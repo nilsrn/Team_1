@@ -2,11 +2,10 @@
 
 Public Class DbManager
 
-    'Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+    Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;" 'Vurdere sikkerheten her
 
-    ' Funksjon for å opprette ny bruker. Denne må mappes til admin-panelet. 
-    Public Shared Sub insertNewUser(username As String, password As String, salt As String)
-        Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+    ' Function for creating a new user and storing it in the DB. Not finished. 
+    Public Shared Sub insertNewUser(username As String, password As String, salt As String) 'Nils
         If Not DuplicateUser(username) Then
             Using SqlConnection As New MySqlConnection(connectionString)
                 Dim insertNewUser As String = "INSERT INTO UserAccount(Username, Password, Salt) VALUES(@user,@pass,@salt)"
@@ -25,9 +24,8 @@ Public Class DbManager
         MsgBox(String.Format("{0} er allerede registrert i systemet", username))
     End Sub
 
-    ' Funksjon for å sjekke om bruker fins fra før 
-    Private Shared Function DuplicateUser(username As String) As Boolean
-        Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+    ' Function to check if a user already exists
+    Private Shared Function DuplicateUser(username As String) As Boolean ' Nils
         Using SqlConnection As New MySqlConnection(connectionString)
             Dim checkUserQuery As String = "SELECT COUNT(Username) FROM UserAccount WHERE username =@user"
             Dim sqlCommand As New MySqlCommand(checkUserQuery, SqlConnection)
@@ -44,11 +42,9 @@ Public Class DbManager
         Return True
     End Function
 
-    ' Funksjon for å logge inn
-    Public Shared Sub Login(username As String, password As String)
+    ' Function for logging in
+    Public Shared Sub Login(username As String, password As String) 'Nils
         Dim salt As String = ""
-
-        Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
 
         Using SqlConnection As New MySqlConnection(connectionString)
             Dim readSaltQuery As String = "SELECT * FROM UserAccount WHERE username=@user"
@@ -83,15 +79,14 @@ Public Class DbManager
     End Sub
 
 
-    'Funksjon for å forsikre seg om at man har kontakt med databasen
-    Public Shared Async Function ConnectedToServerAsync(SqlConnection) As Task(Of Boolean)
+    'Function to verify that the application is connected to the Database. 
+    Public Shared Async Function ConnectedToServerAsync(SqlConnection) As Task(Of Boolean) ' Nils
         Try
             Await SqlConnection.OpenAsync()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
         Return SqlConnection.State
-    End Function
-
+    End Function 'Add If ConnectedToServerAsync(SqlConnection).Result Then' to verify that the connection is established before executing the query
 
 End Class

@@ -50,7 +50,7 @@ Partial Class loginView
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(80, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(75, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(165, 147)
         Me.PictureBox1.TabIndex = 7
@@ -121,7 +121,7 @@ Partial Class loginView
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnLogin.Location = New System.Drawing.Point(97, 354)
+        Me.btnLogin.Location = New System.Drawing.Point(101, 354)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(97, 45)
         Me.btnLogin.TabIndex = 3
