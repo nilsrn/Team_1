@@ -76,14 +76,14 @@
   <ItemGroup>
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />
-    <Compile Include="View\Form1.vb">
+    <Compile Include="View\loginView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="View\loginView.Designer.vb">
+      <DependentUpon>loginView.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Kladd.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,16 +99,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="View\mainView.Designer.vb">
+      <DependentUpon>mainView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\mainView.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="View\loginView.resx">
+      <DependentUpon>loginView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\mainView.resx">
+      <DependentUpon>mainView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

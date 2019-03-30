@@ -9,7 +9,7 @@ Public Class DbManager
         Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
         If Not DuplicateUser(username) Then
             Using SqlConnection As New MySqlConnection(connectionString)
-                Dim insertNewUser As String = "INSERT INTO users(username, password, salt) VALUES(@user,@pass,@salt)"
+                Dim insertNewUser As String = "INSERT INTO UserAccount(Username, Password, Salt) VALUES(@user,@pass,@salt)"
                 Dim SqlCommand As New MySqlCommand(insertNewUser, SqlConnection)
                 SqlCommand.Parameters.AddWithValue("@user", username)
                 SqlCommand.Parameters.AddWithValue("@pass", password)
@@ -29,7 +29,7 @@ Public Class DbManager
     Private Shared Function DuplicateUser(username As String) As Boolean
         Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
         Using SqlConnection As New MySqlConnection(connectionString)
-            Dim checkUserQuery As String = "SELECT COUNT(username) FROM users WHERE username =@user"
+            Dim checkUserQuery As String = "SELECT COUNT(Username) FROM UserAccount WHERE username =@user"
             Dim sqlCommand As New MySqlCommand(checkUserQuery, SqlConnection)
             sqlCommand.Parameters.AddWithValue("@user", username)
             If ConnectedToServerAsync(SqlConnection).Result Then
@@ -47,30 +47,34 @@ Public Class DbManager
     ' Funksjon for å logge inn
     Public Shared Sub Login(username As String, password As String)
         Dim salt As String = ""
+
         Dim connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+
         Using SqlConnection As New MySqlConnection(connectionString)
-            Dim readSaltQuery As String = "SELECT * FROM users WHERE username=@user"
+            Dim readSaltQuery As String = "SELECT * FROM UserAccount WHERE username=@user"
             Dim sqlCommand As New MySqlCommand(readSaltQuery, SqlConnection)
             sqlCommand.Parameters.AddWithValue("@user", username)
 
             If ConnectedToServerAsync(SqlConnection).Result Then
                 Dim reader As MySqlDataReader = sqlCommand.ExecuteReader()
                 While reader.Read()
-                    salt = reader("salt").ToString()
+                    salt = reader("Salt").ToString()
                 End While
                 reader.Close()
 
                 Dim pass = Encryption.HashString(password)
                 Dim hashedAndSalted = Encryption.HashString(String.Format("{0}{1}", pass, salt))
 
-                Dim checkLoginQuery As String = "SELECT COUNT(*) FROM users WHERE username =@user AND password =@pass"
+                Dim checkLoginQuery As String = "SELECT COUNT(*) FROM UserAccount WHERE Username =@user AND Password =@pass"
                 Dim sqlCommand0 As New MySqlCommand(checkLoginQuery, SqlConnection)
-                sqlCommand.Parameters.AddWithValue("@user", username)
-                sqlCommand.Parameters.AddWithValue("@pass", hashedAndSalted)
+                sqlCommand0.Parameters.AddWithValue("@user", username)
+                sqlCommand0.Parameters.AddWithValue("@pass", hashedAndSalted)
 
-                Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
+                Dim results As Integer = Convert.ToInt32(sqlCommand0.ExecuteScalar)
                 If results = 1 Then
                     MsgBox("Velkommen: " & username)
+                    mainView.Show()
+                    loginView.Hide()
                 Else
                     MsgBox("Feil brukernavn eller passord.")
                 End If
