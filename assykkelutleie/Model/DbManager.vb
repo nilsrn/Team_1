@@ -12,7 +12,7 @@ Public Class DbManager
                 Dim SqlCommand As New MySqlCommand(insertNewUser, SqlConnection)
                 SqlCommand.Parameters.AddWithValue("@user", username)
                 SqlCommand.Parameters.AddWithValue("@pass", password)
-                SqlCommand.Parameters.AddWithValue("@salt", salt)
+                SqlCommand.Parameters.AddWithValue("@salt", salt)'Må legges til 
 
                 If ConnectedToServerAsync(SqlConnection).Result Then
                     SqlCommand.ExecuteNonQuery()
@@ -43,36 +43,36 @@ Public Class DbManager
     End Function
 
     ' Function for logging in
-    Public Shared Sub Login(username As String, password As String) 'Nils
+    Public Shared Sub login(username As String, password As String) 'nils
         Dim salt As String = ""
 
-        Using SqlConnection As New MySqlConnection(connectionString)
-            Dim readSaltQuery As String = "SELECT * FROM UserAccount WHERE username=@user"
-            Dim sqlCommand As New MySqlCommand(readSaltQuery, SqlConnection)
-            sqlCommand.Parameters.AddWithValue("@user", username)
+        Using sqlconnection As New MySqlConnection(connectionString)
+            Dim readsaltquery As String = "select * from useraccount where username=@user"
+            Dim sqlcommand As New MySqlCommand(readsaltquery, sqlconnection)
+            sqlcommand.Parameters.AddWithValue("@user", username)
 
-            If ConnectedToServerAsync(SqlConnection).Result Then
-                Dim reader As MySqlDataReader = sqlCommand.ExecuteReader()
+            If ConnectedToServerAsync(sqlconnection).Result Then
+                Dim reader As MySqlDataReader = sqlcommand.ExecuteReader()
                 While reader.Read()
-                    salt = reader("Salt").ToString()
+                    salt = reader("salt").ToString()
                 End While
                 reader.Close()
 
                 Dim pass = Encryption.HashString(password)
-                Dim hashedAndSalted = Encryption.HashString(String.Format("{0}{1}", pass, salt))
+                Dim hashedandsalted = Encryption.HashString(String.Format("{0}{1}", pass, salt))
 
-                Dim checkLoginQuery As String = "SELECT COUNT(*) FROM UserAccount WHERE Username =@user AND Password =@pass"
-                Dim sqlCommand0 As New MySqlCommand(checkLoginQuery, SqlConnection)
-                sqlCommand0.Parameters.AddWithValue("@user", username)
-                sqlCommand0.Parameters.AddWithValue("@pass", hashedAndSalted)
+                Dim checkloginquery As String = "select count(*) from useraccount where username =@user and password =@pass"
+                Dim sqlcommand0 As New MySqlCommand(checkloginquery, sqlconnection)
+                sqlcommand0.Parameters.AddWithValue("@user", username)
+                sqlcommand0.Parameters.AddWithValue("@pass", hashedandsalted)
 
-                Dim results As Integer = Convert.ToInt32(sqlCommand0.ExecuteScalar)
+                Dim results As Integer = Convert.ToInt32(sqlcommand0.ExecuteScalar)
                 If results = 1 Then
-                    MsgBox("Velkommen: " & username)
+                    MsgBox("velkommen: " & username)
                     mainView.Show()
                     loginView.Hide()
                 Else
-                    MsgBox("Feil brukernavn eller passord.")
+                    MsgBox("feil brukernavn eller passord.")
                 End If
             End If
         End Using
@@ -87,6 +87,6 @@ Public Class DbManager
             MsgBox(ex.Message)
         End Try
         Return SqlConnection.State
-    End Function 'Add If ConnectedToServerAsync(SqlConnection).Result Then' to verify that the connection is established before executing the query
+    End Function 'Add; "If ConnectedToServerAsync(SqlConnection).Result Then" to verify that the connection is established before executing the query
 
 End Class

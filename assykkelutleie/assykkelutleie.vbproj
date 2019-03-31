@@ -74,6 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\User.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />
     <Compile Include="View\loginView.vb">

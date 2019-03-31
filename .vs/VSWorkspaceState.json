@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assykkelutleie"
+    "\\assykkelutleie",
+    "\\assykkelutleie\\View"
   ],
-  "SelectedNode": "\\assykkelutleie\\Module1.vb",
+  "SelectedNode": "\\assykkelutleie\\View\\loginView.vb",
   "PreviewInSolutionExplorer": false
 }
