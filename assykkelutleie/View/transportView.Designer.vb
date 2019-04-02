@@ -22,6 +22,7 @@ Partial Class transportView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(transportView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -65,6 +66,7 @@ Partial Class transportView
         '
         'Button1
         '
+        Me.Button1.Image = Global.assykkelutleie.My.Resources.Resources.Rental
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.ImageKey = "(none)"
         Me.Button1.Location = New System.Drawing.Point(12, 12)
@@ -76,6 +78,7 @@ Partial Class transportView
         '
         'Button5
         '
+        Me.Button5.Image = Global.assykkelutleie.My.Resources.Resources.Admin
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button5.ImageKey = "(none)"
         Me.Button5.Location = New System.Drawing.Point(12, 268)
@@ -89,6 +92,7 @@ Partial Class transportView
         '
         Me.Button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Image = Global.assykkelutleie.My.Resources.Resources.Transport
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.ImageKey = "(none)"
         Me.Button4.Location = New System.Drawing.Point(12, 204)
@@ -100,6 +104,7 @@ Partial Class transportView
         '
         'Button3
         '
+        Me.Button3.Image = Global.assykkelutleie.My.Resources.Resources.Bicycles
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.ImageKey = "(none)"
         Me.Button3.Location = New System.Drawing.Point(12, 140)
@@ -111,6 +116,7 @@ Partial Class transportView
         '
         'Button2
         '
+        Me.Button2.Image = Global.assykkelutleie.My.Resources.Resources.Customers
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.ImageKey = "(none)"
         Me.Button2.Location = New System.Drawing.Point(12, 76)
@@ -131,6 +137,7 @@ Partial Class transportView
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "transportView"
         Me.Text = "transport"
         Me.TabControl1.ResumeLayout(False)
