@@ -36,7 +36,6 @@ Partial Class mainView
         '
         'Button1
         '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.ImageKey = "(none)"
         Me.Button1.Location = New System.Drawing.Point(12, 12)
@@ -48,7 +47,6 @@ Partial Class mainView
         '
         'Button2
         '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.ImageKey = "(none)"
         Me.Button2.Location = New System.Drawing.Point(12, 76)
@@ -60,7 +58,6 @@ Partial Class mainView
         '
         'Button3
         '
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.ImageKey = "(none)"
         Me.Button3.Location = New System.Drawing.Point(12, 140)
@@ -72,7 +69,6 @@ Partial Class mainView
         '
         'Button4
         '
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.ImageKey = "(none)"
         Me.Button4.Location = New System.Drawing.Point(12, 204)
@@ -84,7 +80,6 @@ Partial Class mainView
         '
         'Button5
         '
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button5.ImageKey = "(none)"
         Me.Button5.Location = New System.Drawing.Point(12, 268)
