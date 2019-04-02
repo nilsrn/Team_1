@@ -106,6 +106,12 @@
     <Compile Include="View\mainView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\utleieView.Designer.vb">
+      <DependentUpon>utleieView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\utleieView.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\loginView.resx">
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\mainView.resx">
       <DependentUpon>mainView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\utleieView.resx">
+      <DependentUpon>utleieView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
