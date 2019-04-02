@@ -77,6 +77,18 @@
     <Compile Include="Controller\User.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />
+    <Compile Include="View\adminView.Designer.vb">
+      <DependentUpon>adminView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\adminView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\kuderView.Designer.vb">
+      <DependentUpon>kuderView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\kuderView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\loginView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,18 @@
     <Compile Include="View\mainView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\syklerView.Designer.vb">
+      <DependentUpon>syklerView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\syklerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\transportView.Designer.vb">
+      <DependentUpon>transportView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\transportView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\utleieView.Designer.vb">
       <DependentUpon>utleieView.vb</DependentUpon>
     </Compile>
@@ -114,6 +138,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="View\adminView.resx">
+      <DependentUpon>adminView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\kuderView.resx">
+      <DependentUpon>kuderView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\loginView.resx">
       <DependentUpon>loginView.vb</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +155,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\mainView.resx">
       <DependentUpon>mainView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\syklerView.resx">
+      <DependentUpon>syklerView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\transportView.resx">
+      <DependentUpon>transportView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\utleieView.resx">
       <DependentUpon>utleieView.vb</DependentUpon>

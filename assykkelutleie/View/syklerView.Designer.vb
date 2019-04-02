@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class utleieView
+Partial Class syklerView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,73 +22,16 @@ Partial Class utleieView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageKey = "(none)"
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 45)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Utleie"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.ImageKey = "(none)"
-        Me.Button5.Location = New System.Drawing.Point(12, 268)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(141, 45)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "Admin"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.ImageKey = "(none)"
-        Me.Button4.Location = New System.Drawing.Point(12, 204)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(141, 45)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Transport"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.ImageKey = "(none)"
-        Me.Button3.Location = New System.Drawing.Point(12, 140)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(141, 45)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "Sykler"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.ImageKey = "(none)"
-        Me.Button2.Location = New System.Drawing.Point(12, 76)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(141, 45)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Kunder"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'TabControl1
         '
@@ -98,7 +41,7 @@ Partial Class utleieView
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(617, 426)
-        Me.TabControl1.TabIndex = 12
+        Me.TabControl1.TabIndex = 18
         '
         'TabPage1
         '
@@ -120,7 +63,64 @@ Partial Class utleieView
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'utleieView
+        'Button1
+        '
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.ImageKey = "(none)"
+        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(141, 45)
+        Me.Button1.TabIndex = 17
+        Me.Button1.Text = "Utleie"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.ImageKey = "(none)"
+        Me.Button5.Location = New System.Drawing.Point(12, 268)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(141, 45)
+        Me.Button5.TabIndex = 16
+        Me.Button5.Text = "Admin"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.ImageKey = "(none)"
+        Me.Button4.Location = New System.Drawing.Point(12, 204)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(141, 45)
+        Me.Button4.TabIndex = 15
+        Me.Button4.Text = "Transport"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.ImageKey = "(none)"
+        Me.Button3.Location = New System.Drawing.Point(12, 140)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(141, 45)
+        Me.Button3.TabIndex = 14
+        Me.Button3.Text = "Sykler"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.ImageKey = "(none)"
+        Me.Button2.Location = New System.Drawing.Point(12, 76)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(141, 45)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Kunder"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'syklerView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -131,19 +131,19 @@ Partial Class utleieView
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Name = "utleieView"
-        Me.Text = "utleie"
+        Me.Name = "syklerView"
+        Me.Text = "sykler"
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Button1 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
 End Class
