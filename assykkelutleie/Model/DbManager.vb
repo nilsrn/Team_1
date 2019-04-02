@@ -5,14 +5,20 @@ Public Class DbManager
     Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;" 'Vurdere sikkerheten her
 
     ' Function for creating a new user and storing it in the DB. Not finished. 
-    Public Shared Sub insertNewUser(username As String, password As String, salt As String) 'Nils
+    Public Shared Sub insertNewUser(username As String, password As String, salt As String, accountType As String, location As String, firstName As String, surname As String, email As String, telephonenumber As String) 'Nils
         If Not DuplicateUser(username) Then
             Using SqlConnection As New MySqlConnection(connectionString)
-                Dim insertNewUser As String = "INSERT INTO UserAccount(Username, Password, Salt) VALUES(@user,@pass,@salt)"
+                Dim insertNewUser As String = "INSERT INTO UserAccount(Username, Password, Salt, AccountType, Location, FirstName, Surname, Email, TelephoneNumber) VALUES(@user,@pass,@salt,@acc,@loc,@first,@sur,@email,@tel)"
                 Dim SqlCommand As New MySqlCommand(insertNewUser, SqlConnection)
                 SqlCommand.Parameters.AddWithValue("@user", username)
                 SqlCommand.Parameters.AddWithValue("@pass", password)
-                SqlCommand.Parameters.AddWithValue("@salt", salt)'Må legges til 
+                SqlCommand.Parameters.AddWithValue("@salt", salt)
+                SqlCommand.Parameters.AddWithValue("@acc", accountType)
+                SqlCommand.Parameters.AddWithValue("@loc", location)
+                SqlCommand.Parameters.AddWithValue("@first", firstName)
+                SqlCommand.Parameters.AddWithValue("@sur", surname)
+                SqlCommand.Parameters.AddWithValue("@email", email)
+                SqlCommand.Parameters.AddWithValue("@tel", telephonenumber)
 
                 If ConnectedToServerAsync(SqlConnection).Result Then
                     SqlCommand.ExecuteNonQuery()
@@ -47,7 +53,7 @@ Public Class DbManager
         Dim salt As String = ""
 
         Using sqlconnection As New MySqlConnection(connectionString)
-            Dim readsaltquery As String = "select * from useraccount where username=@user"
+            Dim readsaltquery As String = "select * from UserAccount where username=@user"
             Dim sqlcommand As New MySqlCommand(readsaltquery, sqlconnection)
             sqlcommand.Parameters.AddWithValue("@user", username)
 
@@ -61,14 +67,14 @@ Public Class DbManager
                 Dim pass = Encryption.HashString(password)
                 Dim hashedandsalted = Encryption.HashString(String.Format("{0}{1}", pass, salt))
 
-                Dim checkloginquery As String = "select count(*) from useraccount where username =@user and password =@pass"
+                Dim checkloginquery As String = "select count(*) from UserAccount where username =@user and password =@pass"
                 Dim sqlcommand0 As New MySqlCommand(checkloginquery, sqlconnection)
                 sqlcommand0.Parameters.AddWithValue("@user", username)
                 sqlcommand0.Parameters.AddWithValue("@pass", hashedandsalted)
 
                 Dim results As Integer = Convert.ToInt32(sqlcommand0.ExecuteScalar)
                 If results = 1 Then
-                    MsgBox("velkommen: " & username)
+                    MsgBox("Velkommen: " & username)
                     mainView.Show()
                     loginView.Hide()
                 Else
