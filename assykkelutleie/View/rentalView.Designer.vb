@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class utleieView
+Partial Class rentalView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -120,7 +120,7 @@ Partial Class utleieView
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'utleieView
+        'rentalView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -131,8 +131,8 @@ Partial Class utleieView
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Name = "utleieView"
-        Me.Text = "utleie"
+        Me.Name = "rentalView"
+        Me.Text = "rental"
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

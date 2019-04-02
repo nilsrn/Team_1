@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class kuderView
+Partial Class customersView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -120,7 +120,7 @@ Partial Class kuderView
         Me.Button2.Text = "Kunder"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'kuderView
+        'customersView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -131,8 +131,8 @@ Partial Class kuderView
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Name = "kuderView"
-        Me.Text = "kuder"
+        Me.Name = "customersView"
+        Me.Text = "customers"
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

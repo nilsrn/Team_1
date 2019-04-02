@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class syklerView
+Partial Class bicyclesView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -120,7 +120,7 @@ Partial Class syklerView
         Me.Button2.Text = "Kunder"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'syklerView
+        'bicyclesView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -131,8 +131,8 @@ Partial Class syklerView
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Name = "syklerView"
-        Me.Text = "sykler"
+        Me.Name = "bicyclesView"
+        Me.Text = "bicycles"
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

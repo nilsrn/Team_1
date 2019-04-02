@@ -83,10 +83,10 @@
     <Compile Include="View\adminView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\kuderView.Designer.vb">
-      <DependentUpon>kuderView.vb</DependentUpon>
+    <Compile Include="View\customersView.Designer.vb">
+      <DependentUpon>customersView.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\kuderView.vb">
+    <Compile Include="View\customersView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\loginView.vb">
@@ -118,10 +118,10 @@
     <Compile Include="View\mainView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\syklerView.Designer.vb">
-      <DependentUpon>syklerView.vb</DependentUpon>
+    <Compile Include="View\bicyclesView.Designer.vb">
+      <DependentUpon>bicyclesView.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\syklerView.vb">
+    <Compile Include="View\bicyclesView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\transportView.Designer.vb">
@@ -130,10 +130,10 @@
     <Compile Include="View\transportView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\utleieView.Designer.vb">
-      <DependentUpon>utleieView.vb</DependentUpon>
+    <Compile Include="View\rentalView.Designer.vb">
+      <DependentUpon>rentalView.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\utleieView.vb">
+    <Compile Include="View\rentalView.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -141,8 +141,8 @@
     <EmbeddedResource Include="View\adminView.resx">
       <DependentUpon>adminView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\kuderView.resx">
-      <DependentUpon>kuderView.vb</DependentUpon>
+    <EmbeddedResource Include="View\customersView.resx">
+      <DependentUpon>customersView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\loginView.resx">
       <DependentUpon>loginView.vb</DependentUpon>
@@ -156,14 +156,14 @@
     <EmbeddedResource Include="View\mainView.resx">
       <DependentUpon>mainView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\syklerView.resx">
-      <DependentUpon>syklerView.vb</DependentUpon>
+    <EmbeddedResource Include="View\bicyclesView.resx">
+      <DependentUpon>bicyclesView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\transportView.resx">
       <DependentUpon>transportView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\utleieView.resx">
-      <DependentUpon>utleieView.vb</DependentUpon>
+    <EmbeddedResource Include="View\rentalView.resx">
+      <DependentUpon>rentalView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
