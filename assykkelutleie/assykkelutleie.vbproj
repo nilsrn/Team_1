@@ -178,6 +178,35 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bicycles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AS SykkelUtleie Logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
