@@ -50,7 +50,6 @@ Partial Class rentalView
         '
         'Button5
         '
-        Me.Button5.Image = Global.assykkelutleie.My.Resources.Resources.Admin
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button5.ImageKey = "(none)"
         Me.Button5.Location = New System.Drawing.Point(12, 268)
@@ -62,7 +61,6 @@ Partial Class rentalView
         '
         'Button4
         '
-        Me.Button4.Image = Global.assykkelutleie.My.Resources.Resources.Transport
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.ImageKey = "(none)"
         Me.Button4.Location = New System.Drawing.Point(12, 204)
@@ -74,7 +72,6 @@ Partial Class rentalView
         '
         'Button3
         '
-        Me.Button3.Image = Global.assykkelutleie.My.Resources.Resources.Bicycles
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.ImageKey = "(none)"
         Me.Button3.Location = New System.Drawing.Point(12, 140)
@@ -86,7 +83,6 @@ Partial Class rentalView
         '
         'Button2
         '
-        Me.Button2.Image = Global.assykkelutleie.My.Resources.Resources.Customers
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.ImageKey = "(none)"
         Me.Button2.Location = New System.Drawing.Point(12, 76)
