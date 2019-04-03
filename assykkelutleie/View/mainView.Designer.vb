@@ -77,6 +77,7 @@ Partial Class mainView
         '
         'btnRental
         '
+        Me.btnRental.Image = Global.assykkelutleie.My.Resources.Resources.Rental
         Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.ImageKey = "(none)"
         Me.btnRental.Location = New System.Drawing.Point(12, 12)
