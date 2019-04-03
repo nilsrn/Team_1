@@ -33,6 +33,8 @@ Partial Class mainView
         '
         'btnCustomers
         '
+        Me.btnCustomers.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Customers
+        Me.btnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.ImageKey = "(none)"
         Me.btnCustomers.Location = New System.Drawing.Point(12, 76)
@@ -40,10 +42,13 @@ Partial Class mainView
         Me.btnCustomers.Size = New System.Drawing.Size(141, 45)
         Me.btnCustomers.TabIndex = 1
         Me.btnCustomers.Text = "Kunder"
+        Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.UseVisualStyleBackColor = True
         '
         'btnBicycles
         '
+        Me.btnBicycles.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Bicycles
+        Me.btnBicycles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnBicycles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.ImageKey = "(none)"
         Me.btnBicycles.Location = New System.Drawing.Point(12, 140)
@@ -51,10 +56,13 @@ Partial Class mainView
         Me.btnBicycles.Size = New System.Drawing.Size(141, 45)
         Me.btnBicycles.TabIndex = 2
         Me.btnBicycles.Text = "Sykler"
+        Me.btnBicycles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.UseVisualStyleBackColor = True
         '
         'btnTransport
         '
+        Me.btnTransport.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Transport
+        Me.btnTransport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnTransport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransport.ImageKey = "(none)"
         Me.btnTransport.Location = New System.Drawing.Point(12, 204)
@@ -62,10 +70,13 @@ Partial Class mainView
         Me.btnTransport.Size = New System.Drawing.Size(141, 45)
         Me.btnTransport.TabIndex = 3
         Me.btnTransport.Text = "Transport"
+        Me.btnTransport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransport.UseVisualStyleBackColor = True
         '
         'btnAdmin
         '
+        Me.btnAdmin.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Admin
+        Me.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.ImageKey = "(none)"
         Me.btnAdmin.Location = New System.Drawing.Point(12, 268)
@@ -73,11 +84,13 @@ Partial Class mainView
         Me.btnAdmin.Size = New System.Drawing.Size(141, 45)
         Me.btnAdmin.TabIndex = 4
         Me.btnAdmin.Text = "Admin"
+        Me.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.UseVisualStyleBackColor = True
         '
         'btnRental
         '
         Me.btnRental.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Rental
+        Me.btnRental.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.ImageKey = "(none)"
         Me.btnRental.Location = New System.Drawing.Point(12, 12)
@@ -85,6 +98,7 @@ Partial Class mainView
         Me.btnRental.Size = New System.Drawing.Size(141, 45)
         Me.btnRental.TabIndex = 6
         Me.btnRental.Text = "Utleie"
+        Me.btnRental.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.UseVisualStyleBackColor = True
         '
         'PanelMainView
