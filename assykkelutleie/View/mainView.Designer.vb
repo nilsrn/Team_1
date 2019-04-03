@@ -23,131 +23,97 @@ Partial Class mainView
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainView))
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TabControl1.SuspendLayout()
+        Me.btnCustomers = New System.Windows.Forms.Button()
+        Me.btnBicycles = New System.Windows.Forms.Button()
+        Me.btnTransport = New System.Windows.Forms.Button()
+        Me.btnAdmin = New System.Windows.Forms.Button()
+        Me.btnRental = New System.Windows.Forms.Button()
+        Me.PanelMainView = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
-        'Button2
+        'btnCustomers
         '
-        Me.Button2.Image = Global.assykkelutleie.My.Resources.Resources.Customers
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.ImageKey = "(none)"
-        Me.Button2.Location = New System.Drawing.Point(12, 76)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(141, 45)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Kunder"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCustomers.ImageKey = "(none)"
+        Me.btnCustomers.Location = New System.Drawing.Point(12, 76)
+        Me.btnCustomers.Name = "btnCustomers"
+        Me.btnCustomers.Size = New System.Drawing.Size(141, 45)
+        Me.btnCustomers.TabIndex = 1
+        Me.btnCustomers.Text = "Kunder"
+        Me.btnCustomers.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnBicycles
         '
-        Me.Button3.Image = Global.assykkelutleie.My.Resources.Resources.Bicycles
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.ImageKey = "(none)"
-        Me.Button3.Location = New System.Drawing.Point(12, 140)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(141, 45)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Sykler"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnBicycles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBicycles.ImageKey = "(none)"
+        Me.btnBicycles.Location = New System.Drawing.Point(12, 140)
+        Me.btnBicycles.Name = "btnBicycles"
+        Me.btnBicycles.Size = New System.Drawing.Size(141, 45)
+        Me.btnBicycles.TabIndex = 2
+        Me.btnBicycles.Text = "Sykler"
+        Me.btnBicycles.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnTransport
         '
-        Me.Button4.Image = Global.assykkelutleie.My.Resources.Resources.Transport
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.ImageKey = "(none)"
-        Me.Button4.Location = New System.Drawing.Point(12, 204)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(141, 45)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Transport"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnTransport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTransport.ImageKey = "(none)"
+        Me.btnTransport.Location = New System.Drawing.Point(12, 204)
+        Me.btnTransport.Name = "btnTransport"
+        Me.btnTransport.Size = New System.Drawing.Size(141, 45)
+        Me.btnTransport.TabIndex = 3
+        Me.btnTransport.Text = "Transport"
+        Me.btnTransport.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnAdmin
         '
-        Me.Button5.Image = Global.assykkelutleie.My.Resources.Resources.Admin
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.ImageKey = "(none)"
-        Me.Button5.Location = New System.Drawing.Point(12, 268)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(141, 45)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Admin"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAdmin.ImageKey = "(none)"
+        Me.btnAdmin.Location = New System.Drawing.Point(12, 268)
+        Me.btnAdmin.Name = "btnAdmin"
+        Me.btnAdmin.Size = New System.Drawing.Size(141, 45)
+        Me.btnAdmin.TabIndex = 4
+        Me.btnAdmin.Text = "Admin"
+        Me.btnAdmin.UseVisualStyleBackColor = True
         '
-        'TabControl1
+        'btnRental
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(171, 12)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(617, 426)
-        Me.TabControl1.TabIndex = 5
+        Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRental.ImageKey = "(none)"
+        Me.btnRental.Location = New System.Drawing.Point(12, 12)
+        Me.btnRental.Name = "btnRental"
+        Me.btnRental.Size = New System.Drawing.Size(141, 45)
+        Me.btnRental.TabIndex = 6
+        Me.btnRental.Text = "Utleie"
+        Me.btnRental.UseVisualStyleBackColor = True
         '
-        'TabPage1
+        'PanelMainView
         '
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(609, 400)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(609, 400)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.assykkelutleie.My.Resources.Resources.Rental
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageKey = "(none)"
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 45)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Utleie"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.PanelMainView.Location = New System.Drawing.Point(175, 12)
+        Me.PanelMainView.Name = "PanelMainView"
+        Me.PanelMainView.Size = New System.Drawing.Size(613, 426)
+        Me.PanelMainView.TabIndex = 7
         '
         'mainView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.PanelMainView)
+        Me.Controls.Add(Me.btnRental)
+        Me.Controls.Add(Me.btnAdmin)
+        Me.Controls.Add(Me.btnTransport)
+        Me.Controls.Add(Me.btnBicycles)
+        Me.Controls.Add(Me.btnCustomers)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mainView"
         Me.Text = "main"
-        Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCustomers As Button
+    Friend WithEvents btnBicycles As Button
+    Friend WithEvents btnTransport As Button
+    Friend WithEvents btnAdmin As Button
+    Friend WithEvents btnRental As Button
+    Friend WithEvents PanelMainView As Panel
 End Class
