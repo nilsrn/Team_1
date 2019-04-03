@@ -1,4 +1,5 @@
 ﻿Public Class mainView
+    'Sven-Erik
     Private Sub btnRental_Click(sender As Object, e As EventArgs) Handles btnRental.Click
         Me.Enabled = True
         btnRental.Enabled = False
@@ -7,6 +8,10 @@
         rentalView.TopMost = True
         PanelMainView.Controls.Add(rentalView)
         rentalView.Show()
+
+        'Dim view = rentalView
+        'Dim button = btnRental
+        'Config.main(view, button)
     End Sub
 
     Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
