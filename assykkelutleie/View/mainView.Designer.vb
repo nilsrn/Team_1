@@ -40,7 +40,7 @@ Partial Class mainView
         Me.btnCustomers.Location = New System.Drawing.Point(12, 76)
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Size = New System.Drawing.Size(141, 45)
-        Me.btnCustomers.TabIndex = 1
+        Me.btnCustomers.TabIndex = 2
         Me.btnCustomers.Text = "Kunder"
         Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.UseVisualStyleBackColor = True
@@ -54,7 +54,7 @@ Partial Class mainView
         Me.btnBicycles.Location = New System.Drawing.Point(12, 140)
         Me.btnBicycles.Name = "btnBicycles"
         Me.btnBicycles.Size = New System.Drawing.Size(141, 45)
-        Me.btnBicycles.TabIndex = 2
+        Me.btnBicycles.TabIndex = 3
         Me.btnBicycles.Text = "Sykler"
         Me.btnBicycles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.UseVisualStyleBackColor = True
@@ -68,7 +68,7 @@ Partial Class mainView
         Me.btnTransport.Location = New System.Drawing.Point(12, 204)
         Me.btnTransport.Name = "btnTransport"
         Me.btnTransport.Size = New System.Drawing.Size(141, 45)
-        Me.btnTransport.TabIndex = 3
+        Me.btnTransport.TabIndex = 4
         Me.btnTransport.Text = "Transport"
         Me.btnTransport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransport.UseVisualStyleBackColor = True
@@ -82,7 +82,7 @@ Partial Class mainView
         Me.btnAdmin.Location = New System.Drawing.Point(12, 268)
         Me.btnAdmin.Name = "btnAdmin"
         Me.btnAdmin.Size = New System.Drawing.Size(141, 45)
-        Me.btnAdmin.TabIndex = 4
+        Me.btnAdmin.TabIndex = 5
         Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.UseVisualStyleBackColor = True
@@ -96,7 +96,7 @@ Partial Class mainView
         Me.btnRental.Location = New System.Drawing.Point(12, 12)
         Me.btnRental.Name = "btnRental"
         Me.btnRental.Size = New System.Drawing.Size(141, 45)
-        Me.btnRental.TabIndex = 6
+        Me.btnRental.TabIndex = 1
         Me.btnRental.Text = "Utleie"
         Me.btnRental.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.UseVisualStyleBackColor = True
@@ -106,7 +106,7 @@ Partial Class mainView
         Me.PanelMainView.Location = New System.Drawing.Point(175, 12)
         Me.PanelMainView.Name = "PanelMainView"
         Me.PanelMainView.Size = New System.Drawing.Size(613, 426)
-        Me.PanelMainView.TabIndex = 7
+        Me.PanelMainView.TabIndex = 6
         '
         'mainView
         '

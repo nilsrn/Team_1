@@ -6,8 +6,8 @@
         Next
         button.Enabled = False
 
+        mainView.PanelMainView.Controls.Clear()
         view.TopLevel = False
-        view.TopMost = True
         mainView.PanelMainView.Controls.Add(view)
         view.Show()
     End Sub
