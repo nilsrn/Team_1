@@ -49,3 +49,8 @@ C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.xml
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.pdb
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.utleieView.resources
+C:\Users\nilsrle\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.adminView.resources
+C:\Users\nilsrle\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersView.resources
+C:\Users\nilsrle\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.bicyclesView.resources
+C:\Users\nilsrle\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.transportView.resources
+C:\Users\nilsrle\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.rentalView.resources
