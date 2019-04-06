@@ -119,6 +119,7 @@ Partial Class mainView
         Me.Controls.Add(Me.btnTransport)
         Me.Controls.Add(Me.btnBicycles)
         Me.Controls.Add(Me.btnCustomers)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mainView"
         Me.Text = "main"

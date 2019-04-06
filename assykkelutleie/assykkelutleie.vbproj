@@ -52,6 +52,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -81,10 +85,27 @@
     <Compile Include="Controller\User.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\adminView.Designer.vb">
       <DependentUpon>adminView.vb</DependentUpon>
     </Compile>
     <Compile Include="View\adminView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\bicyclesChgView.Designer.vb">
+      <DependentUpon>bicyclesChgView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\bicyclesChgView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\customersChgView.Designer.vb">
+      <DependentUpon>customersChgView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\customersChgView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\customersView.Designer.vb">
@@ -105,11 +126,6 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -145,6 +161,12 @@
     <EmbeddedResource Include="View\adminView.resx">
       <DependentUpon>adminView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\bicyclesChgView.resx">
+      <DependentUpon>bicyclesChgView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\customersChgView.resx">
+      <DependentUpon>customersChgView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\customersView.resx">
       <DependentUpon>customersView.vb</DependentUpon>
     </EmbeddedResource>
@@ -153,9 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\mainView.resx">
       <DependentUpon>mainView.vb</DependentUpon>
@@ -211,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
