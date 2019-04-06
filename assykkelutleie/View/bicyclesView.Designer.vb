@@ -32,6 +32,7 @@ Partial Class bicyclesView
         Me.FramenbrTxt = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.refresh = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gear2Cmb = New System.Windows.Forms.ComboBox()
         Me.wheel2Cmb = New System.Windows.Forms.ComboBox()
@@ -39,7 +40,6 @@ Partial Class bicyclesView
         Me.searchBtn = New System.Windows.Forms.Button()
         Me.searchTxt = New System.Windows.Forms.TextBox()
         Me.bicyclesLst = New System.Windows.Forms.ListBox()
-        Me.refresh = New System.Windows.Forms.Button()
         TypeCmb = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -50,7 +50,6 @@ Partial Class bicyclesView
         '
         TypeCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         TypeCmb.FormattingEnabled = True
-        TypeCmb.Items.AddRange(New Object() {"Terrengsykkel", "Downhill", "Racer", "Barnesykkel"})
         TypeCmb.Location = New System.Drawing.Point(20, 60)
         TypeCmb.Name = "TypeCmb"
         TypeCmb.Size = New System.Drawing.Size(121, 24)
@@ -97,7 +96,6 @@ Partial Class bicyclesView
         '
         Me.gearCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.gearCmb.FormattingEnabled = True
-        Me.gearCmb.Items.AddRange(New Object() {"Shimono", "SRAM"})
         Me.gearCmb.Location = New System.Drawing.Point(274, 60)
         Me.gearCmb.Name = "gearCmb"
         Me.gearCmb.Size = New System.Drawing.Size(121, 24)
@@ -108,7 +106,6 @@ Partial Class bicyclesView
         '
         Me.wheelCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.wheelCmb.FormattingEnabled = True
-        Me.wheelCmb.Items.AddRange(New Object() {"26""", "27,5""", "29"""})
         Me.wheelCmb.Location = New System.Drawing.Point(147, 60)
         Me.wheelCmb.Name = "wheelCmb"
         Me.wheelCmb.Size = New System.Drawing.Size(121, 24)
@@ -151,6 +148,17 @@ Partial Class bicyclesView
         Me.TabPage2.Text = "Sykkeloversikt"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'refresh
+        '
+        Me.refresh.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.update
+        Me.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.refresh.Location = New System.Drawing.Point(534, 72)
+        Me.refresh.Margin = New System.Windows.Forms.Padding(2)
+        Me.refresh.Name = "refresh"
+        Me.refresh.Size = New System.Drawing.Size(56, 50)
+        Me.refresh.TabIndex = 17
+        Me.refresh.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -166,7 +174,6 @@ Partial Class bicyclesView
         '
         Me.gear2Cmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.gear2Cmb.FormattingEnabled = True
-        Me.gear2Cmb.Items.AddRange(New Object() {"Shimono", "SRAM"})
         Me.gear2Cmb.Location = New System.Drawing.Point(264, 42)
         Me.gear2Cmb.Name = "gear2Cmb"
         Me.gear2Cmb.Size = New System.Drawing.Size(121, 24)
@@ -177,7 +184,6 @@ Partial Class bicyclesView
         '
         Me.wheel2Cmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.wheel2Cmb.FormattingEnabled = True
-        Me.wheel2Cmb.Items.AddRange(New Object() {"26""", "27,5""", "29"""})
         Me.wheel2Cmb.Location = New System.Drawing.Point(137, 42)
         Me.wheel2Cmb.Name = "wheel2Cmb"
         Me.wheel2Cmb.Size = New System.Drawing.Size(121, 24)
@@ -188,7 +194,6 @@ Partial Class bicyclesView
         '
         Me.type2Cmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.type2Cmb.FormattingEnabled = True
-        Me.type2Cmb.Items.AddRange(New Object() {"Terrengsykkel", "Downhill", "Racer", "Barnesykkel"})
         Me.type2Cmb.Location = New System.Drawing.Point(10, 42)
         Me.type2Cmb.Name = "type2Cmb"
         Me.type2Cmb.Size = New System.Drawing.Size(121, 24)
@@ -222,17 +227,6 @@ Partial Class bicyclesView
         Me.bicyclesLst.Name = "bicyclesLst"
         Me.bicyclesLst.Size = New System.Drawing.Size(580, 260)
         Me.bicyclesLst.TabIndex = 7
-        '
-        'refresh
-        '
-        Me.refresh.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.update
-        Me.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.refresh.Location = New System.Drawing.Point(534, 72)
-        Me.refresh.Margin = New System.Windows.Forms.Padding(2)
-        Me.refresh.Name = "refresh"
-        Me.refresh.Size = New System.Drawing.Size(56, 50)
-        Me.refresh.TabIndex = 17
-        Me.refresh.UseVisualStyleBackColor = True
         '
         'bicyclesView
         '

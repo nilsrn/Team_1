@@ -40,7 +40,7 @@ Partial Class customersView
         Me.refresh = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.searchBtn = New System.Windows.Forms.Button()
-        Me.txtSøk = New System.Windows.Forms.TextBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -183,7 +183,7 @@ Partial Class customersView
         Me.TabPage2.Controls.Add(Me.refresh)
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Controls.Add(Me.searchBtn)
-        Me.TabPage2.Controls.Add(Me.txtSøk)
+        Me.TabPage2.Controls.Add(Me.txtSearch)
         Me.TabPage2.Controls.Add(Me.ListBox1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -225,14 +225,14 @@ Partial Class customersView
         Me.searchBtn.Text = "Søk"
         Me.searchBtn.UseVisualStyleBackColor = True
         '
-        'txtSøk
+        'txtSearch
         '
-        Me.txtSøk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtSøk.Location = New System.Drawing.Point(14, 49)
-        Me.txtSøk.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtSøk.Name = "txtSøk"
-        Me.txtSøk.Size = New System.Drawing.Size(167, 22)
-        Me.txtSøk.TabIndex = 9
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.txtSearch.Location = New System.Drawing.Point(14, 49)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(167, 22)
+        Me.txtSearch.TabIndex = 9
         '
         'ListBox1
         '
@@ -278,7 +278,7 @@ Partial Class customersView
     Friend WithEvents phonenumber As Label
     Friend WithEvents surname As Label
     Friend WithEvents firstname As Label
-    Friend WithEvents txtSøk As TextBox
+    Friend WithEvents txtSearch As TextBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents searchBtn As Button
     Friend WithEvents Label1 As Label

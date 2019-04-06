@@ -1,6 +1,10 @@
-﻿Public Class bicyclesView
+﻿Imports MySql.Data.MySqlClient
+
+Public Class bicyclesView
+    Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+
     Private Sub BicycleRegister_Click(sender As Object, e As EventArgs) Handles bicycleRegister.Click
-        Dim connection As New MysqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
             connection.Open()
             Dim terrengsykkel As String
@@ -34,7 +38,7 @@
     Public searchID As String
 
     Private Sub BicyclesLst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles bicyclesLst.SelectedIndexChanged
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
 
         searchID = bicyclesLst.SelectedItem
         Dim editcustomer As New bicyclesChgView

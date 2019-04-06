@@ -1,8 +1,11 @@
-﻿Public Class customersChgView
+﻿Imports MySql.Data.MySqlClient
+
+Public Class customersChgView
+    Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
     Private searchID As String = customersView.searchID
 
     Private Sub UpdateCustomer_Click(sender As Object, e As EventArgs) Handles updateCustomer.Click
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
             connection.Open()
             Convert.ToInt32(searchID)
@@ -27,7 +30,7 @@
     End Sub
 
     Private Sub DeleteCustomer_Click(sender As Object, e As EventArgs) Handles deleteCustomer.Click
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
             connection.Open()
             Convert.ToInt32(searchID)
@@ -36,7 +39,7 @@
             Dim query As String
             query = "DELETE FROM Customer WHERE CustomerID= " & searchID
 
-            MsgBox("Sikker på at du vil slette kunden? :)", MsgBoxStyle.YesNo)
+            MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo)
             If MsgBoxResult.Yes Then
 
                 Dim insertsql As New MySqlCommand(query, connection)
@@ -57,7 +60,7 @@
     End Sub
 
     Private Sub CustomersChgView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Dim id, phonenumber As Integer
         Dim Firstname, surname, email As String
 

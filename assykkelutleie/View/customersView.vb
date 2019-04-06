@@ -1,6 +1,10 @@
-﻿Public Class customersView
+﻿Imports MySql.Data.MySqlClient
+
+Public Class customersView
+    Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+
     Private Sub CustomerRegister_Click(sender As Object, e As EventArgs) Handles CustomerRegister.Click
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
             connection.Open()
             Dim firstname As String = firstnameTxt.Text
@@ -34,7 +38,7 @@
     End Sub
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
             connection.Open()
 
@@ -75,7 +79,7 @@
     End Sub
 
     Private Sub CustomersView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
 
             connection.Open()
@@ -113,7 +117,7 @@
     Public searchID As String
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
 
         searchID = ListBox1.SelectedItem
         Dim editcustomer As New customersChgView
@@ -121,7 +125,7 @@
     End Sub
 
     Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
-        Dim connection As New MySqlConnection(DbManager.connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         Try
 
             connection.Open()
@@ -175,5 +179,4 @@
     'End Using
     'Return True
     ' End Function
-    End Sub
 End Class

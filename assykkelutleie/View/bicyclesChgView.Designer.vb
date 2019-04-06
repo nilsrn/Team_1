@@ -34,6 +34,7 @@ Partial Class bicyclesChgView
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.bicycleDelete = New System.Windows.Forms.Button()
         TypeCmb = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
@@ -50,10 +51,10 @@ Partial Class bicyclesChgView
         '
         'bicycleRegister
         '
-        Me.bicycleRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bicycleRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bicycleRegister.Location = New System.Drawing.Point(14, 107)
         Me.bicycleRegister.Name = "bicycleRegister"
-        Me.bicycleRegister.Size = New System.Drawing.Size(375, 44)
+        Me.bicycleRegister.Size = New System.Drawing.Size(164, 44)
         Me.bicycleRegister.TabIndex = 29
         Me.bicycleRegister.Text = "Oppdater sykkel"
         Me.bicycleRegister.UseVisualStyleBackColor = True
@@ -163,11 +164,22 @@ Partial Class bicyclesChgView
         Me.RadioButton3.Text = "Service"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
+        'bicycleDelete
+        '
+        Me.bicycleDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bicycleDelete.Location = New System.Drawing.Point(225, 107)
+        Me.bicycleDelete.Name = "bicycleDelete"
+        Me.bicycleDelete.Size = New System.Drawing.Size(164, 44)
+        Me.bicycleDelete.TabIndex = 36
+        Me.bicycleDelete.Text = "Slett sykkel"
+        Me.bicycleDelete.UseVisualStyleBackColor = True
+        '
         'bicyclesChgView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(493, 166)
+        Me.Controls.Add(Me.bicycleDelete)
         Me.Controls.Add(Me.RadioButton3)
         Me.Controls.Add(Me.RadioButton2)
         Me.Controls.Add(Me.RadioButton1)
@@ -199,4 +211,5 @@ Partial Class bicyclesChgView
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents bicycleDelete As Button
 End Class
