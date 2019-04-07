@@ -6,45 +6,39 @@ Public Class bicyclesView
 
     'Sven-Erik
     Private Sub BicycleRegister_Click(sender As Object, e As EventArgs) Handles btnBicycleRegister.Click
-        Dim connection As New MySqlConnection(connectionString)
-        Try
-            connection.Open()
-            Dim framenbr As Integer = txtFramenbr.Text
-            Dim bicycleType As String = cmbType.SelectedItem
-            Dim defaultLocation As String = cmbDefaultLoc.SelectedItem
-            Dim currentLocation As String = cmbCurrentLoc.SelectedItem
-            Dim status As String
+        Using sqlconnection As New MySqlConnection(connectionString)
+            If DbManager.connectedToServerAsync(sqlconnection).Result Then
+                Dim framenbr As Integer = txtFramenbr.Text
+                Dim bicycleType As String = cmbType.SelectedItem
+                Dim defaultLocation As String = cmbDefaultLoc.SelectedItem
+                Dim currentLocation As String = cmbCurrentLoc.SelectedItem
+                Dim status As String
 
-            If rbAvailable.Checked = True Then
-                status = "Ledig"
-            ElseIf rbRented.Checked = True Then
-                status = "Utleid"
-            ElseIf rbService.Checked = True Then
-                status = "Service"
-            ElseIf rbStolen.Checked = True Then
-                status = "Stjålet"
+                If rbAvailable.Checked = True Then
+                    status = "Ledig"
+                ElseIf rbRented.Checked = True Then
+                    status = "Utleid"
+                ElseIf rbService.Checked = True Then
+                    status = "Service"
+                ElseIf rbStolen.Checked = True Then
+                    status = "Stjålet"
+                End If
+
+                'Adds the inserted values to the database
+                Dim query As String
+                query = "INSERT INTO Bicycle"
+                query = query & " (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status"
+                query = query & " VALUES "
+                query &= " ('" & framenbr & "', " & "'" & bicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
+                MsgBox(query)
+                Dim sql As New MySqlCommand(query, sqlconnection)
+                Dim da As New MySqlDataAdapter
+                Dim table As New DataTable
+
+                da.SelectCommand = sql
+                da.Fill(table)
             End If
-
-            'Adds the inserted values to the database
-            Dim query As String
-            query = "INSERT INTO Bicycle"
-            query = query & " (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status"
-            query = query & " VALUES "
-            query &= " ('" & framenbr & "', " & "'" & bicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
-            MsgBox(query)
-            Dim sql As New MySqlCommand(query, connection)
-            Dim da As New MySqlDataAdapter
-            Dim table As New DataTable
-
-            da.SelectCommand = sql
-            da.Fill(table)
-            connection.Close()
-
-        Catch mistake As MySqlException
-            MsgBox("Feil ved tilkobling" & mistake.Message)
-        Finally
-            connection.Dispose()
-        End Try
+        End Using
 
         'Refreshes the list in "Sykkeloversikt"
         Config.refreshBicycle()
@@ -57,40 +51,35 @@ Public Class bicyclesView
 
     'Sven-Erik
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Dim connection As New MySqlConnection(connectionString)
-        Try
-            connection.Open()
-            'Search for BicycleID in the database
-            Dim framenbr As Integer
-            Dim bicycleType, defaultLocation, currentLocation, status As String
-            Dim search As Integer = txtSearch.Text.ToString()
-            Dim sql As New MySqlCommand("SELECT * FROM Bicycle WHERE BicycleID = '" & search & "'", connection)
-            Dim da As New MySqlDataAdapter
-            Dim table As New DataTable
+        'Search for BicycleID in the database
+        Using sqlconnection As New MySqlConnection(connectionString)
+            If DbManager.connectedToServerAsync(sqlconnection).Result Then
+                Dim framenbr As Integer
+                Dim bicycleType, defaultLocation, currentLocation, status As String
+                Dim search As Integer = txtSearch.Text.ToString()
+                Dim sql As New MySqlCommand("SELECT * FROM Bicycle WHERE BicycleID = '" & search & "'", sqlconnection)
+                Dim da As New MySqlDataAdapter
+                Dim table As New DataTable
 
-            da.SelectCommand = sql
-            da.Fill(table)
-            connection.Close()
+                da.SelectCommand = sql
+                da.Fill(table)
 
-            Dim row As DataRow
-            lstBicycles.Items.Clear()
-            For Each row In table.Rows
-                framenbr = row("BicycleID")
-                bicycleType = row("BicycleType")
-                defaultLocation = row("DefaultLocation")
-                currentLocation = row("CurrentLocation")
-                status = row("Status")
-                lstBicycles.Items.Add(framenbr & " " & bicycleType & " " & defaultLocation & " " & currentLocation & " " & status)
-            Next row
-            txtSearch.Text = ""
-            If framenbr <> search Then
-                MessageBox.Show("Fant ikke " & search & " i databasen")
+                Dim row As DataRow
+                lstBicycles.Items.Clear()
+                For Each row In table.Rows
+                    framenbr = row("BicycleID")
+                    bicycleType = row("BicycleType")
+                    defaultLocation = row("DefaultLocation")
+                    currentLocation = row("CurrentLocation")
+                    status = row("Status")
+                    lstBicycles.Items.Add(framenbr & " " & bicycleType & " " & defaultLocation & " " & currentLocation & " " & status)
+                Next row
+                txtSearch.Text = ""
+                If framenbr <> search Then
+                    MessageBox.Show("Fant ikke " & search & " i databasen")
+                End If
             End If
-        Catch mistake As MySqlException
-            MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
-        Finally
-            connection.Dispose()
-        End Try
+        End Using
     End Sub
 
     Private Sub EndreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EndreToolStripMenuItem.Click
@@ -103,31 +92,25 @@ Public Class bicyclesView
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click
-        Dim connection As New MySqlConnection(connectionString)
         'Deletes the selcted item in lstBicycles
-        Try
-            connection.Open()
-            searchID = lstBicycles.SelectedItem
-            Convert.ToInt32(searchID)
+        Using sqlconnection As New MySqlConnection(connectionString)
+            If DbManager.connectedToServerAsync(sqlconnection).Result Then
+                searchID = lstBicycles.SelectedItem
+                Convert.ToInt32(searchID)
 
-            Dim query As String
-            query = "DELETE FROM Bicycle WHERE BicycleID= " & searchID
+                Dim query As String
+                query = "DELETE FROM Bicycle WHERE BicycleID= " & searchID
 
-            MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo)
-            If MsgBoxResult.Yes Then
-                Dim insertsql As New MySqlCommand(query, connection)
-                Dim da As New MySqlDataAdapter
-                Dim table As New DataTable
-                da.SelectCommand = insertsql
-                da.Fill(table)
-                connection.Close()
+                MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo)
+                If MsgBoxResult.Yes Then
+                    Dim insertsql As New MySqlCommand(query, sqlconnection)
+                    Dim da As New MySqlDataAdapter
+                    Dim table As New DataTable
+                    da.SelectCommand = insertsql
+                    da.Fill(table)
+                End If
             End If
-
-        Catch mistake As MySqlException
-            MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
-        Finally
-            connection.Dispose()
-        End Try
+        End Using
 
         Config.refreshBicycle()
     End Sub

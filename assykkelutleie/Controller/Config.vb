@@ -21,12 +21,10 @@ Public Class Config
     'Sven-Erik
     Public Shared Sub refreshBicycle()
         'Refreshes "Sykkeloversikt"
-        Dim connection As New MySqlConnection(connectionString)
-        Try
-            connection.Open()
+        Using sqlconnection As New MySqlConnection(connectionString)
             Dim framenbr As Integer
             Dim bicycleType, defaultLocation, currentLocation, status As String
-            Dim sql As New MySqlCommand("SELECT * FROM Bicycle ORDER BY BicycleID", connection)
+            Dim sql As New MySqlCommand("SELECT * FROM Bicycle ORDER BY BicycleID", sqlconnection)
             Dim da As New MySqlDataAdapter
             Dim table As New DataTable
             da.SelectCommand = sql
@@ -41,10 +39,6 @@ Public Class Config
                 status = row("Status")
                 bicyclesView.lstBicycles.Items.Add(framenbr & " " & bicycleType & " " & defaultLocation & " " & currentLocation & " " & status)
             Next row
-        Catch mistake As MySqlException
-            MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
-        Finally
-            connection.Dispose()
-        End Try
+        End Using
     End Sub
 End Class
