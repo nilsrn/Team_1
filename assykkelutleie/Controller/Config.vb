@@ -1,4 +1,8 @@
-﻿Public Class Config
+﻿Imports MySql.Data.MySqlClient
+
+Public Class Config
+    Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+
     'Sven-Erik
     Public Shared Sub main(view, button)
         'Enables all buttons except the one active
@@ -12,5 +16,35 @@
         view.TopLevel = False
         mainView.PanelMainView.Controls.Add(view)
         view.Show()
+    End Sub
+
+    'Sven-Erik
+    Public Shared Sub refreshBicycle()
+        'Refreshes "Sykkeloversikt"
+        Dim connection As New MySqlConnection(connectionString)
+        Try
+            connection.Open()
+            Dim framenbr As Integer
+            Dim bicycleType, defaultLocation, currentLocation, status As String
+            Dim sql As New MySqlCommand("SELECT * FROM Bicycle ORDER BY BicycleID", connection)
+            Dim da As New MySqlDataAdapter
+            Dim table As New DataTable
+            da.SelectCommand = sql
+            da.Fill(table)
+
+            bicyclesView.lstBicycles.Items.Clear()
+            For Each row In table.Rows
+                framenbr = row("BicycleID")
+                bicycleType = row("BicycleType")
+                defaultLocation = row("DefaultLocation")
+                currentLocation = row("CurrentLocation")
+                status = row("Status")
+                bicyclesView.lstBicycles.Items.Add(framenbr & " " & bicycleType & " " & defaultLocation & " " & currentLocation & " " & status)
+            Next row
+        Catch mistake As MySqlException
+            MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
+        Finally
+            connection.Dispose()
+        End Try
     End Sub
 End Class
