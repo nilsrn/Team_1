@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Config.vb" />
+    <Compile Include="Controller\Location.vb" />
     <Compile Include="Controller\User.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />

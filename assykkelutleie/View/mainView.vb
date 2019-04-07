@@ -19,4 +19,8 @@
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Config.main(adminView, btnAdmin)
     End Sub
+
+    Private Sub mainView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
