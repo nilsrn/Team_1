@@ -22,39 +22,34 @@ Partial Class bicyclesView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TypeCmb As System.Windows.Forms.ComboBox
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(bicyclesView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.bicycleRegister = New System.Windows.Forms.Button()
-        Me.gearCmb = New System.Windows.Forms.ComboBox()
-        Me.wheelCmb = New System.Windows.Forms.ComboBox()
-        Me.FramenbrTxt = New System.Windows.Forms.TextBox()
+        Me.cmbType = New System.Windows.Forms.ComboBox()
+        Me.rbStolen = New System.Windows.Forms.RadioButton()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.rbService = New System.Windows.Forms.RadioButton()
+        Me.rbRented = New System.Windows.Forms.RadioButton()
+        Me.rbAvailable = New System.Windows.Forms.RadioButton()
+        Me.btnBicycleRegister = New System.Windows.Forms.Button()
+        Me.cmbCurrentLoc = New System.Windows.Forms.ComboBox()
+        Me.cmbDefaultLoc = New System.Windows.Forms.ComboBox()
+        Me.txtFramenbr = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.refresh = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.gear2Cmb = New System.Windows.Forms.ComboBox()
-        Me.wheel2Cmb = New System.Windows.Forms.ComboBox()
-        Me.type2Cmb = New System.Windows.Forms.ComboBox()
-        Me.searchBtn = New System.Windows.Forms.Button()
-        Me.searchTxt = New System.Windows.Forms.TextBox()
-        Me.bicyclesLst = New System.Windows.Forms.ListBox()
-        TypeCmb = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.lstBicycles = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EndreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'TypeCmb
-        '
-        TypeCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        TypeCmb.FormattingEnabled = True
-        TypeCmb.Location = New System.Drawing.Point(20, 60)
-        TypeCmb.Name = "TypeCmb"
-        TypeCmb.Size = New System.Drawing.Size(121, 24)
-        TypeCmb.TabIndex = 12
-        TypeCmb.Text = "Sykkeltype"
         '
         'TabControl1
         '
@@ -68,11 +63,16 @@ Partial Class bicyclesView
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.bicycleRegister)
-        Me.TabPage1.Controls.Add(Me.gearCmb)
-        Me.TabPage1.Controls.Add(Me.wheelCmb)
-        Me.TabPage1.Controls.Add(TypeCmb)
-        Me.TabPage1.Controls.Add(Me.FramenbrTxt)
+        Me.TabPage1.Controls.Add(Me.cmbType)
+        Me.TabPage1.Controls.Add(Me.rbStolen)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.rbService)
+        Me.TabPage1.Controls.Add(Me.rbRented)
+        Me.TabPage1.Controls.Add(Me.rbAvailable)
+        Me.TabPage1.Controls.Add(Me.btnBicycleRegister)
+        Me.TabPage1.Controls.Add(Me.cmbCurrentLoc)
+        Me.TabPage1.Controls.Add(Me.cmbDefaultLoc)
+        Me.TabPage1.Controls.Add(Me.txtFramenbr)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -82,43 +82,112 @@ Partial Class bicyclesView
         Me.TabPage1.Text = "Ny sykkel"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'bicycleRegister
+        'cmbType
         '
-        Me.bicycleRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.bicycleRegister.Location = New System.Drawing.Point(20, 116)
-        Me.bicycleRegister.Name = "bicycleRegister"
-        Me.bicycleRegister.Size = New System.Drawing.Size(375, 44)
-        Me.bicycleRegister.TabIndex = 23
-        Me.bicycleRegister.Text = "Registrer sykkel"
-        Me.bicycleRegister.UseVisualStyleBackColor = True
+        Me.cmbType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.cmbType.FormattingEnabled = True
+        Me.cmbType.Location = New System.Drawing.Point(20, 60)
+        Me.cmbType.Name = "cmbType"
+        Me.cmbType.Size = New System.Drawing.Size(121, 24)
+        Me.cmbType.TabIndex = 41
+        Me.cmbType.Text = "Sykkeltype"
         '
-        'gearCmb
+        'rbStolen
         '
-        Me.gearCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.gearCmb.FormattingEnabled = True
-        Me.gearCmb.Location = New System.Drawing.Point(274, 60)
-        Me.gearCmb.Name = "gearCmb"
-        Me.gearCmb.Size = New System.Drawing.Size(121, 24)
-        Me.gearCmb.TabIndex = 14
-        Me.gearCmb.Text = "Girsystem"
+        Me.rbStolen.AutoSize = True
+        Me.rbStolen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.rbStolen.Location = New System.Drawing.Point(416, 138)
+        Me.rbStolen.Name = "rbStolen"
+        Me.rbStolen.Size = New System.Drawing.Size(63, 20)
+        Me.rbStolen.TabIndex = 40
+        Me.rbStolen.TabStop = True
+        Me.rbStolen.Text = "Stjålet"
+        Me.rbStolen.UseVisualStyleBackColor = True
         '
-        'wheelCmb
+        'Label3
         '
-        Me.wheelCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.wheelCmb.FormattingEnabled = True
-        Me.wheelCmb.Location = New System.Drawing.Point(147, 60)
-        Me.wheelCmb.Name = "wheelCmb"
-        Me.wheelCmb.Size = New System.Drawing.Size(121, 24)
-        Me.wheelCmb.TabIndex = 13
-        Me.wheelCmb.Text = "Hjulstørrelse"
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline)
+        Me.Label3.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label3.Location = New System.Drawing.Point(413, 29)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(45, 16)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "Status"
         '
-        'FramenbrTxt
+        'rbService
         '
-        Me.FramenbrTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.FramenbrTxt.Location = New System.Drawing.Point(147, 23)
-        Me.FramenbrTxt.Name = "FramenbrTxt"
-        Me.FramenbrTxt.Size = New System.Drawing.Size(248, 22)
-        Me.FramenbrTxt.TabIndex = 11
+        Me.rbService.AutoSize = True
+        Me.rbService.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.rbService.Location = New System.Drawing.Point(416, 112)
+        Me.rbService.Name = "rbService"
+        Me.rbService.Size = New System.Drawing.Size(72, 20)
+        Me.rbService.TabIndex = 38
+        Me.rbService.TabStop = True
+        Me.rbService.Text = "Service"
+        Me.rbService.UseVisualStyleBackColor = True
+        '
+        'rbRented
+        '
+        Me.rbRented.AutoSize = True
+        Me.rbRented.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.rbRented.Location = New System.Drawing.Point(416, 86)
+        Me.rbRented.Name = "rbRented"
+        Me.rbRented.Size = New System.Drawing.Size(61, 20)
+        Me.rbRented.TabIndex = 37
+        Me.rbRented.TabStop = True
+        Me.rbRented.Text = "Utleid"
+        Me.rbRented.UseVisualStyleBackColor = True
+        '
+        'rbAvailable
+        '
+        Me.rbAvailable.AutoSize = True
+        Me.rbAvailable.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.rbAvailable.Location = New System.Drawing.Point(416, 60)
+        Me.rbAvailable.Name = "rbAvailable"
+        Me.rbAvailable.Size = New System.Drawing.Size(60, 20)
+        Me.rbAvailable.TabIndex = 36
+        Me.rbAvailable.TabStop = True
+        Me.rbAvailable.Text = "Ledig"
+        Me.rbAvailable.UseVisualStyleBackColor = True
+        '
+        'btnBicycleRegister
+        '
+        Me.btnBicycleRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnBicycleRegister.Location = New System.Drawing.Point(20, 114)
+        Me.btnBicycleRegister.Name = "btnBicycleRegister"
+        Me.btnBicycleRegister.Size = New System.Drawing.Size(375, 44)
+        Me.btnBicycleRegister.TabIndex = 23
+        Me.btnBicycleRegister.Text = "Registrer sykkel"
+        Me.btnBicycleRegister.UseVisualStyleBackColor = True
+        '
+        'cmbCurrentLoc
+        '
+        Me.cmbCurrentLoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.cmbCurrentLoc.FormattingEnabled = True
+        Me.cmbCurrentLoc.Location = New System.Drawing.Point(274, 60)
+        Me.cmbCurrentLoc.Name = "cmbCurrentLoc"
+        Me.cmbCurrentLoc.Size = New System.Drawing.Size(121, 24)
+        Me.cmbCurrentLoc.TabIndex = 14
+        Me.cmbCurrentLoc.Text = "Gjeldende lokasjon"
+        '
+        'cmbDefaultLoc
+        '
+        Me.cmbDefaultLoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.cmbDefaultLoc.FormattingEnabled = True
+        Me.cmbDefaultLoc.Location = New System.Drawing.Point(147, 60)
+        Me.cmbDefaultLoc.Name = "cmbDefaultLoc"
+        Me.cmbDefaultLoc.Size = New System.Drawing.Size(121, 24)
+        Me.cmbDefaultLoc.TabIndex = 13
+        Me.cmbDefaultLoc.Text = "Standard lokasjon"
+        '
+        'txtFramenbr
+        '
+        Me.txtFramenbr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.txtFramenbr.Location = New System.Drawing.Point(147, 23)
+        Me.txtFramenbr.Name = "txtFramenbr"
+        Me.txtFramenbr.Size = New System.Drawing.Size(248, 22)
+        Me.txtFramenbr.TabIndex = 11
         '
         'Label2
         '
@@ -132,14 +201,10 @@ Partial Class bicyclesView
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.refresh)
-        Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Controls.Add(Me.gear2Cmb)
-        Me.TabPage2.Controls.Add(Me.wheel2Cmb)
-        Me.TabPage2.Controls.Add(Me.type2Cmb)
-        Me.TabPage2.Controls.Add(Me.searchBtn)
-        Me.TabPage2.Controls.Add(Me.searchTxt)
-        Me.TabPage2.Controls.Add(Me.bicyclesLst)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.btnSearch)
+        Me.TabPage2.Controls.Add(Me.txtSearch)
+        Me.TabPage2.Controls.Add(Me.lstBicycles)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -148,85 +213,63 @@ Partial Class bicyclesView
         Me.TabPage2.Text = "Sykkeloversikt"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'refresh
+        'Label4
         '
-        Me.refresh.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.update
-        Me.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.refresh.Location = New System.Drawing.Point(534, 72)
-        Me.refresh.Margin = New System.Windows.Forms.Padding(2)
-        Me.refresh.Name = "refresh"
-        Me.refresh.Size = New System.Drawing.Size(56, 50)
-        Me.refresh.TabIndex = 17
-        Me.refresh.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline)
+        Me.Label4.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label4.Location = New System.Drawing.Point(7, 12)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 16)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Søk på rammenummer"
         '
-        'Label1
+        'btnSearch
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline)
-        Me.Label1.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label1.Location = New System.Drawing.Point(7, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 16)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Filtrer søk"
+        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.btnSearch.Location = New System.Drawing.Point(183, 47)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(83, 22)
+        Me.btnSearch.TabIndex = 9
+        Me.btnSearch.Text = "Søk"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
-        'gear2Cmb
+        'txtSearch
         '
-        Me.gear2Cmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.gear2Cmb.FormattingEnabled = True
-        Me.gear2Cmb.Location = New System.Drawing.Point(264, 42)
-        Me.gear2Cmb.Name = "gear2Cmb"
-        Me.gear2Cmb.Size = New System.Drawing.Size(121, 24)
-        Me.gear2Cmb.TabIndex = 12
-        Me.gear2Cmb.Text = "Girsystem"
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.txtSearch.Location = New System.Drawing.Point(10, 47)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(167, 22)
+        Me.txtSearch.TabIndex = 8
         '
-        'wheel2Cmb
+        'lstBicycles
         '
-        Me.wheel2Cmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.wheel2Cmb.FormattingEnabled = True
-        Me.wheel2Cmb.Location = New System.Drawing.Point(137, 42)
-        Me.wheel2Cmb.Name = "wheel2Cmb"
-        Me.wheel2Cmb.Size = New System.Drawing.Size(121, 24)
-        Me.wheel2Cmb.TabIndex = 11
-        Me.wheel2Cmb.Text = "Hjulstørrelse"
+        Me.lstBicycles.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.lstBicycles.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lstBicycles.FormattingEnabled = True
+        Me.lstBicycles.ItemHeight = 16
+        Me.lstBicycles.Location = New System.Drawing.Point(10, 80)
+        Me.lstBicycles.Name = "lstBicycles"
+        Me.lstBicycles.Size = New System.Drawing.Size(580, 308)
+        Me.lstBicycles.TabIndex = 7
         '
-        'type2Cmb
+        'ContextMenuStrip1
         '
-        Me.type2Cmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.type2Cmb.FormattingEnabled = True
-        Me.type2Cmb.Location = New System.Drawing.Point(10, 42)
-        Me.type2Cmb.Name = "type2Cmb"
-        Me.type2Cmb.Size = New System.Drawing.Size(121, 24)
-        Me.type2Cmb.TabIndex = 10
-        Me.type2Cmb.Text = "Sykkeltype"
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EndreToolStripMenuItem, Me.SlettToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(105, 48)
         '
-        'searchBtn
+        'EndreToolStripMenuItem
         '
-        Me.searchBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.searchBtn.Location = New System.Drawing.Point(302, 100)
-        Me.searchBtn.Name = "searchBtn"
-        Me.searchBtn.Size = New System.Drawing.Size(83, 22)
-        Me.searchBtn.TabIndex = 9
-        Me.searchBtn.Text = "Søk"
-        Me.searchBtn.UseVisualStyleBackColor = True
+        Me.EndreToolStripMenuItem.Name = "EndreToolStripMenuItem"
+        Me.EndreToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.EndreToolStripMenuItem.Text = "Endre"
         '
-        'searchTxt
+        'SlettToolStripMenuItem
         '
-        Me.searchTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.searchTxt.Location = New System.Drawing.Point(10, 100)
-        Me.searchTxt.Name = "searchTxt"
-        Me.searchTxt.Size = New System.Drawing.Size(286, 22)
-        Me.searchTxt.TabIndex = 8
-        '
-        'bicyclesLst
-        '
-        Me.bicyclesLst.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.bicyclesLst.FormattingEnabled = True
-        Me.bicyclesLst.ItemHeight = 16
-        Me.bicyclesLst.Location = New System.Drawing.Point(10, 128)
-        Me.bicyclesLst.Name = "bicyclesLst"
-        Me.bicyclesLst.Size = New System.Drawing.Size(580, 260)
-        Me.bicyclesLst.TabIndex = 7
+        Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
+        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.SlettToolStripMenuItem.Text = "Slett"
         '
         'bicyclesView
         '
@@ -243,6 +286,7 @@ Partial Class bicyclesView
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -250,17 +294,22 @@ Partial Class bicyclesView
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents gearCmb As ComboBox
-    Friend WithEvents wheelCmb As ComboBox
-    Friend WithEvents FramenbrTxt As TextBox
+    Friend WithEvents txtFramenbr As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents gear2Cmb As ComboBox
-    Friend WithEvents wheel2Cmb As ComboBox
-    Friend WithEvents type2Cmb As ComboBox
-    Friend WithEvents searchBtn As Button
-    Friend WithEvents searchTxt As TextBox
-    Friend WithEvents bicyclesLst As ListBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents bicycleRegister As Button
-    Friend WithEvents refresh As Button
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents lstBicycles As ListBox
+    Friend WithEvents btnBicycleRegister As Button
+    Friend WithEvents cmbCurrentLoc As ComboBox
+    Friend WithEvents cmbDefaultLoc As ComboBox
+    Friend WithEvents rbService As RadioButton
+    Friend WithEvents rbRented As RadioButton
+    Friend WithEvents rbAvailable As RadioButton
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents rbStolen As RadioButton
+    Friend WithEvents cmbType As ComboBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents EndreToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
 End Class
