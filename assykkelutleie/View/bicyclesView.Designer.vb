@@ -22,6 +22,7 @@ Partial Class bicyclesView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(bicyclesView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -41,9 +42,13 @@ Partial Class bicyclesView
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.lstBicycles = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EndreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -239,6 +244,7 @@ Partial Class bicyclesView
         '
         'lstBicycles
         '
+        Me.lstBicycles.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lstBicycles.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.lstBicycles.FormattingEnabled = True
         Me.lstBicycles.ItemHeight = 16
@@ -246,6 +252,24 @@ Partial Class bicyclesView
         Me.lstBicycles.Name = "lstBicycles"
         Me.lstBicycles.Size = New System.Drawing.Size(580, 308)
         Me.lstBicycles.TabIndex = 7
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EndreToolStripMenuItem, Me.SlettToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(105, 48)
+        '
+        'EndreToolStripMenuItem
+        '
+        Me.EndreToolStripMenuItem.Name = "EndreToolStripMenuItem"
+        Me.EndreToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.EndreToolStripMenuItem.Text = "Endre"
+        '
+        'SlettToolStripMenuItem
+        '
+        Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
+        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.SlettToolStripMenuItem.Text = "Slett"
         '
         'bicyclesView
         '
@@ -262,6 +286,7 @@ Partial Class bicyclesView
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -284,4 +309,7 @@ Partial Class bicyclesView
     Friend WithEvents Label4 As Label
     Friend WithEvents rbStolen As RadioButton
     Friend WithEvents cmbType As ComboBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents EndreToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -51,16 +51,6 @@ Public Class bicyclesView
     End Sub
 
     'Sven-Erik
-    Private Sub BicyclesLst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstBicycles.SelectedIndexChanged
-        Dim connection As New MySqlConnection(connectionString)
-
-        'Opens the bicyclesChgView form in order to edit values
-        searchID = lstBicycles.SelectedItem
-        Dim editbicycle As New bicyclesChgView
-        editbicycle.Show()
-    End Sub
-
-    'Sven-Erik
     Private Sub BicyclesView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Config.refreshBicycle()
     End Sub
@@ -101,5 +91,55 @@ Public Class bicyclesView
         Finally
             connection.Dispose()
         End Try
+    End Sub
+
+    Private Sub EndreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EndreToolStripMenuItem.Click
+        Dim connection As New MySqlConnection(connectionString)
+
+        'Opens the bicyclesChgView form in order to edit values
+        searchID = lstBicycles.SelectedItem
+        Dim editbicycle As New bicyclesChgView
+        editbicycle.Show()
+    End Sub
+
+    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click
+        Dim connection As New MySqlConnection(connectionString)
+        'Deletes the selcted item in lstBicycles
+        Try
+            connection.Open()
+            searchID = lstBicycles.SelectedItem
+            Convert.ToInt32(searchID)
+
+            Dim query As String
+            query = "DELETE FROM Bicycle WHERE BicycleID= " & searchID
+
+            MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo)
+            If MsgBoxResult.Yes Then
+                Dim insertsql As New MySqlCommand(query, connection)
+                Dim da As New MySqlDataAdapter
+                Dim table As New DataTable
+                da.SelectCommand = insertsql
+                da.Fill(table)
+                connection.Close()
+            End If
+
+        Catch mistake As MySqlException
+            MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+        Config.refreshBicycle()
+    End Sub
+
+    Private Sub lstBicycles_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lstBicycles.MouseDown
+        'ContextMenuStrip only shows when an item is selected in the listbox
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            If lstBicycles.SelectedIndices.Count > 0 Then
+                lstBicycles.ContextMenuStrip = Me.ContextMenuStrip1
+            Else
+                lstBicycles.ContextMenuStrip = Nothing
+            End If
+        End If
     End Sub
 End Class

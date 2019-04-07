@@ -44,38 +44,6 @@ Public Class bicyclesChgView
     End Sub
 
     'Sven-Erik
-    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Dim connection As New MySqlConnection(connectionString)
-        Try
-            connection.Open()
-            Convert.ToInt32(searchID)
-
-            Dim query As String
-            query = "DELETE FROM Bicycle WHERE BicycleID= " & searchID
-
-            MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo)
-            If MsgBoxResult.Yes Then
-                Dim insertsql As New MySqlCommand(query, connection)
-                Dim da As New MySqlDataAdapter
-                Dim table As New DataTable
-                da.SelectCommand = insertsql
-                da.Fill(table)
-                connection.Close()
-            Else
-                MsgBox("OK")
-            End If
-
-        Catch mistake As MySqlException
-            MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
-        Finally
-            connection.Dispose()
-        End Try
-
-        Config.refreshBicycle()
-        customersChgView.Close()
-    End Sub
-
-    'Sven-Erik
     Private Sub BicyclesChgView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim connection As New MySqlConnection(connectionString)
         Dim framenbr As Integer

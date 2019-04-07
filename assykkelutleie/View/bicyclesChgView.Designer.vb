@@ -28,7 +28,6 @@ Partial Class bicyclesChgView
         Me.txtFramenbr = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnDelete = New System.Windows.Forms.Button()
         Me.rbAvailable = New System.Windows.Forms.RadioButton()
         Me.rbRented = New System.Windows.Forms.RadioButton()
         Me.rbService = New System.Windows.Forms.RadioButton()
@@ -38,10 +37,10 @@ Partial Class bicyclesChgView
         '
         'btnUpdate
         '
-        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.Location = New System.Drawing.Point(14, 93)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(164, 44)
+        Me.btnUpdate.Size = New System.Drawing.Size(375, 44)
         Me.btnUpdate.TabIndex = 29
         Me.btnUpdate.Text = "Oppdater sykkel"
         Me.btnUpdate.UseVisualStyleBackColor = True
@@ -94,16 +93,6 @@ Partial Class bicyclesChgView
         Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 31
         Me.Label3.Text = "Status"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(225, 93)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(164, 44)
-        Me.btnDelete.TabIndex = 36
-        Me.btnDelete.Text = "Slett sykkel"
-        Me.btnDelete.UseVisualStyleBackColor = True
         '
         'rbAvailable
         '
@@ -166,7 +155,6 @@ Partial Class bicyclesChgView
         Me.ClientSize = New System.Drawing.Size(493, 156)
         Me.Controls.Add(Me.cmbType)
         Me.Controls.Add(Me.rbStolen)
-        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.rbService)
         Me.Controls.Add(Me.rbRented)
         Me.Controls.Add(Me.rbAvailable)
@@ -190,7 +178,6 @@ Partial Class bicyclesChgView
     Friend WithEvents txtFramenbr As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents btnDelete As Button
     Friend WithEvents rbAvailable As RadioButton
     Friend WithEvents rbRented As RadioButton
     Friend WithEvents rbService As RadioButton
