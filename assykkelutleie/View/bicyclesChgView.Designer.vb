@@ -50,7 +50,6 @@ Partial Class bicyclesChgView
         '
         Me.cmbCurrentLoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.cmbCurrentLoc.FormattingEnabled = True
-        Me.cmbCurrentLoc.Items.AddRange(New Object() {"Shimono", "SRAM"})
         Me.cmbCurrentLoc.Location = New System.Drawing.Point(268, 51)
         Me.cmbCurrentLoc.Name = "cmbCurrentLoc"
         Me.cmbCurrentLoc.Size = New System.Drawing.Size(121, 21)
@@ -61,7 +60,6 @@ Partial Class bicyclesChgView
         '
         Me.cmbDefaultLoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.cmbDefaultLoc.FormattingEnabled = True
-        Me.cmbDefaultLoc.Items.AddRange(New Object() {"26""", "27,5""", "29"""})
         Me.cmbDefaultLoc.Location = New System.Drawing.Point(141, 51)
         Me.cmbDefaultLoc.Name = "cmbDefaultLoc"
         Me.cmbDefaultLoc.Size = New System.Drawing.Size(121, 21)
@@ -155,7 +153,6 @@ Partial Class bicyclesChgView
         '
         Me.cmbType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.cmbType.FormattingEnabled = True
-        Me.cmbType.Items.AddRange(New Object() {"26""", "27,5""", "29"""})
         Me.cmbType.Location = New System.Drawing.Point(14, 51)
         Me.cmbType.Name = "cmbType"
         Me.cmbType.Size = New System.Drawing.Size(121, 21)
