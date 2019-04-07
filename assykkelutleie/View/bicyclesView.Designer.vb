@@ -91,7 +91,7 @@ Partial Class bicyclesView
         '
         Me.rbStolen.AutoSize = True
         Me.rbStolen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.rbStolen.Location = New System.Drawing.Point(231, 122)
+        Me.rbStolen.Location = New System.Drawing.Point(416, 138)
         Me.rbStolen.Name = "rbStolen"
         Me.rbStolen.Size = New System.Drawing.Size(63, 20)
         Me.rbStolen.TabIndex = 40
@@ -102,11 +102,11 @@ Partial Class bicyclesView
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline)
         Me.Label3.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label3.Location = New System.Drawing.Point(17, 104)
+        Me.Label3.Location = New System.Drawing.Point(413, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 39
         Me.Label3.Text = "Status"
         '
@@ -114,7 +114,7 @@ Partial Class bicyclesView
         '
         Me.rbService.AutoSize = True
         Me.rbService.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.rbService.Location = New System.Drawing.Point(153, 122)
+        Me.rbService.Location = New System.Drawing.Point(416, 112)
         Me.rbService.Name = "rbService"
         Me.rbService.Size = New System.Drawing.Size(72, 20)
         Me.rbService.TabIndex = 38
@@ -126,7 +126,7 @@ Partial Class bicyclesView
         '
         Me.rbRented.AutoSize = True
         Me.rbRented.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.rbRented.Location = New System.Drawing.Point(86, 122)
+        Me.rbRented.Location = New System.Drawing.Point(416, 86)
         Me.rbRented.Name = "rbRented"
         Me.rbRented.Size = New System.Drawing.Size(61, 20)
         Me.rbRented.TabIndex = 37
@@ -138,7 +138,7 @@ Partial Class bicyclesView
         '
         Me.rbAvailable.AutoSize = True
         Me.rbAvailable.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.rbAvailable.Location = New System.Drawing.Point(20, 122)
+        Me.rbAvailable.Location = New System.Drawing.Point(416, 60)
         Me.rbAvailable.Name = "rbAvailable"
         Me.rbAvailable.Size = New System.Drawing.Size(60, 20)
         Me.rbAvailable.TabIndex = 36
@@ -149,7 +149,7 @@ Partial Class bicyclesView
         'btnBicycleRegister
         '
         Me.btnBicycleRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnBicycleRegister.Location = New System.Drawing.Point(20, 169)
+        Me.btnBicycleRegister.Location = New System.Drawing.Point(20, 114)
         Me.btnBicycleRegister.Name = "btnBicycleRegister"
         Me.btnBicycleRegister.Size = New System.Drawing.Size(375, 44)
         Me.btnBicycleRegister.TabIndex = 23
