@@ -92,7 +92,7 @@ Public Class Form1
             Dim firstname As String
             Dim surname As String
             Dim email As String
-            MsgBox("Alt gikk greit med å koble til databasen")
+            
             Dim sql As New MySqlCommand("SELECT * FROM Customer ORDER BY CustomerID", connection)
             Dim da As New MySqlDataAdapter
             Dim interntabell As New DataTable
