@@ -37,7 +37,7 @@ Public Class customersView
         End Try
     End Sub
 
-    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
+    Private Sub SearchBtn_Click(sender As Object, e As EventArgs)
         Dim connection As New MySqlConnection(connectionString)
         Try
             connection.Open()
@@ -57,14 +57,14 @@ Public Class customersView
             connection.Close()
 
             Dim row As DataRow
-            ListBox1.Items.Clear()
+            lstCustomers.Items.Clear()
             For Each row In table.Rows
                 CustomerID = row("CustomerID")
                 firstname = row("FirstName")
                 surname = row("Surname")
                 email = row("Email")
                 phone = row("TelephoneNumber")
-                ListBox1.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
+                lstCustomers.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
             Next row
             txtSearch.Text = ""
             If phone <> search Then
@@ -97,14 +97,14 @@ Public Class customersView
             connection.Close()
 
 
-            ListBox1.Items.Clear()
+            lstCustomers.Items.Clear()
             For Each row In interntabell.Rows
                 CustomerID = row("CustomerID")
                 firstname = row("FirstName")
                 surname = row("Surname")
                 email = row("Email")
                 phone = row("TelephoneNumber")
-                ListBox1.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
+                lstCustomers.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
 
             Next row
         Catch mistake As MySqlException
@@ -116,15 +116,15 @@ Public Class customersView
 
     Public searchID As String
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         Dim connection As New MySqlConnection(connectionString)
 
-        searchID = ListBox1.SelectedItem
+        searchID = lstCustomers.SelectedItem
         Dim editcustomer As New customersChgView
         editcustomer.Show()
     End Sub
 
-    Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
+    Private Sub Refresh_Click(sender As Object, e As EventArgs)
         Dim connection As New MySqlConnection(connectionString)
         Try
 
@@ -143,14 +143,14 @@ Public Class customersView
             connection.Close()
 
 
-            ListBox1.Items.Clear()
+            lstCustomers.Items.Clear()
             For Each row In table.Rows
                 CustomerID = row("CustomerID")
                 firstname = row("FirstName")
                 surname = row("Surname")
                 email = row("Email")
                 phone = row("TelephoneNumber")
-                ListBox1.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
+                lstCustomers.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
 
             Next row
         Catch mistake As MySqlException
@@ -160,23 +160,13 @@ Public Class customersView
         End Try
     End Sub
 
-
-    'Private shared Function checkPhonenumber(phone As Integer) As Boolean
-    'Using connection As New MySqlConnection(connectionString)
-    'Dim checkphone As String = "Select COUNT(TelephoneNumber) From Customer where TelephoneNumber=" & "'" & phone & "'"
-    'Dim sqlcheck As New MySqlCommand(checkphone, connection)
-    '   sqlcheck.Parameters.AddWithValue("TelephoneNumber", phone)
-    'esults As Integer = Convert.ToInt32(sqlcheck.ExecuteScalar)
-    'If results > 0 Then
-    'Return True
-    'Else
-    'lse
-
-    'End If
-
-
-
-    'End Using
-    'Return True
-    ' End Function
+    Private Sub lstCustomers_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) 'ContextMenuStrip only shows when an item is selected in the listbox.
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            If lstCustomers.SelectedIndices.Count > 0 Then
+                lstCustomers.ContextMenuStrip = Me.ContextMenuStrip1
+            Else
+                lstCustomers.ContextMenuStrip = Nothing
+            End If
+        End If
+    End Sub
 End Class
