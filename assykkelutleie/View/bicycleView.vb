@@ -32,9 +32,9 @@ Public Class bicycleView 'Sven-Erik
     Private Sub PutBicycles(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
             txtFramenbr.Text = row("BicycleID")
-            cbType.SelectedItem = row("BicycleType")
-            cbDefaultLoc.SelectedItem = row("DefaultLocation")
-            cbCurrentLoc.SelectedItem = row("DefaultLocation")
+            cbType.SelectedValue = row("BicycleType")
+            cbDefaultLoc.SelectedValue = row("DefaultLocation")
+            cbCurrentLoc.SelectedValue = row("CurrentLocation")
             If row("Status") = "Ledig" Then
                 rbAvailable.Checked = True
             ElseIf row("Status") = "Utleid" Then
@@ -97,9 +97,9 @@ Public Class bicycleView 'Sven-Erik
         Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim framenbr As Integer = txtFramenbr.Text
-            Dim bicycleType As String = cbType.SelectedItem.ToString
-            Dim defaultLocation As String = cbDefaultLoc.SelectedItem.ToString
-            Dim currentLocation As String = cbCurrentLoc.SelectedItem.ToString
+            Dim bicycleType As String = cbType.SelectedValue
+            Dim defaultLocation As String = cbDefaultLoc.SelectedValue
+            Dim currentLocation As String = cbCurrentLoc.SelectedValue
             Dim status As String
             If rbAvailable.Checked = True Then
                 status = "Ledig"
@@ -113,7 +113,7 @@ Public Class bicycleView 'Sven-Erik
 
             Dim query As String
             If DbManager.duplicateBicycle(framenbr) = True Then
-                query = "UPDATE INTO Bicycle"
+                query = "UPDATE Bicycle "
                 query &= "SET BicycleType='" & bicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
                 query &= "WHERE BicycleID='" & framenbr & "'"
             ElseIf DbManager.duplicateBicycle(framenbr) = False Then

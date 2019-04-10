@@ -49,7 +49,6 @@ C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.xml
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.pdb
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.adminView.resources
-C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersView.resources
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.transportView.resources
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.rentalView.resources
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Data.EntityFramework.dll
@@ -61,7 +60,6 @@ C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySQL.Data.En
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Web.xml
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe.config
-C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersChgView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\bin\Debug\assykkelutleie.exe.config
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\bin\Debug\assykkelutleie.exe
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\bin\Debug\assykkelutleie.pdb
@@ -128,3 +126,4 @@ C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykke
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.xml
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.pdb
+C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customerView.resources
