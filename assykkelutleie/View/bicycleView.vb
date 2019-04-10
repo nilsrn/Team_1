@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-
-Public Class bicycleView
+Public Class bicycleView 'Sven-Erik
     Private Sub CbPutBicycleLocations() 'Populates the location combobox.
         Dim location As New Location()
         cbDefaultLoc.DataSource = DbManager.GetAll(location)

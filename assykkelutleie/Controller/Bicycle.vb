@@ -1,4 +1,4 @@
-﻿Public Class Bicycle
+﻿Public Class Bicycle 'Sven-Erik
     Dim m_rammenummer As Integer
     Dim m_type, m_stdlok, m_gjlok, m_status As String
 

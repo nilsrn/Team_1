@@ -1,4 +1,4 @@
-﻿Public Class BicycleType
+﻿Public Class BicycleType 'Sven-Erik
     Dim m_navn, m_beskrivelse, m_gir, m_hjul, m_ramme As String
     Dim m_pristime, m_prisdag As Integer
 
