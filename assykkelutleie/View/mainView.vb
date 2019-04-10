@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
-        Main.main(customersView, btnCustomers)
+        Main.main(customerView, btnCustomers)
     End Sub
 
     Private Sub btnBicycles_Click(sender As Object, e As EventArgs) Handles btnBicycles.Click
