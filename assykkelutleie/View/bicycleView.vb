@@ -112,11 +112,11 @@ Public Class bicycleView 'Sven-Erik
             End If
 
             'Dim query As String
-            'If framenbr ikke allerede eksisterer Then
+            'If framenbr ikke allerede eksisterer i DB Then
             'query = "INSERT INTO Bicycle (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) "
             'query &= "VALUES ('" & framenbr & "', " & "'" & bicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
 
-            'Else If framenbr allerede eksisterer Then
+            'Else If framenbr allerede eksisterer i DB Then
             'query = "UPDATE INTO Bicycle"
             'query &= "SET BicycleType='" & bicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
             'query &= "WHERE BicycleID='" & framenbr & "'"
