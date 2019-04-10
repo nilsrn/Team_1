@@ -99,12 +99,6 @@
     <Compile Include="View\adminView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\customersChgView.Designer.vb">
-      <DependentUpon>customersChgView.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\customersChgView.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="View\customersView.Designer.vb">
       <DependentUpon>customersView.vb</DependentUpon>
     </Compile>
@@ -157,9 +151,6 @@
   <ItemGroup>
     <EmbeddedResource Include="View\adminView.resx">
       <DependentUpon>adminView.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\customersChgView.resx">
-      <DependentUpon>customersChgView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\customersView.resx">
       <DependentUpon>customersView.vb</DependentUpon>
