@@ -171,5 +171,22 @@ Public Class DbManager
         End Using
         Return True
     End Function
+    ' Function to check if a bicycle already exists
+    Public Shared Function duplicateCustomer(TelephoneNumber As Integer) As Boolean ' Sven-Erik
+        Using SqlConnection As New MySqlConnection(connectionString)
+            Dim checkCustomerQuery As String = "SELECT COUNT(TelephoneNumber) FROM Customer WHERE TelephoneNumber =@phone"
+            Dim sqlCommand As New MySqlCommand(checkCustomerQuery, SqlConnection)
+            sqlCommand.Parameters.AddWithValue("@phone", TelephoneNumber)
+            If connectedToServerAsync(SqlConnection).Result Then
+                Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
+                If results > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+        End Using
+        Return True
+    End Function
 End Class
 

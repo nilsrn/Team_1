@@ -1,8 +1,9 @@
-﻿Public Class customerView
+﻿Imports MySql.Data.MySqlClient
+Public Class customerView
     Private Sub PutLbCustomer(table As DataTable) 'Populates the listbox with data received from the DB. 
         lbCustomer.DataSource = table
-        lbCustomer.DisplayMember = "CustomerID"
-        lbCustomer.ValueMember = "CustomerID"
+        lbCustomer.DisplayMember = "FirstName" & "Surname"
+        lbCustomer.ValueMember = "FirstName" & "Surname"
     End Sub
 
     Private Function GetAllCustomer() 'Returns a DataTable with all customers.
@@ -50,10 +51,43 @@
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click
-
+        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+        If MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Using sqlconnection As New MySqlConnection(connectionString)
+                Dim query As String = "DELETE FROM Customer WHERE TelephoneNumber= " & txtCustomerSearch.Text
+                Dim insertsql As New MySqlCommand(query, sqlconnection)
+                Dim da As New MySqlDataAdapter
+                Dim table As New DataTable
+                da.SelectCommand = insertsql
+                da.Fill(table)
+            End Using
+            PutLbCustomer(GetAllCustomer)
+        End If
     End Sub
 
     Private Sub BtnCustomerSave_Click(sender As Object, e As EventArgs) Handles btnCustomerSave.Click
-
+        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+        Using sqlconnection As New MySqlConnection(connectionString)
+            Dim firstname As String = txtFirstname.Text
+            Dim surname As String = txtSurname.Text
+            Dim phone As Integer = txtTelephone.Text
+            Dim email As String = txtEmail.Text
+            Dim query As String
+            If DbManager.duplicateCustomer(TelephoneNumber) = True Then
+                query = "UPDATE Customer "
+                query &= "SET FirstName='" & BicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
+                query &= "WHERE BicycleID='" & framenbr & "'"
+            ElseIf DbManager.duplicateBicycle(framenbr) = False Then
+                query = "INSERT INTO Bicycle (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) "
+                query &= "VALUES ('" & framenbr & "', " & "'" & BicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
+            End If
+            Dim sql As New MySqlCommand(query, sqlconnection)
+            Dim da As New MySqlDataAdapter
+            Dim table As New DataTable
+            da.SelectCommand = sql
+            da.Fill(table)
+        End Using
+        PutLbCustomer(GetAllCustomer)
     End Sub
+
 End Class

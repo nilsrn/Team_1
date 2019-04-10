@@ -112,8 +112,6 @@ C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.W
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.vbprojAssemblyReference.cache
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe.config
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.adminView.resources
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersChgView.resources
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersView.resources
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.loginView.resources
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.Resources.resources
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.mainView.resources
@@ -127,3 +125,4 @@ C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykke
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.xml
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.pdb
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customerView.resources
+C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customerView.resources
