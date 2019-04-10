@@ -151,5 +151,25 @@ Public Class DbManager
         End Using
     End Function
 
+
+
+
+    ' Function to check if a bicycle already exists
+    Public Shared Function duplicateBicycle(bicycleID As Integer) As Boolean ' Sven-Erik
+        Using SqlConnection As New MySqlConnection(connectionString)
+            Dim checkBicycleQuery As String = "SELECT COUNT(BicycleID) FROM Bicycle WHERE bicycleID =@bicycle"
+            Dim sqlCommand As New MySqlCommand(checkBicycleQuery, SqlConnection)
+            sqlCommand.Parameters.AddWithValue("@bicycle", bicycleID)
+            If connectedToServerAsync(SqlConnection).Result Then
+                Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
+                If results > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+        End Using
+        Return True
+    End Function
 End Class
 

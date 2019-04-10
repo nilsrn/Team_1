@@ -111,22 +111,20 @@ Public Class bicycleView 'Sven-Erik
                 status = "Stjålet"
             End If
 
-            'Dim query As String
-            'If framenbr ikke allerede eksisterer i DB Then
-            'query = "INSERT INTO Bicycle (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) "
-            'query &= "VALUES ('" & framenbr & "', " & "'" & bicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
-
-            'Else If framenbr allerede eksisterer i DB Then
-            'query = "UPDATE INTO Bicycle"
-            'query &= "SET BicycleType='" & bicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
-            'query &= "WHERE BicycleID='" & framenbr & "'"
-            'End if
-
-            'Dim sql As New MySqlCommand(query, sqlconnection)
-            'Dim da As New MySqlDataAdapter
-            'Dim table As New DataTable
-            'da.SelectCommand = sql
-            'da.Fill(table)
+            Dim query As String
+            If DbManager.duplicateBicycle(framenbr) = True Then
+                query = "UPDATE INTO Bicycle"
+                query &= "SET BicycleType='" & bicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
+                query &= "WHERE BicycleID='" & framenbr & "'"
+            ElseIf DbManager.duplicateBicycle(framenbr) = False Then
+                query = "INSERT INTO Bicycle (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) "
+                query &= "VALUES ('" & framenbr & "', " & "'" & bicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
+            End If
+            Dim sql As New MySqlCommand(query, sqlconnection)
+            Dim da As New MySqlDataAdapter
+            Dim table As New DataTable
+            da.SelectCommand = sql
+            da.Fill(table)
         End Using
         PutLbBicycles(GetAllBicycles)
     End Sub
