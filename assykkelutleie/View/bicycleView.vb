@@ -93,7 +93,7 @@ Public Class bicycleView 'Sven-Erik
         End If
     End Sub
 
-    Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click
+    Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click 'Adds or updates the DB according to the input.
         Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim framenbr As Integer = txtFramenbr.Text
