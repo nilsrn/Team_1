@@ -28,18 +28,18 @@ Partial Class customerView
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtTelephone = New System.Windows.Forms.TextBox()
         Me.txtSurname = New System.Windows.Forms.TextBox()
-        Me.btnBicycleSave = New System.Windows.Forms.Button()
+        Me.btnCustomerSave = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtFirstname = New System.Windows.Forms.TextBox()
         Me.lbCustomer = New System.Windows.Forms.ListBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnCustomerSearch = New System.Windows.Forms.Button()
         Me.txtCustomerSearch = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class customerView
         Me.TabPage3.Controls.Add(Me.txtEmail)
         Me.TabPage3.Controls.Add(Me.txtTelephone)
         Me.TabPage3.Controls.Add(Me.txtSurname)
-        Me.TabPage3.Controls.Add(Me.btnBicycleSave)
+        Me.TabPage3.Controls.Add(Me.btnCustomerSave)
         Me.TabPage3.Controls.Add(Me.Label8)
         Me.TabPage3.Controls.Add(Me.Label12)
         Me.TabPage3.Controls.Add(Me.Label13)
@@ -97,14 +97,14 @@ Partial Class customerView
         Me.txtSurname.Size = New System.Drawing.Size(157, 20)
         Me.txtSurname.TabIndex = 42
         '
-        'btnBicycleSave
+        'btnCustomerSave
         '
-        Me.btnBicycleSave.Location = New System.Drawing.Point(427, 177)
-        Me.btnBicycleSave.Name = "btnBicycleSave"
-        Me.btnBicycleSave.Size = New System.Drawing.Size(157, 23)
-        Me.btnBicycleSave.TabIndex = 41
-        Me.btnBicycleSave.Text = "Lagre"
-        Me.btnBicycleSave.UseVisualStyleBackColor = True
+        Me.btnCustomerSave.Location = New System.Drawing.Point(427, 177)
+        Me.btnCustomerSave.Name = "btnCustomerSave"
+        Me.btnCustomerSave.Size = New System.Drawing.Size(157, 23)
+        Me.btnCustomerSave.TabIndex = 41
+        Me.btnCustomerSave.Text = "Lagre"
+        Me.btnCustomerSave.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -158,6 +158,18 @@ Partial Class customerView
         Me.lbCustomer.Size = New System.Drawing.Size(258, 329)
         Me.lbCustomer.TabIndex = 24
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SlettToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(98, 26)
+        '
+        'SlettToolStripMenuItem
+        '
+        Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
+        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(97, 22)
+        Me.SlettToolStripMenuItem.Text = "Slett"
+        '
         'btnCustomerSearch
         '
         Me.btnCustomerSearch.Location = New System.Drawing.Point(239, 31)
@@ -183,18 +195,6 @@ Partial Class customerView
         Me.Label15.TabIndex = 21
         Me.Label15.Text = "Telefonnummer:"
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SlettToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(98, 26)
-        '
-        'SlettToolStripMenuItem
-        '
-        Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
-        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SlettToolStripMenuItem.Text = "Slett"
-        '
         'customerView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -217,7 +217,7 @@ Partial Class customerView
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtTelephone As TextBox
     Friend WithEvents txtSurname As TextBox
-    Friend WithEvents btnBicycleSave As Button
+    Friend WithEvents btnCustomerSave As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label

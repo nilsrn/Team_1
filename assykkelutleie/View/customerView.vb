@@ -5,13 +5,13 @@
         lbCustomer.ValueMember = "CustomerID"
     End Sub
 
-    Private Function GetAllBicycles() 'Returns a DataTable with all customers.
+    Private Function GetAllCustomer() 'Returns a DataTable with all customers.
         Dim customer As New Customer()
         Dim customerTable As DataTable = DbManager.GetAll(customer)
         Return customerTable
     End Function
 
-    Private Sub PutBicycles(list As DataTable) 'Populates the textboxes with data from the DB.
+    Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
             txtFirstname.Text = row("FirstName")
             txtSurname.Text = row("SurName")
@@ -21,22 +21,22 @@
     End Sub
 
     Private Sub CustomerView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
-        PutLbCustomer(GetAllBicycles)
+        PutLbCustomer(GetAllCustomer)
     End Sub
 
     Private Sub BtnCustomerSearch_Click(sender As Object, e As EventArgs) Handles btnCustomerSearch.Click 'Updates the listbox according to the user input.
-        Dim customerSearch As New Bicycle()
+        Dim customerSearch As New Customer()
         Dim customer As String = txtCustomerSearch.Text
         Dim customerTable As DataTable = DbManager.GetSpecific(customerSearch, customer)
         PutLbCustomer(customerTable)
         If txtCustomerSearch.Text = "" Then
-            PutLbCustomer(GetAllBicycles)
+            PutLbCustomer(GetAllCustomer)
         End If
     End Sub
 
     Private Sub LbCustomer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbCustomer.SelectedIndexChanged 'Populates the textboxes based on the chosen customer in the listbox.
         Dim customerSearch As New Customer()
-        PutBicycles(DbManager.GetSpecific(customerSearch, lbCustomer.SelectedValue.ToString()))
+        PutCustomer(DbManager.GetSpecific(customerSearch, lbCustomer.SelectedValue.ToString()))
     End Sub
 
     Private Sub lbCustomer_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) 'ContextMenuStrip only shows when an item is selected in the listbox.
@@ -53,7 +53,7 @@
 
     End Sub
 
-    Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click
+    Private Sub BtnCustomerSave_Click(sender As Object, e As EventArgs) Handles btnCustomerSave.Click
 
     End Sub
 End Class
