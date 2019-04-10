@@ -220,11 +220,5 @@
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\reload.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,6 +1,11 @@
 ﻿Public Class Customer
     Dim me_phone, me_customerID As Integer
     Dim me_firstname, me_surname, me_email As String
+
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(CustomerID, FirstName, Surname, TelephoneNumber, Email)
         me_phone = TelephoneNumber
         me_customerID = CustomerID

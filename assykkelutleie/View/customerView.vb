@@ -1,182 +1,59 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Public Class customerView
+    Private Sub PutLbCustomer(table As DataTable) 'Populates the listbox with data received from the DB. 
+        lbCustomer.DataSource = table
+        lbCustomer.DisplayMember = "CustomerID"
+        lbCustomer.ValueMember = "CustomerID"
+    End Sub
 
-Public Class customerView
-    'Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+    Private Function GetAllBicycles() 'Returns a DataTable with all customers.
+        Dim customer As New Customer()
+        Dim customerTable As DataTable = DbManager.GetAll(customer)
+        Return customerTable
+    End Function
 
-    'Private Sub CustomerRegister_Click(sender As Object, e As EventArgs) Handles CustomerRegister.Click
-    '    Dim connection As New MySqlConnection(connectionString)
-    '    Try
-    '        connection.Open()
-    '        Dim firstname As String = firstnameTxt.Text
-    '        Dim surname As String = surnameTxt.Text
-    '        Dim TelephoneNumber As Integer = phoneTxt.Text
-    '        Dim email As String = emailTxt.Text
-    '        Dim birth As Date = birthTxt.Text
+    Private Sub PutBicycles(list As DataTable) 'Populates the textboxes with data from the DB.
+        For Each row In list.Rows
+            txtFirstname.Text = row("FirstName")
+            txtSurname.Text = row("SurName")
+            txtTelephone.Text = row("TelephoneNumber")
+            txtEmail.Text = row("Email")
+        Next
+    End Sub
 
-    '        Dim query As String
+    Private Sub CustomerView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
+        PutLbCustomer(GetAllBicycles)
+    End Sub
 
-    '        query = "INSERT INTO Customer"
-    '        query = query & " (FirstName, Surname, TelephoneNumber, Email)"
-    '        query = query & " VALUES "
-    '        query &= " ('" & firstname & "', " & "'" & surname & "', " & "'" & TelephoneNumber & "', " & "'" & email & "')"
-    '        MsgBox(query)
-    '        Dim sql As New MySqlCommand(query, connection)
-    '        Dim da As New MySqlDataAdapter
-    '        Dim table As New DataTable
+    Private Sub BtnCustomerSearch_Click(sender As Object, e As EventArgs) Handles btnCustomerSearch.Click 'Updates the listbox according to the user input.
+        Dim customerSearch As New Bicycle()
+        Dim customer As String = txtCustomerSearch.Text
+        Dim customerTable As DataTable = DbManager.GetSpecific(customerSearch, customer)
+        PutLbCustomer(customerTable)
+        If txtCustomerSearch.Text = "" Then
+            PutLbCustomer(GetAllBicycles)
+        End If
+    End Sub
 
-    '        da.SelectCommand = sql
-    '        da.Fill(table)
+    Private Sub LbCustomer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbCustomer.SelectedIndexChanged 'Populates the textboxes based on the chosen customer in the listbox.
+        Dim customerSearch As New Customer()
+        PutBicycles(DbManager.GetSpecific(customerSearch, lbCustomer.SelectedValue.ToString()))
+    End Sub
 
-    '        connection.Close()
+    Private Sub lbCustomer_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) 'ContextMenuStrip only shows when an item is selected in the listbox.
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            If lbCustomer.SelectedIndices.Count > 0 Then
+                lbCustomer.ContextMenuStrip = Me.ContextMenuStrip1
+            Else
+                lbCustomer.ContextMenuStrip = Nothing
+            End If
+        End If
+    End Sub
 
-    '    Catch mistake As MySqlException
-    '        MsgBox("Feil ved tilkobling" & mistake.Message)
-    '    Finally
-    '        connection.Dispose()
+    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click
 
-    '    End Try
-    'End Sub
+    End Sub
 
-    'Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
-    '    Dim connection As New MySqlConnection(connectionString)
-    '    Try
-    '        connection.Open()
+    Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click
 
-    '        Dim CustomerID As Integer
-    '        Dim firstname As String
-    '        Dim surname As String
-    '        Dim email As String
-    '        Dim phone As Integer
-    '        Dim search As Integer = txtSearch.Text.ToString()
-    '        Dim sql As New MySqlCommand("SELECT * FROM Customer WHERE TelephoneNumber = '" & search & "'", connection)
-    '        Dim da As New MySqlDataAdapter
-    '        Dim table As New DataTable
-
-    '        da.SelectCommand = sql
-    '        da.Fill(table)
-    '        connection.Close()
-
-    '        Dim row As DataRow
-    '        ListBox1.Items.Clear()
-    '        For Each row In table.Rows
-    '            CustomerID = row("CustomerID")
-    '            firstname = row("FirstName")
-    '            surname = row("Surname")
-    '            email = row("Email")
-    '            phone = row("TelephoneNumber")
-    '            ListBox1.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
-    '        Next row
-    '        txtSearch.Text = ""
-    '        If phone <> search Then
-    '            MessageBox.Show("Fant ikke " & search & " i databasen")
-    '        End If
-    '    Catch mistake As MySqlException
-    '        MsgBox("Feil ved tilkobling til databasen: " &
-    '        mistake.Message)
-    '    Finally
-    '        connection.Dispose()
-    '    End Try
-    'End Sub
-
-    'Private Sub CustomersView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    Dim connection As New MySqlConnection(connectionString)
-    '    Try
-
-    '        connection.Open()
-    '        Dim CustomerID As Integer
-    '        Dim phone As Integer
-    '        Dim firstname As String
-    '        Dim surname As String
-    '        Dim email As String
-    '        MsgBox("Alt gikk greit med å koble til databasen")
-    '        Dim sql As New MySqlCommand("SELECT * FROM Customer ORDER BY CustomerID", connection)
-    '        Dim da As New MySqlDataAdapter
-    '        Dim interntabell As New DataTable
-    '        da.SelectCommand = sql
-    '        da.Fill(interntabell)
-    '        connection.Close()
-
-
-    '        ListBox1.Items.Clear()
-    '        For Each row In interntabell.Rows
-    '            CustomerID = row("CustomerID")
-    '            firstname = row("FirstName")
-    '            surname = row("Surname")
-    '            email = row("Email")
-    '            phone = row("TelephoneNumber")
-    '            ListBox1.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
-
-    '        Next row
-    '    Catch mistake As MySqlException
-    '        MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
-    '    Finally
-    '        connection.Dispose()
-    '    End Try
-    'End Sub
-
-    'Public searchID As String
-
-    'Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-    '    Dim connection As New MySqlConnection(connectionString)
-
-    '    searchID = ListBox1.SelectedItem
-    '    Dim editcustomer As New customersChgView
-    '    editcustomer.Show()
-    'End Sub
-
-    'Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
-    '    Dim connection As New MySqlConnection(connectionString)
-    '    Try
-
-    '        connection.Open()
-    '        Dim CustomerID As Integer
-    '        Dim phone As Integer
-    '        Dim firstname As String
-    '        Dim surname As String
-    '        Dim email As String
-
-    '        Dim sql As New MySqlCommand("SELECT * FROM Customer ORDER BY CustomerID", connection)
-    '        Dim da As New MySqlDataAdapter
-    '        Dim table As New DataTable
-    '        da.SelectCommand = sql
-    '        da.Fill(table)
-    '        connection.Close()
-
-
-    '        ListBox1.Items.Clear()
-    '        For Each row In table.Rows
-    '            CustomerID = row("CustomerID")
-    '            firstname = row("FirstName")
-    '            surname = row("Surname")
-    '            email = row("Email")
-    '            phone = row("TelephoneNumber")
-    '            ListBox1.Items.Add(CustomerID & " " & firstname & " " & surname & " " & email & " " & phone)
-
-    '        Next row
-    '    Catch mistake As MySqlException
-    '        MsgBox("Feil ved tilkobling til databasen: " & mistake.Message)
-    '    Finally
-    '        connection.Dispose()
-    '    End Try
-    'End Sub
-
-
-    'Private shared Function checkPhonenumber(phone As Integer) As Boolean
-    'Using connection As New MySqlConnection(connectionString)
-    'Dim checkphone As String = "Select COUNT(TelephoneNumber) From Customer where TelephoneNumber=" & "'" & phone & "'"
-    'Dim sqlcheck As New MySqlCommand(checkphone, connection)
-    '   sqlcheck.Parameters.AddWithValue("TelephoneNumber", phone)
-    'esults As Integer = Convert.ToInt32(sqlcheck.ExecuteScalar)
-    'If results > 0 Then
-    'Return True
-    'Else
-    'lse
-
-    'End If
-
-
-
-    'End Using
-    'Return True
-    ' End Function
+    End Sub
 End Class

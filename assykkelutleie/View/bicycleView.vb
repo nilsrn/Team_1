@@ -63,12 +63,12 @@ Public Class bicycleView 'Sven-Erik
         End If
     End Sub
 
-    Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbBicycle.SelectedIndexChanged 'Populates the textboxes based on the chosen location in the listbox.
+    Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbBicycle.SelectedIndexChanged 'Populates the textboxes based on the chosen bicycle in the listbox.
         Dim bicyclesSearch As New Bicycle()
         PutBicycles(DbManager.GetSpecific(bicyclesSearch, lbBicycle.SelectedValue.ToString()))
     End Sub
 
-    Private Sub lstBicycles_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) 'ContextMenuStrip only shows when an item is selected in the listbox.
+    Private Sub lbBicycles_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) 'ContextMenuStrip only shows when an item is selected in the listbox.
         If e.Button = Windows.Forms.MouseButtons.Right Then
             If lbBicycle.SelectedIndices.Count > 0 Then
                 lbBicycle.ContextMenuStrip = Me.ContextMenuStrip1

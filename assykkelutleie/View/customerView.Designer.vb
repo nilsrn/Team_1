@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class customersView
+Partial Class customerView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,229 +23,210 @@ Partial Class customersView
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(customersView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.btnsearch = New System.Windows.Forms.Button()
-        Me.searchlbl = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.lstCustomers = New System.Windows.Forms.ListBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.txtTelephone = New System.Windows.Forms.TextBox()
+        Me.txtSurname = New System.Windows.Forms.TextBox()
+        Me.btnBicycleSave = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtFirstname = New System.Windows.Forms.TextBox()
+        Me.lbCustomer = New System.Windows.Forms.ListBox()
+        Me.btnCustomerSearch = New System.Windows.Forms.Button()
+        Me.txtCustomerSearch = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CustomerRegister = New System.Windows.Forms.Button()
-        Me.emailTxt = New System.Windows.Forms.TextBox()
-        Me.phoneTxt = New System.Windows.Forms.TextBox()
-        Me.surnameTxt = New System.Windows.Forms.TextBox()
-        Me.firstnameTxt = New System.Windows.Forms.TextBox()
-        Me.email = New System.Windows.Forms.Label()
-        Me.phonenumber = New System.Windows.Forms.Label()
-        Me.surname = New System.Windows.Forms.Label()
-        Me.firstname = New System.Windows.Forms.Label()
+        Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(16, 15)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(823, 524)
-        Me.TabControl1.TabIndex = 18
+        Me.TabControl1.Size = New System.Drawing.Size(617, 426)
+        Me.TabControl1.TabIndex = 19
         '
-        'TabPage1
+        'TabPage3
         '
-        Me.TabPage1.Controls.Add(Me.btnsearch)
-        Me.TabPage1.Controls.Add(Me.searchlbl)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
-        Me.TabPage1.Controls.Add(Me.lstCustomers)
-        Me.TabPage1.Controls.Add(Me.CustomerRegister)
-        Me.TabPage1.Controls.Add(Me.emailTxt)
-        Me.TabPage1.Controls.Add(Me.phoneTxt)
-        Me.TabPage1.Controls.Add(Me.surnameTxt)
-        Me.TabPage1.Controls.Add(Me.firstnameTxt)
-        Me.TabPage1.Controls.Add(Me.email)
-        Me.TabPage1.Controls.Add(Me.phonenumber)
-        Me.TabPage1.Controls.Add(Me.surname)
-        Me.TabPage1.Controls.Add(Me.firstname)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(815, 495)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Ny kunde"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.TabPage3.Controls.Add(Me.txtEmail)
+        Me.TabPage3.Controls.Add(Me.txtTelephone)
+        Me.TabPage3.Controls.Add(Me.txtSurname)
+        Me.TabPage3.Controls.Add(Me.btnBicycleSave)
+        Me.TabPage3.Controls.Add(Me.Label8)
+        Me.TabPage3.Controls.Add(Me.Label12)
+        Me.TabPage3.Controls.Add(Me.Label13)
+        Me.TabPage3.Controls.Add(Me.Label14)
+        Me.TabPage3.Controls.Add(Me.txtFirstname)
+        Me.TabPage3.Controls.Add(Me.lbCustomer)
+        Me.TabPage3.Controls.Add(Me.btnCustomerSearch)
+        Me.TabPage3.Controls.Add(Me.txtCustomerSearch)
+        Me.TabPage3.Controls.Add(Me.Label15)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(609, 400)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Kunder"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'btnsearch
+        'txtEmail
         '
-        Me.btnsearch.Location = New System.Drawing.Point(352, 64)
-        Me.btnsearch.Name = "btnsearch"
-        Me.btnsearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnsearch.TabIndex = 26
-        Me.btnsearch.Text = "Søk"
-        Me.btnsearch.UseVisualStyleBackColor = True
+        Me.txtEmail.Location = New System.Drawing.Point(427, 142)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(157, 20)
+        Me.txtEmail.TabIndex = 44
         '
-        'searchlbl
+        'txtTelephone
         '
-        Me.searchlbl.AutoSize = True
-        Me.searchlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchlbl.Location = New System.Drawing.Point(16, 64)
-        Me.searchlbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.searchlbl.Name = "searchlbl"
-        Me.searchlbl.Size = New System.Drawing.Size(144, 17)
-        Me.searchlbl.TabIndex = 25
-        Me.searchlbl.Text = "Søk på mobilnummer:"
+        Me.txtTelephone.Location = New System.Drawing.Point(427, 116)
+        Me.txtTelephone.Name = "txtTelephone"
+        Me.txtTelephone.Size = New System.Drawing.Size(157, 20)
+        Me.txtTelephone.TabIndex = 43
         '
-        'TextBox1
+        'txtSurname
         '
-        Me.TextBox1.Location = New System.Drawing.Point(167, 64)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox1.TabIndex = 24
+        Me.txtSurname.Location = New System.Drawing.Point(427, 90)
+        Me.txtSurname.Name = "txtSurname"
+        Me.txtSurname.Size = New System.Drawing.Size(157, 20)
+        Me.txtSurname.TabIndex = 42
         '
-        'lstCustomers
+        'btnBicycleSave
         '
-        Me.lstCustomers.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.lstCustomers.FormattingEnabled = True
-        Me.lstCustomers.ItemHeight = 16
-        Me.lstCustomers.Location = New System.Drawing.Point(19, 92)
-        Me.lstCustomers.Name = "lstCustomers"
-        Me.lstCustomers.Size = New System.Drawing.Size(429, 340)
-        Me.lstCustomers.TabIndex = 23
+        Me.btnBicycleSave.Location = New System.Drawing.Point(427, 177)
+        Me.btnBicycleSave.Name = "btnBicycleSave"
+        Me.btnBicycleSave.Size = New System.Drawing.Size(157, 23)
+        Me.btnBicycleSave.TabIndex = 41
+        Me.btnBicycleSave.Text = "Lagre"
+        Me.btnBicycleSave.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(297, 67)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(46, 13)
+        Me.Label8.TabIndex = 39
+        Me.Label8.Text = "Fornavn"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(297, 145)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(40, 13)
+        Me.Label12.TabIndex = 33
+        Me.Label12.Text = "E-post:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(297, 119)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(83, 13)
+        Me.Label13.TabIndex = 32
+        Me.Label13.Text = "Telefonnummer:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(297, 93)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(53, 13)
+        Me.Label14.TabIndex = 31
+        Me.Label14.Text = "Etternavn"
+        '
+        'txtFirstname
+        '
+        Me.txtFirstname.Location = New System.Drawing.Point(427, 64)
+        Me.txtFirstname.Name = "txtFirstname"
+        Me.txtFirstname.Size = New System.Drawing.Size(157, 20)
+        Me.txtFirstname.TabIndex = 25
+        '
+        'lbCustomer
+        '
+        Me.lbCustomer.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.lbCustomer.FormattingEnabled = True
+        Me.lbCustomer.Location = New System.Drawing.Point(17, 60)
+        Me.lbCustomer.Name = "lbCustomer"
+        Me.lbCustomer.Size = New System.Drawing.Size(258, 329)
+        Me.lbCustomer.TabIndex = 24
+        '
+        'btnCustomerSearch
+        '
+        Me.btnCustomerSearch.Location = New System.Drawing.Point(239, 31)
+        Me.btnCustomerSearch.Name = "btnCustomerSearch"
+        Me.btnCustomerSearch.Size = New System.Drawing.Size(36, 20)
+        Me.btnCustomerSearch.TabIndex = 23
+        Me.btnCustomerSearch.Text = "Søk"
+        Me.btnCustomerSearch.UseVisualStyleBackColor = True
+        '
+        'txtCustomerSearch
+        '
+        Me.txtCustomerSearch.Location = New System.Drawing.Point(106, 31)
+        Me.txtCustomerSearch.Name = "txtCustomerSearch"
+        Me.txtCustomerSearch.Size = New System.Drawing.Size(127, 20)
+        Me.txtCustomerSearch.TabIndex = 22
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(17, 34)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(83, 13)
+        Me.Label15.TabIndex = 21
+        Me.Label15.Text = "Telefonnummer:"
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SlettToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(98, 26)
         '
-        'CustomerRegister
+        'SlettToolStripMenuItem
         '
-        Me.CustomerRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CustomerRegister.Location = New System.Drawing.Point(563, 326)
-        Me.CustomerRegister.Margin = New System.Windows.Forms.Padding(4)
-        Me.CustomerRegister.Name = "CustomerRegister"
-        Me.CustomerRegister.Size = New System.Drawing.Size(205, 29)
-        Me.CustomerRegister.TabIndex = 22
-        Me.CustomerRegister.Text = "Lagre"
-        Me.CustomerRegister.UseVisualStyleBackColor = True
+        Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
+        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SlettToolStripMenuItem.Text = "Slett"
         '
-        'emailTxt
+        'customerView
         '
-        Me.emailTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.emailTxt.Location = New System.Drawing.Point(573, 277)
-        Me.emailTxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.emailTxt.Name = "emailTxt"
-        Me.emailTxt.Size = New System.Drawing.Size(195, 22)
-        Me.emailTxt.TabIndex = 20
-        '
-        'phoneTxt
-        '
-        Me.phoneTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.phoneTxt.Location = New System.Drawing.Point(573, 218)
-        Me.phoneTxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.phoneTxt.Name = "phoneTxt"
-        Me.phoneTxt.Size = New System.Drawing.Size(195, 22)
-        Me.phoneTxt.TabIndex = 19
-        '
-        'surnameTxt
-        '
-        Me.surnameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.surnameTxt.Location = New System.Drawing.Point(573, 161)
-        Me.surnameTxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.surnameTxt.Name = "surnameTxt"
-        Me.surnameTxt.Size = New System.Drawing.Size(195, 22)
-        Me.surnameTxt.TabIndex = 18
-        '
-        'firstnameTxt
-        '
-        Me.firstnameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.firstnameTxt.Location = New System.Drawing.Point(573, 108)
-        Me.firstnameTxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.firstnameTxt.Name = "firstnameTxt"
-        Me.firstnameTxt.Size = New System.Drawing.Size(195, 22)
-        Me.firstnameTxt.TabIndex = 17
-        '
-        'email
-        '
-        Me.email.AutoSize = True
-        Me.email.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.email.Location = New System.Drawing.Point(473, 280)
-        Me.email.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.email.Name = "email"
-        Me.email.Size = New System.Drawing.Size(49, 17)
-        Me.email.TabIndex = 15
-        Me.email.Text = "E-post"
-        '
-        'phonenumber
-        '
-        Me.phonenumber.AutoSize = True
-        Me.phonenumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.phonenumber.Location = New System.Drawing.Point(473, 221)
-        Me.phonenumber.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.phonenumber.Name = "phonenumber"
-        Me.phonenumber.Size = New System.Drawing.Size(92, 17)
-        Me.phonenumber.TabIndex = 14
-        Me.phonenumber.Text = "Mobilnummer"
-        '
-        'surname
-        '
-        Me.surname.AutoSize = True
-        Me.surname.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.surname.Location = New System.Drawing.Point(473, 166)
-        Me.surname.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.surname.Name = "surname"
-        Me.surname.Size = New System.Drawing.Size(69, 17)
-        Me.surname.TabIndex = 13
-        Me.surname.Text = "Etternavn"
-        '
-        'firstname
-        '
-        Me.firstname.AutoSize = True
-        Me.firstname.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.firstname.Location = New System.Drawing.Point(473, 113)
-        Me.firstname.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.firstname.Name = "firstname"
-        Me.firstname.Size = New System.Drawing.Size(60, 17)
-        Me.firstname.TabIndex = 12
-        Me.firstname.Text = "Fornavn"
-        '
-        'customersView
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(853, 554)
+        Me.ClientSize = New System.Drawing.Size(640, 450)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.Name = "customersView"
-        Me.Text = "customers"
+        Me.Name = "customerView"
+        Me.Text = "customerView"
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents CustomerRegister As Button
-    Friend WithEvents emailTxt As TextBox
-    Friend WithEvents phoneTxt As TextBox
-    Friend WithEvents surnameTxt As TextBox
-    Friend WithEvents firstnameTxt As TextBox
-    Friend WithEvents email As Label
-    Friend WithEvents phonenumber As Label
-    Friend WithEvents surname As Label
-    Friend WithEvents firstname As Label
-    Friend WithEvents lstCustomers As ListBox
-    Friend WithEvents searchlbl As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents btnsearch As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents txtTelephone As TextBox
+    Friend WithEvents txtSurname As TextBox
+    Friend WithEvents btnBicycleSave As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtFirstname As TextBox
+    Friend WithEvents lbCustomer As ListBox
+    Friend WithEvents btnCustomerSearch As Button
+    Friend WithEvents txtCustomerSearch As TextBox
+    Friend WithEvents Label15 As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-#Disable Warning BC40004 ' Member conflicts with member in the base type and should be declared 'Shadows'
-#Enable Warning BC40004 ' Member conflicts with member in the base type and should be declared 'Shadows'
+    Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
 End Class
