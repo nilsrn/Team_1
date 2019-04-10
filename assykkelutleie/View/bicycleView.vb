@@ -113,7 +113,7 @@ Public Class bicycleView 'Sven-Erik
 
             Dim query As String
             If DbManager.duplicateBicycle(framenbr) = True Then
-                query = "UPDATE INTO Bicycle"
+                query = "UPDATE Bicycle "
                 query &= "SET BicycleType='" & bicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
                 query &= "WHERE BicycleID='" & framenbr & "'"
             ElseIf DbManager.duplicateBicycle(framenbr) = False Then
