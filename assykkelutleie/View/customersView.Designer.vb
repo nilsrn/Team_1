@@ -282,5 +282,7 @@ Partial Class customersView
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents searchBtn As Button
     Friend WithEvents Label1 As Label
+#Disable Warning BC40004 ' Member conflicts with member in the base type and should be declared 'Shadows'
     Friend WithEvents refresh As Button
+#Enable Warning BC40004 ' Member conflicts with member in the base type and should be declared 'Shadows'
 End Class

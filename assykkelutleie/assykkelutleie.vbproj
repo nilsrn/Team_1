@@ -82,7 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Bicycle.vb" />
-    <Compile Include="Controller\Config.vb" />
+    <Compile Include="Controller\BicycleType.vb" />
+    <Compile Include="Controller\Main.vb" />
     <Compile Include="Controller\Location.vb" />
     <Compile Include="Controller\User.vb" />
     <Compile Include="Model\DbManager.vb" />
@@ -96,12 +97,6 @@
       <DependentUpon>adminView.vb</DependentUpon>
     </Compile>
     <Compile Include="View\adminView.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\bicyclesChgView.Designer.vb">
-      <DependentUpon>bicyclesChgView.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\bicyclesChgView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\customersChgView.Designer.vb">
@@ -140,10 +135,10 @@
     <Compile Include="View\mainView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\bicyclesView.Designer.vb">
-      <DependentUpon>bicyclesView.vb</DependentUpon>
+    <Compile Include="View\bicycleView.Designer.vb">
+      <DependentUpon>bicycleView.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\bicyclesView.vb">
+    <Compile Include="View\bicycleView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\transportView.Designer.vb">
@@ -163,9 +158,6 @@
     <EmbeddedResource Include="View\adminView.resx">
       <DependentUpon>adminView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\bicyclesChgView.resx">
-      <DependentUpon>bicyclesChgView.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\customersChgView.resx">
       <DependentUpon>customersChgView.vb</DependentUpon>
     </EmbeddedResource>
@@ -184,8 +176,8 @@
     <EmbeddedResource Include="View\mainView.resx">
       <DependentUpon>mainView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\bicyclesView.resx">
-      <DependentUpon>bicyclesView.vb</DependentUpon>
+    <EmbeddedResource Include="View\bicycleView.resx">
+      <DependentUpon>bicycleView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\transportView.resx">
       <DependentUpon>transportView.vb</DependentUpon>

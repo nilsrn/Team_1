@@ -49,6 +49,5 @@
         Dim locationSearch As New Location()
         PutLocation(DbManager.GetSpecific(locationSearch, lbLocations.SelectedValue.ToString()))
     End Sub
-
 End Class
 
