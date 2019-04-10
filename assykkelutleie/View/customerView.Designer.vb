@@ -78,14 +78,14 @@ Partial Class customerView
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(427, 142)
+        Me.txtEmail.Location = New System.Drawing.Point(427, 116)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(157, 20)
         Me.txtEmail.TabIndex = 44
         '
         'txtTelephone
         '
-        Me.txtTelephone.Location = New System.Drawing.Point(427, 116)
+        Me.txtTelephone.Location = New System.Drawing.Point(427, 142)
         Me.txtTelephone.Name = "txtTelephone"
         Me.txtTelephone.Size = New System.Drawing.Size(157, 20)
         Me.txtTelephone.TabIndex = 43
@@ -118,7 +118,7 @@ Partial Class customerView
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(297, 145)
+        Me.Label12.Location = New System.Drawing.Point(297, 119)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(40, 13)
         Me.Label12.TabIndex = 33
@@ -127,7 +127,7 @@ Partial Class customerView
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(297, 119)
+        Me.Label13.Location = New System.Drawing.Point(297, 145)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(83, 13)
         Me.Label13.TabIndex = 32
