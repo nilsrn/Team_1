@@ -1,20 +1,27 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class bicycleView 'Sven-Erik
-    Private Sub CbPutBicycleLocations() 'Populates the location combobox.
+    Private Sub CbPutComboBox() 'Populates the comboboxes.
+        Dim status As New Status()
+        Dim bicycletype As New BicycleType()
         Dim location As New Location()
+
+        cbStatusSearch.DataSource = DbManager.GetAll(status)
+        cbType.DataSource = DbManager.GetAll(bicycletype)
+        cbTypeSearch.DataSource = DbManager.GetAll(bicycletype)
         cbDefaultLoc.DataSource = DbManager.GetAll(location)
         cbCurrentLoc.DataSource = DbManager.GetAll(location)
+
+        cbStatusSearch.DisplayMember = "Name"
+        cbType.DisplayMember = "Name"
+        cbTypeSearch.DisplayMember = "Name"
         cbDefaultLoc.DisplayMember = "Name"
         cbCurrentLoc.DisplayMember = "Name"
+
+        cbStatusSearch.ValueMember = "Name"
+        cbType.ValueMember = "Name"
+        cbTypeSearch.ValueMember = "Name"
         cbDefaultLoc.ValueMember = "Name"
         cbCurrentLoc.ValueMember = "Name"
-    End Sub
-
-    Private Sub CbPutBicycleType() 'Populates the bicycletype combobox.
-        Dim bicycletype As New BicycleType()
-        cbType.DataSource = DbManager.GetAll(bicycletype)
-        cbType.DisplayMember = "Name"
-        cbType.ValueMember = "Name"
     End Sub
 
     Private Sub PutLbBicycles(table As DataTable) 'Populates the listbox with data received from the DB. 
@@ -48,17 +55,16 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Sub BicyclesView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
-        CbPutBicycleLocations()
-        CbPutBicycleType()
+        CbPutComboBox()
         PutLbBicycles(GetAllBicycles)
     End Sub
 
     Private Sub BtnBicyclesSearch_Click(sender As Object, e As EventArgs) Handles btnBicyclesSearch.Click 'Updates the listbox according to the user input.
         Dim bicycleSearch As New Bicycle()
-        Dim bicycle As String = txtBicycleSearch.Text
+        Dim bicycle As String = txtFramenbr.Text
         Dim bicycleTable As DataTable = DbManager.GetSpecific(bicycleSearch, bicycle)
         PutLbBicycles(bicycleTable)
-        If txtBicycleSearch.Text = "" Then
+        If txtFramenbr.Text = "" Then
             PutLbBicycles(GetAllBicycles)
         End If
     End Sub
@@ -79,18 +85,9 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click 'Deletes the selcted item.
-        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
-        If MsgBox("Sikker på at du vil slette sykkelen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Using sqlconnection As New MySqlConnection(connectionString)
-                Dim query As String = "DELETE FROM Bicycle WHERE BicycleID= " & txtFramenbr.Text
-                Dim insertsql As New MySqlCommand(query, sqlconnection)
-                Dim da As New MySqlDataAdapter
-                Dim table As New DataTable
-                da.SelectCommand = insertsql
-                da.Fill(table)
-            End Using
-            PutLbBicycles(GetAllBicycles)
-        End If
+        Dim framenbr As Integer = txtFramenbr.Text
+        DbManager.DeleteBicycle(framenbr)
+        PutLbBicycles(GetAllBicycles)
     End Sub
 
     Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click 'Adds or updates the DB according to the input.

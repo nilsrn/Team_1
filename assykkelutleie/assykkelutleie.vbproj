@@ -86,6 +86,7 @@
     <Compile Include="Controller\Customer.vb" />
     <Compile Include="Controller\Main.vb" />
     <Compile Include="Controller\Location.vb" />
+    <Compile Include="Controller\Status.vb" />
     <Compile Include="Controller\User.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />

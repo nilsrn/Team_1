@@ -224,5 +224,21 @@ Public Class DbManager
             End Using
         End If
     End Sub
+
+    ' Function for deleting a bicycle.
+    Public Shared Sub DeleteBicycle(bicycleID As Integer) 'Sven-Erik
+        If MsgBox("Sikker på at du vil slette sykkelen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Using SqlConnection As New MySqlConnection(connectionString)
+                Dim deleteBicycle As String = "DELETE FROM Bicycle WHERE BicycleID=@id"
+                Dim SqlCommand As New MySqlCommand(deleteBicycle, SqlConnection)
+                SqlCommand.Parameters.AddWithValue("@id", bicycleID)
+                If connectedToServerAsync(SqlConnection).Result Then
+                    SqlCommand.ExecuteNonQuery()
+                    MsgBox(String.Format("{0} har blitt slettet", bicycleID))
+                End If
+                Return
+            End Using
+        End If
+    End Sub
 End Class
 

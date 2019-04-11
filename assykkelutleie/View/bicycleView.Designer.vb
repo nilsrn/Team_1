@@ -44,8 +44,9 @@ Partial Class bicycleView
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnBicyclesSearch = New System.Windows.Forms.Button()
-        Me.txtBicycleSearch = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.cbTypeSearch = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbStatusSearch = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -62,6 +63,9 @@ Partial Class bicycleView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.cbStatusSearch)
+        Me.TabPage3.Controls.Add(Me.Label1)
+        Me.TabPage3.Controls.Add(Me.cbTypeSearch)
         Me.TabPage3.Controls.Add(Me.cbType)
         Me.TabPage3.Controls.Add(Me.cbCurrentLoc)
         Me.TabPage3.Controls.Add(Me.cbDefaultLoc)
@@ -78,8 +82,6 @@ Partial Class bicycleView
         Me.TabPage3.Controls.Add(Me.txtFramenbr)
         Me.TabPage3.Controls.Add(Me.lbBicycle)
         Me.TabPage3.Controls.Add(Me.btnBicyclesSearch)
-        Me.TabPage3.Controls.Add(Me.txtBicycleSearch)
-        Me.TabPage3.Controls.Add(Me.Label15)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(609, 400)
@@ -219,16 +221,16 @@ Partial Class bicycleView
         '
         Me.txtFramenbr.Location = New System.Drawing.Point(427, 64)
         Me.txtFramenbr.Name = "txtFramenbr"
-        Me.txtFramenbr.Size = New System.Drawing.Size(157, 20)
+        Me.txtFramenbr.Size = New System.Drawing.Size(115, 20)
         Me.txtFramenbr.TabIndex = 25
         '
         'lbBicycle
         '
         Me.lbBicycle.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbBicycle.FormattingEnabled = True
-        Me.lbBicycle.Location = New System.Drawing.Point(17, 60)
+        Me.lbBicycle.Location = New System.Drawing.Point(17, 64)
         Me.lbBicycle.Name = "lbBicycle"
-        Me.lbBicycle.Size = New System.Drawing.Size(258, 329)
+        Me.lbBicycle.Size = New System.Drawing.Size(258, 316)
         Me.lbBicycle.TabIndex = 24
         '
         'ContextMenuStrip1
@@ -245,28 +247,40 @@ Partial Class bicycleView
         '
         'btnBicyclesSearch
         '
-        Me.btnBicyclesSearch.Location = New System.Drawing.Point(239, 31)
+        Me.btnBicyclesSearch.Location = New System.Drawing.Point(548, 64)
         Me.btnBicyclesSearch.Name = "btnBicyclesSearch"
         Me.btnBicyclesSearch.Size = New System.Drawing.Size(36, 20)
         Me.btnBicyclesSearch.TabIndex = 23
         Me.btnBicyclesSearch.Text = "Søk"
         Me.btnBicyclesSearch.UseVisualStyleBackColor = True
         '
-        'txtBicycleSearch
+        'cbTypeSearch
         '
-        Me.txtBicycleSearch.Location = New System.Drawing.Point(106, 31)
-        Me.txtBicycleSearch.Name = "txtBicycleSearch"
-        Me.txtBicycleSearch.Size = New System.Drawing.Size(127, 20)
-        Me.txtBicycleSearch.TabIndex = 22
+        Me.cbTypeSearch.FormattingEnabled = True
+        Me.cbTypeSearch.Location = New System.Drawing.Point(17, 29)
+        Me.cbTypeSearch.Name = "cbTypeSearch"
+        Me.cbTypeSearch.Size = New System.Drawing.Size(123, 21)
+        Me.cbTypeSearch.TabIndex = 49
+        Me.cbTypeSearch.Text = "Sykkeltype"
         '
-        'Label15
+        'Label1
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(17, 34)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(83, 13)
-        Me.Label15.TabIndex = 21
-        Me.Label15.Text = "Rammenummer:"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(17, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
+        Me.Label1.TabIndex = 50
+        Me.Label1.Text = "Filtrer"
+        '
+        'cbStatusSearch
+        '
+        Me.cbStatusSearch.FormattingEnabled = True
+        Me.cbStatusSearch.Location = New System.Drawing.Point(152, 29)
+        Me.cbStatusSearch.Name = "cbStatusSearch"
+        Me.cbStatusSearch.Size = New System.Drawing.Size(123, 21)
+        Me.cbStatusSearch.TabIndex = 51
+        Me.cbStatusSearch.Text = "Status"
         '
         'bicycleView
         '
@@ -303,9 +317,10 @@ Partial Class bicycleView
     Friend WithEvents txtFramenbr As TextBox
     Friend WithEvents lbBicycle As ListBox
     Friend WithEvents btnBicyclesSearch As Button
-    Friend WithEvents txtBicycleSearch As TextBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents cbDefaultLoc As ComboBox
     Friend WithEvents cbCurrentLoc As ComboBox
     Friend WithEvents cbType As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cbTypeSearch As ComboBox
+    Friend WithEvents cbStatusSearch As ComboBox
 End Class
