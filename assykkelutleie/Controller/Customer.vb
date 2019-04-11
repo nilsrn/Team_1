@@ -1,26 +1,27 @@
 ﻿Public Class Customer
-    Dim me_customerID, me_phone As Integer
+    Dim me_phone As Integer
     Dim me_firstname, me_surname, me_email As String
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(CustomerID, FirstName, Surname, Email, TelephoneNumber)
-        me_customerID = CustomerID
+    Public Sub New(CustomerID, FirstName, Surname, Email)
+
+        me_phone = CustomerID
         me_firstname = FirstName
         me_surname = Surname
         me_email = Email
-        me_phone = TelephoneNumber
     End Sub
     Public Property CustomerID() As Integer
         Get
-            Return me_customerID
+            Return me_phone
         End Get
         Set(value As Integer)
-            me_customerID = value
+            me_phone = value
         End Set
     End Property
+
     Public Property FirstName() As String
         Get
             Return me_firstname
@@ -43,15 +44,6 @@
         End Get
         Set(value As String)
             me_email = value
-        End Set
-    End Property
-
-    Public Property TelephoneNumber() As Integer
-        Get
-            Return me_phone
-        End Get
-        Set(value As Integer)
-            me_phone = value
         End Set
     End Property
 End Class

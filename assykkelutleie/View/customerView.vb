@@ -2,8 +2,9 @@
 Public Class customerView
     Private Sub PutLbCustomer(table As DataTable) 'Populates the listbox with data received from the DB. 
         lbCustomer.DataSource = table
-        lbCustomer.DisplayMember = "TelephoneNumber"
-        lbCustomer.ValueMember = "TelephoneNumber"
+        lbCustomer.DisplayMember = "CustomerID"
+        lbCustomer.ValueMember = "CustomerID"
+
     End Sub
 
     Private Function GetAllCustomer() 'Returns a DataTable with all customers.
@@ -13,11 +14,12 @@ Public Class customerView
     End Function
 
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
+
         For Each row In list.Rows
+            txtTelephone.Text = row("CustomerID")
             txtFirstname.Text = row("FirstName")
-            txtSurname.Text = row("SurName")
+            txtSurname.Text = row("Surname")
             txtEmail.Text = row("Email")
-            txtTelephone.Text = row("TelephoneNumber")
         Next
     End Sub
 
@@ -54,7 +56,7 @@ Public Class customerView
         Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
         If MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             Using sqlconnection As New MySqlConnection(connectionString)
-                Dim query As String = "DELETE FROM Customer WHERE TelephoneNumber= " & txtTelephone.Text
+                Dim query As String = "DELETE FROM Customer WHERE CustomerID= " & txtCustomerSearch.Text
                 Dim insertsql As New MySqlCommand(query, sqlconnection)
                 Dim da As New MySqlDataAdapter
                 Dim table As New DataTable
@@ -70,16 +72,16 @@ Public Class customerView
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim firstname As String = txtFirstname.Text
             Dim surname As String = txtSurname.Text
-            Dim email As String = txtEmail.Text
             Dim phone As Integer = txtTelephone.Text
+            Dim email As String = txtEmail.Text
             Dim query As String
             If DbManager.duplicateCustomer(phone) = True Then
                 query = "UPDATE Customer "
-                query &= "SET FirstName='" & firstname & "', SurName='" & surname & "', Email='" & email & "' "
-                query &= "WHERE PhoneNumber='" & phone & "'"
+                query &= "SET FirstName='" & firstname & "', Surname='" & surname & "', Email='" & email & "' "
+                query &= "WHERE CustomerID='" & phone & "'"
             ElseIf DbManager.duplicateBicycle(phone) = False Then
-                query = "INSERT INTO Customer (FirstName, SurName, Email, TelephoneNumber) "
-                query &= "VALUES ('" & firstname & "', " & "'" & surname & "', " & "'" & email & "', " & "'" & phone & "')"
+                query = "INSERT INTO Customer (CustomerID, FirstName, Surname, Email) "
+                query &= "VALUES ('" & phone & "', " & "'" & firstname & "', " & "'" & surname & "', " & "'" & email & "')"
             End If
             Dim sql As New MySqlCommand(query, sqlconnection)
             Dim da As New MySqlDataAdapter
@@ -89,4 +91,5 @@ Public Class customerView
         End Using
         PutLbCustomer(GetAllCustomer)
     End Sub
+
 End Class

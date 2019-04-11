@@ -170,11 +170,11 @@ Public Class DbManager
     End Function
 
     ' Function to check if a customer already exists
-    Public Shared Function duplicateCustomer(TelephoneNumber As Integer) As Boolean ' Sven-Erik
+    Public Shared Function duplicateCustomer(CustomerID As Integer) As Boolean ' Ådne og Silje 🙂
         Using SqlConnection As New MySqlConnection(connectionString)
-            Dim checkCustomerQuery As String = "SELECT COUNT(CustomerID) FROM Customer WHERE TelephoneNumber =@phone"
+            Dim checkCustomerQuery As String = "SELECT COUNT(CustomerID) FROM Customer WHERE CustomerID =@phone"
             Dim sqlCommand As New MySqlCommand(checkCustomerQuery, SqlConnection)
-            sqlCommand.Parameters.AddWithValue("@phone", TelephoneNumber)
+            sqlCommand.Parameters.AddWithValue("@phone", CustomerID)
             If connectedToServerAsync(SqlConnection).Result Then
                 Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
                 If results > 0 Then
