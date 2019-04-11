@@ -127,5 +127,23 @@ Public Class bicycleView 'Sven-Erik
             da.Fill(table)
         End Using
         PutLbBicycles(GetAllBicycles)
+
+
+        'Dim framenbr As Integer = txtFramenbr.Text
+        'Dim bicycleType As String = cbType.SelectedValue
+        'Dim defaultLocation As String = cbDefaultLoc.SelectedValue
+        'Dim currentLocation As String = cbCurrentLoc.SelectedValue
+        'Dim status As String
+        'If rbAvailable.Checked = True Then
+        '    status = "Ledig"
+        'ElseIf rbRented.Checked = True Then
+        '    status = "Utleid"
+        'ElseIf rbService.Checked = True Then
+        '    status = "Service"
+        'ElseIf rbStolen.Checked = True Then
+        '    status = "Stjålet"
+        'End If
+        'DbManager.insertNewBicycle(framenbr, bicycleType, defaultLocation, currentLocation, status)
+        'PutLbBicycles(GetAllBicycles)
     End Sub
 End Class
