@@ -186,5 +186,43 @@ Public Class DbManager
         End Using
         Return True
     End Function
+
+
+    ' Function for creating a new bicycle and storing it in the DB. Not tested.
+    Public Shared Sub insertNewBicycle(bicycleID As Integer, BicycleType As String, DefaultLocation As String, CurrentLocation As String, Status As String) 'Sven-Erik
+        If Not duplicateBicycle(bicycleID) Then
+            Using SqlConnection As New MySqlConnection(connectionString)
+                Dim insertNewBicycle As String = "INSERT INTO Bicycle(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) VALUES(@id,@type,@defloc,@curloc,@status)"
+                Dim SqlCommand As New MySqlCommand(insertNewBicycle, SqlConnection)
+                SqlCommand.Parameters.AddWithValue("@id", bicycleID)
+                SqlCommand.Parameters.AddWithValue("@type", BicycleType)
+                SqlCommand.Parameters.AddWithValue("@defloc", DefaultLocation)
+                SqlCommand.Parameters.AddWithValue("@curloc", CurrentLocation)
+                SqlCommand.Parameters.AddWithValue("@status", Status)
+
+                If connectedToServerAsync(SqlConnection).Result Then
+                    SqlCommand.ExecuteNonQuery()
+                    MsgBox(String.Format("{0} har blitt registrert", bicycleID))
+                End If
+                Return
+            End Using
+        ElseIf duplicateBicycle(bicycleID) Then
+            Using SqlConnection As New MySqlConnection(connectionString)
+                Dim updateBicycle As String = "UPDATE Bicycle SET BicycleType=@type, DefaultLocation=@defloc, CurrentLocation=@curloc, Status=@status WHERE BicycleID=@id"
+                Dim SqlCommand As New MySqlCommand(updateBicycle, SqlConnection)
+                SqlCommand.Parameters.AddWithValue("@id", bicycleID)
+                SqlCommand.Parameters.AddWithValue("@type", BicycleType)
+                SqlCommand.Parameters.AddWithValue("@defloc", DefaultLocation)
+                SqlCommand.Parameters.AddWithValue("@curloc", CurrentLocation)
+                SqlCommand.Parameters.AddWithValue("@status", Status)
+
+                If connectedToServerAsync(SqlConnection).Result Then
+                    SqlCommand.ExecuteNonQuery()
+                    MsgBox(String.Format("{0} har blitt oppdatert", bicycleID))
+                End If
+                Return
+            End Using
+        End If
+    End Sub
 End Class
 
