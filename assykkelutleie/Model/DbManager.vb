@@ -151,9 +151,6 @@ Public Class DbManager
         End Using
     End Function
 
-
-
-
     ' Function to check if a bicycle already exists
     Public Shared Function duplicateBicycle(bicycleID As Integer) As Boolean ' Sven-Erik
         Using SqlConnection As New MySqlConnection(connectionString)
@@ -171,10 +168,11 @@ Public Class DbManager
         End Using
         Return True
     End Function
-    ' Function to check if a bicycle already exists
+
+    ' Function to check if a customer already exists
     Public Shared Function duplicateCustomer(TelephoneNumber As Integer) As Boolean ' Sven-Erik
         Using SqlConnection As New MySqlConnection(connectionString)
-            Dim checkCustomerQuery As String = "SELECT COUNT(TelephoneNumber) FROM Customer WHERE TelephoneNumber =@phone"
+            Dim checkCustomerQuery As String = "SELECT COUNT(CustomerID) FROM Customer WHERE TelephoneNumber =@phone"
             Dim sqlCommand As New MySqlCommand(checkCustomerQuery, SqlConnection)
             sqlCommand.Parameters.AddWithValue("@phone", TelephoneNumber)
             If connectedToServerAsync(SqlConnection).Result Then
