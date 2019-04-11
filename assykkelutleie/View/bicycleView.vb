@@ -94,56 +94,21 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click 'Adds or updates the DB according to the input.
-        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
-        Using sqlconnection As New MySqlConnection(connectionString)
-            Dim framenbr As Integer = txtFramenbr.Text
-            Dim bicycleType As String = cbType.SelectedValue
-            Dim defaultLocation As String = cbDefaultLoc.SelectedValue
-            Dim currentLocation As String = cbCurrentLoc.SelectedValue
-            Dim status As String
-            If rbAvailable.Checked = True Then
-                status = "Ledig"
-            ElseIf rbRented.Checked = True Then
-                status = "Utleid"
-            ElseIf rbService.Checked = True Then
-                status = "Service"
-            ElseIf rbStolen.Checked = True Then
-                status = "Stjålet"
-            End If
-
-            Dim query As String
-            If DbManager.duplicateBicycle(framenbr) = True Then
-                query = "UPDATE Bicycle "
-                query &= "SET BicycleType='" & bicycleType & "', DefaultLocation='" & defaultLocation & "', CurrentLocation='" & currentLocation & "', Status='" & status & "' "
-                query &= "WHERE BicycleID='" & framenbr & "'"
-            ElseIf DbManager.duplicateBicycle(framenbr) = False Then
-                query = "INSERT INTO Bicycle (BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) "
-                query &= "VALUES ('" & framenbr & "', " & "'" & bicycleType & "', " & "'" & defaultLocation & "', " & "'" & currentLocation & "', " & "'" & status & "')"
-            End If
-            Dim sql As New MySqlCommand(query, sqlconnection)
-            Dim da As New MySqlDataAdapter
-            Dim table As New DataTable
-            da.SelectCommand = sql
-            da.Fill(table)
-        End Using
+        Dim framenbr As Integer = txtFramenbr.Text
+        Dim bicycleType As String = cbType.SelectedValue
+        Dim defaultLocation As String = cbDefaultLoc.SelectedValue
+        Dim currentLocation As String = cbCurrentLoc.SelectedValue
+        Dim status As String
+        If rbAvailable.Checked = True Then
+            status = "Ledig"
+        ElseIf rbRented.Checked = True Then
+            status = "Utleid"
+        ElseIf rbService.Checked = True Then
+            status = "Service"
+        ElseIf rbStolen.Checked = True Then
+            status = "Stjålet"
+        End If
+        DbManager.insertNewBicycle(framenbr, bicycleType, defaultLocation, currentLocation, status)
         PutLbBicycles(GetAllBicycles)
-
-
-        'Dim framenbr As Integer = txtFramenbr.Text
-        'Dim bicycleType As String = cbType.SelectedValue
-        'Dim defaultLocation As String = cbDefaultLoc.SelectedValue
-        'Dim currentLocation As String = cbCurrentLoc.SelectedValue
-        'Dim status As String
-        'If rbAvailable.Checked = True Then
-        '    status = "Ledig"
-        'ElseIf rbRented.Checked = True Then
-        '    status = "Utleid"
-        'ElseIf rbService.Checked = True Then
-        '    status = "Service"
-        'ElseIf rbStolen.Checked = True Then
-        '    status = "Stjålet"
-        'End If
-        'DbManager.insertNewBicycle(framenbr, bicycleType, defaultLocation, currentLocation, status)
-        'PutLbBicycles(GetAllBicycles)
     End Sub
 End Class

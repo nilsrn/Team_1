@@ -188,7 +188,7 @@ Public Class DbManager
     End Function
 
 
-    ' Function for creating a new bicycle and storing it in the DB. Not tested.
+    ' Function for creating/updating a new bicycle and storing it in the DB.
     Public Shared Sub insertNewBicycle(bicycleID As Integer, BicycleType As String, DefaultLocation As String, CurrentLocation As String, Status As String) 'Sven-Erik
         If Not duplicateBicycle(bicycleID) Then
             Using SqlConnection As New MySqlConnection(connectionString)
