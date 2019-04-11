@@ -240,5 +240,25 @@ Public Class DbManager
             End Using
         End If
     End Sub
+
+
+
+
+
+
+    ' Function to check if an ID already exists. Not finished.
+    Public Shared Function duplicateID(ID As String, DB As String, input As Integer) As Boolean ' Sven-Erik
+        Using SqlConnection As New MySqlConnection(connectionString)
+            Dim query As String = "SELECT COUNT(@id) FROM @db WHERE @id=@input"
+            Dim SqlCommand As New MySqlCommand(query, SqlConnection)
+            SqlCommand.Parameters.AddWithValue("@id", ID)
+            SqlCommand.Parameters.AddWithValue("@DB", DB)
+            SqlCommand.Parameters.AddWithValue("@input", input)
+            If connectedToServerAsync(SqlConnection).Result Then
+                SqlCommand.ExecuteNonQuery()
+            End If
+            Return True
+        End Using
+    End Function
 End Class
 
