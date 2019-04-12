@@ -122,7 +122,7 @@ Partial Class mainView
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mainView"
-        Me.Text = "main"
+        Me.Text = "AS SykkelUtleie"
         Me.ResumeLayout(False)
 
     End Sub
