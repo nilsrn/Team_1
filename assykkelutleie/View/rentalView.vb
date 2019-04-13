@@ -16,11 +16,9 @@ Public Class rentalView
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim customerSearch As New Customer()
-        Dim customer As String = txtCustomerSearch.Text
+        Dim customer As String = txtsearch.Text
         Dim customerTable As DataTable = DbManager.GetSpecific(customerSearch, customer)
-        PutLbCustomer(customerTable)
-        If txtCustomerSearch.Text = "" Then
-            PutLbCustomer(GetAllCustomer)
-        End If
+        PutCustomer(customerTable)
+
     End Sub
 End Class

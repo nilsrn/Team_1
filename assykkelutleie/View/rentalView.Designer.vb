@@ -45,7 +45,7 @@ Partial Class rentalView
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -216,7 +216,7 @@ Partial Class rentalView
         Me.Kunde.Controls.Add(Me.Label3)
         Me.Kunde.Controls.Add(Me.Label2)
         Me.Kunde.Controls.Add(Me.btnSearch)
-        Me.Kunde.Controls.Add(Me.TextBox1)
+        Me.Kunde.Controls.Add(Me.txtsearch)
         Me.Kunde.Controls.Add(Me.Label1)
         Me.Kunde.Location = New System.Drawing.Point(6, 15)
         Me.Kunde.Name = "Kunde"
@@ -282,12 +282,12 @@ Partial Class rentalView
         Me.btnSearch.Text = "Søk"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtsearch
         '
-        Me.TextBox1.Location = New System.Drawing.Point(10, 37)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.txtsearch.Location = New System.Drawing.Point(10, 37)
+        Me.txtsearch.Name = "txtsearch"
+        Me.txtsearch.Size = New System.Drawing.Size(100, 20)
+        Me.txtsearch.TabIndex = 1
         '
         'Label1
         '
@@ -436,7 +436,7 @@ Partial Class rentalView
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSearch As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtsearch As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents filing As ComboBox
     Friend WithEvents extradition As ComboBox
