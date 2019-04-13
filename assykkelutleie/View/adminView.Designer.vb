@@ -25,23 +25,23 @@ Partial Class adminView
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnUserSave = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.cbLocation = New System.Windows.Forms.ComboBox()
+        Me.cbUserLocation = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbAccountType = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.tbPhoneNumber = New System.Windows.Forms.TextBox()
+        Me.tbEmail = New System.Windows.Forms.TextBox()
+        Me.tbSurname = New System.Windows.Forms.TextBox()
+        Me.tbPassword = New System.Windows.Forms.TextBox()
+        Me.tbFirstName = New System.Windows.Forms.TextBox()
+        Me.tbUsername = New System.Windows.Forms.TextBox()
         Me.lbUsers = New System.Windows.Forms.ListBox()
         Me.btnUserSearch = New System.Windows.Forms.Button()
         Me.tbUsernameSearch = New System.Windows.Forms.TextBox()
@@ -60,6 +60,7 @@ Partial Class adminView
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btnCreateUser = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -79,23 +80,24 @@ Partial Class adminView
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.btnCreateUser)
+        Me.TabPage1.Controls.Add(Me.btnUserSave)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.Label7)
-        Me.TabPage1.Controls.Add(Me.cbLocation)
+        Me.TabPage1.Controls.Add(Me.cbUserLocation)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.cbAccountType)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.TextBox7)
-        Me.TabPage1.Controls.Add(Me.TextBox6)
-        Me.TabPage1.Controls.Add(Me.TextBox5)
-        Me.TabPage1.Controls.Add(Me.TextBox4)
-        Me.TabPage1.Controls.Add(Me.TextBox3)
-        Me.TabPage1.Controls.Add(Me.TextBox2)
+        Me.TabPage1.Controls.Add(Me.tbPhoneNumber)
+        Me.TabPage1.Controls.Add(Me.tbEmail)
+        Me.TabPage1.Controls.Add(Me.tbSurname)
+        Me.TabPage1.Controls.Add(Me.tbPassword)
+        Me.TabPage1.Controls.Add(Me.tbFirstName)
+        Me.TabPage1.Controls.Add(Me.tbUsername)
         Me.TabPage1.Controls.Add(Me.lbUsers)
         Me.TabPage1.Controls.Add(Me.btnUserSearch)
         Me.TabPage1.Controls.Add(Me.tbUsernameSearch)
@@ -108,19 +110,19 @@ Partial Class adminView
         Me.TabPage1.Text = "Brukere"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnUserSave
         '
-        Me.Button1.Location = New System.Drawing.Point(416, 295)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Lagre"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUserSave.Location = New System.Drawing.Point(392, 292)
+        Me.btnUserSave.Name = "btnUserSave"
+        Me.btnUserSave.Size = New System.Drawing.Size(158, 23)
+        Me.btnUserSave.TabIndex = 20
+        Me.btnUserSave.Text = "Lagre / Oppdater"
+        Me.btnUserSave.UseVisualStyleBackColor = True
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(318, 196)
+        Me.Label9.Location = New System.Drawing.Point(294, 193)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(83, 13)
         Me.Label9.TabIndex = 19
@@ -129,7 +131,7 @@ Partial Class adminView
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(318, 69)
+        Me.Label8.Location = New System.Drawing.Point(294, 66)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 13)
         Me.Label8.TabIndex = 18
@@ -138,24 +140,24 @@ Partial Class adminView
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(318, 252)
+        Me.Label7.Location = New System.Drawing.Point(294, 249)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(53, 13)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Lokasjon:"
         '
-        'cbLocation
+        'cbUserLocation
         '
-        Me.cbLocation.FormattingEnabled = True
-        Me.cbLocation.Location = New System.Drawing.Point(406, 249)
-        Me.cbLocation.Name = "cbLocation"
-        Me.cbLocation.Size = New System.Drawing.Size(158, 21)
-        Me.cbLocation.TabIndex = 16
+        Me.cbUserLocation.FormattingEnabled = True
+        Me.cbUserLocation.Location = New System.Drawing.Point(382, 246)
+        Me.cbUserLocation.Name = "cbUserLocation"
+        Me.cbUserLocation.Size = New System.Drawing.Size(193, 21)
+        Me.cbUserLocation.TabIndex = 16
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(318, 173)
+        Me.Label6.Location = New System.Drawing.Point(294, 170)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
         Me.Label6.TabIndex = 15
@@ -164,15 +166,15 @@ Partial Class adminView
         'cbAccountType
         '
         Me.cbAccountType.FormattingEnabled = True
-        Me.cbAccountType.Location = New System.Drawing.Point(407, 222)
+        Me.cbAccountType.Location = New System.Drawing.Point(383, 219)
         Me.cbAccountType.Name = "cbAccountType"
-        Me.cbAccountType.Size = New System.Drawing.Size(157, 21)
+        Me.cbAccountType.Size = New System.Drawing.Size(192, 21)
         Me.cbAccountType.TabIndex = 14
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(318, 222)
+        Me.Label5.Location = New System.Drawing.Point(294, 219)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(58, 13)
         Me.Label5.TabIndex = 13
@@ -181,7 +183,7 @@ Partial Class adminView
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(318, 144)
+        Me.Label4.Location = New System.Drawing.Point(294, 141)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 13)
         Me.Label4.TabIndex = 12
@@ -190,7 +192,7 @@ Partial Class adminView
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(318, 118)
+        Me.Label3.Location = New System.Drawing.Point(294, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 13)
         Me.Label3.TabIndex = 11
@@ -199,53 +201,53 @@ Partial Class adminView
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(318, 95)
+        Me.Label2.Location = New System.Drawing.Point(294, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Fornavn:"
         '
-        'TextBox7
+        'tbPhoneNumber
         '
-        Me.TextBox7.Location = New System.Drawing.Point(407, 196)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox7.TabIndex = 9
+        Me.tbPhoneNumber.Location = New System.Drawing.Point(383, 193)
+        Me.tbPhoneNumber.Name = "tbPhoneNumber"
+        Me.tbPhoneNumber.Size = New System.Drawing.Size(192, 20)
+        Me.tbPhoneNumber.TabIndex = 9
         '
-        'TextBox6
+        'tbEmail
         '
-        Me.TextBox6.Location = New System.Drawing.Point(407, 166)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox6.TabIndex = 8
+        Me.tbEmail.Location = New System.Drawing.Point(383, 163)
+        Me.tbEmail.Name = "tbEmail"
+        Me.tbEmail.Size = New System.Drawing.Size(192, 20)
+        Me.tbEmail.TabIndex = 8
         '
-        'TextBox5
+        'tbSurname
         '
-        Me.TextBox5.Location = New System.Drawing.Point(407, 118)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox5.TabIndex = 7
+        Me.tbSurname.Location = New System.Drawing.Point(383, 115)
+        Me.tbSurname.Name = "tbSurname"
+        Me.tbSurname.Size = New System.Drawing.Size(192, 20)
+        Me.tbSurname.TabIndex = 7
         '
-        'TextBox4
+        'tbPassword
         '
-        Me.TextBox4.Location = New System.Drawing.Point(407, 141)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox4.TabIndex = 6
+        Me.tbPassword.Location = New System.Drawing.Point(383, 138)
+        Me.tbPassword.Name = "tbPassword"
+        Me.tbPassword.Size = New System.Drawing.Size(192, 20)
+        Me.tbPassword.TabIndex = 6
         '
-        'TextBox3
+        'tbFirstName
         '
-        Me.TextBox3.Location = New System.Drawing.Point(407, 95)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox3.TabIndex = 5
+        Me.tbFirstName.Location = New System.Drawing.Point(383, 92)
+        Me.tbFirstName.Name = "tbFirstName"
+        Me.tbFirstName.Size = New System.Drawing.Size(192, 20)
+        Me.tbFirstName.TabIndex = 5
         '
-        'TextBox2
+        'tbUsername
         '
-        Me.TextBox2.Location = New System.Drawing.Point(407, 66)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.tbUsername.Location = New System.Drawing.Point(383, 63)
+        Me.tbUsername.Name = "tbUsername"
+        Me.tbUsername.Size = New System.Drawing.Size(192, 20)
+        Me.tbUsername.TabIndex = 4
         '
         'lbUsers
         '
@@ -304,9 +306,9 @@ Partial Class adminView
         '
         Me.btnSaveLocation.Location = New System.Drawing.Point(460, 178)
         Me.btnSaveLocation.Name = "btnSaveLocation"
-        Me.btnSaveLocation.Size = New System.Drawing.Size(75, 23)
+        Me.btnSaveLocation.Size = New System.Drawing.Size(100, 23)
         Me.btnSaveLocation.TabIndex = 25
-        Me.btnSaveLocation.Text = "Lagre"
+        Me.btnSaveLocation.Text = "Lagre / Oppdater"
         Me.btnSaveLocation.UseVisualStyleBackColor = True
         '
         'Label11
@@ -408,6 +410,15 @@ Partial Class adminView
         Me.TabPage4.Text = "Utstyrstyper"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'btnCreateUser
+        '
+        Me.btnCreateUser.Location = New System.Drawing.Point(83, 271)
+        Me.btnCreateUser.Name = "btnCreateUser"
+        Me.btnCreateUser.Size = New System.Drawing.Size(128, 23)
+        Me.btnCreateUser.TabIndex = 21
+        Me.btnCreateUser.Text = "Opprett ny bruker"
+        Me.btnCreateUser.UseVisualStyleBackColor = True
+        '
         'adminView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -436,23 +447,23 @@ Partial Class adminView
     Friend WithEvents tbUsernameSearch As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnUserSave As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents cbLocation As ComboBox
+    Friend WithEvents cbUserLocation As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents cbAccountType As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents tbPhoneNumber As TextBox
+    Friend WithEvents tbEmail As TextBox
+    Friend WithEvents tbSurname As TextBox
+    Friend WithEvents tbPassword As TextBox
+    Friend WithEvents tbFirstName As TextBox
+    Friend WithEvents tbUsername As TextBox
     Friend WithEvents lbLocations As ListBox
     Friend WithEvents btnLocationSearch As Button
     Friend WithEvents tbLocationSearch As TextBox
@@ -464,4 +475,5 @@ Partial Class adminView
     Friend WithEvents tbLocationTelephoneNumber As TextBox
     Friend WithEvents tbLocationAddress As TextBox
     Friend WithEvents tbLocationName As TextBox
+    Friend WithEvents btnCreateUser As Button
 End Class

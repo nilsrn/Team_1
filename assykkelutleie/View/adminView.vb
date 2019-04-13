@@ -1,7 +1,7 @@
 ﻿Public Class adminView 'Nils
 
     Private Sub adminView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
-
+        GetAllUsers()
         PutLbLocations(GetAllLocations)
         CbGetUserLocations()
         CbGetAccountTypes()
@@ -14,9 +14,9 @@
 
     Private Sub CbGetUserLocations()    'Populates the location combo box.
         Dim location As New Location()
-        cbLocation.DataSource = DbManager.GetAll(location)
-        cbLocation.DisplayMember = "Name"
-        cbLocation.ValueMember = "Name"
+        cbUserLocation.DataSource = DbManager.GetAll(location)
+        cbUserLocation.DisplayMember = "Name"
+        cbUserLocation.ValueMember = "Name"
     End Sub
 
     Private Sub CbGetAccountTypes()    'Populates the Accounttypes combo box.
@@ -26,7 +26,59 @@
         cbAccountType.ValueMember = "AccountType"
     End Sub
 
-    Private Sub btnLocationSearch_Click(sender As Object, e As EventArgs) Handles btnLocationSearch.Click 'Updates the listbox according to the user input
+    Private Sub PutUserAccounts(table As DataTable)  'Populates the users listbox with data received from the DB. 
+        lbUsers.DataSource = table
+        lbUsers.DisplayMember = "username"
+        lbUsers.ValueMember = "username"
+    End Sub
+
+    Private Sub GetAllUsers()   'Gets all users and populates the listbox
+        Dim user As New UserAccount()
+        Dim usertable As DataTable = DbManager.GetAll(user)
+        PutUserAccounts(usertable)
+    End Sub
+
+    Private Sub PutUserAccount(userTable As DataTable)    'Populates the textboxes with the selected user data.
+        For Each row In userTable.Rows
+            tbUsername.Text = row("username")
+            tbFirstName.Text = row("firstname")
+            tbSurname.Text = row("surname")
+            tbPassword.Text = row("password")
+            tbEmail.Text = row("email")
+            tbPhoneNumber.Text = row("TelephoneNumber")
+            cbAccountType.Text = row("AccountType")
+            cbUserLocation.Text = row("Location")
+        Next
+    End Sub
+
+    Private Sub lbUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbUsers.SelectedIndexChanged   'Populates the textboxes based on the chosen user in the listbox.
+        Dim usersearch As New UserAccount()
+        PutUserAccount(DbManager.GetSpecific(usersearch, lbUsers.SelectedValue.ToString()))
+    End Sub
+
+    Private Sub btnUserSave_Click(sender As Object, e As EventArgs) Handles btnUserSave.Click
+        Dim username, firstname, surname, password, salt, email, telephoneNumber, accounttype, userlocation As String
+        Try
+            username = tbUsername.Text
+            firstname = tbFirstName.Text
+            surname = tbSurname.Text
+            password = tbPassword.Text
+            salt = Encryption.GenerateSalt
+            email = tbEmail.Text
+            telephoneNumber = tbLocationTelephoneNumber.Text
+            accounttype = cbAccountType.Text
+            userlocation = cbUserLocation.Text
+
+            Dim updateUser As New UserAccount(username, accounttype, Location, firstname, surname, email, telephoneNumber)
+            DbManager.InsertOrUpdate(updateUser)
+        Catch ex As Exception
+                MsgBox("Feil input - all tekst må fylles ut")
+            End Try
+
+        GetAllUsers()
+    End Sub
+
+    Private Sub btnLocationSearch_Click(sender As Object, e As EventArgs) Handles btnLocationSearch.Click 'Search function for locations
         Dim locationSearch As New Location()
         Dim location As String = tbLocationSearch.Text
         Dim locationTable As DataTable = DbManager.GetSpecific(locationSearch, location)
@@ -39,7 +91,7 @@
         Return locationsTable
     End Function
 
-    Private Sub PutLocation(list As DataTable) 'Populates the textboxes with data from the DB.
+    Private Sub PutLocation(list As DataTable) 'Populates the textboxes with selected location data.
         For Each row In list.Rows
             tbLocationName.Text = row("Name")
             tbLocationAddress.Text = row("Address")
@@ -47,7 +99,7 @@
         Next
     End Sub
 
-    Private Sub PutLbLocations(table As DataTable) 'Populates the listbox with data received from the DB. 
+    Private Sub PutLbLocations(table As DataTable) 'Populates the locations listbox with data received from the DB. 
         lbLocations.DataSource = table
         lbLocations.DisplayMember = "Name"
         lbLocations.ValueMember = "Name"
@@ -60,12 +112,12 @@
 
     Private Sub PutUserLocations()    ' Populates the location combobox with the name values from the DB
         Dim location As New Location()
-        cbLocation.DataSource = DbManager.GetAll(location)
-        cbLocation.DisplayMember = "Name"
-        cbLocation.ValueMember = "Name"
+        cbUserLocation.DataSource = DbManager.GetAll(location)
+        cbUserLocation.DisplayMember = "Name"
+        cbUserLocation.ValueMember = "Name"
     End Sub
 
-    Private Sub btnSaveLocation_Click(sender As Object, e As EventArgs) Handles btnSaveLocation.Click
+    Private Sub btnSaveLocation_Click(sender As Object, e As EventArgs) Handles btnSaveLocation.Click 'Updates an existing location or creates a new location if the name is unique.
         Dim name, address, telephoneNumber As String
         Try
             name = tbLocationName.Text
@@ -78,6 +130,7 @@
         End Try
         PutLbLocations(GetAllLocations)
     End Sub
+
 
 End Class
 
