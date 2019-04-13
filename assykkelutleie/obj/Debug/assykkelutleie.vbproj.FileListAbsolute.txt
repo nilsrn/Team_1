@@ -78,13 +78,9 @@ C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.vbprojAssemblyReference.cache
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe.config
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.adminView.resources
-\\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.bicyclesChgView.resources
-\\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersChgView.resources
-\\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customersView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.loginView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.Resources.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.mainView.resources
-\\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.bicyclesView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.transportView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.rentalView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.vbproj.GenerateResource.cache
@@ -157,3 +153,5 @@ C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe
 C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.xml
 C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.pdb
+\\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.customerView.resources
+\\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\Team_1\assykkelutleie\obj\Debug\assykkelutleie.bicycleView.resources

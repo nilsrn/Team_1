@@ -1,41 +1,39 @@
-﻿Public Class Location
-    Dim m_navn, m_adresse As String
-    Dim m_telefon As Integer
+﻿Public Class Location 'Class that defines a location.
+    Dim m_name, m_address, m_telephoneNumber As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
-
     End Sub
 
     Public Sub New(name, address, telephoneNumber)
-        m_navn = name
-        m_adresse = address
-        m_telefon = telephoneNumber
+        m_name = name
+        m_address = address
+        m_telephoneNumber = telephoneNumber
     End Sub
 
     Public Property Name() As String
         Get
-            Return m_navn
+            Return m_name
         End Get
         Set(value As String)
-            m_navn = value
+            m_name = value
         End Set
     End Property
 
     Public Property Address() As String
         Get
-            Return m_adresse
+            Return m_address
         End Get
         Set(value As String)
-            m_adresse = value
+            m_address = value
         End Set
     End Property
 
-    Public Property telephoneNumber() As Integer
+    Public Property TelephoneNumber() As String
         Get
-            Return m_telefon
+            Return m_telephoneNumber
         End Get
-        Set(value As Integer)
-            m_telefon = value
+        Set(value As String)
+            m_telephoneNumber = value
         End Set
     End Property
 End Class

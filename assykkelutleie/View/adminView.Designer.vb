@@ -31,7 +31,7 @@ Partial Class adminView
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbLocation = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbAccountType = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -47,7 +47,7 @@ Partial Class adminView
         Me.tbUsernameSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnSaveLocation = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -85,7 +85,7 @@ Partial Class adminView
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.cbLocation)
         Me.TabPage1.Controls.Add(Me.Label6)
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
+        Me.TabPage1.Controls.Add(Me.cbAccountType)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
@@ -147,7 +147,6 @@ Partial Class adminView
         'cbLocation
         '
         Me.cbLocation.FormattingEnabled = True
-        Me.cbLocation.Items.AddRange(New Object() {"Finse", "Flåm", "Haugastøl", "Myrdal", "Voss"})
         Me.cbLocation.Location = New System.Drawing.Point(406, 249)
         Me.cbLocation.Name = "cbLocation"
         Me.cbLocation.Size = New System.Drawing.Size(158, 21)
@@ -162,14 +161,13 @@ Partial Class adminView
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "E-postadresse"
         '
-        'ComboBox1
+        'cbAccountType
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Administrator", "Selger", "Lagermedarbeider"})
-        Me.ComboBox1.Location = New System.Drawing.Point(407, 222)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBox1.TabIndex = 14
+        Me.cbAccountType.FormattingEnabled = True
+        Me.cbAccountType.Location = New System.Drawing.Point(407, 222)
+        Me.cbAccountType.Name = "cbAccountType"
+        Me.cbAccountType.Size = New System.Drawing.Size(157, 21)
+        Me.cbAccountType.TabIndex = 14
         '
         'Label5
         '
@@ -284,7 +282,7 @@ Partial Class adminView
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Button3)
+        Me.TabPage2.Controls.Add(Me.btnSaveLocation)
         Me.TabPage2.Controls.Add(Me.Label11)
         Me.TabPage2.Controls.Add(Me.Label12)
         Me.TabPage2.Controls.Add(Me.Label13)
@@ -302,14 +300,14 @@ Partial Class adminView
         Me.TabPage2.Text = "Lokasjoner"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnSaveLocation
         '
-        Me.Button3.Location = New System.Drawing.Point(460, 178)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 25
-        Me.Button3.Text = "Lagre"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnSaveLocation.Location = New System.Drawing.Point(460, 178)
+        Me.btnSaveLocation.Name = "btnSaveLocation"
+        Me.btnSaveLocation.Size = New System.Drawing.Size(75, 23)
+        Me.btnSaveLocation.TabIndex = 25
+        Me.btnSaveLocation.Text = "Lagre"
+        Me.btnSaveLocation.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -444,7 +442,7 @@ Partial Class adminView
     Friend WithEvents Label7 As Label
     Friend WithEvents cbLocation As ComboBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbAccountType As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -459,7 +457,7 @@ Partial Class adminView
     Friend WithEvents btnLocationSearch As Button
     Friend WithEvents tbLocationSearch As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnSaveLocation As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label

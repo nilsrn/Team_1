@@ -87,7 +87,7 @@
     <Compile Include="Controller\Main.vb" />
     <Compile Include="Controller\Location.vb" />
     <Compile Include="Controller\Status.vb" />
-    <Compile Include="Controller\User.vb" />
+    <Compile Include="Controller\UserAccount.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
