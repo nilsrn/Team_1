@@ -26,6 +26,9 @@ Partial Class bicycleView
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(bicycleView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.cbStatusSearch = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbTypeSearch = New System.Windows.Forms.ComboBox()
         Me.cbType = New System.Windows.Forms.ComboBox()
         Me.cbCurrentLoc = New System.Windows.Forms.ComboBox()
         Me.cbDefaultLoc = New System.Windows.Forms.ComboBox()
@@ -44,9 +47,6 @@ Partial Class bicycleView
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnBicyclesSearch = New System.Windows.Forms.Button()
-        Me.cbTypeSearch = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbStatusSearch = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -89,6 +89,34 @@ Partial Class bicycleView
         Me.TabPage3.Text = "Sykler"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'cbStatusSearch
+        '
+        Me.cbStatusSearch.FormattingEnabled = True
+        Me.cbStatusSearch.Location = New System.Drawing.Point(152, 29)
+        Me.cbStatusSearch.Name = "cbStatusSearch"
+        Me.cbStatusSearch.Size = New System.Drawing.Size(123, 21)
+        Me.cbStatusSearch.TabIndex = 51
+        Me.cbStatusSearch.Text = "Status"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(17, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
+        Me.Label1.TabIndex = 50
+        Me.Label1.Text = "Filtrer"
+        '
+        'cbTypeSearch
+        '
+        Me.cbTypeSearch.FormattingEnabled = True
+        Me.cbTypeSearch.Location = New System.Drawing.Point(17, 29)
+        Me.cbTypeSearch.Name = "cbTypeSearch"
+        Me.cbTypeSearch.Size = New System.Drawing.Size(123, 21)
+        Me.cbTypeSearch.TabIndex = 49
+        Me.cbTypeSearch.Text = "Sykkeltype"
+        '
         'cbType
         '
         Me.cbType.FormattingEnabled = True
@@ -123,7 +151,6 @@ Partial Class bicycleView
         Me.rbStolen.Name = "rbStolen"
         Me.rbStolen.Size = New System.Drawing.Size(54, 17)
         Me.rbStolen.TabIndex = 45
-        Me.rbStolen.TabStop = True
         Me.rbStolen.Text = "Stjålet"
         Me.rbStolen.UseVisualStyleBackColor = True
         '
@@ -135,7 +162,6 @@ Partial Class bicycleView
         Me.rbService.Name = "rbService"
         Me.rbService.Size = New System.Drawing.Size(61, 17)
         Me.rbService.TabIndex = 44
-        Me.rbService.TabStop = True
         Me.rbService.Text = "Service"
         Me.rbService.UseVisualStyleBackColor = True
         '
@@ -147,13 +173,13 @@ Partial Class bicycleView
         Me.rbRented.Name = "rbRented"
         Me.rbRented.Size = New System.Drawing.Size(52, 17)
         Me.rbRented.TabIndex = 43
-        Me.rbRented.TabStop = True
         Me.rbRented.Text = "Utleid"
         Me.rbRented.UseVisualStyleBackColor = True
         '
         'rbAvailable
         '
         Me.rbAvailable.AutoSize = True
+        Me.rbAvailable.Checked = True
         Me.rbAvailable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.rbAvailable.Location = New System.Drawing.Point(427, 170)
         Me.rbAvailable.Name = "rbAvailable"
@@ -253,34 +279,6 @@ Partial Class bicycleView
         Me.btnBicyclesSearch.TabIndex = 23
         Me.btnBicyclesSearch.Text = "Søk"
         Me.btnBicyclesSearch.UseVisualStyleBackColor = True
-        '
-        'cbTypeSearch
-        '
-        Me.cbTypeSearch.FormattingEnabled = True
-        Me.cbTypeSearch.Location = New System.Drawing.Point(17, 29)
-        Me.cbTypeSearch.Name = "cbTypeSearch"
-        Me.cbTypeSearch.Size = New System.Drawing.Size(123, 21)
-        Me.cbTypeSearch.TabIndex = 49
-        Me.cbTypeSearch.Text = "Sykkeltype"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 13)
-        Me.Label1.TabIndex = 50
-        Me.Label1.Text = "Filtrer"
-        '
-        'cbStatusSearch
-        '
-        Me.cbStatusSearch.FormattingEnabled = True
-        Me.cbStatusSearch.Location = New System.Drawing.Point(152, 29)
-        Me.cbStatusSearch.Name = "cbStatusSearch"
-        Me.cbStatusSearch.Size = New System.Drawing.Size(123, 21)
-        Me.cbStatusSearch.TabIndex = 51
-        Me.cbStatusSearch.Text = "Status"
         '
         'bicycleView
         '

@@ -91,7 +91,6 @@ Public Class DbManager
         End Using
     End Sub
 
-
     'Function to verify that the application is connected to the Database. 
     Public Shared Async Function connectedToServerAsync(SqlConnection) As Task(Of Boolean) ' Nils
         Try
@@ -220,28 +219,6 @@ Public Class DbManager
         End Using
     End Sub
 
-
-
-
-
-    ' Function to check if a bicycle already exists
-    Public Shared Function duplicateBicycle(bicycleID As Integer) As Boolean ' Sven-Erik
-        Using SqlConnection As New MySqlConnection(connectionString)
-            Dim checkBicycleQuery As String = "SELECT COUNT(BicycleID) FROM Bicycle WHERE bicycleID =@bicycle"
-            Dim sqlCommand As New MySqlCommand(checkBicycleQuery, SqlConnection)
-            sqlCommand.Parameters.AddWithValue("@bicycle", bicycleID)
-            If connectedToServerAsync(SqlConnection).Result Then
-                Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
-                If results > 0 Then
-                    Return True
-                Else
-                    Return False
-                End If
-            End If
-        End Using
-        Return True
-    End Function
-
     ' Function to check if a customer already exists
     Public Shared Function duplicateCustomer(CustomerID As Integer) As Boolean ' Ådne og Silje 🙂
         Using SqlConnection As New MySqlConnection(connectionString)
@@ -258,80 +235,6 @@ Public Class DbManager
             End If
         End Using
         Return True
-    End Function
-
-
-    ' Function for creating/updating a new bicycle and storing it in the DB.
-    Public Shared Sub insertNewBicycle(bicycleID As Integer, BicycleType As String, DefaultLocation As String, CurrentLocation As String, Status As String) 'Sven-Erik
-        If Not duplicateBicycle(bicycleID) Then
-            Using SqlConnection As New MySqlConnection(connectionString)
-                Dim insertNewBicycle As String = "INSERT INTO Bicycle(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status) VALUES(@id,@type,@defloc,@curloc,@status)"
-                Dim SqlCommand As New MySqlCommand(insertNewBicycle, SqlConnection)
-                SqlCommand.Parameters.AddWithValue("@id", bicycleID)
-                SqlCommand.Parameters.AddWithValue("@type", BicycleType)
-                SqlCommand.Parameters.AddWithValue("@defloc", DefaultLocation)
-                SqlCommand.Parameters.AddWithValue("@curloc", CurrentLocation)
-                SqlCommand.Parameters.AddWithValue("@status", Status)
-
-                If connectedToServerAsync(SqlConnection).Result Then
-                    SqlCommand.ExecuteNonQuery()
-                    MsgBox(String.Format("{0} har blitt registrert", bicycleID))
-                End If
-                Return
-            End Using
-        ElseIf duplicateBicycle(bicycleID) Then
-            Using SqlConnection As New MySqlConnection(connectionString)
-                Dim updateBicycle As String = "UPDATE Bicycle SET BicycleType=@type, DefaultLocation=@defloc, CurrentLocation=@curloc, Status=@status WHERE BicycleID=@id"
-                Dim SqlCommand As New MySqlCommand(updateBicycle, SqlConnection)
-                SqlCommand.Parameters.AddWithValue("@id", bicycleID)
-                SqlCommand.Parameters.AddWithValue("@type", BicycleType)
-                SqlCommand.Parameters.AddWithValue("@defloc", DefaultLocation)
-                SqlCommand.Parameters.AddWithValue("@curloc", CurrentLocation)
-                SqlCommand.Parameters.AddWithValue("@status", Status)
-
-                If connectedToServerAsync(SqlConnection).Result Then
-                    SqlCommand.ExecuteNonQuery()
-                    MsgBox(String.Format("{0} har blitt oppdatert", bicycleID))
-                End If
-                Return
-            End Using
-        End If
-    End Sub
-
-    ' Function for deleting a bicycle.
-    Public Shared Sub DeleteBicycle(bicycleID As Integer) 'Sven-Erik
-        If MsgBox("Sikker på at du vil slette sykkelen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Using SqlConnection As New MySqlConnection(connectionString)
-                Dim deleteBicycle As String = "DELETE FROM Bicycle WHERE BicycleID=@id"
-                Dim SqlCommand As New MySqlCommand(deleteBicycle, SqlConnection)
-                SqlCommand.Parameters.AddWithValue("@id", bicycleID)
-                If connectedToServerAsync(SqlConnection).Result Then
-                    SqlCommand.ExecuteNonQuery()
-                    MsgBox(String.Format("{0} har blitt slettet", bicycleID))
-                End If
-                Return
-            End Using
-        End If
-    End Sub
-
-
-
-
-
-
-    ' Function to check if an ID already exists. Not finished.
-    Public Shared Function duplicateID(ID As String, DB As String, input As Integer) As Boolean ' Sven-Erik
-        Using SqlConnection As New MySqlConnection(connectionString)
-            Dim query As String = "SELECT COUNT(@id) FROM @db WHERE @id=@input"
-            Dim SqlCommand As New MySqlCommand(query, SqlConnection)
-            SqlCommand.Parameters.AddWithValue("@id", ID)
-            SqlCommand.Parameters.AddWithValue("@DB", DB)
-            SqlCommand.Parameters.AddWithValue("@input", input)
-            If connectedToServerAsync(SqlConnection).Result Then
-                SqlCommand.ExecuteNonQuery()
-            End If
-            Return True
-        End Using
     End Function
 End Class
 

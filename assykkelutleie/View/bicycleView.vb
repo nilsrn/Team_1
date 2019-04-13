@@ -54,6 +54,20 @@ Public Class bicycleView 'Sven-Erik
         Next
     End Sub
 
+    Private Function bicycleStatus() ' Function to check which status that is selected
+        Dim status As String
+        If rbAvailable.Checked = True Then
+            status = "Ledig"
+        ElseIf rbRented.Checked = True Then
+            status = "Utleid"
+        ElseIf rbService.Checked = True Then
+            status = "Service"
+        ElseIf rbStolen.Checked = True Then
+            status = "Stjålet"
+        End If
+        Return status
+    End Function
+
     Private Sub BicyclesView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
         CbPutComboBox()
         PutLbBicycles(GetAllBicycles)
@@ -85,27 +99,34 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click 'Deletes the selcted item.
-        Dim framenbr As Integer = txtFramenbr.Text
-        DbManager.DeleteBicycle(framenbr)
+        If MsgBox("Sikker på at du vil slette sykkelen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Try
+                Dim bicycle As New Bicycle()
+                Dim bicycleID As Integer = lbBicycle.SelectedValue
+                DbManager.Delete(bicycle, "BicycleID", bicycleID)
+            Catch ex As Exception
+            End Try
+        End If
         PutLbBicycles(GetAllBicycles)
     End Sub
 
     Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click 'Adds or updates the DB according to the input.
-        Dim framenbr As Integer = txtFramenbr.Text
-        Dim bicycleType As String = cbType.SelectedValue
-        Dim defaultLocation As String = cbDefaultLoc.SelectedValue
-        Dim currentLocation As String = cbCurrentLoc.SelectedValue
-        Dim status As String
-        If rbAvailable.Checked = True Then
-            status = "Ledig"
-        ElseIf rbRented.Checked = True Then
-            status = "Utleid"
-        ElseIf rbService.Checked = True Then
-            status = "Service"
-        ElseIf rbStolen.Checked = True Then
-            status = "Stjålet"
+        Dim framenbr As Integer
+        Dim bicycleType, defaultLocation, currentLocation, status As String
+        If txtFramenbr.Text = "" Then
+            MessageBox.Show("Rammenummer må fylles ut")
+        Else
+            Try
+                framenbr = txtFramenbr.Text
+                bicycleType = cbType.SelectedValue
+                defaultLocation = cbDefaultLoc.SelectedValue
+                currentLocation = cbCurrentLoc.SelectedValue
+                status = bicycleStatus()
+                Dim updateBicycle As New Bicycle(framenbr, bicycleType, defaultLocation, currentLocation, status)
+                DbManager.InsertOrUpdate(updateBicycle)
+            Catch ex As Exception
+            End Try
         End If
-        DbManager.insertNewBicycle(framenbr, bicycleType, defaultLocation, currentLocation, status)
         PutLbBicycles(GetAllBicycles)
     End Sub
 End Class

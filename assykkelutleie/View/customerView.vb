@@ -79,7 +79,7 @@ Public Class customerView
                 query = "UPDATE Customer "
                 query &= "SET FirstName='" & firstname & "', Surname='" & surname & "', Email='" & email & "' "
                 query &= "WHERE CustomerID='" & phone & "'"
-            ElseIf DbManager.duplicateBicycle(phone) = False Then
+            ElseIf DbManager.duplicateCustomer(phone) = False Then
                 query = "INSERT INTO Customer (CustomerID, FirstName, Surname, Email) "
                 query &= "VALUES ('" & phone & "', " & "'" & firstname & "', " & "'" & surname & "', " & "'" & email & "')"
             End If

@@ -34,29 +34,29 @@
         End Set
     End Property
 
-    Public Property gearSystem() As Integer
+    Public Property gearSystem() As String
         Get
             Return m_gir
         End Get
-        Set(value As Integer)
+        Set(value As String)
             m_gir = value
         End Set
     End Property
 
-    Public Property WheelSize() As Integer
+    Public Property WheelSize() As String
         Get
             Return m_hjul
         End Get
-        Set(value As Integer)
+        Set(value As String)
             m_hjul = value
         End Set
     End Property
 
-    Public Property FrameSize() As Integer
+    Public Property FrameSize() As String
         Get
             Return m_ramme
         End Get
-        Set(value As Integer)
+        Set(value As String)
             m_ramme = value
         End Set
     End Property

@@ -14,11 +14,11 @@
         m_status = Status
     End Sub
 
-    Public Property BicycleID() As String
+    Public Property BicycleID() As Integer
         Get
             Return m_rammenummer
         End Get
-        Set(value As String)
+        Set(value As Integer)
             m_rammenummer = value
         End Set
     End Property
@@ -32,29 +32,29 @@
         End Set
     End Property
 
-    Public Property DefaultLocation() As Integer
+    Public Property DefaultLocation() As String
         Get
             Return m_stdlok
         End Get
-        Set(value As Integer)
+        Set(value As String)
             m_stdlok = value
         End Set
     End Property
 
-    Public Property CurrentLocation() As Integer
+    Public Property CurrentLocation() As String
         Get
             Return m_gjlok
         End Get
-        Set(value As Integer)
+        Set(value As String)
             m_gjlok = value
         End Set
     End Property
 
-    Public Property Status() As Integer
+    Public Property Status() As String
         Get
             Return m_status
         End Get
-        Set(value As Integer)
+        Set(value As String)
             m_status = value
         End Set
     End Property
