@@ -1,10 +1,10 @@
 ﻿Public Class UserAccount
     Dim m_username, m_password, m_salt, m_accountType, m_location, m_firstName, m_surname, m_email, m_telephoneNumber As String
 
-    Public Sub New(username, password, salt, accountType, location, firstName, surname, email, telephoneNumber)
+    Public Sub New(username, accountType, location, firstName, surname, email, telephoneNumber)
         m_username = username
-        m_password = Encryption.HashString(password)
-        m_salt = Encryption.GenerateSalt(salt)
+        m_password = Encryption.HashString(Password)
+        m_salt = Encryption.GenerateSalt()
         m_accountType = accountType
         m_location = location
         m_firstName = firstName

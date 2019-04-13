@@ -38,7 +38,7 @@ Public Class DbManager
     End Sub
 
     ' Function to check if a user already exists
-    Private Shared Function duplicateUser(username As String) As Boolean ' Nils
+    Public Shared Function duplicateUser(username As String) As Boolean ' Nils
         Using SqlConnection As New MySqlConnection(connectionString)
             Dim checkUserQuery As String = "SELECT COUNT(Username) FROM UserAccount WHERE username =@user"
             Dim sqlCommand As New MySqlCommand(checkUserQuery, SqlConnection)
