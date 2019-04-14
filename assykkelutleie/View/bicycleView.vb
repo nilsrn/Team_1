@@ -129,4 +129,6 @@ Public Class bicycleView 'Sven-Erik
         End If
         PutLbBicycles(GetAllBicycles)
     End Sub
+
+
 End Class

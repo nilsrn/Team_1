@@ -21,4 +21,27 @@ Public Class rentalView
         PutCustomer(customerTable)
 
     End Sub
+    Private Sub CbPutComboBox() 'Populates the comboboxes.
+
+        Dim bicycletype As New BicycleType()
+        Dim location As New Location()
+
+
+        pickbike.DataSource = DbManager.GetAll(bicycletype)
+        pickequipment.DataSource = DbManager.GetAll(Equipment)
+        extradition.DataSource = DbManager.GetAll(location)
+        filing.DataSource = DbManager.GetAll(location)
+
+        pickbike.DisplayMember = "Name"
+        pickequipment.DisplayMember = "Name"
+        extradition.DisplayMember = "Name"
+        filing.DisplayMember = "Name"
+        cbCurrentLoc.DisplayMember = "Name"
+
+        cbStatusSearch.ValueMember = "Name"
+        cbType.ValueMember = "Name"
+        cbTypeSearch.ValueMember = "Name"
+        cbDefaultLoc.ValueMember = "Name"
+        cbCurrentLoc.ValueMember = "Name"
+    End Sub
 End Class
