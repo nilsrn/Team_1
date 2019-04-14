@@ -99,6 +99,7 @@ Public Class bicycleView 'Sven-Erik
         PutLbBicycles(bicycleTable)
         If txtFramenbr.Text = "" Then
             PutBicyclesFilter()
+            cbStatusSearch.SelectedValue = "Alle"
         End If
     End Sub
 
