@@ -1,12 +1,18 @@
 ﻿Public Class Encryption ' Nils
     Private cryptoServiceProvider As System.Security.Cryptography.RNGCryptoServiceProvider  'Using RNGCrypto SP to generate real random results. 
 
+    'Function for escaping to avoid SQL-injection
+    Public Shared Function Escaping(str As String)
+        str.Replace("'", "\'")
+        Return str
+    End Function
+
     ' Function to share HashString value
     Public Shared Function HashString(str As String) As String
         Return EncryptString(str)
     End Function
 
-    'Function for generating a random salt. Returnerer string. 
+    'Function for generating a random salt. Returns a true random string. 
     Public Shared Function GenerateSalt() As String
         Using cryptoServiceProvider As New System.Security.Cryptography.RNGCryptoServiceProvider
             Dim sb As New System.Text.StringBuilder()

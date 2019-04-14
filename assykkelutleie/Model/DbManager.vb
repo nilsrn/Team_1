@@ -2,18 +2,13 @@
 Imports System.Reflection 'Provides objects that describe assemblies, modules and types.
 
 Public Class DbManager
-
+#Region "General databse functions"
     Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Vurdere sikkerheten her
     'Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
 
-    Public Shared Function Escaping(str As String) 'General function for escaping to avoid SQL-injection
-        str.Replace("'", "\'")
-        Return str
-    End Function
-
-    ' Function for creating a new user and storing it in the DB. Not finished. 
-    Public Shared Sub insertNewUser(username As String, password As String, salt As String, accountType As String, location As String, firstName As String, surname As String, email As String, telephonenumber As String) 'Nils
-        If Not duplicateUser(username) Then
+    ' Creates a new user and storing it in the DB. Not finished. will be moved
+    Public Shared Sub InsertNewUser(username As String, password As String, salt As String, accountType As String, location As String, firstName As String, surname As String, email As String, telephonenumber As String) 'Nils
+        If Not DuplicatedUser(username) Then
             Using SqlConnection As New MySqlConnection(connectionString)
                 Dim insertNewUser As String = "INSERT INTO UserAccount(Username, Password, Salt, AccountType, Location, FirstName, Surname, Email, TelephoneNumber) VALUES(@user,@pass,@salt,@acc,@loc,@first,@sur,@email,@tel)"
                 Dim SqlCommand As New MySqlCommand(insertNewUser, SqlConnection)
@@ -27,7 +22,7 @@ Public Class DbManager
                 SqlCommand.Parameters.AddWithValue("@email", email)
                 SqlCommand.Parameters.AddWithValue("@tel", telephonenumber)
 
-                If connectedToServerAsync(SqlConnection).Result Then
+                If ConnectedToServerAsync(SqlConnection).Result Then
                     SqlCommand.ExecuteNonQuery()
                     MsgBox(String.Format("{0} har blitt registrert som bruker", username))
                 End If
@@ -37,13 +32,13 @@ Public Class DbManager
         MsgBox(String.Format("{0} er allerede registrert i systemet", username))
     End Sub
 
-    ' Function to check if a user already exists
-    Public Shared Function duplicateUser(username As String) As Boolean ' Nils
+    ' Function to check if a user already exists - Must be made general
+    Public Shared Function DuplicatedUser(username As String) As Boolean ' Nils
         Using SqlConnection As New MySqlConnection(connectionString)
             Dim checkUserQuery As String = "SELECT COUNT(Username) FROM UserAccount WHERE username =@user"
             Dim sqlCommand As New MySqlCommand(checkUserQuery, SqlConnection)
             sqlCommand.Parameters.AddWithValue("@user", username)
-            If connectedToServerAsync(SqlConnection).Result Then
+            If ConnectedToServerAsync(SqlConnection).Result Then
                 Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
                 If results > 0 Then
                     Return True
@@ -55,8 +50,8 @@ Public Class DbManager
         Return True
     End Function
 
-    ' Function for logging in
-    Public Shared Sub login(username As String, password As String) 'nils
+    ' Login
+    Public Shared Sub Login(username As String, password As String) 'nils
         Dim salt As String = ""
 
         Using sqlconnection As New MySqlConnection(connectionString)
@@ -64,7 +59,7 @@ Public Class DbManager
             Dim sqlcommand As New MySqlCommand(readsaltquery, sqlconnection)
             sqlcommand.Parameters.AddWithValue("@user", username)
 
-            If connectedToServerAsync(sqlconnection).Result Then
+            If ConnectedToServerAsync(sqlconnection).Result Then
                 Dim reader As MySqlDataReader = sqlcommand.ExecuteReader()
                 While reader.Read()
                     salt = reader("salt").ToString()
@@ -91,16 +86,18 @@ Public Class DbManager
         End Using
     End Sub
 
-    'Function to verify that the application is connected to the Database. 
-    Public Shared Async Function connectedToServerAsync(SqlConnection) As Task(Of Boolean) ' Nils
+    'Function to verify that the application is connected to the database. Also opens a connection to the database
+    Public Shared Async Function ConnectedToServerAsync(SqlConnection) As Task(Of Boolean) ' Nils
         Try
             Await SqlConnection.OpenAsync()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
         Return SqlConnection.State
-    End Function 'Add; "If ConnectedToServerAsync(SqlConnection).Result Then" to verify that the connection is established before executing the query
+    End Function 'Add; "If ConnectedToServerAsync(SqlConnection).Result Then" to verify that the connection is established and open a connection to the database before executing a query
+#End Region
 
+#Region "Get functions for the database"
     Public Shared Function GetTableName(obj As Object)   'Gets the name to the object that equals the tablename in the database. 
         Dim t As Type = obj.GetType()
         Return t.Name
@@ -167,16 +164,17 @@ Public Class DbManager
         objectStringValues = objectStringValues.Substring(0, objectStringValues.Length - 2) 'Removes the last comma in the string to avoid syntaxerrors 
         Return objectStringValues
     End Function
+#End Region
 
-    Public Shared Function Insert(x As Object)   'Adds an object(x) to the database
+#Region "Insert, update and delete functions for the database"
+    Public Shared Sub Insert(x As Object)   'Adds an object(x) to the database
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim sqlcommand As New MySqlCommand("INSERT INTO " & GetTableName(x) & " (" & GetAllTableNames(x) & ") VALUES (" & GetAllValues(x) & ")", sqlconnection)
-            If connectedToServerAsync(sqlconnection).Result Then
+            If ConnectedToServerAsync(sqlconnection).Result Then
                 sqlcommand.ExecuteNonQuery()
             End If
         End Using
-        Return True
-    End Function
+    End Sub
 
     Public Shared Sub Update(x As Object)  'Gets all the tables and values for the object(x) to be updated and then updates the record.
         Dim tableList As New List(Of String)
@@ -186,39 +184,35 @@ Public Class DbManager
                 Dim sqlcommand As New MySqlCommand("UPDATE " & GetTableName(x) & " SET " & row & " = @value WHERE " & tableList.First() & " = @primarykey", sqlconnection)
                 sqlcommand.Parameters.AddWithValue("@value", CallByName(x, row, CallType.Method))    'Gets the value of the object's property
                 sqlcommand.Parameters.AddWithValue("@primarykey", CallByName(x, tableList.First(), CallType.Method))   'Gets the value for the first property(primary key) for the object(x).
-                Try
-                    sqlconnection.Open()
+                If ConnectedToServerAsync(sqlconnection).Result Then
                     sqlcommand.ExecuteNonQuery()
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-                sqlconnection.Close()
+                    sqlconnection.Close()
+                End If
             Next
         End Using
     End Sub
 
-    Public Shared Function InsertOrUpdate(x As Object)   'Sjekker om objektet finnes fra før og kjører insert dersom det ikke gjør det, eller oppdater dersom det finnes
+    Public Shared Sub InsertOrUpdate(x As Object)   'Checks if the object exists. If it does not exist it will execute an Insert. If it does exist it will do an Update.
         Dim listeAvProperties = GetProperties(x)
-        If GetSpecific(x, Escaping(CallByName(x, listeAvProperties(0), CallType.Method))).rows.count() = 0 Then
+        If GetSpecific(x, Encryption.Escaping(CallByName(x, listeAvProperties(0), CallType.Method))).rows.count() = 0 Then
             Insert(x)
             MsgBox(String.Format("{0} har blitt opprettet", x))
         Else
             Update(x)
             MsgBox(String.Format("{0} har blitt oppdatert", x))
         End If
-        Return True
-    End Function
+    End Sub
 
     Public Shared Sub Delete(x As Object, column As String, condition As String) 'Deletes an object(x) from the database
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim sqlcommand As New MySqlCommand("DELETE FROM " & GetTableName(x) & " WHERE " & column & " = @condition", sqlconnection)
             sqlcommand.Parameters.AddWithValue("@condition", condition)
-            If connectedToServerAsync(sqlconnection).Result Then
+            If ConnectedToServerAsync(sqlconnection).Result Then
                 sqlcommand.ExecuteNonQuery()
             End If
         End Using
     End Sub
-
+#End Region
     ' Function to check if a customer already exists
     Public Shared Function duplicateCustomer(CustomerID As Integer) As Boolean ' Ådne og Silje 🙂
         Using SqlConnection As New MySqlConnection(connectionString)
