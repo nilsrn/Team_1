@@ -24,12 +24,12 @@ Public Class DbManager
 
                 If ConnectedToServerAsync(SqlConnection).Result Then
                     SqlCommand.ExecuteNonQuery()
-                    MsgBox(String.Format("{0} har blitt registrert som bruker", username))
+                    MsgBox(String.Format("{0} har blitt registrert som bruker", username)) 'Needs verification 31
                 End If
                 Return
             End Using
         End If
-        MsgBox(String.Format("{0} er allerede registrert i systemet", username))
+        MsgBox(String.Format("{0} er allerede registrert i systemet", username)) 'Needs verification 31
     End Sub
 
     ' Function to check if a user already exists - Must be made general
@@ -47,12 +47,12 @@ Public Class DbManager
                 End If
             End If
         End Using
-        Return True
+        Return True 'Returns true if the query fails to run
     End Function
 
     ' Login
-    Public Shared Sub Login(username As String, password As String) 'nils
-        Dim salt As String = ""
+    Public Shared Sub Login(username As String, password As String) 'Nils
+        Dim salt As String = "" 'Empty because using a DataReader wich will get the specific users salt from the DB. 
 
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim readsaltquery As String = "SELECT * FROM UserAccount WHERE username=@user"
@@ -60,7 +60,7 @@ Public Class DbManager
             sqlcommand.Parameters.AddWithValue("@user", username)
 
             If ConnectedToServerAsync(sqlconnection).Result Then
-                Dim reader As MySqlDataReader = sqlcommand.ExecuteReader()
+                Dim reader As MySqlDataReader = sqlcommand.ExecuteReader() 'Gets the salt for the user
                 While reader.Read()
                     salt = reader("salt").ToString()
                 End While
@@ -70,17 +70,17 @@ Public Class DbManager
                 Dim hashedandsalted = Encryption.HashString(String.Format("{0}{1}", pass, salt))
 
                 Dim checkloginquery As String = "SELECT COUNT(*) FROM UserAccount WHERE username =@user AND password =@pass"
-                Dim sqlcommand0 As New MySqlCommand(checkloginquery, sqlconnection)
-                sqlcommand0.Parameters.AddWithValue("@user", username)
-                sqlcommand0.Parameters.AddWithValue("@pass", hashedandsalted)
+                Dim sqlcommand1 As New MySqlCommand(checkloginquery, sqlconnection)
+                sqlcommand1.Parameters.AddWithValue("@user", username)
+                sqlcommand1.Parameters.AddWithValue("@pass", hashedandsalted)
 
-                Dim results As Integer = Convert.ToInt32(sqlcommand0.ExecuteScalar)
+                Dim results As Integer = Convert.ToInt32(sqlcommand1.ExecuteScalar) ' Reads the ammount of results
                 If results = 1 Then
-                    MsgBox("Velkommen: " & username)
+                    MsgBox("Velkommen: " & username, MsgBoxStyle.Information, "AS SykkelUtleie")
                     mainView.Show()
                     loginView.Hide()
                 Else
-                    MsgBox("feil brukernavn eller passord.")
+                    MsgBox("Feil brukernavn eller passord.", MsgBoxStyle.Critical, "AS SykkelUtleie")
                 End If
             End If
         End Using
@@ -193,8 +193,8 @@ Public Class DbManager
     End Sub
 
     Public Shared Sub InsertOrUpdate(x As Object)   'Checks if the object exists. If it does not exist it will execute an Insert. If it does exist it will do an Update.
-        Dim listeAvProperties = GetProperties(x)
-        If GetSpecific(x, Encryption.Escaping(CallByName(x, listeAvProperties(0), CallType.Method))).rows.count() = 0 Then
+        Dim listOfProperties = GetProperties(x)
+        If GetSpecific(x, Encryption.Escaping(CallByName(x, listOfProperties(0), CallType.Method))).rows.count() = 0 Then
             Insert(x)
             MsgBox(String.Format("{0} har blitt opprettet", x))
         Else

@@ -1,10 +1,10 @@
 ﻿Public Class UserAccount
     Dim m_username, m_password, m_salt, m_accountType, m_location, m_firstName, m_surname, m_email, m_telephoneNumber As String
 
-    Public Sub New(username, accountType, location, firstName, surname, email, telephoneNumber)
+    Public Sub New(username, password, salt, accountType, location, firstName, surname, email, telephoneNumber)
         m_username = username
-        m_password = Encryption.HashString(Password)
-        m_salt = Encryption.GenerateSalt()
+        m_password = password
+        m_salt = salt
         m_accountType = accountType
         m_location = location
         m_firstName = firstName
@@ -30,7 +30,7 @@
     Public Sub New()
     End Sub
 
-    Public Property username() As String
+    Public Property Username() As String
         Get
             Return m_username
         End Get
@@ -110,10 +110,5 @@
             m_telephoneNumber = value
         End Set
     End Property
-
-    'Dim username As String = "Admins"
-    'Dim password = Encryption.HashString("Tastatur123")
-    'Dim salt = Encryption.GenerateSalt
-    'Dim hashedAndSalted = Encryption.HashString(String.Format("{0}{1}", password, salt))
 
 End Class

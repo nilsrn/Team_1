@@ -41,8 +41,8 @@
                 tbUsername.Text = row("username")
                 tbFirstName.Text = row("firstname")
                 tbSurname.Text = row("surname")
-                tbPassword.Text = row("password")
-                tbEmail.Text = row("email")
+            'tbPassword.Text = ""
+            tbEmail.Text = row("email")
                 tbPhoneNumber.Text = row("TelephoneNumber")
                 cbAccountType.Text = row("AccountType")
                 cbUserLocation.Text = row("Location")
@@ -59,27 +59,33 @@
 
         End Sub
 
-        Private Sub btnUserSave_Click(sender As Object, e As EventArgs) Handles btnUserSave.Click
-            Dim username, firstname, surname, password, salt, email, telephoneNumber, accounttype, userlocation As String
-            Try
-                username = tbUsername.Text
-                firstname = tbFirstName.Text
-                surname = tbSurname.Text
-                password = tbPassword.Text
-                salt = Encryption.GenerateSalt
-                email = tbEmail.Text
-                telephoneNumber = tbLocationTelephoneNumber.Text
-                accounttype = cbAccountType.Text
-                userlocation = cbUserLocation.Text
+    Private Sub btnUserSave_Click(sender As Object, e As EventArgs) Handles btnUserSave.Click
+        Dim username, firstname, surname, email, telephoneNumber, accounttype, location As String
+        Dim password0, password, salt
+        Try
+            username = tbUsername.Text
+            password0 = Encryption.HashString(tbPassword.Text) 'Hashes the password typed in the tbPassword field.
+            salt = Encryption.GenerateSalt
+            password = Encryption.HashString(String.Format("{0}{1}", password0, salt)) ' Merges the password and salt and hashes them again. This value gets stored as the password in the database.
+            firstname = tbFirstName.Text
+            surname = tbSurname.Text
+            email = tbEmail.Text
+            telephoneNumber = tbLocationTelephoneNumber.Text
+            accounttype = cbAccountType.Text
+            location = cbUserLocation.Text
+            Dim updateUser As New UserAccount(username, password, salt, accounttype, location, firstname, surname, email, telephoneNumber)
+            DbManager.InsertOrUpdate(updateUser)
+        Catch ex As Exception
+            MsgBox("Feil input - all tekst må fylles ut")
+        End Try
+        tbPassword.Text = ""
+        GetAllUsers()
+    End Sub
 
-                Dim updateUser As New UserAccount(username, accounttype, Location, firstname, surname, email, telephoneNumber)
-                DbManager.InsertOrUpdate(updateUser)
-            Catch ex As Exception
-                MsgBox("Feil input - all tekst må fylles ut")
-            End Try
-
-            GetAllUsers()
-        End Sub
+    'Dim username As String = "Admins"
+    'Dim password = Encryption.HashString("Tastatur123")
+    'Dim salt = Encryption.GenerateSalt
+    'Dim hashedAndSalted = Encryption.HashString(String.Format("{0}{1}", password, salt))
 #End Region
 
 #Region "Code for the location tab"
