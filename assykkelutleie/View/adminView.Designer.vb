@@ -36,7 +36,7 @@ Partial Class adminView
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.tbPhoneNumber = New System.Windows.Forms.TextBox()
+        Me.tbUserPhoneNumber = New System.Windows.Forms.TextBox()
         Me.tbEmail = New System.Windows.Forms.TextBox()
         Me.tbSurname = New System.Windows.Forms.TextBox()
         Me.tbPassword = New System.Windows.Forms.TextBox()
@@ -60,7 +60,6 @@ Partial Class adminView
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.btnCreateUser = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -80,7 +79,6 @@ Partial Class adminView
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.btnCreateUser)
         Me.TabPage1.Controls.Add(Me.btnUserSave)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.Label8)
@@ -92,7 +90,7 @@ Partial Class adminView
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.tbPhoneNumber)
+        Me.TabPage1.Controls.Add(Me.tbUserPhoneNumber)
         Me.TabPage1.Controls.Add(Me.tbEmail)
         Me.TabPage1.Controls.Add(Me.tbSurname)
         Me.TabPage1.Controls.Add(Me.tbPassword)
@@ -207,12 +205,12 @@ Partial Class adminView
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Fornavn:"
         '
-        'tbPhoneNumber
+        'tbUserPhoneNumber
         '
-        Me.tbPhoneNumber.Location = New System.Drawing.Point(383, 193)
-        Me.tbPhoneNumber.Name = "tbPhoneNumber"
-        Me.tbPhoneNumber.Size = New System.Drawing.Size(192, 20)
-        Me.tbPhoneNumber.TabIndex = 9
+        Me.tbUserPhoneNumber.Location = New System.Drawing.Point(383, 193)
+        Me.tbUserPhoneNumber.Name = "tbUserPhoneNumber"
+        Me.tbUserPhoneNumber.Size = New System.Drawing.Size(192, 20)
+        Me.tbUserPhoneNumber.TabIndex = 9
         '
         'tbEmail
         '
@@ -410,15 +408,6 @@ Partial Class adminView
         Me.TabPage4.Text = "Utstyrstyper"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'btnCreateUser
-        '
-        Me.btnCreateUser.Location = New System.Drawing.Point(83, 271)
-        Me.btnCreateUser.Name = "btnCreateUser"
-        Me.btnCreateUser.Size = New System.Drawing.Size(128, 23)
-        Me.btnCreateUser.TabIndex = 21
-        Me.btnCreateUser.Text = "Opprett ny bruker"
-        Me.btnCreateUser.UseVisualStyleBackColor = True
-        '
         'adminView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -458,7 +447,7 @@ Partial Class adminView
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents tbPhoneNumber As TextBox
+    Friend WithEvents tbUserPhoneNumber As TextBox
     Friend WithEvents tbEmail As TextBox
     Friend WithEvents tbSurname As TextBox
     Friend WithEvents tbPassword As TextBox
@@ -475,5 +464,4 @@ Partial Class adminView
     Friend WithEvents tbLocationTelephoneNumber As TextBox
     Friend WithEvents tbLocationAddress As TextBox
     Friend WithEvents tbLocationName As TextBox
-    Friend WithEvents btnCreateUser As Button
 End Class

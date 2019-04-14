@@ -38,15 +38,14 @@
 
         Private Sub PutUserAccount(userTable As DataTable)    'Populates the textboxes with the selected user data.
             For Each row In userTable.Rows
-                tbUsername.Text = row("username")
-                tbFirstName.Text = row("firstname")
-                tbSurname.Text = row("surname")
-            'tbPassword.Text = ""
+            tbUsername.Text = row("username")
+            tbFirstName.Text = row("firstname")
+            tbSurname.Text = row("surname")
             tbEmail.Text = row("email")
-                tbPhoneNumber.Text = row("TelephoneNumber")
-                cbAccountType.Text = row("AccountType")
-                cbUserLocation.Text = row("Location")
-            Next
+            tbUserPhoneNumber.Text = row("TelephoneNumber")
+            cbAccountType.Text = row("AccountType")
+            cbUserLocation.Text = row("Location")
+        Next
         End Sub
 
         Private Sub lbUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbUsers.SelectedIndexChanged   'Populates the textboxes based on the chosen user in the listbox.
@@ -70,11 +69,16 @@
             firstname = tbFirstName.Text
             surname = tbSurname.Text
             email = tbEmail.Text
-            telephoneNumber = tbLocationTelephoneNumber.Text
+            telephoneNumber = tbUserPhoneNumber.Text
             accounttype = cbAccountType.Text
             location = cbUserLocation.Text
+            'If tbPassword.Text = "" Then
+            'Dim updateUser As New UserAccount(username, accounttype, location, firstname, surname, email, telephoneNumber)
+            'DbManager.InsertOrUpdate(updateUser)
+            'Else
             Dim updateUser As New UserAccount(username, password, salt, accounttype, location, firstname, surname, email, telephoneNumber)
-            DbManager.InsertOrUpdate(updateUser)
+                DbManager.InsertOrUpdate(updateUser)
+            'End If
         Catch ex As Exception
             MsgBox("Feil input - all tekst må fylles ut")
         End Try
