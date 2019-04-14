@@ -25,6 +25,7 @@ Public Class rentalView
 
         Dim bicycletype As New BicycleType()
         Dim location As New Location()
+        Dim equipment As New Equipment()
 
 
         pickbike.DataSource = DbManager.GetAll(bicycletype)
@@ -36,12 +37,11 @@ Public Class rentalView
         pickequipment.DisplayMember = "Name"
         extradition.DisplayMember = "Name"
         filing.DisplayMember = "Name"
-        cbCurrentLoc.DisplayMember = "Name"
 
-        cbStatusSearch.ValueMember = "Name"
-        cbType.ValueMember = "Name"
-        cbTypeSearch.ValueMember = "Name"
-        cbDefaultLoc.ValueMember = "Name"
-        cbCurrentLoc.ValueMember = "Name"
+        pickbike.ValueMember = "Name"
+        pickequipment.ValueMember = "Name"
+        extradition.ValueMember = "Name"
+        filing.ValueMember = "Name"
+
     End Sub
 End Class
