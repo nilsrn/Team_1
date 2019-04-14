@@ -1,27 +1,33 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class bicycleView 'Sven-Erik
+#Region "Functions"
     Private Sub CbPutComboBox() 'Populates the comboboxes.
         Dim status As New Status()
         Dim bicycletype As New BicycleType()
         Dim location As New Location()
 
-        cbStatusSearch.DataSource = DbManager.GetAll(status)
+        'Adds an extra row "Alle" to  cbStatusSearch
+        Dim dt As DataTable = DbManager.GetAll(status)
+        Dim row As DataRow = dt.NewRow
+        row("Name") = "Alle"
+        dt.Rows.InsertAt(row, 0)
+
         cbType.DataSource = DbManager.GetAll(bicycletype)
-        cbTypeSearch.DataSource = DbManager.GetAll(bicycletype)
         cbDefaultLoc.DataSource = DbManager.GetAll(location)
         cbCurrentLoc.DataSource = DbManager.GetAll(location)
 
-        cbStatusSearch.DisplayMember = "Name"
         cbType.DisplayMember = "Name"
-        cbTypeSearch.DisplayMember = "Name"
         cbDefaultLoc.DisplayMember = "Name"
         cbCurrentLoc.DisplayMember = "Name"
+        cbStatusSearch.DisplayMember = "Name"
 
-        cbStatusSearch.ValueMember = "Name"
         cbType.ValueMember = "Name"
-        cbTypeSearch.ValueMember = "Name"
         cbDefaultLoc.ValueMember = "Name"
         cbCurrentLoc.ValueMember = "Name"
+        cbStatusSearch.ValueMember = "Name"
+
+        cbStatusSearch.DataSource = dt
+        cbStatusSearch.SelectedIndex = 0
     End Sub
 
     Private Sub PutLbBicycles(table As DataTable) 'Populates the listbox with data received from the DB. 
@@ -35,6 +41,17 @@ Public Class bicycleView 'Sven-Erik
         Dim bicyclesTable As DataTable = DbManager.GetAll(bicycle)
         Return bicyclesTable
     End Function
+
+    Private Sub PutBicyclesFilter() 'Returns a DataTable with bicycles corresponding with the filter.
+        If cbStatusSearch.SelectedValue.ToString = "Alle" Then
+            PutLbBicycles(GetAllBicycles)
+        Else
+            Dim bicycleSearch As New Bicycle()
+            Dim status As String = cbStatusSearch.SelectedValue.ToString
+            Dim bicycleTable As DataTable = DbManager.bicycleFilter(bicycleSearch, status)
+            PutLbBicycles(bicycleTable)
+        End If
+    End Sub
 
     Private Sub PutBicycles(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
@@ -67,7 +84,9 @@ Public Class bicycleView 'Sven-Erik
         End If
         Return status
     End Function
+#End Region
 
+#Region "Actions"
     Private Sub BicyclesView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
         CbPutComboBox()
         PutLbBicycles(GetAllBicycles)
@@ -79,7 +98,7 @@ Public Class bicycleView 'Sven-Erik
         Dim bicycleTable As DataTable = DbManager.GetSpecific(bicycleSearch, bicycle)
         PutLbBicycles(bicycleTable)
         If txtFramenbr.Text = "" Then
-            PutLbBicycles(GetAllBicycles)
+            PutBicyclesFilter()
         End If
     End Sub
 
@@ -107,7 +126,7 @@ Public Class bicycleView 'Sven-Erik
             Catch ex As Exception
             End Try
         End If
-        PutLbBicycles(GetAllBicycles)
+        PutBicyclesFilter()
     End Sub
 
     Private Sub BtnBicycleSave_Click(sender As Object, e As EventArgs) Handles btnBicycleSave.Click 'Adds or updates the DB according to the input.
@@ -127,6 +146,18 @@ Public Class bicycleView 'Sven-Erik
             Catch ex As Exception
             End Try
         End If
-        PutLbBicycles(GetAllBicycles)
+        PutBicyclesFilter()
     End Sub
+
+    Private Sub CbStatusSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbStatusSearch.SelectedIndexChanged 'Updates the listbox according to the filter input.
+        If cbStatusSearch.SelectedValue.ToString = "Alle" Then
+            PutLbBicycles(GetAllBicycles)
+        Else
+            Dim bicycleSearch As New Bicycle()
+            Dim status As String = cbStatusSearch.SelectedValue.ToString
+            Dim bicycleTable As DataTable = DbManager.bicycleFilter(bicycleSearch, status)
+            PutLbBicycles(bicycleTable)
+        End If
+    End Sub
+#End Region
 End Class

@@ -169,13 +169,33 @@ Public Class DbManager
         End Using
     End Sub
 #End Region
+
+#Region "bicycleView"
+    Public Shared Function bicycleFilter(obj As Object, BicycleStatus As String)   'Selects a spesfic record from the "Status" row in the DB.
+        Using sqlconnection As New MySqlConnection(connectionString)
+            Dim returntable As New DataTable
+            Try
+                Dim listOfTables As New List(Of String)
+                listOfTables = GetProperties(obj)
+                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE Status= @input", sqlconnection)
+                sql.Parameters.AddWithValue("@input", BicycleStatus)
+                Dim da As New MySqlDataAdapter(sql)
+                da.Fill(returntable)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            Return returntable
+        End Using
+    End Function
+#End Region
+
     ' Function to check if a customer already exists
     Public Shared Function duplicateCustomer(CustomerID As Integer) As Boolean ' Ådne og Silje 🙂
         Using SqlConnection As New MySqlConnection(connectionString)
             Dim checkCustomerQuery As String = "SELECT COUNT(CustomerID) FROM Customer WHERE CustomerID =@phone"
             Dim sqlCommand As New MySqlCommand(checkCustomerQuery, SqlConnection)
             sqlCommand.Parameters.AddWithValue("@phone", CustomerID)
-            If connectedToServerAsync(SqlConnection).Result Then
+            If ConnectedToServerAsync(SqlConnection).Result Then
                 Dim results As Integer = Convert.ToInt32(sqlCommand.ExecuteScalar)
                 If results > 0 Then
                     Return True

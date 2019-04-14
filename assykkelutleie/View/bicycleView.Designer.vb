@@ -28,7 +28,6 @@ Partial Class bicycleView
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.cbStatusSearch = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbTypeSearch = New System.Windows.Forms.ComboBox()
         Me.cbType = New System.Windows.Forms.ComboBox()
         Me.cbCurrentLoc = New System.Windows.Forms.ComboBox()
         Me.cbDefaultLoc = New System.Windows.Forms.ComboBox()
@@ -65,7 +64,6 @@ Partial Class bicycleView
         '
         Me.TabPage3.Controls.Add(Me.cbStatusSearch)
         Me.TabPage3.Controls.Add(Me.Label1)
-        Me.TabPage3.Controls.Add(Me.cbTypeSearch)
         Me.TabPage3.Controls.Add(Me.cbType)
         Me.TabPage3.Controls.Add(Me.cbCurrentLoc)
         Me.TabPage3.Controls.Add(Me.cbDefaultLoc)
@@ -92,9 +90,9 @@ Partial Class bicycleView
         'cbStatusSearch
         '
         Me.cbStatusSearch.FormattingEnabled = True
-        Me.cbStatusSearch.Location = New System.Drawing.Point(152, 29)
+        Me.cbStatusSearch.Location = New System.Drawing.Point(17, 26)
         Me.cbStatusSearch.Name = "cbStatusSearch"
-        Me.cbStatusSearch.Size = New System.Drawing.Size(123, 21)
+        Me.cbStatusSearch.Size = New System.Drawing.Size(258, 21)
         Me.cbStatusSearch.TabIndex = 51
         Me.cbStatusSearch.Text = "Status"
         '
@@ -107,15 +105,6 @@ Partial Class bicycleView
         Me.Label1.Size = New System.Drawing.Size(29, 13)
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "Filter"
-        '
-        'cbTypeSearch
-        '
-        Me.cbTypeSearch.FormattingEnabled = True
-        Me.cbTypeSearch.Location = New System.Drawing.Point(17, 29)
-        Me.cbTypeSearch.Name = "cbTypeSearch"
-        Me.cbTypeSearch.Size = New System.Drawing.Size(123, 21)
-        Me.cbTypeSearch.TabIndex = 49
-        Me.cbTypeSearch.Text = "Sykkeltype"
         '
         'cbType
         '
@@ -195,7 +184,7 @@ Partial Class bicycleView
         Me.btnBicycleSave.Name = "btnBicycleSave"
         Me.btnBicycleSave.Size = New System.Drawing.Size(157, 23)
         Me.btnBicycleSave.TabIndex = 41
-        Me.btnBicycleSave.Text = "Lagre"
+        Me.btnBicycleSave.Text = "Lagre / Oppdater"
         Me.btnBicycleSave.UseVisualStyleBackColor = True
         '
         'Label8
@@ -319,6 +308,5 @@ Partial Class bicycleView
     Friend WithEvents cbCurrentLoc As ComboBox
     Friend WithEvents cbType As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents cbTypeSearch As ComboBox
     Friend WithEvents cbStatusSearch As ComboBox
 End Class
