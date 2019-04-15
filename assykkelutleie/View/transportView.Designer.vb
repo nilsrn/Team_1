@@ -25,7 +25,21 @@ Partial Class transportView
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(transportView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnBicycleSave = New System.Windows.Forms.Button()
+        Me.txtTransportSearch = New System.Windows.Forms.TextBox()
+        Me.lbTransport = New System.Windows.Forms.ListBox()
+        Me.btnBicyclesSearch = New System.Windows.Forms.Button()
+        Me.lbBicycles = New System.Windows.Forms.ListBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtRentalID = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPickupLocation = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtDeliveryLocation = New System.Windows.Forms.TextBox()
+        Me.txtPickupTime = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -39,6 +53,19 @@ Partial Class transportView
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.txtPickupTime)
+        Me.TabPage1.Controls.Add(Me.txtDeliveryLocation)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.txtPickupLocation)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.txtRentalID)
+        Me.TabPage1.Controls.Add(Me.Label15)
+        Me.TabPage1.Controls.Add(Me.lbBicycles)
+        Me.TabPage1.Controls.Add(Me.lbTransport)
+        Me.TabPage1.Controls.Add(Me.txtTransportSearch)
+        Me.TabPage1.Controls.Add(Me.btnBicyclesSearch)
+        Me.TabPage1.Controls.Add(Me.btnBicycleSave)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -46,6 +73,116 @@ Partial Class transportView
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Ny transport"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnBicycleSave
+        '
+        Me.btnBicycleSave.Location = New System.Drawing.Point(335, 193)
+        Me.btnBicycleSave.Name = "btnBicycleSave"
+        Me.btnBicycleSave.Size = New System.Drawing.Size(249, 23)
+        Me.btnBicycleSave.TabIndex = 51
+        Me.btnBicycleSave.Text = "Registrer transport"
+        Me.btnBicycleSave.UseVisualStyleBackColor = True
+        '
+        'txtTransportSearch
+        '
+        Me.txtTransportSearch.Location = New System.Drawing.Point(117, 17)
+        Me.txtTransportSearch.Name = "txtTransportSearch"
+        Me.txtTransportSearch.Size = New System.Drawing.Size(167, 20)
+        Me.txtTransportSearch.TabIndex = 50
+        '
+        'lbTransport
+        '
+        Me.lbTransport.FormattingEnabled = True
+        Me.lbTransport.Location = New System.Drawing.Point(21, 43)
+        Me.lbTransport.Name = "lbTransport"
+        Me.lbTransport.Size = New System.Drawing.Size(196, 173)
+        Me.lbTransport.TabIndex = 49
+        '
+        'btnBicyclesSearch
+        '
+        Me.btnBicyclesSearch.Location = New System.Drawing.Point(290, 17)
+        Me.btnBicyclesSearch.Name = "btnBicyclesSearch"
+        Me.btnBicyclesSearch.Size = New System.Drawing.Size(36, 20)
+        Me.btnBicyclesSearch.TabIndex = 48
+        Me.btnBicyclesSearch.Text = "Søk"
+        Me.btnBicyclesSearch.UseVisualStyleBackColor = True
+        '
+        'lbBicycles
+        '
+        Me.lbBicycles.Enabled = False
+        Me.lbBicycles.FormattingEnabled = True
+        Me.lbBicycles.Location = New System.Drawing.Point(223, 43)
+        Me.lbBicycles.Name = "lbBicycles"
+        Me.lbBicycles.Size = New System.Drawing.Size(103, 173)
+        Me.lbBicycles.TabIndex = 54
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(18, 20)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(93, 13)
+        Me.Label15.TabIndex = 55
+        Me.Label15.Text = "Bestillingsnummer:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(332, 43)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(93, 13)
+        Me.Label8.TabIndex = 58
+        Me.Label8.Text = "Bestillingsnummer:"
+        '
+        'txtRentalID
+        '
+        Me.txtRentalID.Enabled = False
+        Me.txtRentalID.Location = New System.Drawing.Point(431, 40)
+        Me.txtRentalID.Name = "txtRentalID"
+        Me.txtRentalID.Size = New System.Drawing.Size(153, 20)
+        Me.txtRentalID.TabIndex = 57
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(332, 69)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(25, 13)
+        Me.Label2.TabIndex = 62
+        Me.Label2.Text = "Fra:"
+        '
+        'txtPickupLocation
+        '
+        Me.txtPickupLocation.Enabled = False
+        Me.txtPickupLocation.Location = New System.Drawing.Point(431, 66)
+        Me.txtPickupLocation.Name = "txtPickupLocation"
+        Me.txtPickupLocation.Size = New System.Drawing.Size(153, 20)
+        Me.txtPickupLocation.TabIndex = 64
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(332, 121)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(21, 13)
+        Me.Label1.TabIndex = 65
+        Me.Label1.Text = "Til:"
+        '
+        'txtDeliveryLocation
+        '
+        Me.txtDeliveryLocation.Enabled = False
+        Me.txtDeliveryLocation.Location = New System.Drawing.Point(431, 118)
+        Me.txtDeliveryLocation.Name = "txtDeliveryLocation"
+        Me.txtDeliveryLocation.Size = New System.Drawing.Size(153, 20)
+        Me.txtDeliveryLocation.TabIndex = 66
+        '
+        'txtPickupTime
+        '
+        Me.txtPickupTime.Enabled = False
+        Me.txtPickupTime.Location = New System.Drawing.Point(431, 92)
+        Me.txtPickupTime.Name = "txtPickupTime"
+        Me.txtPickupTime.Size = New System.Drawing.Size(153, 20)
+        Me.txtPickupTime.TabIndex = 67
         '
         'transportView
         '
@@ -58,10 +195,25 @@ Partial Class transportView
         Me.Name = "transportView"
         Me.Text = "transport"
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents lbBicycles As ListBox
+    Friend WithEvents lbTransport As ListBox
+    Friend WithEvents txtTransportSearch As TextBox
+    Friend WithEvents btnBicyclesSearch As Button
+    Friend WithEvents btnBicycleSave As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtPickupLocation As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtRentalID As TextBox
+    Friend WithEvents txtDeliveryLocation As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtPickupTime As TextBox
 End Class
