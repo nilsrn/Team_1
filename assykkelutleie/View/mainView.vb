@@ -19,4 +19,8 @@
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Main.main(adminView, btnAdmin)
     End Sub
+
+    Private Sub Window1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Closing
+        End
+    End Sub
 End Class
