@@ -120,6 +120,24 @@ Public Class DbManager
         objectStringValues = objectStringValues.Substring(0, objectStringValues.Length - 2) 'Removes the last comma in the string to avoid syntaxerrors 
         Return objectStringValues
     End Function
+
+    Public Shared Function GetFilter(obj As Object, row As String, input As String)   'Selects a spesfic record from a selected row in the DB.
+        Using sqlconnection As New MySqlConnection(connectionString)
+            Dim returntable As New DataTable
+            Try
+                Dim listOfTables As New List(Of String)
+                listOfTables = GetProperties(obj)
+                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE Status= @input", sqlconnection)
+                sql.Parameters.AddWithValue("@row", row)
+                sql.Parameters.AddWithValue("@input", input)
+                Dim da As New MySqlDataAdapter(sql)
+                da.Fill(returntable)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            Return returntable
+        End Using
+    End Function
 #End Region
 
 #Region "Insert, update and delete functions for the database"
@@ -168,25 +186,6 @@ Public Class DbManager
             End If
         End Using
     End Sub
-#End Region
-
-#Region "bicycleView"
-    Public Shared Function bicycleFilter(obj As Object, BicycleStatus As String)   'Selects a spesfic record from the "Status" row in the DB.
-        Using sqlconnection As New MySqlConnection(connectionString)
-            Dim returntable As New DataTable
-            Try
-                Dim listOfTables As New List(Of String)
-                listOfTables = GetProperties(obj)
-                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE Status= @input", sqlconnection)
-                sql.Parameters.AddWithValue("@input", BicycleStatus)
-                Dim da As New MySqlDataAdapter(sql)
-                da.Fill(returntable)
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            Return returntable
-        End Using
-    End Function
 #End Region
 
     ' Function to check if a customer already exists

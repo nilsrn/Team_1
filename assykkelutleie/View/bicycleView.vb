@@ -48,7 +48,7 @@ Public Class bicycleView 'Sven-Erik
         Else
             Dim bicycleSearch As New Bicycle()
             Dim status As String = cbStatusSearch.SelectedValue.ToString
-            Dim bicycleTable As DataTable = DbManager.bicycleFilter(bicycleSearch, status)
+            Dim bicycleTable As DataTable = DbManager.GetFilter(bicycleSearch, "'Status'", status)
             PutLbBicycles(bicycleTable)
         End If
     End Sub
@@ -151,14 +151,7 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Sub CbStatusSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbStatusSearch.SelectedIndexChanged 'Updates the listbox according to the filter input.
-        If cbStatusSearch.SelectedValue.ToString = "Alle" Then
-            PutLbBicycles(GetAllBicycles)
-        Else
-            Dim bicycleSearch As New Bicycle()
-            Dim status As String = cbStatusSearch.SelectedValue.ToString
-            Dim bicycleTable As DataTable = DbManager.bicycleFilter(bicycleSearch, status)
-            PutLbBicycles(bicycleTable)
-        End If
+        PutBicyclesFilter()
     End Sub
 #End Region
 End Class
