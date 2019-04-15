@@ -6,7 +6,7 @@ Public Class rentalView
         Return customerTable
     End Function
     Private Function GetAllRentals() 'Returns a DataTable with all customers.
-        Dim rentals As New Rentals()
+        Dim rentals As Rentals()
         Dim rentalTable As DataTable = DbManager.GetAll(rentals)
         Return rentalTable
     End Function

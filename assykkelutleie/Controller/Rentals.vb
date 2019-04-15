@@ -3,7 +3,7 @@
     Dim m_comment, dloc, pickuploc, m_username, uttyp As String
     Dim dtime, m_pickuptime As Date
 
-    Public Sub New()
+    Public Sub New(customerID As Integer, deliveryLocation As String, deliveryTime As Date, pickupLocation As String, pickupTime As Date)
 
     End Sub
 
