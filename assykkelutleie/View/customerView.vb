@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class customerView
+#Region "Functions"
     Private Sub PutLbCustomer(table As DataTable) 'Populates the listbox with data received from the DB. 
         lbCustomer.DataSource = table
         lbCustomer.DisplayMember = "Surname"
@@ -14,7 +15,6 @@ Public Class customerView
     End Function
 
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
-
         For Each row In list.Rows
             txtTelephone.Text = row("CustomerID")
             txtFirstname.Text = row("FirstName")
@@ -22,7 +22,9 @@ Public Class customerView
             txtEmail.Text = row("Email")
         Next
     End Sub
+#End Region
 
+#Region "Actions"
     Private Sub CustomerView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listboxes and dropdownmenues when the form loads.
         PutLbCustomer(GetAllCustomer)
     End Sub
@@ -67,8 +69,8 @@ Public Class customerView
     Private Sub BtnCustomerSave_Click(sender As Object, e As EventArgs) Handles btnCustomerSave.Click
         Dim firstname, surname, email As String
         Dim phone As Integer
-        If txtTelephone.Text = "" Then
-            MessageBox.Show("Telefonnummer må fylles ut")
+        If txtFirstname.Text = "" Or txtSurname.Text = "" Or txtEmail.Text = "" Or txtTelephone.Text = "" Then
+            MessageBox.Show("Alle felter må fylles ut")
         Else
             Try
                 firstname = txtFirstname.Text
@@ -76,33 +78,12 @@ Public Class customerView
                 email = txtEmail.Text
                 phone = txtTelephone.Text
 
-                Dim updateCustomer As New Customer(firstname, surname, email, phone)
-                DbManager.InsertOrUpdate(updateCustomer) 'blir ikke oppdatert eller laget ny
+                Dim updateCustomer As New Customer(phone, firstname, surname, email)
+                DbManager.InsertOrUpdate(updateCustomer)
             Catch ex As Exception
             End Try
         End If
         PutLbCustomer(GetAllCustomer)
     End Sub
-
+#End Region
 End Class
-'Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
-'Using sqlconnection As New MySqlConnection(connectionString)
-'Dim firstname As String = txtFirstname.Text
-'Dim surname As String = txtSurname.Text
-'Dim phone As Integer = txtTelephone.Text
-'Dim email As String = txtEmail.Text
-'Dim query As String
-'If DbManager.duplicateCustomer(phone) = True Then
-'query = "UPDATE Customer "
-'query &= "SET FirstName='" & firstname & "', Surname='" & surname & "', Email='" & email & "' "
-'query &= "WHERE CustomerID='" & phone & "'"
-'ElseIf DbManager.duplicateCustomer(phone) = False Then
-'query = "INSERT INTO Customer (CustomerID, FirstName, Surname, Email) "
-'query &= "VALUES ('" & phone & "', " & "'" & firstname & "', " & "'" & surname & "', " & "'" & email & "')"
-'End If
-'Dim sql As New MySqlCommand(query, sqlconnection)
-'Dim da As New MySqlDataAdapter
-'Dim table As New DataTable
-'da.SelectCommand = sql
-'da.Fill(table)
-'End Using

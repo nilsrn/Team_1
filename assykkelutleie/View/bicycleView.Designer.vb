@@ -184,7 +184,7 @@ Partial Class bicycleView
         Me.btnBicycleSave.Name = "btnBicycleSave"
         Me.btnBicycleSave.Size = New System.Drawing.Size(157, 23)
         Me.btnBicycleSave.TabIndex = 41
-        Me.btnBicycleSave.Text = "Lagre / Oppdater"
+        Me.btnBicycleSave.Text = "Lagre"
         Me.btnBicycleSave.UseVisualStyleBackColor = True
         '
         'Label8
