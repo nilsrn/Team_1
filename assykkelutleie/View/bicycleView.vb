@@ -71,7 +71,7 @@ Public Class bicycleView 'Sven-Erik
         Next
     End Sub
 
-    Private Function bicycleStatus() ' Function to check which status that is selected
+    Private Function bicycleStatus() ' Function to check selected status
         Dim status As String
         If rbAvailable.Checked = True Then
             status = "Ledig"

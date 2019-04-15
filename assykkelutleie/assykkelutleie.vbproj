@@ -81,7 +81,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Controller\Bicycle.vb" />
     <Compile Include="Controller\BicycleType.vb" />
     <Compile Include="Controller\Customer.vb" />
