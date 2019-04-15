@@ -2,7 +2,7 @@
 Public Class customerView
     Private Sub PutLbCustomer(table As DataTable) 'Populates the listbox with data received from the DB. 
         lbCustomer.DataSource = table
-        lbCustomer.DisplayMember = "CustomerID"
+        lbCustomer.DisplayMember = "Surname"
         lbCustomer.ValueMember = "CustomerID"
 
     End Sub
@@ -52,44 +52,57 @@ Public Class customerView
         End If
     End Sub
 
-    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click
-        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click 'Deletes the selected item
         If MsgBox("Sikker på at du vil slette kunden?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Using sqlconnection As New MySqlConnection(connectionString)
-                Dim query As String = "DELETE FROM Customer WHERE CustomerID= " & txtCustomerSearch.Text
-                Dim insertsql As New MySqlCommand(query, sqlconnection)
-                Dim da As New MySqlDataAdapter
-                Dim table As New DataTable
-                da.SelectCommand = insertsql
-                da.Fill(table)
-            End Using
-            PutLbCustomer(GetAllCustomer)
+            Try
+                Dim customer As New Customer()
+                Dim customerID As Integer = lbCustomer.SelectedValue
+                DbManager.Delete(customer, "CustomerID", customerID)
+            Catch ex As Exception
+            End Try
         End If
+        PutLbCustomer(GetAllCustomer)
     End Sub
 
     Private Sub BtnCustomerSave_Click(sender As Object, e As EventArgs) Handles btnCustomerSave.Click
-        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
-        Using sqlconnection As New MySqlConnection(connectionString)
-            Dim firstname As String = txtFirstname.Text
-            Dim surname As String = txtSurname.Text
-            Dim phone As Integer = txtTelephone.Text
-            Dim email As String = txtEmail.Text
-            Dim query As String
-            If DbManager.duplicateCustomer(phone) = True Then
-                query = "UPDATE Customer "
-                query &= "SET FirstName='" & firstname & "', Surname='" & surname & "', Email='" & email & "' "
-                query &= "WHERE CustomerID='" & phone & "'"
-            ElseIf DbManager.duplicateCustomer(phone) = False Then
-                query = "INSERT INTO Customer (CustomerID, FirstName, Surname, Email) "
-                query &= "VALUES ('" & phone & "', " & "'" & firstname & "', " & "'" & surname & "', " & "'" & email & "')"
-            End If
-            Dim sql As New MySqlCommand(query, sqlconnection)
-            Dim da As New MySqlDataAdapter
-            Dim table As New DataTable
-            da.SelectCommand = sql
-            da.Fill(table)
-        End Using
+        Dim firstname, surname, email As String
+        Dim phone As Integer
+        If txtTelephone.Text = "" Then
+            MessageBox.Show("Telefonnummer må fylles ut")
+        Else
+            Try
+                firstname = txtFirstname.Text
+                surname = txtSurname.Text
+                email = txtEmail.Text
+                phone = txtTelephone.Text
+
+                Dim updateCustomer As New Customer(firstname, surname, email, phone)
+                DbManager.InsertOrUpdate(updateCustomer) 'blir ikke oppdatert eller laget ny
+            Catch ex As Exception
+            End Try
+        End If
         PutLbCustomer(GetAllCustomer)
     End Sub
 
 End Class
+'Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+'Using sqlconnection As New MySqlConnection(connectionString)
+'Dim firstname As String = txtFirstname.Text
+'Dim surname As String = txtSurname.Text
+'Dim phone As Integer = txtTelephone.Text
+'Dim email As String = txtEmail.Text
+'Dim query As String
+'If DbManager.duplicateCustomer(phone) = True Then
+'query = "UPDATE Customer "
+'query &= "SET FirstName='" & firstname & "', Surname='" & surname & "', Email='" & email & "' "
+'query &= "WHERE CustomerID='" & phone & "'"
+'ElseIf DbManager.duplicateCustomer(phone) = False Then
+'query = "INSERT INTO Customer (CustomerID, FirstName, Surname, Email) "
+'query &= "VALUES ('" & phone & "', " & "'" & firstname & "', " & "'" & surname & "', " & "'" & email & "')"
+'End If
+'Dim sql As New MySqlCommand(query, sqlconnection)
+'Dim da As New MySqlDataAdapter
+'Dim table As New DataTable
+'da.SelectCommand = sql
+'da.Fill(table)
+'End Using
