@@ -93,6 +93,7 @@ Public Class rentalView
             DbManager.InsertOrUpdate(updateRentals)
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
+            MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
         End Try
 
 
