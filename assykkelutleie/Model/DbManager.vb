@@ -32,6 +32,12 @@ Public Class DbManager
 
                 Dim results As Integer = Convert.ToInt32(sqlcommand1.ExecuteScalar) ' Reads the ammount of results
                 If results = 1 Then
+                    Dim loggedInUser As New UserAccount()
+                    Dim table As DataTable = GetSpecific(loggedInUser, username)
+                    loggedInUser = New UserAccount(table)
+                    My.Settings.username = loggedinuser.Username()
+                    My.Settings.accounttype = loggedinuser.AccountType()
+                    My.Settings.location = loggedInUser.Location()
                     MsgBox("Velkommen: " & username, MsgBoxStyle.Information, "AS SykkelUtleie")
                     mainView.Show()
                     loginView.Hide()

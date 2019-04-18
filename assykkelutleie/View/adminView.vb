@@ -160,9 +160,12 @@
         GetAllLocations()
     End Sub
 
-    Private Sub tbLocationSearch_TextChanged(sender As Object, e As EventArgs) Handles tbLocationSearch.TextChanged
-
+    Private Sub btnLocationClear_Click(sender As Object, e As EventArgs) Handles btnLocationClear.Click
+        tbLocationName.Text = ""
+        tbLocationAddress.Text = ""
+        tbLocationTelephoneNumber.Text = ""
     End Sub
+
 #End Region
 
 #Region "Code For the BicycleType tab"
@@ -223,6 +226,10 @@
         tbBicycleTypeRateHour.Text = ""
         tbBicycleTypeRateDay.Text = ""
     End Sub
+
+
+
+
 
 
 #End Region

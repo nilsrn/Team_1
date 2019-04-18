@@ -52,6 +52,8 @@ Partial Class adminView
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnUserSearch = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnLocationClear = New System.Windows.Forms.Button()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btnSaveLocation = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -65,6 +67,8 @@ Partial Class adminView
         Me.tbLocationSearch = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.btnBicycleTypeClear = New System.Windows.Forms.Button()
         Me.tbBicycleTypeRateHour = New System.Windows.Forms.TextBox()
         Me.tbBicycleTypeRateDay = New System.Windows.Forms.TextBox()
         Me.tbBicycleTypeFrameSize = New System.Windows.Forms.TextBox()
@@ -83,7 +87,6 @@ Partial Class adminView
         Me.tbBicycleTypeName = New System.Windows.Forms.TextBox()
         Me.lbBicycleType = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.btnBicycleTypeClear = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -368,6 +371,8 @@ Partial Class adminView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnLocationClear)
+        Me.TabPage2.Controls.Add(Me.Label26)
         Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Controls.Add(Me.btnSaveLocation)
         Me.TabPage2.Controls.Add(Me.Label11)
@@ -388,6 +393,24 @@ Partial Class adminView
         Me.TabPage2.Text = "Lokasjoner"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnLocationClear
+        '
+        Me.btnLocationClear.Location = New System.Drawing.Point(816, 218)
+        Me.btnLocationClear.Name = "btnLocationClear"
+        Me.btnLocationClear.Size = New System.Drawing.Size(66, 35)
+        Me.btnLocationClear.TabIndex = 76
+        Me.btnLocationClear.Text = "Tøm"
+        Me.btnLocationClear.UseVisualStyleBackColor = True
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(16, 460)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(263, 20)
+        Me.Label26.TabIndex = 75
+        Me.Label26.Text = "Høyreklikk for å slette valgt lokasjon."
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -399,7 +422,7 @@ Partial Class adminView
         '
         'btnSaveLocation
         '
-        Me.btnSaveLocation.Location = New System.Drawing.Point(683, 234)
+        Me.btnSaveLocation.Location = New System.Drawing.Point(648, 218)
         Me.btnSaveLocation.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSaveLocation.Name = "btnSaveLocation"
         Me.btnSaveLocation.Size = New System.Drawing.Size(150, 35)
@@ -501,6 +524,7 @@ Partial Class adminView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label25)
         Me.TabPage3.Controls.Add(Me.btnBicycleTypeClear)
         Me.TabPage3.Controls.Add(Me.tbBicycleTypeRateHour)
         Me.TabPage3.Controls.Add(Me.tbBicycleTypeRateDay)
@@ -526,6 +550,24 @@ Partial Class adminView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Sykkeltyper"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(24, 493)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(274, 20)
+        Me.Label25.TabIndex = 74
+        Me.Label25.Text = "Høyreklikk for å slette valgt sykkeltype"
+        '
+        'btnBicycleTypeClear
+        '
+        Me.btnBicycleTypeClear.Location = New System.Drawing.Point(785, 493)
+        Me.btnBicycleTypeClear.Name = "btnBicycleTypeClear"
+        Me.btnBicycleTypeClear.Size = New System.Drawing.Size(66, 35)
+        Me.btnBicycleTypeClear.TabIndex = 73
+        Me.btnBicycleTypeClear.Text = "Tøm"
+        Me.btnBicycleTypeClear.UseVisualStyleBackColor = True
         '
         'tbBicycleTypeRateHour
         '
@@ -602,7 +644,7 @@ Partial Class adminView
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(529, 564)
+        Me.Label17.Location = New System.Drawing.Point(578, 543)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(273, 20)
         Me.Label17.TabIndex = 64
@@ -610,7 +652,7 @@ Partial Class adminView
         '
         'btnBicycleTypeSave
         '
-        Me.btnBicycleTypeSave.Location = New System.Drawing.Point(591, 493)
+        Me.btnBicycleTypeSave.Location = New System.Drawing.Point(617, 493)
         Me.btnBicycleTypeSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBicycleTypeSave.Name = "btnBicycleTypeSave"
         Me.btnBicycleTypeSave.Size = New System.Drawing.Size(150, 35)
@@ -693,15 +735,6 @@ Partial Class adminView
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Utstyrstyper"
         Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'btnBicycleTypeClear
-        '
-        Me.btnBicycleTypeClear.Location = New System.Drawing.Point(766, 493)
-        Me.btnBicycleTypeClear.Name = "btnBicycleTypeClear"
-        Me.btnBicycleTypeClear.Size = New System.Drawing.Size(85, 35)
-        Me.btnBicycleTypeClear.TabIndex = 73
-        Me.btnBicycleTypeClear.Text = "Tøm"
-        Me.btnBicycleTypeClear.UseVisualStyleBackColor = True
         '
         'adminView
         '
@@ -786,4 +819,7 @@ Partial Class adminView
     Friend WithEvents tbBicycleTypeFrameSize As TextBox
     Friend WithEvents tbBicycleTypeWheelSize As TextBox
     Friend WithEvents btnBicycleTypeClear As Button
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents btnLocationClear As Button
 End Class

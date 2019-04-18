@@ -17,7 +17,11 @@
     End Sub
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
-        Main.main(adminView, btnAdmin)
+        If My.Settings.accounttype = "Administrator" Then
+            Main.main(adminView, btnAdmin)
+        Else
+            MsgBox("Kun administratorer har tilgang her")
+        End If
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
