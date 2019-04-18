@@ -1,10 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class rentalView
+#Region "Functions"
     Private Sub CbPutComboBox() 'Populates the comboboxes.
 
         Dim bicycletype As New BicycleType()
         Dim location As New Location()
-        Dim equipment As New Equipment()
+        Dim equipment As New EquipmentType()
 
 
         pickbike.DataSource = DbManager.GetAll(bicycletype)
@@ -38,7 +39,11 @@ Public Class rentalView
         Dim rentalTable As DataTable = DbManager.GetAll(rentals)
         Return rentalTable
     End Function
-
+    Private Function GetAllBicycles() 'Returns a DataTable with all bicycles.
+        Dim bicycle As New Bicycle()
+        Dim bicyclesTable As DataTable = DbManager.GetAll(bicycle)
+        Return bicyclesTable
+    End Function
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
 
@@ -59,8 +64,12 @@ Public Class rentalView
 
         Next
     End Sub
+#End Region
+
+#Region "Actions"
     Private Sub rentalView_Load(sender As Object, e As EventArgs) Handles Me.Load
         PutLbRentals(GetAllRentals)
+        CbPutComboBox()
     End Sub
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click
 
@@ -118,6 +127,7 @@ Public Class rentalView
         Dim rentalSearch As New Rentals()
         PutRentals(DbManager.GetSpecific(rentalSearch, lbrentals.SelectedValue.ToString()))
     End Sub
+
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click 'Deletes the selcted item.
         If MsgBox("Sikker på at du vil slette bestillingen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             Try
@@ -129,6 +139,6 @@ Public Class rentalView
         End If
 
     End Sub
-
+#End Region
 
 End Class

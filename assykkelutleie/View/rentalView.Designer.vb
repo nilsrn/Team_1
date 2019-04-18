@@ -37,6 +37,8 @@ Partial Class rentalView
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.commenttxt = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pickequipment = New System.Windows.Forms.ComboBox()
@@ -66,16 +68,18 @@ Partial Class rentalView
         Me.searchrentals = New System.Windows.Forms.Button()
         Me.txtrentalsearch = New System.Windows.Forms.TextBox()
         Me.lbrentals = New System.Windows.Forms.ListBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.commenttxt = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Kunde.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -137,7 +141,6 @@ Partial Class rentalView
         'filing
         '
         Me.filing.FormattingEnabled = True
-        Me.filing.Items.AddRange(New Object() {"Haugastøl", "Finse", "Flåm", "Myrdal", "Voss"})
         Me.filing.Location = New System.Drawing.Point(132, 130)
         Me.filing.Margin = New System.Windows.Forms.Padding(4)
         Me.filing.Name = "filing"
@@ -147,7 +150,6 @@ Partial Class rentalView
         'extradition
         '
         Me.extradition.FormattingEnabled = True
-        Me.extradition.Items.AddRange(New Object() {"Haugastøl", "Finse", "Flåm", "Myrdal", "Voss"})
         Me.extradition.Location = New System.Drawing.Point(12, 130)
         Me.extradition.Margin = New System.Windows.Forms.Padding(4)
         Me.extradition.Name = "extradition"
@@ -227,6 +229,23 @@ Partial Class rentalView
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sykkel og utstyr"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(9, 106)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(84, 17)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "Kommentar:"
+        '
+        'commenttxt
+        '
+        Me.commenttxt.Location = New System.Drawing.Point(9, 133)
+        Me.commenttxt.Multiline = True
+        Me.commenttxt.Name = "commenttxt"
+        Me.commenttxt.Size = New System.Drawing.Size(245, 154)
+        Me.commenttxt.TabIndex = 4
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -250,7 +269,6 @@ Partial Class rentalView
         'pickequipment
         '
         Me.pickequipment.FormattingEnabled = True
-        Me.pickequipment.Items.AddRange(New Object() {"Sykkelveske", "Barnehenger", "Lastehenger"})
         Me.pickequipment.Location = New System.Drawing.Point(141, 46)
         Me.pickequipment.Margin = New System.Windows.Forms.Padding(4)
         Me.pickequipment.Name = "pickequipment"
@@ -260,7 +278,6 @@ Partial Class rentalView
         'pickbike
         '
         Me.pickbike.FormattingEnabled = True
-        Me.pickbike.Items.AddRange(New Object() {"Terreng", "Tandem", "Racer", "Downhill", "Barnesykkel", ""})
         Me.pickbike.Location = New System.Drawing.Point(9, 46)
         Me.pickbike.Margin = New System.Windows.Forms.Padding(4)
         Me.pickbike.Name = "pickbike"
@@ -390,6 +407,8 @@ Partial Class rentalView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label15)
+        Me.TabPage2.Controls.Add(Me.Label14)
         Me.TabPage2.Controls.Add(Me.filingdate2)
         Me.TabPage2.Controls.Add(Me.extraditiondate2)
         Me.TabPage2.Controls.Add(Me.btnSave)
@@ -459,7 +478,6 @@ Partial Class rentalView
         Me.filing2.Name = "filing2"
         Me.filing2.Size = New System.Drawing.Size(121, 24)
         Me.filing2.TabIndex = 6
-        Me.filing2.Text = "Sted"
         '
         'extradition2
         '
@@ -468,7 +486,6 @@ Partial Class rentalView
         Me.extradition2.Name = "extradition2"
         Me.extradition2.Size = New System.Drawing.Size(121, 24)
         Me.extradition2.TabIndex = 5
-        Me.extradition2.Text = "Sted"
         '
         'pickequipment2
         '
@@ -477,7 +494,6 @@ Partial Class rentalView
         Me.pickequipment2.Name = "pickequipment2"
         Me.pickequipment2.Size = New System.Drawing.Size(121, 24)
         Me.pickequipment2.TabIndex = 4
-        Me.pickequipment2.Text = "Utstyr"
         '
         'pickbike2
         '
@@ -486,7 +502,6 @@ Partial Class rentalView
         Me.pickbike2.Name = "pickbike2"
         Me.pickbike2.Size = New System.Drawing.Size(121, 24)
         Me.pickbike2.TabIndex = 3
-        Me.pickbike2.Text = "Sykkel"
         '
         'searchrentals
         '
@@ -517,6 +532,19 @@ Partial Class rentalView
         Me.lbrentals.Size = New System.Drawing.Size(429, 420)
         Me.lbrentals.TabIndex = 0
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SlettToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(109, 28)
+        '
+        'SlettToolStripMenuItem
+        '
+        Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
+        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(108, 24)
+        Me.SlettToolStripMenuItem.Text = "Slett"
+        '
         'TabPage3
         '
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
@@ -527,28 +555,23 @@ Partial Class rentalView
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'commenttxt
+        'Label14
         '
-        Me.commenttxt.Location = New System.Drawing.Point(9, 133)
-        Me.commenttxt.Multiline = True
-        Me.commenttxt.Name = "commenttxt"
-        Me.commenttxt.Size = New System.Drawing.Size(245, 154)
-        Me.commenttxt.TabIndex = 4
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(473, 48)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(83, 17)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Velg sykkel:"
         '
-        'Label13
+        'Label15
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(9, 106)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(84, 17)
-        Me.Label13.TabIndex = 5
-        Me.Label13.Text = "Kommentar:"
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(631, 48)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(79, 17)
+        Me.Label15.TabIndex = 15
+        Me.Label15.Text = "Velg utstyr:"
         '
         'rentalView
         '
@@ -571,6 +594,7 @@ Partial Class rentalView
         Me.Kunde.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -620,4 +644,7 @@ Partial Class rentalView
     Friend WithEvents Label13 As Label
     Friend WithEvents commenttxt As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
 End Class
