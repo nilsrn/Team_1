@@ -13,16 +13,6 @@
         m_telephoneNumber = telephoneNumber
     End Sub
 
-    Public Sub New(username, accountType, location, firstName, surname, email, telephoneNumber)
-        m_username = username
-        m_accountType = accountType
-        m_location = location
-        m_firstName = firstName
-        m_surname = surname
-        m_email = email
-        m_telephoneNumber = telephoneNumber
-    End Sub
-
     Public Sub New(table As DataTable)
         For Each row In table.Rows
             m_username = row("Username")

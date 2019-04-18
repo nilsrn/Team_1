@@ -18,11 +18,11 @@
         End Sub
 
         Private Sub CbGetAccountTypes()    'Populates the Accounttypes combo box.
-            Dim user As New UserAccount()
-            cbAccountType.DataSource = DbManager.GetAll(user)
-            cbAccountType.DisplayMember = "AccountType"
-            cbAccountType.ValueMember = "AccountType"
-        End Sub
+        Dim accountType As New AccountType()
+        cbAccountType.DataSource = DbManager.GetAll(accountType)
+        cbAccountType.DisplayMember = "Name"
+        cbAccountType.ValueMember = "Name"
+    End Sub
 
         Private Sub PutUserAccounts(table As DataTable)  'Populates the users listbox with data received from the DB. 
             lbUsers.DataSource = table
@@ -32,12 +32,12 @@
 
         Private Sub GetAllUsers()   'Gets all users and populates the listbox
             Dim user As New UserAccount()
-            Dim usertable As DataTable = DbManager.GetAll(user)
-            PutUserAccounts(usertable)
-        End Sub
+        Dim usertable As DataTable = DbManager.GetAll(user)
+        PutUserAccounts(usertable)
+    End Sub
 
-        Private Sub PutUserAccount(userTable As DataTable)    'Populates the textboxes with the selected user data.
-            For Each row In userTable.Rows
+    Private Sub PutUserAccount(usertable As DataTable)    'Populates the textboxes with the selected user data.
+        For Each row In usertable.Rows
             tbUsername.Text = row("username")
             tbFirstName.Text = row("firstname")
             tbSurname.Text = row("surname")
@@ -46,17 +46,42 @@
             cbAccountType.Text = row("AccountType")
             cbUserLocation.Text = row("Location")
         Next
-        End Sub
+    End Sub
 
-        Private Sub lbUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbUsers.SelectedIndexChanged   'Populates the textboxes based on the chosen user in the listbox.
-            Dim usersearch As New UserAccount()
-            PutUserAccount(DbManager.GetSpecific(usersearch, lbUsers.SelectedValue.ToString()))
-        End Sub
+    Private Sub lbUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbUsers.SelectedIndexChanged   'Populates the textboxes based on the chosen user in the listbox.
+        Dim usersearch As New UserAccount()
+        PutUserAccount(DbManager.GetSpecific(usersearch, lbUsers.SelectedValue.ToString()))
+    End Sub
 
-        Private Sub btnUserSearch_Click(sender As Object, e As EventArgs) Handles btnUserSearch.Click 'Searches for useraccounts based on the username in the textboxt field and lists the results in the listbox below.
-            Dim username As String = tbUsernameSearch.Text
+    Private Sub btnUserClear_Click(sender As Object, e As EventArgs) Handles btnUserClear.Click
+        tbUsername.Text = ""
+        tbFirstName.Text = ""
+        tbSurname.Text = ""
+        tbEmail.Text = ""
+        tbUserPhoneNumber.Text = ""
+        cbAccountType.Text = ""
+        cbUserLocation.Text = ""
+    End Sub
 
-        End Sub
+    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click  'Deletes the selcted item in the listbox.
+        If MsgBox("Sikker på at du vil slette brukerkontoen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Try
+                Dim user As New UserAccount()
+                Dim selectedUser As String = lbUsers.SelectedValue.ToString
+                DbManager.Delete(user, "Username", selectedUser)
+            Catch ex As Exception
+                MsgBox("Brukeren ble ikke slettet. Sjekk at den ikke er knyttet til aktive utleie. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+            End Try
+        End If
+        GetAllUsers()
+    End Sub
+
+    Private Sub btnUserSearch_Click(sender As Object, e As EventArgs) Handles btnUserSearch.Click 'Searches for useraccounts based on the username in the textboxt field and lists the results in the listbox below.
+        Dim username As String = tbUsername.Text
+        Dim usersearch As New UserAccount()
+        Dim usertable As DataTable = DbManager.GetSpecific(usersearch, username)
+        PutUserAccount(usertable)
+    End Sub
 
     Private Sub btnUserSave_Click(sender As Object, e As EventArgs) Handles btnUserSave.Click
         Dim username, firstname, surname, email, telephoneNumber, accounttype, location As String
@@ -72,24 +97,18 @@
             telephoneNumber = tbUserPhoneNumber.Text
             accounttype = cbAccountType.Text
             location = cbUserLocation.Text
-            'If tbPassword.Text = "" Then
-            'Dim updateUser As New UserAccount(username, accounttype, location, firstname, surname, email, telephoneNumber)
-            'DbManager.InsertOrUpdate(updateUser)
-            'Else
-            Dim updateUser As New UserAccount(username, password, salt, accounttype, location, firstname, surname, email, telephoneNumber)
+            If tbPassword.Text = "" Then
+                MsgBox("Passord må settes på nytt ved endring eller oppdatering av brukerkonto")
+            Else
+                Dim updateUser As New UserAccount(username, password, salt, accounttype, location, firstname, surname, email, telephoneNumber)
                 DbManager.InsertOrUpdate(updateUser)
-            'End If
+            End If
         Catch ex As Exception
-            MsgBox("Feil input - all tekst må fylles ut")
+            MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
         End Try
         tbPassword.Text = ""
         GetAllUsers()
     End Sub
-
-    'Dim username As String = "Admins"
-    'Dim password = Encryption.HashString("Tastatur123")
-    'Dim salt = Encryption.GenerateSalt
-    'Dim hashedAndSalted = Encryption.HashString(String.Format("{0}{1}", password, salt))
 #End Region
 
 #Region "Code for the location tab"
@@ -145,6 +164,15 @@
             End Try
             PutLbLocations(GetAllLocations)
         End Sub
+
+    Private Sub tbLocationSearch_TextChanged(sender As Object, e As EventArgs) Handles tbLocationSearch.TextChanged
+
+    End Sub
+
+
+
+
+
 #End Region
 
 #Region "Code For the BicycleType tab"

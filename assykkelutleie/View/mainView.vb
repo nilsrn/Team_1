@@ -20,7 +20,12 @@
         Main.main(adminView, btnAdmin)
     End Sub
 
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Main.logout()
+    End Sub
+
     Private Sub Window1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Closing
         End
     End Sub
+
 End Class

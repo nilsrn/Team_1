@@ -12,4 +12,11 @@
         mainView.PanelMainView.Controls.Add(view)
         view.Show()
     End Sub
+
+    Public Shared Sub logout()
+        mainView.Hide()
+        loginView.txtUsername.Text = ""
+        loginView.txtPassword.Text = ""
+        loginView.Show()
+    End Sub
 End Class
