@@ -86,6 +86,7 @@
     <Compile Include="Controller\BicycleType.vb" />
     <Compile Include="Controller\Customer.vb" />
     <Compile Include="Controller\Equipment.vb" />
+    <Compile Include="Controller\EquipmentType.vb" />
     <Compile Include="Controller\Main.vb" />
     <Compile Include="Controller\Location.vb" />
     <Compile Include="Controller\Rentals.vb" />

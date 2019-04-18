@@ -3,11 +3,9 @@
     Dim m_comment, dloc, pickuploc, m_username, uttyp As String
     Dim dtime, m_pickuptime As Date
 
-    Public Sub New(customerID As Integer, deliveryLocation As String, deliveryTime As Date, pickupLocation As String, pickupTime As Date)
 
-    End Sub
 
-    Public Sub New(Comment, CustomerID, DeliveryLocation, DeliveryTime, PickupLocation, PickupTime, RentalID, Total_Pris, Username, Utleie_Type, Utleie_Type_Antall)
+    Public Sub New(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
         m_comment = Comment
         cid = CustomerID
         rid = RentalID
@@ -20,6 +18,25 @@
         m_username = Username
         uttyp = Utleie_Type
 
+    End Sub
+    Public Sub New(table As DataTable)
+        For Each row In table.Rows
+            rid = row("RentalID")
+            cid = row("CustomerID")
+            m_username = row("Username")
+            pickuploc = row("PickupLocation")
+            dloc = row("DeliveryLocation")
+            m_pickuptime = row("PickupTime")
+            dtime = row("DeliveryTime")
+            uttyp = row("Utleie_Type")
+            typantall = row("Utleie_Type_Antall")
+            pris = row("Total_Pris")
+            m_comment = row("Comment")
+
+        Next
+    End Sub
+
+    Public Sub New()
     End Sub
 
     Public Property CustomerID() As Integer
