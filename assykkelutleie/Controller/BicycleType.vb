@@ -1,81 +1,81 @@
 ﻿Public Class BicycleType 'Sven-Erik
-    Dim m_navn, m_beskrivelse, m_gir, m_hjul, m_ramme As String
-    Dim m_pristime, m_prisdag As Integer
+    Dim m_Name, m_Description, m_GearSystem, m_WheelSize, m_FrameSize As String
+    Dim m_RateHour, m_RateDay As Integer
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(Name, Description, GearSystem, WheelSize, FrameSize, RateHour, RateDay)
-        m_navn = Name
-        m_beskrivelse = Description
-        m_gir = GearSystem
-        m_hjul = WheelSize
-        m_ramme = FrameSize
-        m_pristime = RateHour
-        m_prisdag = RateDay
+        m_Name = Name
+        m_Description = Description
+        m_GearSystem = GearSystem
+        m_WheelSize = WheelSize
+        m_FrameSize = FrameSize
+        m_RateHour = RateHour
+        m_RateDay = RateDay
     End Sub
 
     Public Property Name() As String
         Get
-            Return m_navn
+            Return m_Name
         End Get
         Set(value As String)
-            m_navn = value
+            m_Name = value
         End Set
     End Property
 
     Public Property Description() As String
         Get
-            Return m_beskrivelse
+            Return m_Description
         End Get
         Set(value As String)
-            m_beskrivelse = value
+            m_Description = value
         End Set
     End Property
 
     Public Property gearSystem() As String
         Get
-            Return m_gir
+            Return m_GearSystem
         End Get
         Set(value As String)
-            m_gir = value
+            m_GearSystem = value
         End Set
     End Property
 
     Public Property WheelSize() As String
         Get
-            Return m_hjul
+            Return m_WheelSize
         End Get
         Set(value As String)
-            m_hjul = value
+            m_WheelSize = value
         End Set
     End Property
 
     Public Property FrameSize() As String
         Get
-            Return m_ramme
+            Return m_FrameSize
         End Get
         Set(value As String)
-            m_ramme = value
+            m_FrameSize = value
         End Set
     End Property
 
     Public Property rateHour() As Integer
         Get
-            Return m_pristime
+            Return m_RateHour
         End Get
         Set(value As Integer)
-            m_pristime = value
+            m_RateHour = value
         End Set
     End Property
 
     Public Property rateDay() As Integer
         Get
-            Return m_prisdag
+            Return m_RateDay
         End Get
         Set(value As Integer)
-            m_prisdag = value
+            m_RateDay = value
         End Set
     End Property
 End Class

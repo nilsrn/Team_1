@@ -26,10 +26,10 @@ Partial Class adminView
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.btnUserClear = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbFilterUserAccount = New System.Windows.Forms.ComboBox()
         Me.btnUserSave = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -52,6 +52,7 @@ Partial Class adminView
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnUserSearch = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.btnSaveLocation = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -64,13 +65,30 @@ Partial Class adminView
         Me.tbLocationSearch = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.tbBicycleTypeRateHour = New System.Windows.Forms.TextBox()
+        Me.tbBicycleTypeRateDay = New System.Windows.Forms.TextBox()
+        Me.tbBicycleTypeFrameSize = New System.Windows.Forms.TextBox()
+        Me.tbBicycleTypeWheelSize = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.btnBicycleTypeSave = New System.Windows.Forms.Button()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.tbBicycleTypeGearSystem = New System.Windows.Forms.TextBox()
+        Me.tbBicycleTypeDescription = New System.Windows.Forms.TextBox()
+        Me.tbBicycleTypeName = New System.Windows.Forms.TextBox()
+        Me.lbBicycleType = New System.Windows.Forms.ListBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.btnBicycleTypeClear = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -88,11 +106,10 @@ Partial Class adminView
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.Label15)
         Me.TabPage1.Controls.Add(Me.btnUserClear)
         Me.TabPage1.Controls.Add(Me.Label14)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.cbFilterUserAccount)
         Me.TabPage1.Controls.Add(Me.btnUserSave)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.Label8)
@@ -121,6 +138,24 @@ Partial Class adminView
         Me.TabPage1.Text = "Brukere"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(507, 523)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(353, 20)
+        Me.Label1.TabIndex = 55
+        Me.Label1.Text = "Velg et unikt brukernavn for å opprette ny bruker."
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(588, 491)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(273, 20)
+        Me.Label15.TabIndex = 54
+        Me.Label15.Text = "Felter merket med (*) er obligatoriske."
+        '
         'btnUserClear
         '
         Me.btnUserClear.Location = New System.Drawing.Point(775, 433)
@@ -138,26 +173,6 @@ Partial Class adminView
         Me.Label14.Size = New System.Drawing.Size(290, 20)
         Me.Label14.TabIndex = 52
         Me.Label14.Text = "Høyreklikk for å slette valgt brukerkonto."
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 27)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 20)
-        Me.Label1.TabIndex = 51
-        Me.Label1.Text = "Filter"
-        '
-        'cbFilterUserAccount
-        '
-        Me.cbFilterUserAccount.FormattingEnabled = True
-        Me.cbFilterUserAccount.Location = New System.Drawing.Point(30, 50)
-        Me.cbFilterUserAccount.Name = "cbFilterUserAccount"
-        Me.cbFilterUserAccount.Size = New System.Drawing.Size(253, 28)
-        Me.cbFilterUserAccount.TabIndex = 21
-        Me.cbFilterUserAccount.Text = "Kontotype"
         '
         'btnUserSave
         '
@@ -373,6 +388,15 @@ Partial Class adminView
         Me.TabPage2.Text = "Lokasjoner"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(609, 290)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(273, 20)
+        Me.Label16.TabIndex = 55
+        Me.Label16.Text = "Felter merket med (*) er obligatoriske."
+        '
         'btnSaveLocation
         '
         Me.btnSaveLocation.Location = New System.Drawing.Point(683, 234)
@@ -477,6 +501,24 @@ Partial Class adminView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnBicycleTypeClear)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeRateHour)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeRateDay)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeFrameSize)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeWheelSize)
+        Me.TabPage3.Controls.Add(Me.Label24)
+        Me.TabPage3.Controls.Add(Me.Label23)
+        Me.TabPage3.Controls.Add(Me.Label22)
+        Me.TabPage3.Controls.Add(Me.Label21)
+        Me.TabPage3.Controls.Add(Me.Label17)
+        Me.TabPage3.Controls.Add(Me.btnBicycleTypeSave)
+        Me.TabPage3.Controls.Add(Me.Label18)
+        Me.TabPage3.Controls.Add(Me.Label19)
+        Me.TabPage3.Controls.Add(Me.Label20)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeGearSystem)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeDescription)
+        Me.TabPage3.Controls.Add(Me.tbBicycleTypeName)
+        Me.TabPage3.Controls.Add(Me.lbBicycleType)
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabPage3.Name = "TabPage3"
@@ -484,6 +526,163 @@ Partial Class adminView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Sykkeltyper"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'tbBicycleTypeRateHour
+        '
+        Me.tbBicycleTypeRateHour.Location = New System.Drawing.Point(617, 451)
+        Me.tbBicycleTypeRateHour.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeRateHour.Name = "tbBicycleTypeRateHour"
+        Me.tbBicycleTypeRateHour.Size = New System.Drawing.Size(234, 26)
+        Me.tbBicycleTypeRateHour.TabIndex = 72
+        '
+        'tbBicycleTypeRateDay
+        '
+        Me.tbBicycleTypeRateDay.Location = New System.Drawing.Point(617, 412)
+        Me.tbBicycleTypeRateDay.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeRateDay.Name = "tbBicycleTypeRateDay"
+        Me.tbBicycleTypeRateDay.Size = New System.Drawing.Size(234, 26)
+        Me.tbBicycleTypeRateDay.TabIndex = 71
+        '
+        'tbBicycleTypeFrameSize
+        '
+        Me.tbBicycleTypeFrameSize.Location = New System.Drawing.Point(617, 371)
+        Me.tbBicycleTypeFrameSize.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeFrameSize.Name = "tbBicycleTypeFrameSize"
+        Me.tbBicycleTypeFrameSize.Size = New System.Drawing.Size(234, 26)
+        Me.tbBicycleTypeFrameSize.TabIndex = 70
+        '
+        'tbBicycleTypeWheelSize
+        '
+        Me.tbBicycleTypeWheelSize.Location = New System.Drawing.Point(617, 327)
+        Me.tbBicycleTypeWheelSize.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeWheelSize.Name = "tbBicycleTypeWheelSize"
+        Me.tbBicycleTypeWheelSize.Size = New System.Drawing.Size(234, 26)
+        Me.tbBicycleTypeWheelSize.TabIndex = 69
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(483, 457)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(80, 20)
+        Me.Label24.TabIndex = 68
+        Me.Label24.Text = "Timespris:"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(483, 412)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(76, 20)
+        Me.Label23.TabIndex = 67
+        Me.Label23.Text = "Dagspris:"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(483, 371)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(130, 20)
+        Me.Label22.TabIndex = 66
+        Me.Label22.Text = "Rammestørrelse:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(483, 327)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(101, 20)
+        Me.Label21.TabIndex = 65
+        Me.Label21.Text = "Hjulstørrelse:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(529, 564)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(273, 20)
+        Me.Label17.TabIndex = 64
+        Me.Label17.Text = "Felter merket med (*) er obligatoriske."
+        '
+        'btnBicycleTypeSave
+        '
+        Me.btnBicycleTypeSave.Location = New System.Drawing.Point(591, 493)
+        Me.btnBicycleTypeSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnBicycleTypeSave.Name = "btnBicycleTypeSave"
+        Me.btnBicycleTypeSave.Size = New System.Drawing.Size(150, 35)
+        Me.btnBicycleTypeSave.TabIndex = 63
+        Me.btnBicycleTypeSave.Text = "Lagre / Oppdater"
+        Me.btnBicycleTypeSave.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(483, 143)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(65, 20)
+        Me.Label18.TabIndex = 62
+        Me.Label18.Text = "Navn(*):"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(483, 284)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(84, 20)
+        Me.Label19.TabIndex = 61
+        Me.Label19.Text = "Girsystem:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(483, 183)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(93, 20)
+        Me.Label20.TabIndex = 60
+        Me.Label20.Text = "Beskrivelse:"
+        '
+        'tbBicycleTypeGearSystem
+        '
+        Me.tbBicycleTypeGearSystem.Location = New System.Drawing.Point(617, 284)
+        Me.tbBicycleTypeGearSystem.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeGearSystem.Name = "tbBicycleTypeGearSystem"
+        Me.tbBicycleTypeGearSystem.Size = New System.Drawing.Size(234, 26)
+        Me.tbBicycleTypeGearSystem.TabIndex = 59
+        '
+        'tbBicycleTypeDescription
+        '
+        Me.tbBicycleTypeDescription.Location = New System.Drawing.Point(617, 183)
+        Me.tbBicycleTypeDescription.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeDescription.MaxLength = 254
+        Me.tbBicycleTypeDescription.Multiline = True
+        Me.tbBicycleTypeDescription.Name = "tbBicycleTypeDescription"
+        Me.tbBicycleTypeDescription.Size = New System.Drawing.Size(234, 91)
+        Me.tbBicycleTypeDescription.TabIndex = 58
+        '
+        'tbBicycleTypeName
+        '
+        Me.tbBicycleTypeName.Location = New System.Drawing.Point(617, 139)
+        Me.tbBicycleTypeName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbBicycleTypeName.Name = "tbBicycleTypeName"
+        Me.tbBicycleTypeName.Size = New System.Drawing.Size(234, 26)
+        Me.tbBicycleTypeName.TabIndex = 57
+        '
+        'lbBicycleType
+        '
+        Me.lbBicycleType.FormattingEnabled = True
+        Me.lbBicycleType.ItemHeight = 20
+        Me.lbBicycleType.Location = New System.Drawing.Point(28, 139)
+        Me.lbBicycleType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.lbBicycleType.Name = "lbBicycleType"
+        Me.lbBicycleType.Size = New System.Drawing.Size(276, 344)
+        Me.lbBicycleType.TabIndex = 56
         '
         'TabPage4
         '
@@ -495,23 +694,14 @@ Partial Class adminView
         Me.TabPage4.Text = "Utstyrstyper"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'Label15
+        'btnBicycleTypeClear
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(569, 491)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(273, 20)
-        Me.Label15.TabIndex = 54
-        Me.Label15.Text = "Felter merket med (*) er obligatoriske."
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(609, 290)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(273, 20)
-        Me.Label16.TabIndex = 55
-        Me.Label16.Text = "Felter merket med (*) er obligatoriske."
+        Me.btnBicycleTypeClear.Location = New System.Drawing.Point(766, 493)
+        Me.btnBicycleTypeClear.Name = "btnBicycleTypeClear"
+        Me.btnBicycleTypeClear.Size = New System.Drawing.Size(85, 35)
+        Me.btnBicycleTypeClear.TabIndex = 73
+        Me.btnBicycleTypeClear.Text = "Tøm"
+        Me.btnBicycleTypeClear.UseVisualStyleBackColor = True
         '
         'adminView
         '
@@ -530,6 +720,8 @@ Partial Class adminView
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -571,10 +763,27 @@ Partial Class adminView
     Friend WithEvents tbLocationName As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents cbFilterUserAccount As ComboBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents btnUserClear As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents btnBicycleTypeSave As Button
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents tbBicycleTypeGearSystem As TextBox
+    Friend WithEvents tbBicycleTypeDescription As TextBox
+    Friend WithEvents tbBicycleTypeName As TextBox
+    Friend WithEvents lbBicycleType As ListBox
+    Friend WithEvents tbBicycleTypeRateHour As TextBox
+    Friend WithEvents tbBicycleTypeRateDay As TextBox
+    Friend WithEvents tbBicycleTypeFrameSize As TextBox
+    Friend WithEvents tbBicycleTypeWheelSize As TextBox
+    Friend WithEvents btnBicycleTypeClear As Button
 End Class
