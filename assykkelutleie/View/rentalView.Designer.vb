@@ -22,6 +22,7 @@ Partial Class rentalView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rentalView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -41,6 +42,8 @@ Partial Class rentalView
         Me.pickequipment = New System.Windows.Forms.ComboBox()
         Me.pickbike = New System.Windows.Forms.ComboBox()
         Me.Kunde = New System.Windows.Forms.GroupBox()
+        Me.presentcustomerid = New System.Windows.Forms.Label()
+        Me.customerid = New System.Windows.Forms.Label()
         Me.mailtxt = New System.Windows.Forms.TextBox()
         Me.surnametxt = New System.Windows.Forms.TextBox()
         Me.firstnametxt = New System.Windows.Forms.TextBox()
@@ -61,11 +64,12 @@ Partial Class rentalView
         Me.pickequipment2 = New System.Windows.Forms.ComboBox()
         Me.pickbike2 = New System.Windows.Forms.ComboBox()
         Me.searchrentals = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtrentalsearch = New System.Windows.Forms.TextBox()
         Me.lbrentals = New System.Windows.Forms.ListBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.customerid = New System.Windows.Forms.Label()
-        Me.presentcustomerid = New System.Windows.Forms.Label()
+        Me.commenttxt = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -208,6 +212,8 @@ Partial Class rentalView
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.commenttxt)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.pickequipment)
@@ -282,6 +288,23 @@ Partial Class rentalView
         Me.Kunde.TabIndex = 0
         Me.Kunde.TabStop = False
         Me.Kunde.Text = "Kunde"
+        '
+        'presentcustomerid
+        '
+        Me.presentcustomerid.AutoSize = True
+        Me.presentcustomerid.Location = New System.Drawing.Point(108, 270)
+        Me.presentcustomerid.Name = "presentcustomerid"
+        Me.presentcustomerid.Size = New System.Drawing.Size(0, 17)
+        Me.presentcustomerid.TabIndex = 10
+        '
+        'customerid
+        '
+        Me.customerid.AutoSize = True
+        Me.customerid.Location = New System.Drawing.Point(12, 270)
+        Me.customerid.Name = "customerid"
+        Me.customerid.Size = New System.Drawing.Size(71, 17)
+        Me.customerid.TabIndex = 9
+        Me.customerid.Text = "Kunde-ID:"
         '
         'mailtxt
         '
@@ -377,7 +400,7 @@ Partial Class rentalView
         Me.TabPage2.Controls.Add(Me.pickequipment2)
         Me.TabPage2.Controls.Add(Me.pickbike2)
         Me.TabPage2.Controls.Add(Me.searchrentals)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.txtrentalsearch)
         Me.TabPage2.Controls.Add(Me.lbrentals)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
@@ -475,16 +498,17 @@ Partial Class rentalView
         Me.searchrentals.Text = "Søk"
         Me.searchrentals.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txtrentalsearch
         '
-        Me.TextBox2.Location = New System.Drawing.Point(145, 35)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(163, 22)
-        Me.TextBox2.TabIndex = 1
+        Me.txtrentalsearch.Location = New System.Drawing.Point(145, 35)
+        Me.txtrentalsearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtrentalsearch.Name = "txtrentalsearch"
+        Me.txtrentalsearch.Size = New System.Drawing.Size(163, 22)
+        Me.txtrentalsearch.TabIndex = 1
         '
         'lbrentals
         '
+        Me.lbrentals.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbrentals.FormattingEnabled = True
         Me.lbrentals.ItemHeight = 16
         Me.lbrentals.Location = New System.Drawing.Point(9, 68)
@@ -503,22 +527,28 @@ Partial Class rentalView
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'customerid
+        'commenttxt
         '
-        Me.customerid.AutoSize = True
-        Me.customerid.Location = New System.Drawing.Point(12, 270)
-        Me.customerid.Name = "customerid"
-        Me.customerid.Size = New System.Drawing.Size(71, 17)
-        Me.customerid.TabIndex = 9
-        Me.customerid.Text = "Kunde-ID:"
+        Me.commenttxt.Location = New System.Drawing.Point(9, 133)
+        Me.commenttxt.Multiline = True
+        Me.commenttxt.Name = "commenttxt"
+        Me.commenttxt.Size = New System.Drawing.Size(245, 154)
+        Me.commenttxt.TabIndex = 4
         '
-        'presentcustomerid
+        'Label13
         '
-        Me.presentcustomerid.AutoSize = True
-        Me.presentcustomerid.Location = New System.Drawing.Point(108, 270)
-        Me.presentcustomerid.Name = "presentcustomerid"
-        Me.presentcustomerid.Size = New System.Drawing.Size(0, 17)
-        Me.presentcustomerid.TabIndex = 10
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(9, 106)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(84, 17)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "Kommentar:"
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'rentalView
         '
@@ -574,7 +604,7 @@ Partial Class rentalView
     Friend WithEvents Label9 As Label
     Friend WithEvents rentalcomplete As Button
     Friend WithEvents searchrentals As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtrentalsearch As TextBox
     Friend WithEvents lbrentals As ListBox
     Friend WithEvents filing2 As ComboBox
     Friend WithEvents extradition2 As ComboBox
@@ -587,4 +617,7 @@ Partial Class rentalView
     Friend WithEvents extraditiondate2 As DateTimePicker
     Friend WithEvents presentcustomerid As Label
     Friend WithEvents customerid As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents commenttxt As TextBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class
