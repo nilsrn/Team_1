@@ -6,17 +6,17 @@
 
 
     Public Sub New(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
-        m_comment = Comment
-        cid = CustomerID
         rid = RentalID
+        cid = CustomerID
+        m_username = Username
+        pickuploc = PickupLocation
+        dloc = DeliveryLocation
+        m_pickuptime = PickupTime
+        dtime = DeliveryTime
+        uttyp = Utleie_Type
         typantall = Utleie_Type_Antall
         pris = Total_Pris
-        dloc = DeliveryLocation
-        dtime = DeliveryTime
-        pickuploc = PickupLocation
-        m_pickuptime = PickupTime
-        m_username = Username
-        uttyp = Utleie_Type
+        m_comment = Comment
 
     End Sub
     Public Sub New(table As DataTable)

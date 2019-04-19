@@ -64,6 +64,7 @@ Public Class rentalView
 
         Next
     End Sub
+
 #End Region
 
 #Region "Actions"
@@ -85,12 +86,16 @@ Public Class rentalView
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
             PickupTime = extraditiondate.Text
-            DeliveryTime = filing.Text
+            DeliveryTime = filingdate.Text
             RentalID = RentalID + 1
+            Utleie_Type = "Sykkel"
+            Utleie_Type_Antall = 4
             Comment = commenttxt.Text
-            Dim updateRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
+            Total_Pris = 400
+            Username = My.Settings.username
+            Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
 
-            DbManager.InsertOrUpdate(updateRentals)
+            DbManager.Insert(insertRentals)
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
@@ -124,7 +129,7 @@ Public Class rentalView
             End If
         End If
     End Sub
-    Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbrentals.SelectedIndexChanged 'Populates the textboxes based on the chosen bicycle in the listbox.
+    Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbrentals.SelectedIndexChanged 'Populates the comboboxes based on the chosen rental in the listbox.
         Dim rentalSearch As New Rentals()
         PutRentals(DbManager.GetSpecific(rentalSearch, lbrentals.SelectedValue.ToString()))
     End Sub
@@ -138,7 +143,7 @@ Public Class rentalView
             Catch ex As Exception
             End Try
         End If
-
+        PutLbRentals(GetAllRentals)
     End Sub
 #End Region
 

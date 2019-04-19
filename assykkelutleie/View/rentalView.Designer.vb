@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class rentalView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class rentalView
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rentalView))
@@ -28,7 +28,6 @@ Partial Class rentalView
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.rentalcomplete = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.filing = New System.Windows.Forms.ComboBox()
         Me.extradition = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -56,6 +55,8 @@ Partial Class rentalView
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.filingdate2 = New System.Windows.Forms.DateTimePicker()
         Me.extraditiondate2 = New System.Windows.Forms.DateTimePicker()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -71,8 +72,7 @@ Partial Class rentalView
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.filing = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -137,15 +137,6 @@ Partial Class rentalView
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Utlevering og innlevering"
-        '
-        'filing
-        '
-        Me.filing.FormattingEnabled = True
-        Me.filing.Location = New System.Drawing.Point(132, 130)
-        Me.filing.Margin = New System.Windows.Forms.Padding(4)
-        Me.filing.Name = "filing"
-        Me.filing.Size = New System.Drawing.Size(113, 24)
-        Me.filing.TabIndex = 10
         '
         'extradition
         '
@@ -430,6 +421,24 @@ Partial Class rentalView
         Me.TabPage2.Text = "Bestillingsoversikt"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(631, 48)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(79, 17)
+        Me.Label15.TabIndex = 15
+        Me.Label15.Text = "Velg utstyr:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(473, 48)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(83, 17)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Velg sykkel:"
+        '
         'filingdate2
         '
         Me.filingdate2.Location = New System.Drawing.Point(634, 229)
@@ -555,23 +564,13 @@ Partial Class rentalView
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'Label14
+        'filing
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(473, 48)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(83, 17)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Velg sykkel:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(631, 48)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(79, 17)
-        Me.Label15.TabIndex = 15
-        Me.Label15.Text = "Velg utstyr:"
+        Me.filing.FormattingEnabled = True
+        Me.filing.Location = New System.Drawing.Point(131, 130)
+        Me.filing.Name = "filing"
+        Me.filing.Size = New System.Drawing.Size(117, 24)
+        Me.filing.TabIndex = 10
         '
         'rentalView
         '
@@ -622,7 +621,6 @@ Partial Class rentalView
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtsearch As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents filing As ComboBox
     Friend WithEvents extradition As ComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
@@ -647,4 +645,5 @@ Partial Class rentalView
     Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
+    Friend WithEvents filing As ComboBox
 End Class
