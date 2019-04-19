@@ -6,9 +6,9 @@ Public Class DbManager
     Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Vurdere sikkerheten her
     'Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
 
-    ' Login
-    Public Shared Sub Login(username As String, password As String) 'Nils
-        Dim salt As String = "" 'Empty because using a DataReader wich will get the specific users salt from the DB. 
+
+    Public Shared Sub Login(username As String, password As String) ' Sub procedure for logging in users. 
+        Dim salt As String = "" 'Empty because using a DataReader which will get the specific users salt from the DB. 
 
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim readsaltquery As String = "SELECT * FROM UserAccount WHERE username=@user"
@@ -22,7 +22,7 @@ Public Class DbManager
                 End While
                 reader.Close()
 
-                Dim pass = Encryption.HashString(password)
+                Dim pass = Encryption.HashString(password) 'Hashing the password that the user types in for the login
                 Dim hashedandsalted = Encryption.HashString(String.Format("{0}{1}", pass, salt))
 
                 Dim checkloginquery As String = "SELECT COUNT(*) FROM UserAccount WHERE username =@user AND password =@pass"
@@ -30,13 +30,13 @@ Public Class DbManager
                 sqlcommand1.Parameters.AddWithValue("@user", username)
                 sqlcommand1.Parameters.AddWithValue("@pass", hashedandsalted)
 
-                Dim results As Integer = Convert.ToInt32(sqlcommand1.ExecuteScalar) ' Reads the ammount of results
+                Dim results As Integer = Convert.ToInt32(sqlcommand1.ExecuteScalar) ' Reads the ammount of results. 1 result equals a successfull login. 
                 If results = 1 Then
                     Dim loggedInUser As New UserAccount()
                     Dim table As DataTable = GetSpecific(loggedInUser, username)
                     loggedInUser = New UserAccount(table)
-                    My.Settings.username = loggedinuser.Username()
-                    My.Settings.accounttype = loggedinuser.AccountType()
+                    My.Settings.username = loggedInUser.Username() 'Writes the username, accounttype and location to My.Settings so it can be easily used in the rest of the application. 
+                    My.Settings.accounttype = loggedInUser.AccountType()
                     My.Settings.location = loggedInUser.Location()
                     MsgBox("Velkommen: " & username, MsgBoxStyle.Information, "AS SykkelUtleie")
                     mainView.Show()
@@ -49,7 +49,7 @@ Public Class DbManager
     End Sub
 
     'Function to verify that the application is connected to the database. Also opens a connection to the database
-    Public Shared Async Function ConnectedToServerAsync(SqlConnection) As Task(Of Boolean) ' Nils
+    Public Shared Async Function ConnectedToServerAsync(SqlConnection) As Task(Of Boolean)
         Try
             Await SqlConnection.OpenAsync()
         Catch ex As Exception
