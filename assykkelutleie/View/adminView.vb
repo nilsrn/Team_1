@@ -5,8 +5,51 @@
         GetAllUsers()
         GetAllLocations()
         GetAllBicycleType()
+        GetAllEquipmentType()
         CbGetUserLocations()
         CbGetAccountTypes()
+    End Sub
+
+    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click  'Code for the ContextMenuStrip that deletes the selcted item in the listboxes based on the current active tab. 
+        If MsgBox("Sikker på at du vil slette valgt objekt?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            If TabControl1.SelectedTab Is TabUsers Then
+                Try
+                    Dim user As New UserAccount()
+                    Dim selectedUser As String = lbUsers.SelectedValue.ToString
+                    DbManager.Delete(user, "Username", selectedUser)
+                Catch ex As Exception
+                    MsgBox("Brukeren ble ikke slettet. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+                End Try
+                GetAllUsers()
+            ElseIf TabControl1.SelectedTab Is TabLocations Then
+                Try
+                    Dim location As New Location()
+                    Dim selectedLocation As String = lbLocations.SelectedValue.ToString
+                    DbManager.Delete(location, "Name", selectedLocation)
+                Catch ex As Exception
+                    MsgBox("Lokasjonen ble ikke slettet. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+                End Try
+                GetAllLocations()
+            ElseIf TabControl1.SelectedTab Is TabBicycleTypes Then
+                Try
+                    Dim bicycleType As New BicycleType()
+                    Dim selectedBicycleType As String = lbBicycleType.SelectedValue.ToString
+                    DbManager.Delete(bicycleType, "Name", selectedBicycleType)
+                Catch ex As Exception
+                    MsgBox("Sykkeltypen ble ikke slettet. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+                End Try
+                GetAllBicycleType()
+            ElseIf TabControl1.SelectedTab Is TabEquipmentType Then
+                Try
+                    Dim equipmentType As New EquipmentType()
+                    Dim selectedEquipmentType As String = lbEquipmentType.SelectedValue.ToString
+                    DbManager.Delete(equipmentType, "Name", selectedEquipmentType)
+                Catch ex As Exception
+                    MsgBox("Utstyrstypen ble ikke slettet. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+                End Try
+                GetAllEquipmentType()
+            End If
+        End If
     End Sub
 
 #End Region
@@ -55,7 +98,7 @@
         PutUserAccount(DbManager.GetSpecific(userselected, lbUsers.SelectedValue.ToString()))
     End Sub
 
-    Private Sub btnUserClear_Click(sender As Object, e As EventArgs) Handles btnUserClear.Click
+    Private Sub btnUserClear_Click(sender As Object, e As EventArgs) Handles btnUserClear.Click 'Clears the content of the textboxes. 
         tbUsername.Text = ""
         tbFirstName.Text = ""
         tbSurname.Text = ""
@@ -65,19 +108,6 @@
         cbUserLocation.Text = ""
     End Sub
 
-    Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click  'Deletes the selcted item in the listbox.
-        If MsgBox("Sikker på at du vil slette brukerkontoen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Try
-                Dim user As New UserAccount()
-                Dim selectedUser As String = lbUsers.SelectedValue.ToString
-                DbManager.Delete(user, "Username", selectedUser)
-            Catch ex As Exception
-                MsgBox("Brukeren ble ikke slettet. Sjekk at den ikke er knyttet til aktive utleie. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
-            End Try
-        End If
-        GetAllUsers()
-    End Sub
-
     Private Sub btnUserSearch_Click(sender As Object, e As EventArgs) Handles btnUserSearch.Click 'Searches for useraccounts based on the username in the textboxt field and lists the results in the listbox below.
         Dim username As String = tbUsername.Text
         Dim usersearch As New UserAccount()
@@ -85,7 +115,7 @@
         PutUserAccount(usertable)
     End Sub
 
-    Private Sub btnUserSave_Click(sender As Object, e As EventArgs) Handles btnUserSave.Click
+    Private Sub btnUserSave_Click(sender As Object, e As EventArgs) Handles btnUserSave.Click ' Updates an existing User or creates a new if the name is unique. Due to using the general Update function for editing users the password must be set for each edit. 
         Dim username, firstname, surname, email, telephoneNumber, accounttype, location As String
         Dim password0, password, salt
         Try
@@ -155,12 +185,12 @@
                 Dim updateLocation As New Location(name, address, telephoneNumber)
                 DbManager.InsertOrUpdate(updateLocation)
             Catch ex As Exception
-                MsgBox("Du må fylle inn verdier i alle feltene.")
-            End Try
+            MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+        End Try
         GetAllLocations()
     End Sub
 
-    Private Sub btnLocationClear_Click(sender As Object, e As EventArgs) Handles btnLocationClear.Click
+    Private Sub btnLocationClear_Click(sender As Object, e As EventArgs) Handles btnLocationClear.Click 'Clears the content of the textboxes. 
         tbLocationName.Text = ""
         tbLocationAddress.Text = ""
         tbLocationTelephoneNumber.Text = ""
@@ -217,7 +247,7 @@
         GetAllBicycleType()
     End Sub
 
-    Private Sub btnBicycleTypeClear_Click(sender As Object, e As EventArgs) Handles btnBicycleTypeClear.Click
+    Private Sub btnBicycleTypeClear_Click(sender As Object, e As EventArgs) Handles btnBicycleTypeClear.Click 'Clears the content of the textboxes. 
         tbBicycleTypeName.Text = ""
         tbBicycleTypeDescription.Text = ""
         tbBicycleTypeGearSystem.Text = ""
@@ -226,15 +256,57 @@
         tbBicycleTypeRateHour.Text = ""
         tbBicycleTypeRateDay.Text = ""
     End Sub
-
-
-
-
-
-
 #End Region
 
 #Region "Code for the BicycleType tab"
+    Private Sub PutLbEquipmentType(equipmentTypeTable As DataTable)  'Populates the BicycleType listbox with data received from the DB. 
+        lbEquipmentType.DataSource = equipmentTypeTable
+        lbEquipmentType.DisplayMember = "Name"
+        lbEquipmentType.ValueMember = "Name"
+    End Sub
+
+    Private Sub GetAllEquipmentType()   'Gets all BicycleTypes and populates the listbox
+        Dim EquipmentType As New EquipmentType()
+        Dim equipmentTypeTable As DataTable = DbManager.GetAll(EquipmentType)
+        PutLbEquipmentType(equipmentTypeTable)
+    End Sub
+
+    Private Sub PutEquipmentType(table As DataTable) 'Populates the textboxes with selected location data.
+        For Each row In table.Rows
+            tbEquipmentTypeName.Text = row("Name")
+            tbEquipmentTypeDescription.Text = row("Description")
+            tbEquipmentTypeRateDay.Text = row("Rateday")
+            tbEquipmentTypeRateHour.Text = row("Ratehour")
+        Next
+    End Sub
+
+    Private Sub lbEquipmentType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbEquipmentType.SelectedIndexChanged 'Populates the textboxes based on the chosen BicycleType in the listbox.
+        Dim equipmenttypeselected As New EquipmentType()
+        PutEquipmentType(DbManager.GetSpecific(equipmenttypeselected, lbEquipmentType.SelectedValue.ToString()))
+    End Sub
+
+    Private Sub btnEquipmentTypeSave_Click(sender As Object, e As EventArgs) Handles btnEquipmentTypeSave.Click 'Updates an existing BicycleType or creates a new if the name is unique.
+        Dim name, description As String
+        Dim rateHour, rateDay As Integer
+        Try
+            name = tbEquipmentTypeName.Text
+            description = tbEquipmentTypeDescription.Text
+            rateHour = tbEquipmentTypeRateHour.Text
+            rateDay = tbEquipmentTypeRateDay.Text
+            Dim updateEquipmentType As New EquipmentType(name, description, rateHour, rateDay)
+            DbManager.InsertOrUpdate(updateEquipmentType)
+        Catch ex As Exception
+            MsgBox("Noe gikk galt. Feilmelding: " & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
+        End Try
+        GetAllEquipmentType()
+    End Sub
+
+    Private Sub btnEquipmentTypeClear_Click(sender As Object, e As EventArgs) Handles btnEquipmentTypeClear.Click 'Clears the content of the textboxes. 
+        tbEquipmentTypeName.Text = ""
+        tbEquipmentTypeDescription.Text = ""
+        tbEquipmentTypeRateHour.Text = ""
+        tbEquipmentTypeRateDay.Text = ""
+    End Sub
 #End Region
 End Class
 
