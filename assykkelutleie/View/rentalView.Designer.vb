@@ -23,6 +23,10 @@ Partial Class rentalView
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rentalView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -80,6 +84,14 @@ Partial Class rentalView
         Me.CustomerIDlbl = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.RentalIDlbl = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.usernamelbl = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.pricelbl = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.utleietypelbl = New System.Windows.Forms.Label()
+        Me.typanatalllbltxt = New System.Windows.Forms.Label()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -87,7 +99,9 @@ Partial Class rentalView
         Me.Kunde.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -463,6 +477,7 @@ Partial Class rentalView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Chart1)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
@@ -481,6 +496,13 @@ Partial Class rentalView
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.typanatalllbltxt)
+        Me.GroupBox1.Controls.Add(Me.utleietypelbl)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.pricelbl)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.usernamelbl)
+        Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.RentalIDlbl)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.CustomerIDlbl)
@@ -498,9 +520,9 @@ Partial Class rentalView
         Me.GroupBox1.Controls.Add(Me.changeextradition)
         Me.GroupBox1.Controls.Add(Me.changeequipment)
         Me.GroupBox1.Controls.Add(Me.changebike)
-        Me.GroupBox1.Location = New System.Drawing.Point(446, 64)
+        Me.GroupBox1.Location = New System.Drawing.Point(446, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(354, 424)
+        Me.GroupBox1.Size = New System.Drawing.Size(354, 481)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Endre bestilling:"
@@ -508,7 +530,7 @@ Partial Class rentalView
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(44, 241)
+        Me.Label17.Location = New System.Drawing.Point(45, 293)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(84, 17)
         Me.Label17.TabIndex = 30
@@ -516,7 +538,7 @@ Partial Class rentalView
         '
         'changecommenttxt
         '
-        Me.changecommenttxt.Location = New System.Drawing.Point(47, 261)
+        Me.changecommenttxt.Location = New System.Drawing.Point(48, 322)
         Me.changecommenttxt.Multiline = True
         Me.changecommenttxt.Name = "changecommenttxt"
         Me.changecommenttxt.Size = New System.Drawing.Size(269, 115)
@@ -525,7 +547,7 @@ Partial Class rentalView
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(202, 92)
+        Me.Label18.Location = New System.Drawing.Point(206, 164)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(79, 17)
         Me.Label18.TabIndex = 28
@@ -534,7 +556,7 @@ Partial Class rentalView
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(45, 92)
+        Me.Label19.Location = New System.Drawing.Point(49, 164)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(83, 17)
         Me.Label19.TabIndex = 27
@@ -542,21 +564,21 @@ Partial Class rentalView
         '
         'changedatefiling
         '
-        Me.changedatefiling.Location = New System.Drawing.Point(203, 198)
+        Me.changedatefiling.Location = New System.Drawing.Point(207, 270)
         Me.changedatefiling.Name = "changedatefiling"
         Me.changedatefiling.Size = New System.Drawing.Size(121, 22)
         Me.changedatefiling.TabIndex = 26
         '
         'changedateex
         '
-        Me.changedateex.Location = New System.Drawing.Point(44, 198)
+        Me.changedateex.Location = New System.Drawing.Point(48, 270)
         Me.changedateex.Name = "changedateex"
         Me.changedateex.Size = New System.Drawing.Size(121, 22)
         Me.changedateex.TabIndex = 25
         '
         'savechanges
         '
-        Me.savechanges.Location = New System.Drawing.Point(47, 382)
+        Me.savechanges.Location = New System.Drawing.Point(47, 443)
         Me.savechanges.Name = "savechanges"
         Me.savechanges.Size = New System.Drawing.Size(269, 32)
         Me.savechanges.TabIndex = 24
@@ -566,7 +588,7 @@ Partial Class rentalView
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(200, 148)
+        Me.Label20.Location = New System.Drawing.Point(204, 220)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(81, 17)
         Me.Label20.TabIndex = 23
@@ -575,7 +597,7 @@ Partial Class rentalView
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(45, 148)
+        Me.Label21.Location = New System.Drawing.Point(49, 220)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(76, 17)
         Me.Label21.TabIndex = 22
@@ -584,7 +606,7 @@ Partial Class rentalView
         'changefiling
         '
         Me.changefiling.FormattingEnabled = True
-        Me.changefiling.Location = New System.Drawing.Point(203, 168)
+        Me.changefiling.Location = New System.Drawing.Point(207, 240)
         Me.changefiling.Name = "changefiling"
         Me.changefiling.Size = New System.Drawing.Size(121, 24)
         Me.changefiling.TabIndex = 21
@@ -592,7 +614,7 @@ Partial Class rentalView
         'changeextradition
         '
         Me.changeextradition.FormattingEnabled = True
-        Me.changeextradition.Location = New System.Drawing.Point(44, 168)
+        Me.changeextradition.Location = New System.Drawing.Point(48, 240)
         Me.changeextradition.Name = "changeextradition"
         Me.changeextradition.Size = New System.Drawing.Size(121, 24)
         Me.changeextradition.TabIndex = 20
@@ -600,7 +622,7 @@ Partial Class rentalView
         'changeequipment
         '
         Me.changeequipment.FormattingEnabled = True
-        Me.changeequipment.Location = New System.Drawing.Point(205, 112)
+        Me.changeequipment.Location = New System.Drawing.Point(209, 184)
         Me.changeequipment.Name = "changeequipment"
         Me.changeequipment.Size = New System.Drawing.Size(121, 24)
         Me.changeequipment.TabIndex = 19
@@ -608,7 +630,7 @@ Partial Class rentalView
         'changebike
         '
         Me.changebike.FormattingEnabled = True
-        Me.changebike.Location = New System.Drawing.Point(44, 112)
+        Me.changebike.Location = New System.Drawing.Point(48, 184)
         Me.changebike.Name = "changebike"
         Me.changebike.Size = New System.Drawing.Size(121, 24)
         Me.changebike.TabIndex = 18
@@ -616,7 +638,7 @@ Partial Class rentalView
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(40, 30)
+        Me.Label11.Location = New System.Drawing.Point(44, 82)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(71, 17)
         Me.Label11.TabIndex = 31
@@ -625,7 +647,7 @@ Partial Class rentalView
         'CustomerIDlbl
         '
         Me.CustomerIDlbl.AutoSize = True
-        Me.CustomerIDlbl.Location = New System.Drawing.Point(202, 22)
+        Me.CustomerIDlbl.Location = New System.Drawing.Point(169, 82)
         Me.CustomerIDlbl.Name = "CustomerIDlbl"
         Me.CustomerIDlbl.Size = New System.Drawing.Size(0, 17)
         Me.CustomerIDlbl.TabIndex = 32
@@ -633,7 +655,7 @@ Partial Class rentalView
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(40, 57)
+        Me.Label12.Location = New System.Drawing.Point(43, 112)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(126, 17)
         Me.Label12.TabIndex = 33
@@ -642,10 +664,92 @@ Partial Class rentalView
         'RentalIDlbl
         '
         Me.RentalIDlbl.AutoSize = True
-        Me.RentalIDlbl.Location = New System.Drawing.Point(205, 40)
+        Me.RentalIDlbl.Location = New System.Drawing.Point(172, 100)
         Me.RentalIDlbl.Name = "RentalIDlbl"
         Me.RentalIDlbl.Size = New System.Drawing.Size(0, 17)
         Me.RentalIDlbl.TabIndex = 34
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(44, 31)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(85, 17)
+        Me.Label14.TabIndex = 35
+        Me.Label14.Text = "Brukernavn:"
+        '
+        'usernamelbl
+        '
+        Me.usernamelbl.AutoSize = True
+        Me.usernamelbl.Location = New System.Drawing.Point(150, 31)
+        Me.usernamelbl.Name = "usernamelbl"
+        Me.usernamelbl.Size = New System.Drawing.Size(59, 17)
+        Me.usernamelbl.TabIndex = 36
+        Me.usernamelbl.Text = "Label15"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(44, 138)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(36, 17)
+        Me.Label15.TabIndex = 37
+        Me.Label15.Text = "Pris:"
+        '
+        'pricelbl
+        '
+        Me.pricelbl.AutoSize = True
+        Me.pricelbl.Location = New System.Drawing.Point(159, 138)
+        Me.pricelbl.Name = "pricelbl"
+        Me.pricelbl.Size = New System.Drawing.Size(59, 17)
+        Me.pricelbl.TabIndex = 38
+        Me.pricelbl.Text = "Label16"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(46, 61)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(79, 17)
+        Me.Label16.TabIndex = 39
+        Me.Label16.Text = "Utleietype::"
+        '
+        'utleietypelbl
+        '
+        Me.utleietypelbl.AutoSize = True
+        Me.utleietypelbl.Location = New System.Drawing.Point(150, 65)
+        Me.utleietypelbl.Name = "utleietypelbl"
+        Me.utleietypelbl.Size = New System.Drawing.Size(79, 17)
+        Me.utleietypelbl.TabIndex = 40
+        Me.utleietypelbl.Text = "Utleietype::"
+        '
+        'typanatalllbltxt
+        '
+        Me.typanatalllbltxt.AutoSize = True
+        Me.typanatalllbltxt.Location = New System.Drawing.Point(159, 302)
+        Me.typanatalllbltxt.Name = "typanatalllbltxt"
+        Me.typanatalllbltxt.Size = New System.Drawing.Size(79, 17)
+        Me.typanatalllbltxt.TabIndex = 41
+        Me.typanatalllbltxt.Text = "Utleietype::"
+        '
+        'Chart1
+        '
+        ChartArea1.Name = "Terreng"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(61, 95)
+        Me.Chart1.Name = "Chart1"
+        Series1.ChartArea = "Terreng"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(300, 300)
+        Me.Chart1.TabIndex = 0
+        Me.Chart1.Text = "Chart1"
+        Title1.Name = "Terrengsykkel"
+        Me.Chart1.Titles.Add(Title1)
         '
         'rentalView
         '
@@ -669,8 +773,10 @@ Partial Class rentalView
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -730,4 +836,12 @@ Partial Class rentalView
     Friend WithEvents Label11 As Label
     Friend WithEvents RentalIDlbl As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents pricelbl As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents usernamelbl As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents typanatalllbltxt As Label
+    Friend WithEvents utleietypelbl As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 End Class

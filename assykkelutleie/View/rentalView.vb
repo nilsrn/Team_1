@@ -9,19 +9,31 @@ Public Class rentalView
 
 
         pickbike.DataSource = DbManager.GetAll(bicycletype)
+        changebike.DataSource = DbManager.GetAll(bicycletype)
         pickequipment.DataSource = DbManager.GetAll(equipment)
+        changeequipment.DataSource = DbManager.GetAll(equipment)
         extradition.DataSource = DbManager.GetAll(location)
+        changeextradition.DataSource = DbManager.GetAll(location)
         filing.DataSource = DbManager.GetAll(location)
+        changefiling.DataSource = DbManager.GetAll(location)
 
         pickbike.DisplayMember = "Name"
+        changebike.DisplayMember = "Name"
         pickequipment.DisplayMember = "Name"
+        changeequipment.DisplayMember = "Name"
         extradition.DisplayMember = "Name"
+        changeextradition.DisplayMember = "Name"
         filing.DisplayMember = "Name"
+        changefiling.DisplayMember = "Name"
 
         pickbike.ValueMember = "Name"
+        changebike.ValueMember = "Name"
         pickequipment.ValueMember = "Name"
+        changeequipment.ValueMember = "Name"
         extradition.ValueMember = "Name"
+        changeextradition.ValueMember = "Name"
         filing.ValueMember = "Name"
+        changefiling.ValueMember = "Name"
 
     End Sub
     Private Sub PutLbRentals(table As DataTable) 'Populates the listbox with data received from the DB. 
@@ -51,8 +63,6 @@ Public Class rentalView
     End Sub
     Private Sub PutRentals(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
-            changebike.SelectedValue = row("Name")
-            changeequipment.SelectedValue = row("Name")
             changeextradition.SelectedValue = row("PickupLocation")
             changefiling.SelectedValue = row("DeliveryLocation")
             changedateex.Text = row("PickupTime")
@@ -60,9 +70,22 @@ Public Class rentalView
             changecommenttxt.Text = row("Comment")
             CustomerIDlbl.Text = row("CustomerID")
             RentalIDlbl.Text = row("RentalID")
+            usernamelbl.Text = row("Username")
+            pricelbl.Text = row("Total_Pris")
+            utleietypelbl.Text = row("Utleie_Type")
+            typanatalllbltxt.Text = row("Utleie_Type_Antall")
         Next
     End Sub
-
+    Private Sub PutBicycleType(List As DataTable)
+        For Each row In List.Rows
+            changebike.SelectedValue = row("Name")
+        Next
+    End Sub
+    Private Sub PutEquipmentType(List As DataTable)
+        For Each row In List.Rows
+            changeequipment.SelectedValue = row("Name")
+        Next
+    End Sub
 #End Region
 
 #Region "Actions"
@@ -129,7 +152,11 @@ Public Class rentalView
     End Sub
     Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbrentals.SelectedIndexChanged 'Populates the comboboxes based on the chosen rental in the listbox.
         Dim rentalSearch As New Rentals()
+        Dim bikeSearch As New BicycleType()
+        Dim equipmentSearch As New EquipmentType()
         PutRentals(DbManager.GetSpecific(rentalSearch, lbrentals.SelectedValue.ToString()))
+        PutBicycleType(DbManager.GetSpecific(bikeSearch, lbrentals.SelectedValue.ToString()))
+        PutEquipmentType(DbManager.GetSpecific(equipmentSearch, lbrentals.SelectedValue.ToString()))
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click 'Deletes the selcted item.
