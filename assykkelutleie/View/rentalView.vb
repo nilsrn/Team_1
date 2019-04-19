@@ -39,11 +39,7 @@ Public Class rentalView
         Dim rentalTable As DataTable = DbManager.GetAll(rentals)
         Return rentalTable
     End Function
-    Private Function GetAllBicycles() 'Returns a DataTable with all bicycles.
-        Dim bicycle As New Bicycle()
-        Dim bicyclesTable As DataTable = DbManager.GetAll(bicycle)
-        Return bicyclesTable
-    End Function
+
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
 
@@ -55,13 +51,15 @@ Public Class rentalView
     End Sub
     Private Sub PutRentals(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
-            pickbike2.SelectedValue = row("Name")
-            pickequipment2.SelectedValue = row("Name")
-            extradition2.SelectedValue = row("PickupLocation")
-            filing2.SelectedValue = row("DeliveryLocation")
-            extraditiondate2.Text = row("PickupTime")
-            filingdate2.Text = row("DeliveryTime")
-
+            changebike.SelectedValue = row("Name")
+            changeequipment.SelectedValue = row("Name")
+            changeextradition.SelectedValue = row("PickupLocation")
+            changefiling.SelectedValue = row("DeliveryLocation")
+            changedateex.Text = row("PickupTime")
+            changedatefiling.Text = row("DeliveryTime")
+            changecommenttxt.Text = row("Comment")
+            CustomerIDlbl.Text = row("CustomerID")
+            RentalIDlbl.Text = row("RentalID")
         Next
     End Sub
 

@@ -55,17 +55,6 @@ Partial Class rentalView
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.filingdate2 = New System.Windows.Forms.DateTimePicker()
-        Me.extraditiondate2 = New System.Windows.Forms.DateTimePicker()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.filing2 = New System.Windows.Forms.ComboBox()
-        Me.extradition2 = New System.Windows.Forms.ComboBox()
-        Me.pickequipment2 = New System.Windows.Forms.ComboBox()
-        Me.pickbike2 = New System.Windows.Forms.ComboBox()
         Me.searchrentals = New System.Windows.Forms.Button()
         Me.txtrentalsearch = New System.Windows.Forms.TextBox()
         Me.lbrentals = New System.Windows.Forms.ListBox()
@@ -73,6 +62,24 @@ Partial Class rentalView
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.filing = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.changecommenttxt = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.changedatefiling = New System.Windows.Forms.DateTimePicker()
+        Me.changedateex = New System.Windows.Forms.DateTimePicker()
+        Me.savechanges = New System.Windows.Forms.Button()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.changefiling = New System.Windows.Forms.ComboBox()
+        Me.changeextradition = New System.Windows.Forms.ComboBox()
+        Me.changeequipment = New System.Windows.Forms.ComboBox()
+        Me.changebike = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.CustomerIDlbl = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.RentalIDlbl = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -80,6 +87,7 @@ Partial Class rentalView
         Me.Kunde.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -398,17 +406,7 @@ Partial Class rentalView
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Controls.Add(Me.filingdate2)
-        Me.TabPage2.Controls.Add(Me.extraditiondate2)
-        Me.TabPage2.Controls.Add(Me.btnSave)
-        Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.Label11)
-        Me.TabPage2.Controls.Add(Me.filing2)
-        Me.TabPage2.Controls.Add(Me.extradition2)
-        Me.TabPage2.Controls.Add(Me.pickequipment2)
-        Me.TabPage2.Controls.Add(Me.pickbike2)
+        Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.searchrentals)
         Me.TabPage2.Controls.Add(Me.txtrentalsearch)
         Me.TabPage2.Controls.Add(Me.lbrentals)
@@ -420,97 +418,6 @@ Partial Class rentalView
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Bestillingsoversikt"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(631, 48)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(79, 17)
-        Me.Label15.TabIndex = 15
-        Me.Label15.Text = "Velg utstyr:"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(473, 48)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(83, 17)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Velg sykkel:"
-        '
-        'filingdate2
-        '
-        Me.filingdate2.Location = New System.Drawing.Point(634, 229)
-        Me.filingdate2.Name = "filingdate2"
-        Me.filingdate2.Size = New System.Drawing.Size(121, 22)
-        Me.filingdate2.TabIndex = 13
-        '
-        'extraditiondate2
-        '
-        Me.extraditiondate2.Location = New System.Drawing.Point(473, 229)
-        Me.extraditiondate2.Name = "extraditiondate2"
-        Me.extraditiondate2.Size = New System.Drawing.Size(121, 22)
-        Me.extraditiondate2.TabIndex = 12
-        '
-        'btnSave
-        '
-        Me.btnSave.Location = New System.Drawing.Point(476, 280)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(269, 32)
-        Me.btnSave.TabIndex = 11
-        Me.btnSave.Text = "Lagre"
-        Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(631, 159)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(81, 17)
-        Me.Label12.TabIndex = 10
-        Me.Label12.Text = "Innlevering:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(473, 159)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(76, 17)
-        Me.Label11.TabIndex = 9
-        Me.Label11.Text = "Utlevering:"
-        '
-        'filing2
-        '
-        Me.filing2.FormattingEnabled = True
-        Me.filing2.Location = New System.Drawing.Point(634, 182)
-        Me.filing2.Name = "filing2"
-        Me.filing2.Size = New System.Drawing.Size(121, 24)
-        Me.filing2.TabIndex = 6
-        '
-        'extradition2
-        '
-        Me.extradition2.FormattingEnabled = True
-        Me.extradition2.Location = New System.Drawing.Point(473, 182)
-        Me.extradition2.Name = "extradition2"
-        Me.extradition2.Size = New System.Drawing.Size(121, 24)
-        Me.extradition2.TabIndex = 5
-        '
-        'pickequipment2
-        '
-        Me.pickequipment2.FormattingEnabled = True
-        Me.pickequipment2.Location = New System.Drawing.Point(634, 68)
-        Me.pickequipment2.Name = "pickequipment2"
-        Me.pickequipment2.Size = New System.Drawing.Size(121, 24)
-        Me.pickequipment2.TabIndex = 4
-        '
-        'pickbike2
-        '
-        Me.pickbike2.FormattingEnabled = True
-        Me.pickbike2.Location = New System.Drawing.Point(473, 68)
-        Me.pickbike2.Name = "pickbike2"
-        Me.pickbike2.Size = New System.Drawing.Size(121, 24)
-        Me.pickbike2.TabIndex = 3
         '
         'searchrentals
         '
@@ -572,6 +479,174 @@ Partial Class rentalView
         Me.filing.Size = New System.Drawing.Size(117, 24)
         Me.filing.TabIndex = 10
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RentalIDlbl)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.CustomerIDlbl)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.Label17)
+        Me.GroupBox1.Controls.Add(Me.changecommenttxt)
+        Me.GroupBox1.Controls.Add(Me.Label18)
+        Me.GroupBox1.Controls.Add(Me.Label19)
+        Me.GroupBox1.Controls.Add(Me.changedatefiling)
+        Me.GroupBox1.Controls.Add(Me.changedateex)
+        Me.GroupBox1.Controls.Add(Me.savechanges)
+        Me.GroupBox1.Controls.Add(Me.Label20)
+        Me.GroupBox1.Controls.Add(Me.Label21)
+        Me.GroupBox1.Controls.Add(Me.changefiling)
+        Me.GroupBox1.Controls.Add(Me.changeextradition)
+        Me.GroupBox1.Controls.Add(Me.changeequipment)
+        Me.GroupBox1.Controls.Add(Me.changebike)
+        Me.GroupBox1.Location = New System.Drawing.Point(446, 64)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(354, 424)
+        Me.GroupBox1.TabIndex = 18
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Endre bestilling:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(44, 241)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(84, 17)
+        Me.Label17.TabIndex = 30
+        Me.Label17.Text = "Kommentar:"
+        '
+        'changecommenttxt
+        '
+        Me.changecommenttxt.Location = New System.Drawing.Point(47, 261)
+        Me.changecommenttxt.Multiline = True
+        Me.changecommenttxt.Name = "changecommenttxt"
+        Me.changecommenttxt.Size = New System.Drawing.Size(269, 115)
+        Me.changecommenttxt.TabIndex = 29
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(202, 92)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(79, 17)
+        Me.Label18.TabIndex = 28
+        Me.Label18.Text = "Velg utstyr:"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(45, 92)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(83, 17)
+        Me.Label19.TabIndex = 27
+        Me.Label19.Text = "Velg sykkel:"
+        '
+        'changedatefiling
+        '
+        Me.changedatefiling.Location = New System.Drawing.Point(203, 198)
+        Me.changedatefiling.Name = "changedatefiling"
+        Me.changedatefiling.Size = New System.Drawing.Size(121, 22)
+        Me.changedatefiling.TabIndex = 26
+        '
+        'changedateex
+        '
+        Me.changedateex.Location = New System.Drawing.Point(44, 198)
+        Me.changedateex.Name = "changedateex"
+        Me.changedateex.Size = New System.Drawing.Size(121, 22)
+        Me.changedateex.TabIndex = 25
+        '
+        'savechanges
+        '
+        Me.savechanges.Location = New System.Drawing.Point(47, 382)
+        Me.savechanges.Name = "savechanges"
+        Me.savechanges.Size = New System.Drawing.Size(269, 32)
+        Me.savechanges.TabIndex = 24
+        Me.savechanges.Text = "Lagre endringer"
+        Me.savechanges.UseVisualStyleBackColor = True
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(200, 148)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(81, 17)
+        Me.Label20.TabIndex = 23
+        Me.Label20.Text = "Innlevering:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(45, 148)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(76, 17)
+        Me.Label21.TabIndex = 22
+        Me.Label21.Text = "Utlevering:"
+        '
+        'changefiling
+        '
+        Me.changefiling.FormattingEnabled = True
+        Me.changefiling.Location = New System.Drawing.Point(203, 168)
+        Me.changefiling.Name = "changefiling"
+        Me.changefiling.Size = New System.Drawing.Size(121, 24)
+        Me.changefiling.TabIndex = 21
+        '
+        'changeextradition
+        '
+        Me.changeextradition.FormattingEnabled = True
+        Me.changeextradition.Location = New System.Drawing.Point(44, 168)
+        Me.changeextradition.Name = "changeextradition"
+        Me.changeextradition.Size = New System.Drawing.Size(121, 24)
+        Me.changeextradition.TabIndex = 20
+        '
+        'changeequipment
+        '
+        Me.changeequipment.FormattingEnabled = True
+        Me.changeequipment.Location = New System.Drawing.Point(205, 112)
+        Me.changeequipment.Name = "changeequipment"
+        Me.changeequipment.Size = New System.Drawing.Size(121, 24)
+        Me.changeequipment.TabIndex = 19
+        '
+        'changebike
+        '
+        Me.changebike.FormattingEnabled = True
+        Me.changebike.Location = New System.Drawing.Point(44, 112)
+        Me.changebike.Name = "changebike"
+        Me.changebike.Size = New System.Drawing.Size(121, 24)
+        Me.changebike.TabIndex = 18
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(40, 30)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 17)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Kunde-ID:"
+        '
+        'CustomerIDlbl
+        '
+        Me.CustomerIDlbl.AutoSize = True
+        Me.CustomerIDlbl.Location = New System.Drawing.Point(202, 22)
+        Me.CustomerIDlbl.Name = "CustomerIDlbl"
+        Me.CustomerIDlbl.Size = New System.Drawing.Size(0, 17)
+        Me.CustomerIDlbl.TabIndex = 32
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(40, 57)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(126, 17)
+        Me.Label12.TabIndex = 33
+        Me.Label12.Text = "Bestillingsnummer:"
+        '
+        'RentalIDlbl
+        '
+        Me.RentalIDlbl.AutoSize = True
+        Me.RentalIDlbl.Location = New System.Drawing.Point(205, 40)
+        Me.RentalIDlbl.Name = "RentalIDlbl"
+        Me.RentalIDlbl.Size = New System.Drawing.Size(0, 17)
+        Me.RentalIDlbl.TabIndex = 34
+        '
         'rentalView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -594,6 +669,8 @@ Partial Class rentalView
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -628,22 +705,29 @@ Partial Class rentalView
     Friend WithEvents searchrentals As Button
     Friend WithEvents txtrentalsearch As TextBox
     Friend WithEvents lbrentals As ListBox
-    Friend WithEvents filing2 As ComboBox
-    Friend WithEvents extradition2 As ComboBox
-    Friend WithEvents pickequipment2 As ComboBox
-    Friend WithEvents pickbike2 As ComboBox
-    Friend WithEvents btnSave As Button
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents filingdate2 As DateTimePicker
-    Friend WithEvents extraditiondate2 As DateTimePicker
     Friend WithEvents presentcustomerid As Label
     Friend WithEvents customerid As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents commenttxt As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
     Friend WithEvents filing As ComboBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents changecommenttxt As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents changedatefiling As DateTimePicker
+    Friend WithEvents changedateex As DateTimePicker
+    Friend WithEvents savechanges As Button
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents changefiling As ComboBox
+    Friend WithEvents changeextradition As ComboBox
+    Friend WithEvents changeequipment As ComboBox
+    Friend WithEvents changebike As ComboBox
+    Friend WithEvents CustomerIDlbl As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents RentalIDlbl As Label
+    Friend WithEvents Label12 As Label
 End Class
