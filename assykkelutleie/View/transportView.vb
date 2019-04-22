@@ -98,19 +98,23 @@ Public Class transportView
     End Sub
 
     Private Sub ContextMenuStrip1_Click(sender As Object, e As EventArgs) Handles ContextMenuStrip1.Click ' Sub for the ContextMenuStrip that updates the CurrentLocation to the DefaultLocation when an item has been transported. Checks if it is a bicycle or equipment before updating.
-        If lbTransportation.SelectedItem.ToString.StartsWith("SykkelID") Then
-            Dim bicycle As New Bicycle()
-            Dim getBicycle As New DataTable
-            getBicycle = DbManager.GetSpecific(bicycle, lbTransportation.SelectedItem.BicycleID())
-            bicycle = New Bicycle(getBicycle)
-            bicycle.CurrentLocation() = bicycle.DefaultLocation()
-            DbManager.Update(bicycle)
+        If lbTransportation.SelectedIndices.Count > 0 Then
+            If lbTransportation.SelectedItem.ToString.StartsWith("SykkelID") Then
+                Dim bicycle As New Bicycle()
+                Dim getBicycle As New DataTable
+                getBicycle = DbManager.GetSpecific(bicycle, lbTransportation.SelectedItem.BicycleID())
+                bicycle = New Bicycle(getBicycle)
+                bicycle.CurrentLocation() = bicycle.DefaultLocation()
+                DbManager.Update(bicycle)
+            Else
+                Dim equipment As New Equipment()
+                Dim utstyrTable As DataTable = DbManager.GetSpecific(equipment, lbTransportation.SelectedItem.EquipmentID())
+                equipment = New Equipment(utstyrTable)
+                equipment.CurrentLocation() = equipment.DefaultLocation()
+                DbManager.Update(equipment)
+            End If
         Else
-            Dim equipment As New Equipment()
-            Dim utstyrTable As DataTable = DbManager.GetSpecific(equipment, lbTransportation.SelectedItem.EquipmentID())
-            equipment = New Equipment(utstyrTable)
-            equipment.CurrentLocation() = equipment.DefaultLocation()
-            DbManager.Update(equipment)
+            MsgBox("Du må høyreklikke på et objekt for å returnere det")
         End If
         GetAllForTransport()
     End Sub
