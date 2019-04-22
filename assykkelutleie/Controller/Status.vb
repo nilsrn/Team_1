@@ -1,4 +1,4 @@
-﻿Public Class BicycleStatus
+﻿Public Class Status
     Dim m_status2 As String
 
     Public Sub New()
