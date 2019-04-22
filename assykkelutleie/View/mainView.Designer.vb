@@ -42,10 +42,9 @@ Partial Class mainView
         Me.btnCustomers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.ImageKey = "(none)"
-        Me.btnCustomers.Location = New System.Drawing.Point(13, 84)
-        Me.btnCustomers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnCustomers.Location = New System.Drawing.Point(9, 55)
         Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Size = New System.Drawing.Size(216, 69)
+        Me.btnCustomers.Size = New System.Drawing.Size(144, 45)
         Me.btnCustomers.TabIndex = 2
         Me.btnCustomers.Text = "Kunder"
         Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -58,10 +57,9 @@ Partial Class mainView
         Me.btnBicycles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBicycles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.ImageKey = "(none)"
-        Me.btnBicycles.Location = New System.Drawing.Point(13, 163)
-        Me.btnBicycles.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnBicycles.Location = New System.Drawing.Point(9, 106)
         Me.btnBicycles.Name = "btnBicycles"
-        Me.btnBicycles.Size = New System.Drawing.Size(216, 69)
+        Me.btnBicycles.Size = New System.Drawing.Size(144, 45)
         Me.btnBicycles.TabIndex = 3
         Me.btnBicycles.Text = "Sykler"
         Me.btnBicycles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -74,10 +72,9 @@ Partial Class mainView
         Me.btnRental.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.ImageKey = "(none)"
-        Me.btnRental.Location = New System.Drawing.Point(13, 5)
-        Me.btnRental.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnRental.Location = New System.Drawing.Point(9, 3)
         Me.btnRental.Name = "btnRental"
-        Me.btnRental.Size = New System.Drawing.Size(216, 69)
+        Me.btnRental.Size = New System.Drawing.Size(144, 45)
         Me.btnRental.TabIndex = 1
         Me.btnRental.Text = "Utleie"
         Me.btnRental.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -90,10 +87,9 @@ Partial Class mainView
         Me.btnTransport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTransport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransport.ImageKey = "(none)"
-        Me.btnTransport.Location = New System.Drawing.Point(13, 242)
-        Me.btnTransport.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnTransport.Location = New System.Drawing.Point(9, 157)
         Me.btnTransport.Name = "btnTransport"
-        Me.btnTransport.Size = New System.Drawing.Size(216, 69)
+        Me.btnTransport.Size = New System.Drawing.Size(144, 45)
         Me.btnTransport.TabIndex = 4
         Me.btnTransport.Text = "Transport"
         Me.btnTransport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -102,15 +98,14 @@ Partial Class mainView
         'btnLogout
         '
         Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnLogout.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Admin
+        Me.btnLogout.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.Logout
         Me.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.ImageKey = "(none)"
-        Me.btnLogout.Location = New System.Drawing.Point(13, 609)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnLogout.Location = New System.Drawing.Point(9, 396)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(216, 69)
+        Me.btnLogout.Size = New System.Drawing.Size(144, 45)
         Me.btnLogout.TabIndex = 7
         Me.btnLogout.Text = "Logg ut"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -123,10 +118,9 @@ Partial Class mainView
         Me.btnAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.ImageKey = "(none)"
-        Me.btnAdmin.Location = New System.Drawing.Point(13, 321)
-        Me.btnAdmin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnAdmin.Location = New System.Drawing.Point(9, 209)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(216, 69)
+        Me.btnAdmin.Size = New System.Drawing.Size(144, 45)
         Me.btnAdmin.TabIndex = 5
         Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -136,6 +130,7 @@ Partial Class mainView
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -147,20 +142,20 @@ Partial Class mainView
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnLogout)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnTransport)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnAdmin)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1200, 692)
-        Me.SplitContainer1.SplitterDistance = 238
+        Me.SplitContainer1.Size = New System.Drawing.Size(800, 450)
+        Me.SplitContainer1.SplitterDistance = 158
+        Me.SplitContainer1.SplitterWidth = 3
         Me.SplitContainer1.TabIndex = 8
         '
         'mainView
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkOrange
-        Me.ClientSize = New System.Drawing.Size(1200, 692)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.SplitContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "mainView"
         Me.Text = "AS SykkelUtleie"
         Me.SplitContainer1.Panel1.ResumeLayout(False)

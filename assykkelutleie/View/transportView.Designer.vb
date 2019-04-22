@@ -25,6 +25,8 @@ Partial Class transportView
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(transportView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtFramenbr = New System.Windows.Forms.TextBox()
         Me.txtPickupTime = New System.Windows.Forms.TextBox()
         Me.txtDeliveryLocation = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,8 +40,6 @@ Partial Class transportView
         Me.txtRentalSearch = New System.Windows.Forms.TextBox()
         Me.btnBicyclesSearch = New System.Windows.Forms.Button()
         Me.btnBicycleSave = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtFramenbr = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -75,8 +75,25 @@ Partial Class transportView
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(609, 400)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Ny transport"
+        Me.TabPage1.Text = "Transport"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(332, 69)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(83, 13)
+        Me.Label3.TabIndex = 69
+        Me.Label3.Text = "Rammenummer:"
+        '
+        'txtFramenbr
+        '
+        Me.txtFramenbr.Enabled = False
+        Me.txtFramenbr.Location = New System.Drawing.Point(431, 66)
+        Me.txtFramenbr.Name = "txtFramenbr"
+        Me.txtFramenbr.Size = New System.Drawing.Size(153, 20)
+        Me.txtFramenbr.TabIndex = 68
         '
         'txtPickupTime
         '
@@ -187,23 +204,6 @@ Partial Class transportView
         Me.btnBicycleSave.TabIndex = 51
         Me.btnBicycleSave.Text = "Registrer transport"
         Me.btnBicycleSave.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(332, 69)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(83, 13)
-        Me.Label3.TabIndex = 69
-        Me.Label3.Text = "Rammenummer:"
-        '
-        'txtFramenbr
-        '
-        Me.txtFramenbr.Enabled = False
-        Me.txtFramenbr.Location = New System.Drawing.Point(431, 66)
-        Me.txtFramenbr.Name = "txtFramenbr"
-        Me.txtFramenbr.Size = New System.Drawing.Size(153, 20)
-        Me.txtFramenbr.TabIndex = 68
         '
         'transportView
         '
