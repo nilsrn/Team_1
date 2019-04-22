@@ -65,7 +65,6 @@ Public Class transportView
 #Region "Actions"
     Private Sub transportView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates listbox when the form loads.
         PutLbRentals(GetAllRentals)
-        GetAllForTransport()
     End Sub
 
     Private Sub LbRentals_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbRentals.SelectedIndexChanged 'Populates the other listbox based on the rentalID in the listbox.
@@ -116,6 +115,10 @@ Public Class transportView
         Else
             MsgBox("Du må høyreklikke på et objekt for å returnere det")
         End If
+        GetAllForTransport()
+    End Sub
+
+    Private Sub btnTransportUpdate_Click(sender As Object, e As EventArgs) Handles btnTransportUpdate.Click ' Button for generating the transportlist.
         GetAllForTransport()
     End Sub
 #End Region

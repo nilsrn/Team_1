@@ -47,6 +47,7 @@ Partial Class transportView
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnTransportUpdate = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -236,6 +237,7 @@ Partial Class transportView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnTransportUpdate)
         Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.lbTransportation)
@@ -263,7 +265,7 @@ Partial Class transportView
         Me.lbTransportation.ItemHeight = 20
         Me.lbTransportation.Location = New System.Drawing.Point(22, 70)
         Me.lbTransportation.Name = "lbTransportation"
-        Me.lbTransportation.Size = New System.Drawing.Size(873, 504)
+        Me.lbTransportation.Size = New System.Drawing.Size(694, 484)
         Me.lbTransportation.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -287,6 +289,15 @@ Partial Class transportView
         Me.Label5.Size = New System.Drawing.Size(397, 20)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Høyreklikk for å markere sykel eller utstyr som returnert."
+        '
+        'btnTransportUpdate
+        '
+        Me.btnTransportUpdate.Location = New System.Drawing.Point(758, 70)
+        Me.btnTransportUpdate.Name = "btnTransportUpdate"
+        Me.btnTransportUpdate.Size = New System.Drawing.Size(127, 81)
+        Me.btnTransportUpdate.TabIndex = 3
+        Me.btnTransportUpdate.Text = "Generer transportliste"
+        Me.btnTransportUpdate.UseVisualStyleBackColor = True
         '
         'transportView
         '
@@ -332,4 +343,5 @@ Partial Class transportView
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Label5 As Label
+    Friend WithEvents btnTransportUpdate As Button
 End Class
