@@ -107,13 +107,13 @@ Partial Class transportView
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(191, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(187, 26)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(190, 22)
-        Me.ToolStripMenuItem1.Text = "Markert som returnert"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(186, 22)
+        Me.ToolStripMenuItem1.Text = "Marker som returnert"
         '
         'transportView
         '
