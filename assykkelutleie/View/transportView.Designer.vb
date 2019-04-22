@@ -78,9 +78,9 @@ Partial Class transportView
         Me.Label5.Location = New System.Drawing.Point(12, 375)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(266, 13)
+        Me.Label5.Size = New System.Drawing.Size(272, 13)
         Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Høyreklikk for å markere sykel eller utstyr som returnert."
+        Me.Label5.Text = "Høyreklikk for å markere sykkel eller utstyr som returnert."
         '
         'Label4
         '
