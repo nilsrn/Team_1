@@ -34,10 +34,12 @@ Partial Class transportView
         Me.txtRentalID = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lbFramenbr = New System.Windows.Forms.ListBox()
-        Me.lbRentalID = New System.Windows.Forms.ListBox()
+        Me.lbRentals = New System.Windows.Forms.ListBox()
         Me.txtRentalSearch = New System.Windows.Forms.TextBox()
         Me.btnBicyclesSearch = New System.Windows.Forms.Button()
         Me.btnBicycleSave = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtFramenbr = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -53,6 +55,8 @@ Partial Class transportView
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.txtFramenbr)
         Me.TabPage1.Controls.Add(Me.txtPickupTime)
         Me.TabPage1.Controls.Add(Me.txtDeliveryLocation)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -62,7 +66,7 @@ Partial Class transportView
         Me.TabPage1.Controls.Add(Me.txtRentalID)
         Me.TabPage1.Controls.Add(Me.Label15)
         Me.TabPage1.Controls.Add(Me.lbFramenbr)
-        Me.TabPage1.Controls.Add(Me.lbRentalID)
+        Me.TabPage1.Controls.Add(Me.lbRentals)
         Me.TabPage1.Controls.Add(Me.txtRentalSearch)
         Me.TabPage1.Controls.Add(Me.btnBicyclesSearch)
         Me.TabPage1.Controls.Add(Me.btnBicycleSave)
@@ -77,7 +81,7 @@ Partial Class transportView
         'txtPickupTime
         '
         Me.txtPickupTime.Enabled = False
-        Me.txtPickupTime.Location = New System.Drawing.Point(431, 92)
+        Me.txtPickupTime.Location = New System.Drawing.Point(431, 118)
         Me.txtPickupTime.Name = "txtPickupTime"
         Me.txtPickupTime.Size = New System.Drawing.Size(153, 20)
         Me.txtPickupTime.TabIndex = 67
@@ -85,7 +89,7 @@ Partial Class transportView
         'txtDeliveryLocation
         '
         Me.txtDeliveryLocation.Enabled = False
-        Me.txtDeliveryLocation.Location = New System.Drawing.Point(431, 118)
+        Me.txtDeliveryLocation.Location = New System.Drawing.Point(431, 144)
         Me.txtDeliveryLocation.Name = "txtDeliveryLocation"
         Me.txtDeliveryLocation.Size = New System.Drawing.Size(153, 20)
         Me.txtDeliveryLocation.TabIndex = 66
@@ -93,7 +97,7 @@ Partial Class transportView
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(332, 121)
+        Me.Label1.Location = New System.Drawing.Point(332, 147)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 13)
         Me.Label1.TabIndex = 65
@@ -102,7 +106,7 @@ Partial Class transportView
         'txtPickupLocation
         '
         Me.txtPickupLocation.Enabled = False
-        Me.txtPickupLocation.Location = New System.Drawing.Point(431, 66)
+        Me.txtPickupLocation.Location = New System.Drawing.Point(431, 92)
         Me.txtPickupLocation.Name = "txtPickupLocation"
         Me.txtPickupLocation.Size = New System.Drawing.Size(153, 20)
         Me.txtPickupLocation.TabIndex = 64
@@ -110,7 +114,7 @@ Partial Class transportView
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(332, 69)
+        Me.Label2.Location = New System.Drawing.Point(332, 95)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(25, 13)
         Me.Label2.TabIndex = 62
@@ -151,13 +155,13 @@ Partial Class transportView
         Me.lbFramenbr.Size = New System.Drawing.Size(103, 173)
         Me.lbFramenbr.TabIndex = 54
         '
-        'lbRentalID
+        'lbRentals
         '
-        Me.lbRentalID.FormattingEnabled = True
-        Me.lbRentalID.Location = New System.Drawing.Point(21, 43)
-        Me.lbRentalID.Name = "lbRentalID"
-        Me.lbRentalID.Size = New System.Drawing.Size(196, 173)
-        Me.lbRentalID.TabIndex = 49
+        Me.lbRentals.FormattingEnabled = True
+        Me.lbRentals.Location = New System.Drawing.Point(21, 43)
+        Me.lbRentals.Name = "lbRentals"
+        Me.lbRentals.Size = New System.Drawing.Size(196, 173)
+        Me.lbRentals.TabIndex = 49
         '
         'txtRentalSearch
         '
@@ -184,6 +188,23 @@ Partial Class transportView
         Me.btnBicycleSave.Text = "Registrer transport"
         Me.btnBicycleSave.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(332, 69)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(83, 13)
+        Me.Label3.TabIndex = 69
+        Me.Label3.Text = "Rammenummer:"
+        '
+        'txtFramenbr
+        '
+        Me.txtFramenbr.Enabled = False
+        Me.txtFramenbr.Location = New System.Drawing.Point(431, 66)
+        Me.txtFramenbr.Name = "txtFramenbr"
+        Me.txtFramenbr.Size = New System.Drawing.Size(153, 20)
+        Me.txtFramenbr.TabIndex = 68
+        '
         'transportView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -204,7 +225,7 @@ Partial Class transportView
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents lbFramenbr As ListBox
-    Friend WithEvents lbRentalID As ListBox
+    Friend WithEvents lbRentals As ListBox
     Friend WithEvents txtRentalSearch As TextBox
     Friend WithEvents btnBicyclesSearch As Button
     Friend WithEvents btnBicycleSave As Button
@@ -216,4 +237,6 @@ Partial Class transportView
     Friend WithEvents txtDeliveryLocation As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtPickupTime As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtFramenbr As TextBox
 End Class

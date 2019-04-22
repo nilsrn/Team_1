@@ -46,6 +46,7 @@ Partial Class bicycleView
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnBicyclesSearch = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -62,6 +63,7 @@ Partial Class bicycleView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label2)
         Me.TabPage3.Controls.Add(Me.cbStatusSearch)
         Me.TabPage3.Controls.Add(Me.Label1)
         Me.TabPage3.Controls.Add(Me.cbType)
@@ -245,7 +247,7 @@ Partial Class bicycleView
         Me.lbBicycle.FormattingEnabled = True
         Me.lbBicycle.Location = New System.Drawing.Point(17, 64)
         Me.lbBicycle.Name = "lbBicycle"
-        Me.lbBicycle.Size = New System.Drawing.Size(258, 316)
+        Me.lbBicycle.Size = New System.Drawing.Size(258, 303)
         Me.lbBicycle.TabIndex = 24
         '
         'ContextMenuStrip1
@@ -268,6 +270,16 @@ Partial Class bicycleView
         Me.btnBicyclesSearch.TabIndex = 23
         Me.btnBicyclesSearch.Text = "Søk"
         Me.btnBicyclesSearch.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(17, 370)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(171, 13)
+        Me.Label2.TabIndex = 53
+        Me.Label2.Text = "Høyreklikk for å slette valgt sykkel."
         '
         'bicycleView
         '
@@ -309,4 +321,5 @@ Partial Class bicycleView
     Friend WithEvents cbType As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents cbStatusSearch As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

@@ -2,7 +2,7 @@
 Public Class bicycleView 'Sven-Erik
 #Region "Functions"
     Private Sub CbPutComboBox() 'Populates the comboboxes.
-        Dim status As New Status()
+        Dim status As New BicycleStatus()
         Dim bicycletype As New BicycleType()
         Dim location As New Location()
 

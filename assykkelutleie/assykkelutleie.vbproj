@@ -91,8 +91,8 @@
     <Compile Include="Controller\Location.vb" />
     <Compile Include="Controller\Rentals.vb" />
     <Compile Include="Controller\RentedBicycles.vb" />
-    <Compile Include="Controller\rentedEquipment.vb" />
-    <Compile Include="Controller\Status.vb" />
+    <Compile Include="Controller\RentedEquipment.vb" />
+    <Compile Include="Controller\BicycleStatus.vb" />
     <Compile Include="Controller\UserAccount.vb" />
     <Compile Include="Model\DbManager.vb" />
     <Compile Include="Controller\Encryption.vb" />
