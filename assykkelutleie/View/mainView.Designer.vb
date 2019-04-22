@@ -42,7 +42,7 @@ Partial Class mainView
         Me.btnCustomers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.ImageKey = "(none)"
-        Me.btnCustomers.Location = New System.Drawing.Point(4, 84)
+        Me.btnCustomers.Location = New System.Drawing.Point(13, 84)
         Me.btnCustomers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Size = New System.Drawing.Size(216, 69)
@@ -58,7 +58,7 @@ Partial Class mainView
         Me.btnBicycles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBicycles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.ImageKey = "(none)"
-        Me.btnBicycles.Location = New System.Drawing.Point(4, 163)
+        Me.btnBicycles.Location = New System.Drawing.Point(13, 163)
         Me.btnBicycles.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBicycles.Name = "btnBicycles"
         Me.btnBicycles.Size = New System.Drawing.Size(216, 69)
@@ -74,7 +74,7 @@ Partial Class mainView
         Me.btnRental.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRental.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRental.ImageKey = "(none)"
-        Me.btnRental.Location = New System.Drawing.Point(4, 5)
+        Me.btnRental.Location = New System.Drawing.Point(13, 5)
         Me.btnRental.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRental.Name = "btnRental"
         Me.btnRental.Size = New System.Drawing.Size(216, 69)
@@ -90,7 +90,7 @@ Partial Class mainView
         Me.btnTransport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTransport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransport.ImageKey = "(none)"
-        Me.btnTransport.Location = New System.Drawing.Point(4, 242)
+        Me.btnTransport.Location = New System.Drawing.Point(13, 242)
         Me.btnTransport.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnTransport.Name = "btnTransport"
         Me.btnTransport.Size = New System.Drawing.Size(216, 69)
@@ -107,7 +107,7 @@ Partial Class mainView
         Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.ImageKey = "(none)"
-        Me.btnLogout.Location = New System.Drawing.Point(4, 609)
+        Me.btnLogout.Location = New System.Drawing.Point(13, 609)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(216, 69)
@@ -123,7 +123,7 @@ Partial Class mainView
         Me.btnAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.ImageKey = "(none)"
-        Me.btnAdmin.Location = New System.Drawing.Point(4, 321)
+        Me.btnAdmin.Location = New System.Drawing.Point(13, 321)
         Me.btnAdmin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAdmin.Name = "btnAdmin"
         Me.btnAdmin.Size = New System.Drawing.Size(216, 69)
@@ -148,7 +148,7 @@ Partial Class mainView
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnTransport)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnAdmin)
         Me.SplitContainer1.Size = New System.Drawing.Size(1200, 692)
-        Me.SplitContainer1.SplitterDistance = 230
+        Me.SplitContainer1.SplitterDistance = 238
         Me.SplitContainer1.TabIndex = 8
         '
         'mainView
