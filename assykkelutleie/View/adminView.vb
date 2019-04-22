@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click  'Sub for the ContextMenuStrip that deletes the selcted item in the listboxes based on the current active tab. 
-        If MsgBox("Sikker på at du vil slette valgt objekt?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+        If MsgBox("Er du sikker på at du vil slette valgt objekt?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             If TabControl1.SelectedTab Is TabUsers Then
                 Try
                     Dim user As New UserAccount()

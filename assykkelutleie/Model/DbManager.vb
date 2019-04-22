@@ -2,9 +2,9 @@
 Imports System.Reflection 'Provides objects that describe assemblies, modules and types.
 
 Public Class DbManager
-#Region "General databse functions"
-    Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Vurdere sikkerheten her
-    'Private Shared connectionString As String = "Server=mysql.stud.ntnu.no;Database=nilsrle_assykkelutleie;Uid=nilsrle_team1;Pwd=Tastatur123;"
+#Region "General database functions"
+    Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Connection string to the MySql database.
+
 
 
     Public Shared Sub Login(username As String, password As String) ' Sub procedure for logging in users. 

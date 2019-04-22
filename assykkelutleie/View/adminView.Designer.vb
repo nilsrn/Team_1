@@ -93,6 +93,7 @@ Partial Class adminView
         Me.tbBicycleTypeName = New System.Windows.Forms.TextBox()
         Me.lbBicycleType = New System.Windows.Forms.ListBox()
         Me.TabEquipmentType = New System.Windows.Forms.TabPage()
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.btnEquipmentTypeClear = New System.Windows.Forms.Button()
@@ -107,7 +108,6 @@ Partial Class adminView
         Me.tbEquipmentTypeDescription = New System.Windows.Forms.TextBox()
         Me.tbEquipmentTypeName = New System.Windows.Forms.TextBox()
         Me.lbEquipmentType = New System.Windows.Forms.ListBox()
-        Me.Label40 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabUsers.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -122,12 +122,11 @@ Partial Class adminView
         Me.TabControl1.Controls.Add(Me.TabLocations)
         Me.TabControl1.Controls.Add(Me.TabBicycleTypes)
         Me.TabControl1.Controls.Add(Me.TabEquipmentType)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(920, 655)
+        Me.TabControl1.Size = New System.Drawing.Size(960, 692)
         Me.TabControl1.TabIndex = 19
         '
         'TabUsers
@@ -161,7 +160,7 @@ Partial Class adminView
         Me.TabUsers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabUsers.Name = "TabUsers"
         Me.TabUsers.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabUsers.Size = New System.Drawing.Size(918, 622)
+        Me.TabUsers.Size = New System.Drawing.Size(952, 659)
         Me.TabUsers.TabIndex = 0
         Me.TabUsers.Text = "Brukere"
         Me.TabUsers.UseVisualStyleBackColor = True
@@ -180,7 +179,7 @@ Partial Class adminView
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(7, 24)
+        Me.Label30.Location = New System.Drawing.Point(18, 21)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(292, 25)
         Me.Label30.TabIndex = 56
@@ -216,7 +215,7 @@ Partial Class adminView
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(9, 474)
+        Me.Label14.Location = New System.Drawing.Point(19, 474)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(290, 20)
         Me.Label14.TabIndex = 52
@@ -391,7 +390,7 @@ Partial Class adminView
         Me.lbUsers.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbUsers.FormattingEnabled = True
         Me.lbUsers.ItemHeight = 20
-        Me.lbUsers.Location = New System.Drawing.Point(13, 65)
+        Me.lbUsers.Location = New System.Drawing.Point(23, 65)
         Me.lbUsers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbUsers.Name = "lbUsers"
         Me.lbUsers.Size = New System.Drawing.Size(286, 404)
@@ -441,7 +440,7 @@ Partial Class adminView
         Me.TabLocations.Location = New System.Drawing.Point(4, 29)
         Me.TabLocations.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabLocations.Name = "TabLocations"
-        Me.TabLocations.Size = New System.Drawing.Size(918, 622)
+        Me.TabLocations.Size = New System.Drawing.Size(952, 659)
         Me.TabLocations.TabIndex = 1
         Me.TabLocations.Text = "Lokasjoner"
         Me.TabLocations.UseVisualStyleBackColor = True
@@ -460,7 +459,7 @@ Partial Class adminView
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(3, 23)
+        Me.Label34.Location = New System.Drawing.Point(15, 23)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(258, 25)
         Me.Label34.TabIndex = 76
@@ -622,7 +621,7 @@ Partial Class adminView
         Me.TabBicycleTypes.Location = New System.Drawing.Point(4, 29)
         Me.TabBicycleTypes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabBicycleTypes.Name = "TabBicycleTypes"
-        Me.TabBicycleTypes.Size = New System.Drawing.Size(918, 622)
+        Me.TabBicycleTypes.Size = New System.Drawing.Size(912, 622)
         Me.TabBicycleTypes.TabIndex = 2
         Me.TabBicycleTypes.Text = "Sykkeltyper"
         Me.TabBicycleTypes.UseVisualStyleBackColor = True
@@ -641,7 +640,7 @@ Partial Class adminView
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(3, 24)
+        Me.Label37.Location = New System.Drawing.Point(16, 24)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(268, 25)
         Me.Label37.TabIndex = 77
@@ -650,7 +649,7 @@ Partial Class adminView
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(4, 536)
+        Me.Label25.Location = New System.Drawing.Point(23, 532)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(274, 20)
         Me.Label25.TabIndex = 74
@@ -817,7 +816,7 @@ Partial Class adminView
         Me.lbBicycleType.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbBicycleType.FormattingEnabled = True
         Me.lbBicycleType.ItemHeight = 20
-        Me.lbBicycleType.Location = New System.Drawing.Point(8, 54)
+        Me.lbBicycleType.Location = New System.Drawing.Point(21, 54)
         Me.lbBicycleType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbBicycleType.Name = "lbBicycleType"
         Me.lbBicycleType.Size = New System.Drawing.Size(276, 464)
@@ -848,11 +847,21 @@ Partial Class adminView
         Me.TabEquipmentType.Text = "Utstyrstyper"
         Me.TabEquipmentType.UseVisualStyleBackColor = True
         '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(454, 30)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(202, 25)
+        Me.Label40.TabIndex = 95
+        Me.Label40.Text = "Sykkeltype detaljer:"
+        '
         'Label39
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(3, 30)
+        Me.Label39.Location = New System.Drawing.Point(24, 30)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(271, 25)
         Me.Label39.TabIndex = 94
@@ -861,7 +870,7 @@ Partial Class adminView
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(4, 409)
+        Me.Label27.Location = New System.Drawing.Point(25, 409)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(282, 20)
         Me.Label27.TabIndex = 93
@@ -887,7 +896,7 @@ Partial Class adminView
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(470, 251)
+        Me.Label28.Location = New System.Drawing.Point(455, 252)
         Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(80, 20)
@@ -897,7 +906,7 @@ Partial Class adminView
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(470, 215)
+        Me.Label29.Location = New System.Drawing.Point(455, 216)
         Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(76, 20)
@@ -926,7 +935,7 @@ Partial Class adminView
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(470, 71)
+        Me.Label33.Location = New System.Drawing.Point(455, 72)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(65, 20)
@@ -936,7 +945,7 @@ Partial Class adminView
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(470, 111)
+        Me.Label35.Location = New System.Drawing.Point(455, 112)
         Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(93, 20)
@@ -974,27 +983,18 @@ Partial Class adminView
         Me.lbEquipmentType.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbEquipmentType.FormattingEnabled = True
         Me.lbEquipmentType.ItemHeight = 20
-        Me.lbEquipmentType.Location = New System.Drawing.Point(8, 60)
+        Me.lbEquipmentType.Location = New System.Drawing.Point(29, 60)
         Me.lbEquipmentType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbEquipmentType.Name = "lbEquipmentType"
         Me.lbEquipmentType.Size = New System.Drawing.Size(276, 344)
         Me.lbEquipmentType.TabIndex = 75
         '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(469, 30)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(202, 25)
-        Me.Label40.TabIndex = 95
-        Me.Label40.Text = "Sykkeltype detaljer:"
-        '
         'adminView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(920, 655)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(960, 692)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

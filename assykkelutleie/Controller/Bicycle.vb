@@ -14,6 +14,21 @@
         m_status = Status
     End Sub
 
+    Public Sub New(table As DataTable)
+        For Each row In table.Rows
+            m_rammenummer = row("BicycleID")
+            m_type = row("BicycleType")
+            m_stdlok = row("DefaultLocation")
+            m_gjlok = row("CurrentLocation")
+            m_status = row("Status")
+        Next
+    End Sub
+
+    Public Overrides Function ToString() As String 'Overrides the ToString method to provide information for the transportation view.
+        Return String.Format("SykkelID: {0} ({1}) skal fraktes fra {2} til {3}.", BicycleID, BicycleType, CurrentLocation, DefaultLocation)
+    End Function
+
+
     Public Property BicycleID() As Integer
         Get
             Return m_rammenummer
