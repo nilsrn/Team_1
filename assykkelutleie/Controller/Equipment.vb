@@ -3,9 +3,10 @@
     Dim m_id As Integer
 
     Public Sub New()
+
     End Sub
 
-    Public Sub New(CurrentLocation, DefaultLocation, EquipmentID, EquipmentType, Status)
+    Public Sub New(EquipmentID, EquipmentType, DefaultLocation, CurrentLocation, Status)
         m_id = EquipmentID
         m_equipmentType = EquipmentType
         m_defaultLocation = DefaultLocation
@@ -24,7 +25,7 @@
     End Sub
 
     Public Overrides Function ToString() As String 'Overrides the ToString method to provide information for the transportation view.
-        Return String.Format("UtstyrID: {0} ({1}) skal fraktes fra {2} til {3}.", EquipmentID, EquipmentType, CurrentLocation, DefaultLocation)
+        Return String.Format("UtstyrID: {0} ({1}) skal fraktes fra {2} til {3}", EquipmentID, EquipmentType, CurrentLocation, DefaultLocation)
     End Function
 
     Public Property EquipmentID() As Integer

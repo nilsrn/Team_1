@@ -133,7 +133,7 @@ Public Class DbManager
             Try
                 Dim listOfTables As New List(Of String)
                 listOfTables = GetProperties(obj)
-                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE Status= @input", sqlconnection)
+                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE Status = @input", sqlconnection)
                 sql.Parameters.AddWithValue("@row", row)
                 sql.Parameters.AddWithValue("@input", input)
                 Dim da As New MySqlDataAdapter(sql)
@@ -176,10 +176,10 @@ Public Class DbManager
         Dim listOfProperties = GetProperties(x)
         If GetSpecific(x, Encryption.Escaping(CallByName(x, listOfProperties(0), CallType.Method))).rows.count() = 0 Then
             Insert(x)
-            MsgBox(String.Format("{0} har blitt opprettet", x))
+            MsgBox(String.Format("{0} har blitt opprettet.", x))
         Else
             Update(x)
-            MsgBox(String.Format("{0} har blitt oppdatert", x))
+            MsgBox(String.Format("{0} har blitt oppdatert.", x))
         End If
     End Sub
 
