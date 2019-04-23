@@ -36,7 +36,7 @@ Public Class rentalView
         Return rentalTable
     End Function
 
-    Private Function GetAllInvoice() 'Returns a DataTable with all rentals
+    Private Function GetAllInvoice() 'Returns a DataTable with all Invoice
         Dim invoice As New Invoice()
         Dim invoiceTable As DataTable = DbManager.GetAll(invoice)
         Return invoiceTable
@@ -82,6 +82,24 @@ Public Class rentalView
             presentcustomerid.Text = row("CustomerID")
         Next
     End Sub
+    Private Sub makeInvoice()
+        Dim rid, InvoiceNumber, Total_Pris, CustomerID, kid As Integer
+        Dim InvoiceDate, DueDate As Date
+        Dim rentalsummary As String
+        Dim rental As New Rentals()
+        Dim list As DataTable = DbManager.GetAll(rental)
+        For Each row In list.Rows
+            rid = row("RentalID")
+        Next
+        CustomerID = presentcustomerid.Text
+        rentalsummary = commenttxt.Text
+        InvoiceDate = Date.Today.AddDays(11)
+        DueDate = Date.Today.AddDays(30)
+        kid = Int((9999 * Rnd()) + 1111)
+        Total_Pris = pricetotal()
+        Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)
+        DbManager.Insert(insertInvoice)
+    End Sub
 
 
 
@@ -94,10 +112,11 @@ Public Class rentalView
     End Sub
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click
 
-        Dim BicycleType, equipment, PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type, RentalSummary As String
-        Dim PickupTime, DeliveryTime, InvoiceDate, DueDate As Date
-        Dim CustomerID, Utleie_Type_Antall, Total_Pris, BicycleID, RentalID, InvoiceNumber As Integer
-        Dim KIDnumber As Double
+        Dim BicycleType, equipment, PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
+        Dim PickupTime, DeliveryTime As Date
+        Dim CustomerID, Utleie_Type_Antall, Total_Pris, BicycleID, RentalID As Integer
+
+
 
         Try
 
@@ -108,23 +127,21 @@ Public Class rentalView
             DeliveryLocation = filing.SelectedValue
             PickupTime = extraditiondate.Text
             DeliveryTime = filingdate.Text
-            RentalID = RentalID
             Comment = commenttxt.Text
             Utleie_Type = "Døgn"
             Utleie_Type_Antall = totaldays()
             Username = My.Settings.username
             Total_Pris = pricetotal()
             BicycleID = 1
-            InvoiceDate = Date.Today.AddDays(11)
-            DueDate = Date.Today.AddDays(30)
-            KIDnumber = Int((9999 * Rnd()) + 1111)
-            RentalSummary = commenttxt.Text
+
 
             Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
-            Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, RentalID, InvoiceDate, DueDate, KIDnumber, Total_Pris, RentalSummary)
+            'Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, KIDnumber, Total_Pris, RentalSummary)
             'Dim insertRentedBicycle As New RentedBicycles(BicycleID, RentalID, Total_Pris, PickupTime, DeliveryTime)
             DbManager.Insert(insertRentals)
-            DbManager.Insert(insertInvoice)
+
+            makeInvoice()
+
             'DbManager.Insert(insertRentedBicycle)
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
@@ -181,9 +198,7 @@ Public Class rentalView
         PutLbRentals(GetAllRentals)
     End Sub
 
-    Private Sub Chart1_Click(sender As Object, e As EventArgs)
 
-    End Sub
 #End Region
 
 End Class
