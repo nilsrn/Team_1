@@ -16,6 +16,22 @@
         m_RateDay = RateDay
     End Sub
 
+    Public Sub New(table As DataTable)
+        For Each row In table.Rows
+            m_Name = row("Name")
+            m_Description = row("Description")
+            m_GearSystem = row("GearSystem")
+            m_WheelSize = row("WheelSize")
+            m_FrameSize = row("FrameSize")
+            m_RateHour = row("RateHour")
+            m_RateDay = row("RateDay")
+        Next
+    End Sub
+
+    Public Overrides Function ToString() As String 'Overrides the ToString method to provide information for the statistics view.
+        Return String.Format("BicycleType: {0} ({1}) har blitt bestilt x ganger", Name, Description)
+    End Function
+
     Public Property Name() As String
         Get
             Return m_Name

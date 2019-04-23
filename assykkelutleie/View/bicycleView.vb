@@ -266,7 +266,7 @@ Public Class bicycleView 'Sven-Erik
         EquipmentFilter()
     End Sub
 
-    Private Sub CbEquipmentStatush_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbEquipmentStatus.SelectedIndexChanged 'Updates the listbox according to the filter input.
+    Private Sub CbEquipmentStatush_SelectedIndexChanged(sender As Object, e As EventArgs)  'Updates the listbox according to the filter input.
         EquipmentFilter()
     End Sub
 #End Region

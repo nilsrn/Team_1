@@ -49,7 +49,6 @@ Partial Class bicycleView
         Me.btnBicycleSearch = New System.Windows.Forms.Button()
         Me.TabEquipment = New System.Windows.Forms.TabPage()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbEquipmentStatus = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbEquipmentType = New System.Windows.Forms.ComboBox()
         Me.cbEquipmentCurrentLoc = New System.Windows.Forms.ComboBox()
@@ -67,6 +66,7 @@ Partial Class bicycleView
         Me.txtEquipmentID = New System.Windows.Forms.TextBox()
         Me.lbEquipment = New System.Windows.Forms.ListBox()
         Me.btnEquipmentSearch = New System.Windows.Forms.Button()
+        Me.cbEquipmentStatus = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabBicycle.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -305,8 +305,8 @@ Partial Class bicycleView
         '
         'TabEquipment
         '
-        Me.TabEquipment.Controls.Add(Me.Label3)
         Me.TabEquipment.Controls.Add(Me.cbEquipmentStatus)
+        Me.TabEquipment.Controls.Add(Me.Label3)
         Me.TabEquipment.Controls.Add(Me.Label4)
         Me.TabEquipment.Controls.Add(Me.cbEquipmentType)
         Me.TabEquipment.Controls.Add(Me.cbEquipmentCurrentLoc)
@@ -340,15 +340,6 @@ Partial Class bicycleView
         Me.Label3.Size = New System.Drawing.Size(171, 13)
         Me.Label3.TabIndex = 72
         Me.Label3.Text = "Høyreklikk for å slette valgt sykkel."
-        '
-        'cbEquipmentStatus
-        '
-        Me.cbEquipmentStatus.FormattingEnabled = True
-        Me.cbEquipmentStatus.Location = New System.Drawing.Point(15, 27)
-        Me.cbEquipmentStatus.Name = "cbEquipmentStatus"
-        Me.cbEquipmentStatus.Size = New System.Drawing.Size(258, 21)
-        Me.cbEquipmentStatus.TabIndex = 71
-        Me.cbEquipmentStatus.Text = "Status"
         '
         'Label4
         '
@@ -511,6 +502,15 @@ Partial Class bicycleView
         Me.btnEquipmentSearch.Text = "Søk"
         Me.btnEquipmentSearch.UseVisualStyleBackColor = True
         '
+        'cbEquipmentStatus
+        '
+        Me.cbEquipmentStatus.FormattingEnabled = True
+        Me.cbEquipmentStatus.Location = New System.Drawing.Point(15, 27)
+        Me.cbEquipmentStatus.Name = "cbEquipmentStatus"
+        Me.cbEquipmentStatus.Size = New System.Drawing.Size(258, 21)
+        Me.cbEquipmentStatus.TabIndex = 73
+        Me.cbEquipmentStatus.Text = "Status"
+        '
         'bicycleView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -556,7 +556,6 @@ Partial Class bicycleView
     Friend WithEvents Label2 As Label
     Friend WithEvents TabEquipment As TabPage
     Friend WithEvents Label3 As Label
-    Friend WithEvents cbEquipmentStatus As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents cbEquipmentType As ComboBox
     Friend WithEvents cbEquipmentCurrentLoc As ComboBox
@@ -574,4 +573,5 @@ Partial Class bicycleView
     Friend WithEvents txtEquipmentID As TextBox
     Friend WithEvents lbEquipment As ListBox
     Friend WithEvents btnEquipmentSearch As Button
+    Friend WithEvents cbEquipmentStatus As ComboBox
 End Class

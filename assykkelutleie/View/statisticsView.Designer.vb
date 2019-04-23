@@ -24,40 +24,40 @@ Partial Class statisticsView
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.lbStatistics = New System.Windows.Forms.ListBox()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtJanuary = New System.Windows.Forms.TextBox()
-        Me.txtFebruary = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtMars = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtApril = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtMay = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtJune = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtJuly = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtAugust = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtSeptember = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtOctober = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtNovember = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtDecember = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.txtAverage = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtDecember = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtNovember = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtOctober = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtSeptember = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtAugust = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtJuly = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtJune = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtMay = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtApril = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtMars = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtFebruary = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtJanuary = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -76,7 +76,7 @@ Partial Class statisticsView
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.btnRefresh)
-        Me.TabPage1.Controls.Add(Me.ListBox1)
+        Me.TabPage1.Controls.Add(Me.lbStatistics)
         Me.TabPage1.Controls.Add(Me.Label30)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -84,6 +84,36 @@ Partial Class statisticsView
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "Popularitet"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.reload
+        Me.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnRefresh.Location = New System.Drawing.Point(561, 9)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(30, 30)
+        Me.btnRefresh.TabIndex = 59
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'lbStatistics
+        '
+        Me.lbStatistics.FormattingEnabled = True
+        Me.lbStatistics.Location = New System.Drawing.Point(14, 44)
+        Me.lbStatistics.Name = "lbStatistics"
+        Me.lbStatistics.Size = New System.Drawing.Size(577, 342)
+        Me.lbStatistics.TabIndex = 58
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(11, 11)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(203, 17)
+        Me.Label30.TabIndex = 57
+        Me.Label30.Text = "Mest populære sykkeltyper"
         '
         'TabPage2
         '
@@ -124,224 +154,39 @@ Partial Class statisticsView
         Me.TabPage2.Text = "Avanse"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label30
+        'txtAverage
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(11, 11)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(203, 17)
-        Me.Label30.TabIndex = 57
-        Me.Label30.Text = "Mest populære sykkeltyper"
+        Me.txtAverage.Location = New System.Drawing.Point(351, 82)
+        Me.txtAverage.Name = "txtAverage"
+        Me.txtAverage.ReadOnly = True
+        Me.txtAverage.Size = New System.Drawing.Size(82, 20)
+        Me.txtAverage.TabIndex = 87
         '
-        'Label1
+        'Label15
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 15)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 17)
-        Me.Label1.TabIndex = 58
-        Me.Label1.Text = "Omsetning"
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(277, 85)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(68, 13)
+        Me.Label15.TabIndex = 86
+        Me.Label15.Text = "Gjennomsnitt"
         '
-        'DateTimePicker1
+        'txtTotal
         '
-        Me.DateTimePicker1.CustomFormat = "yyyy"
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(103, 15)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.ShowUpDown = True
-        Me.DateTimePicker1.Size = New System.Drawing.Size(57, 20)
-        Me.DateTimePicker1.TabIndex = 59
+        Me.txtTotal.Location = New System.Drawing.Point(351, 56)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(82, 20)
+        Me.txtTotal.TabIndex = 85
         '
-        'Label2
+        'Label14
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 59)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 60
-        Me.Label2.Text = "Januar"
-        '
-        'txtJanuary
-        '
-        Me.txtJanuary.Location = New System.Drawing.Point(78, 56)
-        Me.txtJanuary.Name = "txtJanuary"
-        Me.txtJanuary.ReadOnly = True
-        Me.txtJanuary.Size = New System.Drawing.Size(82, 20)
-        Me.txtJanuary.TabIndex = 61
-        '
-        'txtFebruary
-        '
-        Me.txtFebruary.Location = New System.Drawing.Point(78, 82)
-        Me.txtFebruary.Name = "txtFebruary"
-        Me.txtFebruary.ReadOnly = True
-        Me.txtFebruary.Size = New System.Drawing.Size(82, 20)
-        Me.txtFebruary.TabIndex = 63
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 85)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
-        Me.Label3.TabIndex = 62
-        Me.Label3.Text = "Februar"
-        '
-        'txtMars
-        '
-        Me.txtMars.Location = New System.Drawing.Point(78, 108)
-        Me.txtMars.Name = "txtMars"
-        Me.txtMars.ReadOnly = True
-        Me.txtMars.Size = New System.Drawing.Size(82, 20)
-        Me.txtMars.TabIndex = 65
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 111)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(30, 13)
-        Me.Label4.TabIndex = 64
-        Me.Label4.Text = "Mars"
-        '
-        'txtApril
-        '
-        Me.txtApril.Location = New System.Drawing.Point(78, 134)
-        Me.txtApril.Name = "txtApril"
-        Me.txtApril.ReadOnly = True
-        Me.txtApril.Size = New System.Drawing.Size(82, 20)
-        Me.txtApril.TabIndex = 67
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 137)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(27, 13)
-        Me.Label5.TabIndex = 66
-        Me.Label5.Text = "April"
-        '
-        'txtMay
-        '
-        Me.txtMay.Location = New System.Drawing.Point(78, 160)
-        Me.txtMay.Name = "txtMay"
-        Me.txtMay.ReadOnly = True
-        Me.txtMay.Size = New System.Drawing.Size(82, 20)
-        Me.txtMay.TabIndex = 69
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 163)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(24, 13)
-        Me.Label6.TabIndex = 68
-        Me.Label6.Text = "Mai"
-        '
-        'txtJune
-        '
-        Me.txtJune.Location = New System.Drawing.Point(78, 186)
-        Me.txtJune.Name = "txtJune"
-        Me.txtJune.ReadOnly = True
-        Me.txtJune.Size = New System.Drawing.Size(82, 20)
-        Me.txtJune.TabIndex = 71
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(16, 189)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(26, 13)
-        Me.Label7.TabIndex = 70
-        Me.Label7.Text = "Juni"
-        '
-        'txtJuly
-        '
-        Me.txtJuly.Location = New System.Drawing.Point(78, 212)
-        Me.txtJuly.Name = "txtJuly"
-        Me.txtJuly.ReadOnly = True
-        Me.txtJuly.Size = New System.Drawing.Size(82, 20)
-        Me.txtJuly.TabIndex = 73
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 215)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(22, 13)
-        Me.Label8.TabIndex = 72
-        Me.Label8.Text = "Juli"
-        '
-        'txtAugust
-        '
-        Me.txtAugust.Location = New System.Drawing.Point(78, 238)
-        Me.txtAugust.Name = "txtAugust"
-        Me.txtAugust.ReadOnly = True
-        Me.txtAugust.Size = New System.Drawing.Size(82, 20)
-        Me.txtAugust.TabIndex = 75
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(16, 241)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
-        Me.Label9.TabIndex = 74
-        Me.Label9.Text = "August"
-        '
-        'txtSeptember
-        '
-        Me.txtSeptember.Location = New System.Drawing.Point(78, 264)
-        Me.txtSeptember.Name = "txtSeptember"
-        Me.txtSeptember.ReadOnly = True
-        Me.txtSeptember.Size = New System.Drawing.Size(82, 20)
-        Me.txtSeptember.TabIndex = 77
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(16, 267)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(58, 13)
-        Me.Label10.TabIndex = 76
-        Me.Label10.Text = "September"
-        '
-        'txtOctober
-        '
-        Me.txtOctober.Location = New System.Drawing.Point(78, 290)
-        Me.txtOctober.Name = "txtOctober"
-        Me.txtOctober.ReadOnly = True
-        Me.txtOctober.Size = New System.Drawing.Size(82, 20)
-        Me.txtOctober.TabIndex = 79
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(16, 293)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 13)
-        Me.Label11.TabIndex = 78
-        Me.Label11.Text = "Oktober"
-        '
-        'txtNovember
-        '
-        Me.txtNovember.Location = New System.Drawing.Point(78, 316)
-        Me.txtNovember.Name = "txtNovember"
-        Me.txtNovember.ReadOnly = True
-        Me.txtNovember.Size = New System.Drawing.Size(82, 20)
-        Me.txtNovember.TabIndex = 81
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(16, 319)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(56, 13)
-        Me.Label12.TabIndex = 80
-        Me.Label12.Text = "November"
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(277, 59)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(34, 13)
+        Me.Label14.TabIndex = 84
+        Me.Label14.Text = "Totalt"
         '
         'txtDecember
         '
@@ -360,58 +205,213 @@ Partial Class statisticsView
         Me.Label13.TabIndex = 82
         Me.Label13.Text = "Desember"
         '
-        'Label14
+        'txtNovember
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(277, 59)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(34, 13)
-        Me.Label14.TabIndex = 84
-        Me.Label14.Text = "Totalt"
+        Me.txtNovember.Location = New System.Drawing.Point(78, 316)
+        Me.txtNovember.Name = "txtNovember"
+        Me.txtNovember.ReadOnly = True
+        Me.txtNovember.Size = New System.Drawing.Size(82, 20)
+        Me.txtNovember.TabIndex = 81
         '
-        'txtTotal
+        'Label12
         '
-        Me.txtTotal.Location = New System.Drawing.Point(351, 56)
-        Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.ReadOnly = True
-        Me.txtTotal.Size = New System.Drawing.Size(82, 20)
-        Me.txtTotal.TabIndex = 85
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(16, 319)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(56, 13)
+        Me.Label12.TabIndex = 80
+        Me.Label12.Text = "November"
         '
-        'txtAverage
+        'txtOctober
         '
-        Me.txtAverage.Location = New System.Drawing.Point(351, 82)
-        Me.txtAverage.Name = "txtAverage"
-        Me.txtAverage.ReadOnly = True
-        Me.txtAverage.Size = New System.Drawing.Size(82, 20)
-        Me.txtAverage.TabIndex = 87
+        Me.txtOctober.Location = New System.Drawing.Point(78, 290)
+        Me.txtOctober.Name = "txtOctober"
+        Me.txtOctober.ReadOnly = True
+        Me.txtOctober.Size = New System.Drawing.Size(82, 20)
+        Me.txtOctober.TabIndex = 79
         '
-        'Label15
+        'Label11
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(277, 85)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(68, 13)
-        Me.Label15.TabIndex = 86
-        Me.Label15.Text = "Gjennomsnitt"
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(16, 293)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.TabIndex = 78
+        Me.Label11.Text = "Oktober"
         '
-        'ListBox1
+        'txtSeptember
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(14, 44)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(577, 342)
-        Me.ListBox1.TabIndex = 58
+        Me.txtSeptember.Location = New System.Drawing.Point(78, 264)
+        Me.txtSeptember.Name = "txtSeptember"
+        Me.txtSeptember.ReadOnly = True
+        Me.txtSeptember.Size = New System.Drawing.Size(82, 20)
+        Me.txtSeptember.TabIndex = 77
         '
-        'btnRefresh
+        'Label10
         '
-        Me.btnRefresh.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.reload
-        Me.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnRefresh.Location = New System.Drawing.Point(561, 9)
-        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(30, 30)
-        Me.btnRefresh.TabIndex = 59
-        Me.btnRefresh.UseVisualStyleBackColor = True
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(16, 267)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(58, 13)
+        Me.Label10.TabIndex = 76
+        Me.Label10.Text = "September"
+        '
+        'txtAugust
+        '
+        Me.txtAugust.Location = New System.Drawing.Point(78, 238)
+        Me.txtAugust.Name = "txtAugust"
+        Me.txtAugust.ReadOnly = True
+        Me.txtAugust.Size = New System.Drawing.Size(82, 20)
+        Me.txtAugust.TabIndex = 75
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(16, 241)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.TabIndex = 74
+        Me.Label9.Text = "August"
+        '
+        'txtJuly
+        '
+        Me.txtJuly.Location = New System.Drawing.Point(78, 212)
+        Me.txtJuly.Name = "txtJuly"
+        Me.txtJuly.ReadOnly = True
+        Me.txtJuly.Size = New System.Drawing.Size(82, 20)
+        Me.txtJuly.TabIndex = 73
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(16, 215)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(22, 13)
+        Me.Label8.TabIndex = 72
+        Me.Label8.Text = "Juli"
+        '
+        'txtJune
+        '
+        Me.txtJune.Location = New System.Drawing.Point(78, 186)
+        Me.txtJune.Name = "txtJune"
+        Me.txtJune.ReadOnly = True
+        Me.txtJune.Size = New System.Drawing.Size(82, 20)
+        Me.txtJune.TabIndex = 71
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(16, 189)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(26, 13)
+        Me.Label7.TabIndex = 70
+        Me.Label7.Text = "Juni"
+        '
+        'txtMay
+        '
+        Me.txtMay.Location = New System.Drawing.Point(78, 160)
+        Me.txtMay.Name = "txtMay"
+        Me.txtMay.ReadOnly = True
+        Me.txtMay.Size = New System.Drawing.Size(82, 20)
+        Me.txtMay.TabIndex = 69
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(16, 163)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(24, 13)
+        Me.Label6.TabIndex = 68
+        Me.Label6.Text = "Mai"
+        '
+        'txtApril
+        '
+        Me.txtApril.Location = New System.Drawing.Point(78, 134)
+        Me.txtApril.Name = "txtApril"
+        Me.txtApril.ReadOnly = True
+        Me.txtApril.Size = New System.Drawing.Size(82, 20)
+        Me.txtApril.TabIndex = 67
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(16, 137)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(27, 13)
+        Me.Label5.TabIndex = 66
+        Me.Label5.Text = "April"
+        '
+        'txtMars
+        '
+        Me.txtMars.Location = New System.Drawing.Point(78, 108)
+        Me.txtMars.Name = "txtMars"
+        Me.txtMars.ReadOnly = True
+        Me.txtMars.Size = New System.Drawing.Size(82, 20)
+        Me.txtMars.TabIndex = 65
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(16, 111)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(30, 13)
+        Me.Label4.TabIndex = 64
+        Me.Label4.Text = "Mars"
+        '
+        'txtFebruary
+        '
+        Me.txtFebruary.Location = New System.Drawing.Point(78, 82)
+        Me.txtFebruary.Name = "txtFebruary"
+        Me.txtFebruary.ReadOnly = True
+        Me.txtFebruary.Size = New System.Drawing.Size(82, 20)
+        Me.txtFebruary.TabIndex = 63
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(16, 85)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.TabIndex = 62
+        Me.Label3.Text = "Februar"
+        '
+        'txtJanuary
+        '
+        Me.txtJanuary.Location = New System.Drawing.Point(78, 56)
+        Me.txtJanuary.Name = "txtJanuary"
+        Me.txtJanuary.ReadOnly = True
+        Me.txtJanuary.Size = New System.Drawing.Size(82, 20)
+        Me.txtJanuary.TabIndex = 61
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(16, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 60
+        Me.Label2.Text = "Januar"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "yyyy"
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(103, 15)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.ShowUpDown = True
+        Me.DateTimePicker1.Size = New System.Drawing.Size(57, 20)
+        Me.DateTimePicker1.TabIndex = 59
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(13, 15)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 17)
+        Me.Label1.TabIndex = 58
+        Me.Label1.Text = "Omsetning"
         '
         'statisticsView
         '
@@ -437,7 +437,7 @@ Partial Class statisticsView
     Friend WithEvents Label30 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label1 As Label
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents lbStatistics As ListBox
     Friend WithEvents txtAverage As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents txtTotal As TextBox
