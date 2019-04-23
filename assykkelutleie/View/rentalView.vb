@@ -36,6 +36,12 @@ Public Class rentalView
         Return rentalTable
     End Function
 
+    Private Function GetAllInvoice() 'Returns a DataTable with all rentals
+        Dim invoice As New Invoice()
+        Dim invoiceTable As DataTable = DbManager.GetAll(invoice)
+        Return invoiceTable
+    End Function
+
 
     Private Function pricetotal()
         Dim bikerateday As Integer
@@ -88,9 +94,10 @@ Public Class rentalView
     End Sub
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click
 
-        Dim BicycleType, equipment, PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
-        Dim PickupTime, DeliveryTime As Date
-        Dim CustomerID, Utleie_Type_Antall, Total_Pris, BicycleID, RentalID As Integer
+        Dim BicycleType, equipment, PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type, RentalSummary As String
+        Dim PickupTime, DeliveryTime, InvoiceDate, DueDate As Date
+        Dim CustomerID, Utleie_Type_Antall, Total_Pris, BicycleID, RentalID, InvoiceNumber As Integer
+        Dim KIDnumber As Double
 
         Try
 
@@ -108,11 +115,16 @@ Public Class rentalView
             Username = My.Settings.username
             Total_Pris = pricetotal()
             BicycleID = 1
-
+            InvoiceDate = Date.Today.AddDays(11)
+            DueDate = Date.Today.AddDays(30)
+            KIDnumber = Int((9999 * Rnd()) + 1111)
+            RentalSummary = commenttxt.Text
 
             Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
+            Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, RentalID, InvoiceDate, DueDate, KIDnumber, Total_Pris, RentalSummary)
             'Dim insertRentedBicycle As New RentedBicycles(BicycleID, RentalID, Total_Pris, PickupTime, DeliveryTime)
             DbManager.Insert(insertRentals)
+            DbManager.Insert(insertInvoice)
             'DbManager.Insert(insertRentedBicycle)
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
@@ -149,8 +161,7 @@ Public Class rentalView
     End Sub
     Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbrentals.SelectedIndexChanged 'Populates the textboxes based on the chosen bicycle in the listbox.
         Dim rentalSearch As New Rentals()
-        Dim bikesearch As New BicycleType()
-        Dim equipmentsearch As New EquipmentType()
+        Dim invoice As New Invoice()
 
     End Sub
 
@@ -158,8 +169,12 @@ Public Class rentalView
         If MsgBox("Sikker på at du vil slette bestillingen?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             Try
                 Dim rental As New Rentals()
+                Dim invoice As New Invoice()
                 Dim rentalID As Integer = lbrentals.SelectedValue
-                DbManager.Delete(rental, "RentalID", rentalID)
+                Dim InvoiceNumber As Integer = lbrentals.SelectedValue
+                DbManager.Delete(invoice, "CustomerID", InvoiceNumber)
+                DbManager.Delete(rental, "CustomerID", rentalID)
+
             Catch ex As Exception
             End Try
         End If
