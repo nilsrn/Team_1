@@ -44,6 +44,20 @@ Public Class rentalView
         Dim bicyclesTable As DataTable = DbManager.GetAll(bicycle)
         Return bicyclesTable
     End Function
+    Private Function GetAllBicycleType() 'Returns a DataTable with all bicycles.
+        Dim bicycletype As New BicycleType()
+        Dim bicycleTypeTable As DataTable = DbManager.GetAll(bicycletype)
+        Return bicycleTypeTable
+    End Function
+    Private Function totaldays()
+
+        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate)
+        Dim back As DateTime = Convert.ToDateTime(filingdate)
+        Dim CountDays As TimeSpan = back.Subtract(borrow)
+        Dim datetodays = Convert.ToInt32(CountDays.Days)
+
+        Return datetodays
+    End Function
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
 
@@ -55,8 +69,7 @@ Public Class rentalView
     End Sub
     Private Sub PutRentals(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
-            pickbike2.SelectedValue = row("Name")
-            pickequipment2.SelectedValue = row("Name")
+
             extradition2.SelectedValue = row("PickupLocation")
             filing2.SelectedValue = row("DeliveryLocation")
             extraditiondate2.Text = row("PickupTime")
@@ -64,6 +77,19 @@ Public Class rentalView
 
         Next
     End Sub
+    Private Sub putbike(list As DataTable)
+        For Each row In list.Rows
+            pickbike2.SelectedValue = row("Name")
+        Next
+
+    End Sub
+    Private Sub putequipment(list As DataTable)
+        For Each row In list.Rows
+            pickequipment2.SelectedValue = row("Name")
+        Next
+
+    End Sub
+
 #End Region
 
 #Region "Actions"
@@ -85,12 +111,16 @@ Public Class rentalView
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
             PickupTime = extraditiondate.Text
-            DeliveryTime = filing.Text
+            DeliveryTime = filingdate.Text
             RentalID = RentalID + 1
             Comment = commenttxt.Text
-            Dim updateRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
+            Utleie_Type = "Døgn"
+            Utleie_Type_Antall = 3
+            Username = My.Settings.username
+            Total_Pris = totaldays() * DbManager.GetAll(BicycleType).RateDay
+            Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
 
-            DbManager.InsertOrUpdate(updateRentals)
+            DbManager.Insert(insertRentals)
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
@@ -126,7 +156,11 @@ Public Class rentalView
     End Sub
     Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbrentals.SelectedIndexChanged 'Populates the textboxes based on the chosen bicycle in the listbox.
         Dim rentalSearch As New Rentals()
+        Dim bikesearch As New BicycleType()
+        Dim equipmentsearch As New EquipmentType()
         PutRentals(DbManager.GetSpecific(rentalSearch, lbrentals.SelectedValue.ToString()))
+        putbike(DbManager.GetSpecific(bikesearch, lbrentals.SelectedValue.ToString()))
+        putequipment(DbManager.GetSpecific(equipmentsearch, lbrentals.SelectedValue.ToString()))
     End Sub
 
     Private Sub SlettToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SlettToolStripMenuItem.Click 'Deletes the selcted item.
@@ -138,7 +172,7 @@ Public Class rentalView
             Catch ex As Exception
             End Try
         End If
-
+        PutLbRentals(GetAllRentals)
     End Sub
 #End Region
 

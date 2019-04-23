@@ -56,6 +56,8 @@ Partial Class rentalView
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.filingdate2 = New System.Windows.Forms.DateTimePicker()
         Me.extraditiondate2 = New System.Windows.Forms.DateTimePicker()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -71,8 +73,6 @@ Partial Class rentalView
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -141,7 +141,7 @@ Partial Class rentalView
         'filing
         '
         Me.filing.FormattingEnabled = True
-        Me.filing.Location = New System.Drawing.Point(132, 130)
+        Me.filing.Location = New System.Drawing.Point(133, 174)
         Me.filing.Margin = New System.Windows.Forms.Padding(4)
         Me.filing.Name = "filing"
         Me.filing.Size = New System.Drawing.Size(113, 24)
@@ -150,7 +150,7 @@ Partial Class rentalView
         'extradition
         '
         Me.extradition.FormattingEnabled = True
-        Me.extradition.Location = New System.Drawing.Point(12, 130)
+        Me.extradition.Location = New System.Drawing.Point(12, 174)
         Me.extradition.Margin = New System.Windows.Forms.Padding(4)
         Me.extradition.Name = "extradition"
         Me.extradition.Size = New System.Drawing.Size(113, 24)
@@ -159,7 +159,7 @@ Partial Class rentalView
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(128, 107)
+        Me.Label10.Location = New System.Drawing.Point(130, 153)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(71, 17)
@@ -169,7 +169,7 @@ Partial Class rentalView
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(8, 107)
+        Me.Label9.Location = New System.Drawing.Point(13, 153)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 17)
@@ -430,6 +430,24 @@ Partial Class rentalView
         Me.TabPage2.Text = "Bestillingsoversikt"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(631, 48)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(79, 17)
+        Me.Label15.TabIndex = 15
+        Me.Label15.Text = "Velg utstyr:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(473, 48)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(83, 17)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Velg sykkel:"
+        '
         'filingdate2
         '
         Me.filingdate2.Location = New System.Drawing.Point(634, 229)
@@ -554,24 +572,6 @@ Partial Class rentalView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(473, 48)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(83, 17)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Velg sykkel:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(631, 48)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(79, 17)
-        Me.Label15.TabIndex = 15
-        Me.Label15.Text = "Velg utstyr:"
         '
         'rentalView
         '
