@@ -44,15 +44,15 @@ Public Class rentalView
         Dim bicyclesTable As DataTable = DbManager.GetAll(bicycle)
         Return bicyclesTable
     End Function
-    Private Function GetAllBicycleType() 'Returns a DataTable with all bicycles.
+    Private Function GetAllBicycleType() 'Returns a DataTable with all bicycletypes
         Dim bicycletype As New BicycleType()
         Dim bicycleTypeTable As DataTable = DbManager.GetAll(bicycletype)
         Return bicycleTypeTable
     End Function
     Private Function totaldays()
 
-        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate)
-        Dim back As DateTime = Convert.ToDateTime(filingdate)
+        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
+        Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
         Dim CountDays As TimeSpan = back.Subtract(borrow)
         Dim datetodays = Convert.ToInt32(CountDays.Days)
 
@@ -101,7 +101,7 @@ Public Class rentalView
 
         Dim BicycleType, equipment, PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
         Dim PickupTime, DeliveryTime As Date
-        Dim CustomerID, RentalID, Utleie_Type_Antall, Total_Pris As Integer
+        Dim CustomerID, RentalID, Utleie_Type_Antall, Total_Pris, BicycleID As Integer
 
         Try
 
@@ -115,12 +115,16 @@ Public Class rentalView
             RentalID = RentalID + 1
             Comment = commenttxt.Text
             Utleie_Type = "Døgn"
-            Utleie_Type_Antall = 3
+            Utleie_Type_Antall = totaldays()
             Username = My.Settings.username
-            Total_Pris = totaldays() * DbManager.GetAll(BicycleType).RateDay
-            Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
+            Total_Pris = totaldays()
+            BicycleID = 1
 
+
+            Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
+            'Dim insertRentedBicycle As New RentedBicycles(BicycleID, RentalID, Total_Pris, PickupTime, DeliveryTime)
             DbManager.Insert(insertRentals)
+            'DbManager.Insert(insertRentedBicycle)
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
