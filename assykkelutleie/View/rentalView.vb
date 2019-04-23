@@ -29,25 +29,28 @@ Public Class rentalView
         lbrentals.DisplayMember = "RentalID"
         lbrentals.ValueMember = "RentalID"
     End Sub
-    Private Function GetAllCustomer() 'Returns a DataTable with all customers.
-        Dim customer As New Customer()
-        Dim customerTable As DataTable = DbManager.GetAll(customer)
-        Return customerTable
-    End Function
+
     Private Function GetAllRentals() 'Returns a DataTable with all rentals
         Dim rentals As New Rentals()
         Dim rentalTable As DataTable = DbManager.GetAll(rentals)
         Return rentalTable
     End Function
-    Private Function GetAllBicycles() 'Returns a DataTable with all bicycles.
-        Dim bicycle As New Bicycle()
-        Dim bicyclesTable As DataTable = DbManager.GetAll(bicycle)
-        Return bicyclesTable
-    End Function
-    Private Function GetAllBicycleType() 'Returns a DataTable with all bicycletypes
+
+
+    Private Function pricetotal()
+        Dim rateday As Integer
+        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
+        Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
+        Dim CountDays As TimeSpan = back.Subtract(borrow)
+        Dim datetodays = Convert.ToInt32(CountDays.Days)
         Dim bicycletype As New BicycleType()
-        Dim bicycleTypeTable As DataTable = DbManager.GetAll(bicycletype)
-        Return bicycleTypeTable
+        Dim totalprice As Integer
+        Dim typelist As DataTable = DbManager.GetAll(bicycletype)
+        For Each row In typelist.Rows
+            rateday = row("RateDay")
+        Next
+        totalprice = rateday * totaldays()
+        Return totalprice
     End Function
     Private Function totaldays()
 
@@ -117,7 +120,7 @@ Public Class rentalView
             Utleie_Type = "Døgn"
             Utleie_Type_Antall = totaldays()
             Username = My.Settings.username
-            Total_Pris = totaldays()
+            Total_Pris = pricetotal()
             BicycleID = 1
 
 
