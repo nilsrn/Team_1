@@ -52,6 +52,11 @@ assykkelutleie
   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
 </summary>
 </member>
+<member name="P:assykkelutleie.My.Resources.Resources.graph">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:assykkelutleie.My.Resources.Resources.Logo">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -30,6 +30,7 @@ Partial Class mainView
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.btnStatistics = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -61,7 +62,7 @@ Partial Class mainView
         Me.btnBicycles.Name = "btnBicycles"
         Me.btnBicycles.Size = New System.Drawing.Size(144, 45)
         Me.btnBicycles.TabIndex = 3
-        Me.btnBicycles.Text = "Sykler"
+        Me.btnBicycles.Text = "Sykler              Utstyr"
         Me.btnBicycles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.UseVisualStyleBackColor = True
         '
@@ -118,7 +119,7 @@ Partial Class mainView
         Me.btnAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.ImageKey = "(none)"
-        Me.btnAdmin.Location = New System.Drawing.Point(9, 209)
+        Me.btnAdmin.Location = New System.Drawing.Point(9, 259)
         Me.btnAdmin.Name = "btnAdmin"
         Me.btnAdmin.Size = New System.Drawing.Size(144, 45)
         Me.btnAdmin.TabIndex = 5
@@ -130,12 +131,13 @@ Partial Class mainView
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btnStatistics)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnCustomers)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnRental)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnBicycles)
@@ -146,6 +148,21 @@ Partial Class mainView
         Me.SplitContainer1.SplitterDistance = 158
         Me.SplitContainer1.SplitterWidth = 3
         Me.SplitContainer1.TabIndex = 8
+        '
+        'btnStatistics
+        '
+        Me.btnStatistics.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.graph
+        Me.btnStatistics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnStatistics.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnStatistics.ImageKey = "(none)"
+        Me.btnStatistics.Location = New System.Drawing.Point(9, 208)
+        Me.btnStatistics.Name = "btnStatistics"
+        Me.btnStatistics.Size = New System.Drawing.Size(144, 45)
+        Me.btnStatistics.TabIndex = 8
+        Me.btnStatistics.Text = "Statistikk"
+        Me.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnStatistics.UseVisualStyleBackColor = True
         '
         'mainView
         '
@@ -172,4 +189,5 @@ Partial Class mainView
     Friend WithEvents btnLogout As Button
     Friend WithEvents btnAdmin As Button
     Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents btnStatistics As Button
 End Class

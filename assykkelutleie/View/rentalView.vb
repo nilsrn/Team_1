@@ -180,6 +180,10 @@ Public Class rentalView
         End If
         PutLbRentals(GetAllRentals)
     End Sub
+
+    Private Sub Chart1_Click(sender As Object, e As EventArgs)
+
+    End Sub
 #End Region
 
 End Class

@@ -238,3 +238,4 @@ C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\team1\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\team1\Team_1\assykkelutleie\obj\Debug\assykkelutleie.xml
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\team1\Team_1\assykkelutleie\obj\Debug\assykkelutleie.pdb
+C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.statisticsView.resources

@@ -26,7 +26,7 @@ Public Class bicycleView 'Sven-Erik
                 Catch ex As Exception
                     MsgBox("Utstyret ble ikke slettet. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
                 End Try
-                'EquipmentFilter()
+                EquipmentFilter()
             End If
         End If
     End Sub
