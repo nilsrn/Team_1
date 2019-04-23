@@ -133,8 +133,7 @@ Public Class DbManager
             Try
                 Dim listOfTables As New List(Of String)
                 listOfTables = GetProperties(obj)
-                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE Status = @input", sqlconnection)
-                sql.Parameters.AddWithValue("@row", row)
+                Dim sql As New MySqlCommand("SELECT * from " & GetTableName(obj) & " WHERE " & row & " = @input", sqlconnection)
                 sql.Parameters.AddWithValue("@input", input)
                 Dim da As New MySqlDataAdapter(sql)
                 da.Fill(returntable)

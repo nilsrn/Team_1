@@ -112,7 +112,7 @@ Public Class bicycleView 'Sven-Erik
         Else
             Dim bicycleSearch As New Bicycle()
             Dim status As String = cbBicycleStatus.SelectedValue.ToString
-            Dim bicycleTable As DataTable = DbManager.GetFilter(bicycleSearch, "'Status'", status)
+            Dim bicycleTable As DataTable = DbManager.GetFilter(bicycleSearch, "Status", status)
             PutBicycles(bicycleTable)
         End If
     End Sub
@@ -210,7 +210,7 @@ Public Class bicycleView 'Sven-Erik
         Else
             Dim equipmentSearch As New Equipment()
             Dim status As String = cbEquipmentStatus.SelectedValue.ToString
-            Dim equipmentTable As DataTable = DbManager.GetFilter(equipmentSearch, "'Status'", status)
+            Dim equipmentTable As DataTable = DbManager.GetFilter(equipmentSearch, "Status", status)
             PutEquipments(equipmentTable)
         End If
     End Sub
