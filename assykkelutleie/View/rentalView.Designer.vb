@@ -23,6 +23,9 @@ Partial Class rentalView
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rentalView))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -56,23 +59,13 @@ Partial Class rentalView
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.filingdate2 = New System.Windows.Forms.DateTimePicker()
-        Me.extraditiondate2 = New System.Windows.Forms.DateTimePicker()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.filing2 = New System.Windows.Forms.ComboBox()
-        Me.extradition2 = New System.Windows.Forms.ComboBox()
-        Me.pickequipment2 = New System.Windows.Forms.ComboBox()
-        Me.pickbike2 = New System.Windows.Forms.ComboBox()
         Me.searchrentals = New System.Windows.Forms.Button()
         Me.txtrentalsearch = New System.Windows.Forms.TextBox()
         Me.lbrentals = New System.Windows.Forms.ListBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -80,6 +73,8 @@ Partial Class rentalView
         Me.Kunde.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -407,17 +402,6 @@ Partial Class rentalView
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Controls.Add(Me.filingdate2)
-        Me.TabPage2.Controls.Add(Me.extraditiondate2)
-        Me.TabPage2.Controls.Add(Me.btnSave)
-        Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.Label11)
-        Me.TabPage2.Controls.Add(Me.filing2)
-        Me.TabPage2.Controls.Add(Me.extradition2)
-        Me.TabPage2.Controls.Add(Me.pickequipment2)
-        Me.TabPage2.Controls.Add(Me.pickbike2)
         Me.TabPage2.Controls.Add(Me.searchrentals)
         Me.TabPage2.Controls.Add(Me.txtrentalsearch)
         Me.TabPage2.Controls.Add(Me.lbrentals)
@@ -430,100 +414,9 @@ Partial Class rentalView
         Me.TabPage2.Text = "Bestillingsoversikt"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(631, 48)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(79, 17)
-        Me.Label15.TabIndex = 15
-        Me.Label15.Text = "Velg utstyr:"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(473, 48)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(83, 17)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Velg sykkel:"
-        '
-        'filingdate2
-        '
-        Me.filingdate2.Location = New System.Drawing.Point(634, 229)
-        Me.filingdate2.Name = "filingdate2"
-        Me.filingdate2.Size = New System.Drawing.Size(121, 22)
-        Me.filingdate2.TabIndex = 13
-        '
-        'extraditiondate2
-        '
-        Me.extraditiondate2.Location = New System.Drawing.Point(473, 229)
-        Me.extraditiondate2.Name = "extraditiondate2"
-        Me.extraditiondate2.Size = New System.Drawing.Size(121, 22)
-        Me.extraditiondate2.TabIndex = 12
-        '
-        'btnSave
-        '
-        Me.btnSave.Location = New System.Drawing.Point(476, 280)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(269, 32)
-        Me.btnSave.TabIndex = 11
-        Me.btnSave.Text = "Lagre"
-        Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(631, 159)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(81, 17)
-        Me.Label12.TabIndex = 10
-        Me.Label12.Text = "Innlevering:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(473, 159)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(76, 17)
-        Me.Label11.TabIndex = 9
-        Me.Label11.Text = "Utlevering:"
-        '
-        'filing2
-        '
-        Me.filing2.FormattingEnabled = True
-        Me.filing2.Location = New System.Drawing.Point(634, 182)
-        Me.filing2.Name = "filing2"
-        Me.filing2.Size = New System.Drawing.Size(121, 24)
-        Me.filing2.TabIndex = 6
-        '
-        'extradition2
-        '
-        Me.extradition2.FormattingEnabled = True
-        Me.extradition2.Location = New System.Drawing.Point(473, 182)
-        Me.extradition2.Name = "extradition2"
-        Me.extradition2.Size = New System.Drawing.Size(121, 24)
-        Me.extradition2.TabIndex = 5
-        '
-        'pickequipment2
-        '
-        Me.pickequipment2.FormattingEnabled = True
-        Me.pickequipment2.Location = New System.Drawing.Point(634, 68)
-        Me.pickequipment2.Name = "pickequipment2"
-        Me.pickequipment2.Size = New System.Drawing.Size(121, 24)
-        Me.pickequipment2.TabIndex = 4
-        '
-        'pickbike2
-        '
-        Me.pickbike2.FormattingEnabled = True
-        Me.pickbike2.Location = New System.Drawing.Point(473, 68)
-        Me.pickbike2.Name = "pickbike2"
-        Me.pickbike2.Size = New System.Drawing.Size(121, 24)
-        Me.pickbike2.TabIndex = 3
-        '
         'searchrentals
         '
-        Me.searchrentals.Location = New System.Drawing.Point(338, 32)
+        Me.searchrentals.Location = New System.Drawing.Point(698, 35)
         Me.searchrentals.Margin = New System.Windows.Forms.Padding(4)
         Me.searchrentals.Name = "searchrentals"
         Me.searchrentals.Size = New System.Drawing.Size(100, 28)
@@ -533,7 +426,7 @@ Partial Class rentalView
         '
         'txtrentalsearch
         '
-        Me.txtrentalsearch.Location = New System.Drawing.Point(145, 35)
+        Me.txtrentalsearch.Location = New System.Drawing.Point(509, 38)
         Me.txtrentalsearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtrentalsearch.Name = "txtrentalsearch"
         Me.txtrentalsearch.Size = New System.Drawing.Size(163, 22)
@@ -547,7 +440,7 @@ Partial Class rentalView
         Me.lbrentals.Location = New System.Drawing.Point(9, 68)
         Me.lbrentals.Margin = New System.Windows.Forms.Padding(4)
         Me.lbrentals.Name = "lbrentals"
-        Me.lbrentals.Size = New System.Drawing.Size(429, 420)
+        Me.lbrentals.Size = New System.Drawing.Size(798, 420)
         Me.lbrentals.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -565,6 +458,7 @@ Partial Class rentalView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Chart1)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
@@ -572,6 +466,22 @@ Partial Class rentalView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Chart1
+        '
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(204, 51)
+        Me.Chart1.Name = "Chart1"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(300, 300)
+        Me.Chart1.TabIndex = 0
+        Me.Chart1.Text = "Chart1"
         '
         'rentalView
         '
@@ -595,6 +505,8 @@ Partial Class rentalView
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -630,21 +542,11 @@ Partial Class rentalView
     Friend WithEvents searchrentals As Button
     Friend WithEvents txtrentalsearch As TextBox
     Friend WithEvents lbrentals As ListBox
-    Friend WithEvents filing2 As ComboBox
-    Friend WithEvents extradition2 As ComboBox
-    Friend WithEvents pickequipment2 As ComboBox
-    Friend WithEvents pickbike2 As ComboBox
-    Friend WithEvents btnSave As Button
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents filingdate2 As DateTimePicker
-    Friend WithEvents extraditiondate2 As DateTimePicker
     Friend WithEvents presentcustomerid As Label
     Friend WithEvents customerid As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents commenttxt As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 End Class
