@@ -24,6 +24,7 @@ Partial Class statisticsView
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -49,7 +50,7 @@ Partial Class statisticsView
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtApril = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtMars = New System.Windows.Forms.TextBox()
+        Me.txtMarch = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtFebruary = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -57,11 +58,10 @@ Partial Class statisticsView
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -85,6 +85,22 @@ Partial Class statisticsView
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "Popularitet"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(14, 48)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowTemplate.ReadOnly = True
+        Me.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.Size = New System.Drawing.Size(295, 326)
+        Me.DataGridView1.TabIndex = 60
         '
         'btnRefresh
         '
@@ -132,7 +148,7 @@ Partial Class statisticsView
         Me.TabPage2.Controls.Add(Me.Label6)
         Me.TabPage2.Controls.Add(Me.txtApril)
         Me.TabPage2.Controls.Add(Me.Label5)
-        Me.TabPage2.Controls.Add(Me.txtMars)
+        Me.TabPage2.Controls.Add(Me.txtMarch)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.txtFebruary)
         Me.TabPage2.Controls.Add(Me.Label3)
@@ -334,13 +350,13 @@ Partial Class statisticsView
         Me.Label5.TabIndex = 66
         Me.Label5.Text = "April"
         '
-        'txtMars
+        'txtMarch
         '
-        Me.txtMars.Location = New System.Drawing.Point(78, 108)
-        Me.txtMars.Name = "txtMars"
-        Me.txtMars.ReadOnly = True
-        Me.txtMars.Size = New System.Drawing.Size(82, 20)
-        Me.txtMars.TabIndex = 65
+        Me.txtMarch.Location = New System.Drawing.Point(78, 108)
+        Me.txtMarch.Name = "txtMarch"
+        Me.txtMarch.ReadOnly = True
+        Me.txtMarch.Size = New System.Drawing.Size(82, 20)
+        Me.txtMarch.TabIndex = 65
         '
         'Label4
         '
@@ -406,22 +422,6 @@ Partial Class statisticsView
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "Omsetning"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(14, 48)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowTemplate.ReadOnly = True
-        Me.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.Size = New System.Drawing.Size(295, 326)
-        Me.DataGridView1.TabIndex = 60
-        '
         'statisticsView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -434,9 +434,9 @@ Partial Class statisticsView
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -469,7 +469,7 @@ Partial Class statisticsView
     Friend WithEvents Label6 As Label
     Friend WithEvents txtApril As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtMars As TextBox
+    Friend WithEvents txtMarch As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtFebruary As TextBox
     Friend WithEvents Label3 As Label

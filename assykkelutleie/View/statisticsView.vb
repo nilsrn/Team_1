@@ -14,7 +14,20 @@ Public Class statisticsView
 
 #Region "Code for the Profit tab"
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-
+        txtTotal.Text = DbManager.GetSum(DateTimePicker1.Value)
+        txtAverage.Text = DbManager.GetSum(DateTimePicker1.Value) / 12
+        txtJanuary.Text = DbManager.GetMonth(DateTimePicker1.Value, 1)
+        txtFebruary.Text = DbManager.GetMonth(DateTimePicker1.Value, 2)
+        txtMarch.Text = DbManager.GetMonth(DateTimePicker1.Value, 3)
+        txtApril.Text = DbManager.GetMonth(DateTimePicker1.Value, 4)
+        txtMay.Text = DbManager.GetMonth(DateTimePicker1.Value, 5)
+        txtJune.Text = DbManager.GetMonth(DateTimePicker1.Value, 6)
+        txtJuly.Text = DbManager.GetMonth(DateTimePicker1.Value, 7)
+        txtAugust.Text = DbManager.GetMonth(DateTimePicker1.Value, 8)
+        txtSeptember.Text = DbManager.GetMonth(DateTimePicker1.Value, 9)
+        txtOctober.Text = DbManager.GetMonth(DateTimePicker1.Value, 10)
+        txtNovember.Text = DbManager.GetMonth(DateTimePicker1.Value, 11)
+        txtDecember.Text = DbManager.GetMonth(DateTimePicker1.Value, 12)
     End Sub
 #End Region
 End Class
