@@ -25,7 +25,6 @@ Partial Class statisticsView
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.lbStatistics = New System.Windows.Forms.ListBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.txtAverage = New System.Windows.Forms.TextBox()
@@ -58,9 +57,11 @@ Partial Class statisticsView
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -75,8 +76,8 @@ Partial Class statisticsView
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Controls.Add(Me.btnRefresh)
-        Me.TabPage1.Controls.Add(Me.lbStatistics)
         Me.TabPage1.Controls.Add(Me.Label30)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -95,14 +96,6 @@ Partial Class statisticsView
         Me.btnRefresh.Size = New System.Drawing.Size(30, 30)
         Me.btnRefresh.TabIndex = 59
         Me.btnRefresh.UseVisualStyleBackColor = True
-        '
-        'lbStatistics
-        '
-        Me.lbStatistics.FormattingEnabled = True
-        Me.lbStatistics.Location = New System.Drawing.Point(14, 44)
-        Me.lbStatistics.Name = "lbStatistics"
-        Me.lbStatistics.Size = New System.Drawing.Size(577, 342)
-        Me.lbStatistics.TabIndex = 58
         '
         'Label30
         '
@@ -413,6 +406,22 @@ Partial Class statisticsView
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "Omsetning"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(14, 48)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowTemplate.ReadOnly = True
+        Me.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.Size = New System.Drawing.Size(295, 326)
+        Me.DataGridView1.TabIndex = 60
+        '
         'statisticsView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -427,6 +436,7 @@ Partial Class statisticsView
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -437,7 +447,6 @@ Partial Class statisticsView
     Friend WithEvents Label30 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label1 As Label
-    Friend WithEvents lbStatistics As ListBox
     Friend WithEvents txtAverage As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents txtTotal As TextBox
@@ -467,4 +476,5 @@ Partial Class statisticsView
     Friend WithEvents txtJanuary As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnRefresh As Button
+    Protected WithEvents DataGridView1 As DataGridView
 End Class

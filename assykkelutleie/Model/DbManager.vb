@@ -192,4 +192,19 @@ Public Class DbManager
         End Using
     End Sub
 #End Region
+
+#Region "Statistics"
+    Public Shared Sub GetStatistics(x As Object) 'Gets the number of rented bicycletypes
+        Using sqlconnection As New MySqlConnection(connectionString)
+            Dim sql As New MySqlCommand("SELECT BicycleType.Name As Sykkeltype, COUNT(*) AS Antall FROM BicycleType, RentedBicycles, Bicycle WHERE RentedBicycles.BicycleID = Bicycle.BicycleID AND Bicycle.BicycleType = BicycleType.Name GROUP BY BicycleType.Name ASC;", sqlconnection)
+            Dim da As New MySqlDataAdapter(sql)
+            Dim returntable As New DataTable
+            da.Fill(returntable)
+            x.DataSource = returntable
+            If ConnectedToServerAsync(sqlconnection).Result Then
+                sql.ExecuteNonQuery()
+            End If
+        End Using
+    End Sub
+#End Region
 End Class
