@@ -130,6 +130,36 @@ Public Class rentalView
         DbManager.Insert(insertRentedBicycle)
         DbManager.Insert(insertRentedEquipment)
     End Sub
+    Private Sub updatebike() 'updates status and location when a bike is rented
+        Dim BicycleID As Integer
+        Dim BicycleType, DefaultLocation, CurrentLocation, Status As String
+        Dim bike As New Bicycle()
+        Dim list As DataTable = DbManager.GetAll(bike)
+        For Each row In list.Rows
+            BicycleType = row("BicycleType")
+            DefaultLocation = row("DefaultLocation")
+        Next
+        BicycleID = pickbike.SelectedValue
+        CurrentLocation = filing.SelectedValue
+        Status = "Utleid"
+        Dim updatebicycle As New Bicycle(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status)
+        DbManager.Update(updatebicycle)
+    End Sub
+    Private Sub updateequipment() 'updates status and location when equipment is rented
+        Dim EquipmentID As Integer
+        Dim EquipmentType, DefaultLocation, CurrentLocation, Status As String
+        Dim equipment As New Equipment()
+        Dim list As DataTable = DbManager.GetAll(equipment)
+        For Each row In list.Rows
+            EquipmentType = row("EquipmentType")
+            DefaultLocation = row("DefaultLocation")
+        Next
+        EquipmentID = pickbike.SelectedValue
+        CurrentLocation = filing.SelectedValue
+        Status = "Utleid"
+        Dim updateequipment As New Equipment(EquipmentID, EquipmentType, DefaultLocation, CurrentLocation, Status)
+        DbManager.Update(updateequipment)
+    End Sub
 
 
 
@@ -158,10 +188,12 @@ Public Class rentalView
             Total_Pris = equipmentpricetotal() + bikepricetotal()
             CustomerID = presentcustomerid.Text
             Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
-
             DbManager.Insert(insertRentals)
+
             makeInvoice()
             rentedbicycleequipment()
+            updatebike()
+            updateequipment()
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
