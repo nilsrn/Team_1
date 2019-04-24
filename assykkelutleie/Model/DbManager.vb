@@ -207,21 +207,20 @@ Public Class DbManager
         End Using
     End Sub
 
-
     Public Shared Function GetSum(year As Date) 'Gets the sum of invoices for the selected year
         Dim sqlconnection As MySqlConnection
         sqlconnection = New MySqlConnection
         sqlconnection.ConnectionString = connectionString
         Dim dadapter As New MySqlDataAdapter
-            Dim sum As Integer
-            Try
-                sqlconnection.Open()
-                Dim sql As New MySqlCommand("SELECT SUM(Amount) FROM Invoice WHERE YEAR(DueDate) = @year;", sqlconnection)
-                sql.Parameters.AddWithValue("@year", year)
-                sum = Convert.ToInt16(sql.ExecuteScalar())
-                sqlconnection.Close()
-            Catch ex As Exception
-            End Try
+        Dim sum As Integer
+        Try
+            sqlconnection.Open()
+            Dim sql As New MySqlCommand("SELECT SUM(Amount) FROM Invoice WHERE YEAR(DueDate) = @year;", sqlconnection)
+            sql.Parameters.AddWithValue("@year", year)
+            sum = Convert.ToInt16(sql.ExecuteScalar())
+            sqlconnection.Close()
+        Catch ex As Exception
+        End Try
         Return sum
     End Function
 
