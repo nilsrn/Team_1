@@ -1,4 +1,4 @@
-﻿Public Class rentedEquipment
+﻿Public Class RentedEquipment
     Dim m_eqid, m_price, rid As Integer
     Dim m_datefrom, m_dateto As Date
 
@@ -6,7 +6,7 @@
 
     End Sub
 
-    Public Sub New(DateFrom, DateTo, EquipmentID, Price, RentalID)
+    Public Sub New(EquipmentID, RentalID, Price, DateFrom, DateTo)
         m_datefrom = DateFrom
         m_dateto = DateTo
         m_eqid = EquipmentID

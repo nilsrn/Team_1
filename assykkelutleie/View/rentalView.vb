@@ -3,23 +3,23 @@ Public Class rentalView
 #Region "Functions"
     Private Sub CbPutComboBox() 'Populates the comboboxes.
 
-        Dim bicycletype As New BicycleType()
+        Dim bicycle As New Bicycle()
         Dim location As New Location()
-        Dim equipment As New EquipmentType()
+        Dim equipment As New Equipment()
 
 
-        pickbike.DataSource = DbManager.GetAll(bicycletype)
+        pickbike.DataSource = DbManager.GetAll(bicycle)
         pickequipment.DataSource = DbManager.GetAll(equipment)
         extradition.DataSource = DbManager.GetAll(location)
         filing.DataSource = DbManager.GetAll(location)
 
-        pickbike.DisplayMember = "Name"
-        pickequipment.DisplayMember = "Name"
+        pickbike.DisplayMember = "BicycleID"
+        pickequipment.DisplayMember = "EquipmentID"
         extradition.DisplayMember = "Name"
         filing.DisplayMember = "Name"
 
-        pickbike.ValueMember = "Name"
-        pickequipment.ValueMember = "Name"
+        pickbike.ValueMember = "BicycleID"
+        pickequipment.ValueMember = "EquipmentID"
         extradition.ValueMember = "Name"
         filing.ValueMember = "Name"
 
@@ -41,30 +41,39 @@ Public Class rentalView
         Dim invoiceTable As DataTable = DbManager.GetAll(invoice)
         Return invoiceTable
     End Function
-
-
-    Private Function pricetotal()
+    Private Function bikepricetotal() 'Counts days between pickup/delivery and multiplies with day-rate for bicycle type
         Dim bikerateday As Integer
-        Dim equipmentrateday As Integer
+        Dim bikeprice As Integer
         Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
         Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
         Dim CountDays As TimeSpan = back.Subtract(borrow)
         Dim datetodays = Convert.ToInt32(CountDays.Days)
         Dim bicycletype As New BicycleType()
-        Dim equipmenttype As New EquipmentType()
-        Dim totalprice As Integer
         Dim typelist As DataTable = DbManager.GetAll(bicycletype)
-        Dim etypelist As DataTable = DbManager.GetAll(equipmenttype)
         For Each row In typelist.Rows
             bikerateday = row("RateDay")
         Next
+        bikeprice = bikerateday * totaldays()
+        Return bikeprice
+    End Function
+    Private Function equipmentpricetotal() 'Counts days between pickup/delivery and multiplies with day-rate for equipment type 
+        Dim equipmentrateday As Integer
+        Dim equipmenteprice As Integer
+        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
+        Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
+        Dim CountDays As TimeSpan = back.Subtract(borrow)
+        Dim datetodays = Convert.ToInt32(CountDays.Days)
+        Dim equipmenttype As New EquipmentType()
+        Dim typelist As DataTable = DbManager.GetAll(equipmenttype)
         For Each row In typelist.Rows
             equipmentrateday = row("RateDay")
         Next
-        totalprice = (bikerateday + equipmentrateday) * totaldays()
-        Return totalprice
+        equipmenteprice = equipmentrateday * totaldays()
+        Return equipmenteprice
     End Function
-    Private Function totaldays()
+
+
+    Private Function totaldays() 'Function showing number of days something is rented
 
         Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
         Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
@@ -82,7 +91,7 @@ Public Class rentalView
             presentcustomerid.Text = row("CustomerID")
         Next
     End Sub
-    Private Sub makeInvoice()
+    Private Sub makeInvoice() 'Sub for writing an invoice for the client
         Dim rid, InvoiceNumber, Total_Pris, CustomerID, kid As Integer
         Dim InvoiceDate, DueDate As Date
         Dim rentalsummary As String
@@ -96,9 +105,30 @@ Public Class rentalView
         InvoiceDate = Date.Today.AddDays(11)
         DueDate = Date.Today.AddDays(30)
         kid = Int((9999 * Rnd()) + 1111)
-        Total_Pris = pricetotal()
+        Total_Pris = bikepricetotal() + equipmentpricetotal()
         Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)
         DbManager.Insert(insertInvoice)
+    End Sub
+    Private Sub rentedbicycleequipment() 'sub for updating tables RentedBicycles and RentedEquipment when a rental is placed
+        Dim rid, BicycleID, EquipmentID, pricebike, priceequipment As Integer
+        Dim datefrom, dateto As Date
+        Dim rental As New Rentals()
+        Dim list As DataTable = DbManager.GetAll(rental)
+        For Each row In list.Rows
+            rid = row("RentalID")
+        Next
+
+        BicycleID = pickbike.SelectedValue
+        EquipmentID = pickequipment.SelectedValue
+        datefrom = extraditiondate.Text
+        dateto = filingdate.Text
+        pricebike = bikepricetotal()
+        priceequipment = equipmentpricetotal()
+
+        Dim insertRentedBicycle As New RentedBicycles(BicycleID, rid, pricebike, datefrom, dateto)
+        Dim insertRentedEquipment As New RentedEquipment(EquipmentID, rid, priceequipment, datefrom, dateto)
+        DbManager.Insert(insertRentedBicycle)
+        DbManager.Insert(insertRentedEquipment)
     End Sub
 
 
@@ -110,19 +140,13 @@ Public Class rentalView
         PutLbRentals(GetAllRentals)
         CbPutComboBox()
     End Sub
-    Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click
+    Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click 'Inserts data into tables Rentals, Invoice, Rentedbicycles and rentedequipment. Updates status on bicycle/equipment-location
 
-        Dim BicycleType, equipment, PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
+        Dim PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
         Dim PickupTime, DeliveryTime As Date
-        Dim CustomerID, Utleie_Type_Antall, Total_Pris, BicycleID, RentalID As Integer
-
-
+        Dim CustomerID, Utleie_Type_Antall, Total_Pris, RentalID As Integer
 
         Try
-
-            CustomerID = presentcustomerid.Text
-            BicycleType = pickbike.SelectedValue
-            equipment = pickequipment.SelectedValue
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
             PickupTime = extraditiondate.Text
@@ -131,23 +155,17 @@ Public Class rentalView
             Utleie_Type = "Døgn"
             Utleie_Type_Antall = totaldays()
             Username = My.Settings.username
-            Total_Pris = pricetotal()
-            BicycleID = 1
-
-
+            Total_Pris = equipmentpricetotal() + bikepricetotal()
+            CustomerID = presentcustomerid.Text
             Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
-            'Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, KIDnumber, Total_Pris, RentalSummary)
-            'Dim insertRentedBicycle As New RentedBicycles(BicycleID, RentalID, Total_Pris, PickupTime, DeliveryTime)
+
             DbManager.Insert(insertRentals)
-
             makeInvoice()
-
-            'DbManager.Insert(insertRentedBicycle)
+            rentedbicycleequipment()
             PutLbRentals(GetAllRentals)
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
         End Try
-
 
     End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
@@ -187,9 +205,15 @@ Public Class rentalView
             Try
                 Dim rental As New Rentals()
                 Dim invoice As New Invoice()
+                Dim bike As New RentedBicycles()
+                Dim equipment As New RentedEquipment()
                 Dim rentalID As Integer = lbrentals.SelectedValue
                 Dim InvoiceNumber As Integer = lbrentals.SelectedValue
+                Dim EquipmentID As Integer = lbrentals.SelectedValue
+                Dim BicycleID As Integer = lbrentals.SelectedValue
                 DbManager.Delete(invoice, "CustomerID", InvoiceNumber)
+                DbManager.Delete(rental, "CustomerID", rentalID)
+                DbManager.Delete(bike, "CustomerID", rentalID)
                 DbManager.Delete(rental, "CustomerID", rentalID)
 
             Catch ex As Exception
