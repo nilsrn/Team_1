@@ -26,8 +26,8 @@ Public Class rentalView
     End Sub
     Private Sub PutLbRentals(table As DataTable) 'Populates the listbox with data received from the DB. 
         lbrentals.DataSource = table
-        lbrentals.DisplayMember = "CustomerID"
-        lbrentals.ValueMember = "CustomerID"
+        lbrentals.DisplayMember = "RentalID"
+        lbrentals.ValueMember = "RentalID"
     End Sub
 
     Private Function GetAllRentals() 'Returns a DataTable with all rentals
