@@ -240,13 +240,14 @@ Public Class rentalView
                 Dim bike As New RentedBicycles()
                 Dim equipment As New RentedEquipment()
                 Dim rentalID As Integer = lbrentals.SelectedValue
-                Dim InvoiceNumber As Integer = lbrentals.SelectedValue
-                Dim EquipmentID As Integer = lbrentals.SelectedValue
-                Dim BicycleID As Integer = lbrentals.SelectedValue
-                DbManager.Delete(invoice, "CustomerID", InvoiceNumber)
-                DbManager.Delete(rental, "CustomerID", rentalID)
-                DbManager.Delete(bike, "CustomerID", rentalID)
-                DbManager.Delete(rental, "CustomerID", rentalID)
+
+                DbManager.Delete(bike, "RentalID", rentalID)
+
+                DbManager.Delete(equipment, "RentalID", rentalID)
+
+                DbManager.Delete(invoice, "RentalID", rentalID)
+
+                DbManager.Delete(rental, "RentalID", rentalID)
 
             Catch ex As Exception
             End Try
