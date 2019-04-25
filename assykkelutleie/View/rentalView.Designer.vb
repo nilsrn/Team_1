@@ -61,6 +61,7 @@ Partial Class rentalView
         Me.lbrentals = New System.Windows.Forms.ListBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -395,6 +396,7 @@ Partial Class rentalView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.searchrentals)
         Me.TabPage2.Controls.Add(Me.txtrentalsearch)
         Me.TabPage2.Controls.Add(Me.lbrentals)
@@ -448,6 +450,16 @@ Partial Class rentalView
         Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
         Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(108, 24)
         Me.SlettToolStripMenuItem.Text = "Slett"
+        '
+        'Button1
+        '
+        Me.Button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.Button1.Image = Global.assykkelutleie.My.Resources.Resources.reload
+        Me.Button1.Location = New System.Drawing.Point(9, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(56, 43)
+        Me.Button1.TabIndex = 3
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'rentalView
         '
@@ -511,4 +523,5 @@ Partial Class rentalView
     Friend WithEvents commenttxt As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class
