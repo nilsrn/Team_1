@@ -202,6 +202,12 @@ Public Class rentalView
             mailtxt.Text = " "
             presentcustomerid.Text = " "
             commenttxt.Text = " "
+            extraditiondate.Text = Date.Today
+            filingdate.Text = Date.Today
+            filing.Text = ""
+            extradition.Text = ""
+            pickbike.Text = ""
+            pickequipment.Text = ""
 
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
