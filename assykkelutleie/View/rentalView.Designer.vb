@@ -28,7 +28,9 @@ Partial Class rentalView
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.rentalcomplete = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.filing = New System.Windows.Forms.ComboBox()
+        Me.commenttxt = New System.Windows.Forms.TextBox()
         Me.extradition = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -37,8 +39,6 @@ Partial Class rentalView
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.commenttxt = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pickequipment = New System.Windows.Forms.ComboBox()
@@ -75,7 +75,7 @@ Partial Class rentalView
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(16, 15)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(823, 524)
@@ -88,9 +88,9 @@ Partial Class rentalView
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.Kunde)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(815, 495)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Ny bestilling"
@@ -99,7 +99,7 @@ Partial Class rentalView
         'rentalcomplete
         '
         Me.rentalcomplete.Location = New System.Drawing.Point(197, 417)
-        Me.rentalcomplete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rentalcomplete.Margin = New System.Windows.Forms.Padding(4)
         Me.rentalcomplete.Name = "rentalcomplete"
         Me.rentalcomplete.Size = New System.Drawing.Size(427, 68)
         Me.rentalcomplete.TabIndex = 3
@@ -119,28 +119,46 @@ Partial Class rentalView
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Location = New System.Drawing.Point(544, 18)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(260, 390)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Utlevering og innlevering"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(13, 209)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(84, 17)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "Kommentar:"
+        '
         'filing
         '
         Me.filing.FormattingEnabled = True
         Me.filing.Location = New System.Drawing.Point(133, 174)
-        Me.filing.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.filing.Margin = New System.Windows.Forms.Padding(4)
         Me.filing.Name = "filing"
         Me.filing.Size = New System.Drawing.Size(113, 24)
         Me.filing.TabIndex = 10
+        '
+        'commenttxt
+        '
+        Me.commenttxt.Location = New System.Drawing.Point(11, 228)
+        Me.commenttxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.commenttxt.Multiline = True
+        Me.commenttxt.Name = "commenttxt"
+        Me.commenttxt.Size = New System.Drawing.Size(245, 154)
+        Me.commenttxt.TabIndex = 4
         '
         'extradition
         '
         Me.extradition.FormattingEnabled = True
         Me.extradition.Location = New System.Drawing.Point(12, 174)
-        Me.extradition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.extradition.Margin = New System.Windows.Forms.Padding(4)
         Me.extradition.Name = "extradition"
         Me.extradition.Size = New System.Drawing.Size(113, 24)
         Me.extradition.TabIndex = 9
@@ -168,7 +186,7 @@ Partial Class rentalView
         'filingdate
         '
         Me.filingdate.Location = New System.Drawing.Point(132, 46)
-        Me.filingdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.filingdate.Margin = New System.Windows.Forms.Padding(4)
         Me.filingdate.Name = "filingdate"
         Me.filingdate.Size = New System.Drawing.Size(116, 22)
         Me.filingdate.TabIndex = 6
@@ -176,7 +194,7 @@ Partial Class rentalView
         'extraditiondate
         '
         Me.extraditiondate.Location = New System.Drawing.Point(12, 46)
-        Me.extraditiondate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.extraditiondate.Margin = New System.Windows.Forms.Padding(4)
         Me.extraditiondate.Name = "extraditiondate"
         Me.extraditiondate.Size = New System.Drawing.Size(111, 22)
         Me.extraditiondate.TabIndex = 5
@@ -208,31 +226,13 @@ Partial Class rentalView
         Me.GroupBox2.Controls.Add(Me.pickequipment)
         Me.GroupBox2.Controls.Add(Me.pickbike)
         Me.GroupBox2.Location = New System.Drawing.Point(272, 18)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(264, 390)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sykkel og utstyr"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(13, 209)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(84, 17)
-        Me.Label13.TabIndex = 5
-        Me.Label13.Text = "Kommentar:"
-        '
-        'commenttxt
-        '
-        Me.commenttxt.Location = New System.Drawing.Point(11, 228)
-        Me.commenttxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.commenttxt.Multiline = True
-        Me.commenttxt.Name = "commenttxt"
-        Me.commenttxt.Size = New System.Drawing.Size(245, 154)
-        Me.commenttxt.TabIndex = 4
         '
         'Label6
         '
@@ -258,7 +258,7 @@ Partial Class rentalView
         '
         Me.pickequipment.FormattingEnabled = True
         Me.pickequipment.Location = New System.Drawing.Point(141, 46)
-        Me.pickequipment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pickequipment.Margin = New System.Windows.Forms.Padding(4)
         Me.pickequipment.Name = "pickequipment"
         Me.pickequipment.Size = New System.Drawing.Size(113, 24)
         Me.pickequipment.TabIndex = 1
@@ -267,7 +267,7 @@ Partial Class rentalView
         '
         Me.pickbike.FormattingEnabled = True
         Me.pickbike.Location = New System.Drawing.Point(9, 46)
-        Me.pickbike.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pickbike.Margin = New System.Windows.Forms.Padding(4)
         Me.pickbike.Name = "pickbike"
         Me.pickbike.Size = New System.Drawing.Size(113, 24)
         Me.pickbike.TabIndex = 0
@@ -286,9 +286,9 @@ Partial Class rentalView
         Me.Kunde.Controls.Add(Me.txtsearch)
         Me.Kunde.Controls.Add(Me.Label1)
         Me.Kunde.Location = New System.Drawing.Point(8, 18)
-        Me.Kunde.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Kunde.Margin = New System.Windows.Forms.Padding(4)
         Me.Kunde.Name = "Kunde"
-        Me.Kunde.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Kunde.Padding = New System.Windows.Forms.Padding(4)
         Me.Kunde.Size = New System.Drawing.Size(261, 390)
         Me.Kunde.TabIndex = 0
         Me.Kunde.TabStop = False
@@ -314,7 +314,7 @@ Partial Class rentalView
         'mailtxt
         '
         Me.mailtxt.Location = New System.Drawing.Point(111, 228)
-        Me.mailtxt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.mailtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.mailtxt.Name = "mailtxt"
         Me.mailtxt.Size = New System.Drawing.Size(132, 22)
         Me.mailtxt.TabIndex = 8
@@ -322,7 +322,7 @@ Partial Class rentalView
         'surnametxt
         '
         Me.surnametxt.Location = New System.Drawing.Point(111, 181)
-        Me.surnametxt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.surnametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.surnametxt.Name = "surnametxt"
         Me.surnametxt.Size = New System.Drawing.Size(132, 22)
         Me.surnametxt.TabIndex = 7
@@ -330,7 +330,7 @@ Partial Class rentalView
         'firstnametxt
         '
         Me.firstnametxt.Location = New System.Drawing.Point(111, 134)
-        Me.firstnametxt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.firstnametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.firstnametxt.Name = "firstnametxt"
         Me.firstnametxt.Size = New System.Drawing.Size(132, 22)
         Me.firstnametxt.TabIndex = 6
@@ -368,7 +368,7 @@ Partial Class rentalView
         'btnSearch
         '
         Me.btnSearch.Location = New System.Drawing.Point(156, 41)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(100, 28)
         Me.btnSearch.TabIndex = 2
@@ -378,7 +378,7 @@ Partial Class rentalView
         'txtsearch
         '
         Me.txtsearch.Location = New System.Drawing.Point(13, 46)
-        Me.txtsearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtsearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtsearch.Name = "txtsearch"
         Me.txtsearch.Size = New System.Drawing.Size(132, 22)
         Me.txtsearch.TabIndex = 1
@@ -399,9 +399,9 @@ Partial Class rentalView
         Me.TabPage2.Controls.Add(Me.txtrentalsearch)
         Me.TabPage2.Controls.Add(Me.lbrentals)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(815, 495)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Bestillingsoversikt"
@@ -410,7 +410,7 @@ Partial Class rentalView
         'searchrentals
         '
         Me.searchrentals.Location = New System.Drawing.Point(699, 34)
-        Me.searchrentals.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.searchrentals.Margin = New System.Windows.Forms.Padding(4)
         Me.searchrentals.Name = "searchrentals"
         Me.searchrentals.Size = New System.Drawing.Size(100, 28)
         Me.searchrentals.TabIndex = 2
@@ -420,7 +420,7 @@ Partial Class rentalView
         'txtrentalsearch
         '
         Me.txtrentalsearch.Location = New System.Drawing.Point(509, 38)
-        Me.txtrentalsearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtrentalsearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtrentalsearch.Name = "txtrentalsearch"
         Me.txtrentalsearch.Size = New System.Drawing.Size(163, 22)
         Me.txtrentalsearch.TabIndex = 1
@@ -431,7 +431,7 @@ Partial Class rentalView
         Me.lbrentals.FormattingEnabled = True
         Me.lbrentals.ItemHeight = 16
         Me.lbrentals.Location = New System.Drawing.Point(9, 68)
-        Me.lbrentals.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbrentals.Margin = New System.Windows.Forms.Padding(4)
         Me.lbrentals.Name = "lbrentals"
         Me.lbrentals.Size = New System.Drawing.Size(799, 420)
         Me.lbrentals.TabIndex = 0
@@ -457,7 +457,7 @@ Partial Class rentalView
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "rentalView"
         Me.Text = "rental"
         Me.TabControl1.ResumeLayout(False)

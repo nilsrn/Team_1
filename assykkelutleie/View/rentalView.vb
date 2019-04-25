@@ -195,6 +195,14 @@ Public Class rentalView
             updatebike()
             updateequipment()
             PutLbRentals(GetAllRentals)
+            MsgBox("Kunden er registrert!")
+            txtsearch.Text = " "
+            firstnametxt.Text = " "
+            surnametxt.Text = " "
+            mailtxt.Text = " "
+            presentcustomerid.Text = " "
+            commenttxt.Text = " "
+
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
         End Try
