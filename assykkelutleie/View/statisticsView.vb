@@ -1,5 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-Public Class statisticsView
+﻿Public Class statisticsView
 #Region "General code for the form"
     Private Sub StatisticsView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DbManager.GetStatistics(Me.DataGridView1)
