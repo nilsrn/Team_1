@@ -58,6 +58,7 @@ Partial Class statisticsView
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,6 +127,7 @@ Partial Class statisticsView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Controls.Add(Me.txtAverage)
         Me.TabPage2.Controls.Add(Me.Label15)
         Me.TabPage2.Controls.Add(Me.txtTotal)
@@ -165,7 +167,7 @@ Partial Class statisticsView
         '
         'txtAverage
         '
-        Me.txtAverage.Location = New System.Drawing.Point(351, 82)
+        Me.txtAverage.Location = New System.Drawing.Point(351, 103)
         Me.txtAverage.Name = "txtAverage"
         Me.txtAverage.ReadOnly = True
         Me.txtAverage.Size = New System.Drawing.Size(82, 20)
@@ -174,7 +176,7 @@ Partial Class statisticsView
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(277, 85)
+        Me.Label15.Location = New System.Drawing.Point(277, 106)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(68, 13)
         Me.Label15.TabIndex = 86
@@ -182,7 +184,7 @@ Partial Class statisticsView
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(351, 56)
+        Me.txtTotal.Location = New System.Drawing.Point(351, 77)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(82, 20)
@@ -191,7 +193,7 @@ Partial Class statisticsView
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(277, 59)
+        Me.Label14.Location = New System.Drawing.Point(277, 80)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(34, 13)
         Me.Label14.TabIndex = 84
@@ -199,7 +201,7 @@ Partial Class statisticsView
         '
         'txtDecember
         '
-        Me.txtDecember.Location = New System.Drawing.Point(78, 342)
+        Me.txtDecember.Location = New System.Drawing.Point(78, 363)
         Me.txtDecember.Name = "txtDecember"
         Me.txtDecember.ReadOnly = True
         Me.txtDecember.Size = New System.Drawing.Size(82, 20)
@@ -208,7 +210,7 @@ Partial Class statisticsView
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(16, 345)
+        Me.Label13.Location = New System.Drawing.Point(16, 366)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(55, 13)
         Me.Label13.TabIndex = 82
@@ -216,7 +218,7 @@ Partial Class statisticsView
         '
         'txtNovember
         '
-        Me.txtNovember.Location = New System.Drawing.Point(78, 316)
+        Me.txtNovember.Location = New System.Drawing.Point(78, 337)
         Me.txtNovember.Name = "txtNovember"
         Me.txtNovember.ReadOnly = True
         Me.txtNovember.Size = New System.Drawing.Size(82, 20)
@@ -225,7 +227,7 @@ Partial Class statisticsView
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(16, 319)
+        Me.Label12.Location = New System.Drawing.Point(16, 340)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(56, 13)
         Me.Label12.TabIndex = 80
@@ -233,7 +235,7 @@ Partial Class statisticsView
         '
         'txtOctober
         '
-        Me.txtOctober.Location = New System.Drawing.Point(78, 290)
+        Me.txtOctober.Location = New System.Drawing.Point(78, 311)
         Me.txtOctober.Name = "txtOctober"
         Me.txtOctober.ReadOnly = True
         Me.txtOctober.Size = New System.Drawing.Size(82, 20)
@@ -242,7 +244,7 @@ Partial Class statisticsView
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(16, 293)
+        Me.Label11.Location = New System.Drawing.Point(16, 314)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(45, 13)
         Me.Label11.TabIndex = 78
@@ -250,7 +252,7 @@ Partial Class statisticsView
         '
         'txtSeptember
         '
-        Me.txtSeptember.Location = New System.Drawing.Point(78, 264)
+        Me.txtSeptember.Location = New System.Drawing.Point(78, 285)
         Me.txtSeptember.Name = "txtSeptember"
         Me.txtSeptember.ReadOnly = True
         Me.txtSeptember.Size = New System.Drawing.Size(82, 20)
@@ -259,7 +261,7 @@ Partial Class statisticsView
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(16, 267)
+        Me.Label10.Location = New System.Drawing.Point(16, 288)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(58, 13)
         Me.Label10.TabIndex = 76
@@ -267,7 +269,7 @@ Partial Class statisticsView
         '
         'txtAugust
         '
-        Me.txtAugust.Location = New System.Drawing.Point(78, 238)
+        Me.txtAugust.Location = New System.Drawing.Point(78, 259)
         Me.txtAugust.Name = "txtAugust"
         Me.txtAugust.ReadOnly = True
         Me.txtAugust.Size = New System.Drawing.Size(82, 20)
@@ -276,7 +278,7 @@ Partial Class statisticsView
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(16, 241)
+        Me.Label9.Location = New System.Drawing.Point(16, 262)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 74
@@ -284,7 +286,7 @@ Partial Class statisticsView
         '
         'txtJuly
         '
-        Me.txtJuly.Location = New System.Drawing.Point(78, 212)
+        Me.txtJuly.Location = New System.Drawing.Point(78, 233)
         Me.txtJuly.Name = "txtJuly"
         Me.txtJuly.ReadOnly = True
         Me.txtJuly.Size = New System.Drawing.Size(82, 20)
@@ -293,7 +295,7 @@ Partial Class statisticsView
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 215)
+        Me.Label8.Location = New System.Drawing.Point(16, 236)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(22, 13)
         Me.Label8.TabIndex = 72
@@ -301,7 +303,7 @@ Partial Class statisticsView
         '
         'txtJune
         '
-        Me.txtJune.Location = New System.Drawing.Point(78, 186)
+        Me.txtJune.Location = New System.Drawing.Point(78, 207)
         Me.txtJune.Name = "txtJune"
         Me.txtJune.ReadOnly = True
         Me.txtJune.Size = New System.Drawing.Size(82, 20)
@@ -310,7 +312,7 @@ Partial Class statisticsView
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(16, 189)
+        Me.Label7.Location = New System.Drawing.Point(16, 210)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(26, 13)
         Me.Label7.TabIndex = 70
@@ -318,7 +320,7 @@ Partial Class statisticsView
         '
         'txtMay
         '
-        Me.txtMay.Location = New System.Drawing.Point(78, 160)
+        Me.txtMay.Location = New System.Drawing.Point(78, 181)
         Me.txtMay.Name = "txtMay"
         Me.txtMay.ReadOnly = True
         Me.txtMay.Size = New System.Drawing.Size(82, 20)
@@ -327,7 +329,7 @@ Partial Class statisticsView
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 163)
+        Me.Label6.Location = New System.Drawing.Point(16, 184)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(24, 13)
         Me.Label6.TabIndex = 68
@@ -335,7 +337,7 @@ Partial Class statisticsView
         '
         'txtApril
         '
-        Me.txtApril.Location = New System.Drawing.Point(78, 134)
+        Me.txtApril.Location = New System.Drawing.Point(78, 155)
         Me.txtApril.Name = "txtApril"
         Me.txtApril.ReadOnly = True
         Me.txtApril.Size = New System.Drawing.Size(82, 20)
@@ -344,7 +346,7 @@ Partial Class statisticsView
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 137)
+        Me.Label5.Location = New System.Drawing.Point(16, 158)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(27, 13)
         Me.Label5.TabIndex = 66
@@ -352,7 +354,7 @@ Partial Class statisticsView
         '
         'txtMarch
         '
-        Me.txtMarch.Location = New System.Drawing.Point(78, 108)
+        Me.txtMarch.Location = New System.Drawing.Point(78, 129)
         Me.txtMarch.Name = "txtMarch"
         Me.txtMarch.ReadOnly = True
         Me.txtMarch.Size = New System.Drawing.Size(82, 20)
@@ -361,7 +363,7 @@ Partial Class statisticsView
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 111)
+        Me.Label4.Location = New System.Drawing.Point(16, 132)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(30, 13)
         Me.Label4.TabIndex = 64
@@ -369,7 +371,7 @@ Partial Class statisticsView
         '
         'txtFebruary
         '
-        Me.txtFebruary.Location = New System.Drawing.Point(78, 82)
+        Me.txtFebruary.Location = New System.Drawing.Point(78, 103)
         Me.txtFebruary.Name = "txtFebruary"
         Me.txtFebruary.ReadOnly = True
         Me.txtFebruary.Size = New System.Drawing.Size(82, 20)
@@ -378,7 +380,7 @@ Partial Class statisticsView
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 85)
+        Me.Label3.Location = New System.Drawing.Point(16, 106)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 62
@@ -386,7 +388,7 @@ Partial Class statisticsView
         '
         'txtJanuary
         '
-        Me.txtJanuary.Location = New System.Drawing.Point(78, 56)
+        Me.txtJanuary.Location = New System.Drawing.Point(78, 77)
         Me.txtJanuary.Name = "txtJanuary"
         Me.txtJanuary.ReadOnly = True
         Me.txtJanuary.Size = New System.Drawing.Size(82, 20)
@@ -395,7 +397,7 @@ Partial Class statisticsView
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 59)
+        Me.Label2.Location = New System.Drawing.Point(16, 80)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 60
@@ -421,6 +423,16 @@ Partial Class statisticsView
         Me.Label1.Size = New System.Drawing.Size(85, 17)
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "Omsetning"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(16, 41)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(102, 13)
+        Me.Label16.TabIndex = 88
+        Me.Label16.Text = "Alle verdier er i NOK"
         '
         'statisticsView
         '
@@ -477,4 +489,5 @@ Partial Class statisticsView
     Friend WithEvents Label2 As Label
     Friend WithEvents btnRefresh As Button
     Protected WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label16 As Label
 End Class

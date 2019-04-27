@@ -48,6 +48,7 @@ Partial Class bicycleView
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnBicycleSearch = New System.Windows.Forms.Button()
         Me.TabEquipment = New System.Windows.Forms.TabPage()
+        Me.cbEquipmentStatus = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbEquipmentType = New System.Windows.Forms.ComboBox()
@@ -66,7 +67,6 @@ Partial Class bicycleView
         Me.txtEquipmentID = New System.Windows.Forms.TextBox()
         Me.lbEquipment = New System.Windows.Forms.ListBox()
         Me.btnEquipmentSearch = New System.Windows.Forms.Button()
-        Me.cbEquipmentStatus = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabBicycle.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -331,6 +331,15 @@ Partial Class bicycleView
         Me.TabEquipment.Text = "Utstyr"
         Me.TabEquipment.UseVisualStyleBackColor = True
         '
+        'cbEquipmentStatus
+        '
+        Me.cbEquipmentStatus.FormattingEnabled = True
+        Me.cbEquipmentStatus.Location = New System.Drawing.Point(15, 27)
+        Me.cbEquipmentStatus.Name = "cbEquipmentStatus"
+        Me.cbEquipmentStatus.Size = New System.Drawing.Size(258, 21)
+        Me.cbEquipmentStatus.TabIndex = 73
+        Me.cbEquipmentStatus.Text = "Status"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -501,15 +510,6 @@ Partial Class bicycleView
         Me.btnEquipmentSearch.TabIndex = 54
         Me.btnEquipmentSearch.Text = "Søk"
         Me.btnEquipmentSearch.UseVisualStyleBackColor = True
-        '
-        'cbEquipmentStatus
-        '
-        Me.cbEquipmentStatus.FormattingEnabled = True
-        Me.cbEquipmentStatus.Location = New System.Drawing.Point(15, 27)
-        Me.cbEquipmentStatus.Name = "cbEquipmentStatus"
-        Me.cbEquipmentStatus.Size = New System.Drawing.Size(258, 21)
-        Me.cbEquipmentStatus.TabIndex = 73
-        Me.cbEquipmentStatus.Text = "Status"
         '
         'bicycleView
         '
