@@ -40,10 +40,10 @@ Partial Class transportView
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(617, 426)
+        Me.TabControl1.Size = New System.Drawing.Size(640, 450)
         Me.TabControl1.TabIndex = 19
         '
         'TabPage2
@@ -56,7 +56,7 @@ Partial Class transportView
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(609, 400)
+        Me.TabPage2.Size = New System.Drawing.Size(632, 424)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Transport"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -65,7 +65,7 @@ Partial Class transportView
         '
         Me.btnTransportUpdate.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.reload
         Me.btnTransportUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnTransportUpdate.Location = New System.Drawing.Point(564, 8)
+        Me.btnTransportUpdate.Location = New System.Drawing.Point(595, 6)
         Me.btnTransportUpdate.Margin = New System.Windows.Forms.Padding(2)
         Me.btnTransportUpdate.Name = "btnTransportUpdate"
         Me.btnTransportUpdate.Size = New System.Drawing.Size(30, 30)
@@ -75,7 +75,7 @@ Partial Class transportView
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 375)
+        Me.Label5.Location = New System.Drawing.Point(12, 389)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(272, 13)
@@ -99,7 +99,7 @@ Partial Class transportView
         Me.lbTransportation.Location = New System.Drawing.Point(15, 45)
         Me.lbTransportation.Margin = New System.Windows.Forms.Padding(2)
         Me.lbTransportation.Name = "lbTransportation"
-        Me.lbTransportation.Size = New System.Drawing.Size(579, 316)
+        Me.lbTransportation.Size = New System.Drawing.Size(610, 342)
         Me.lbTransportation.TabIndex = 0
         '
         'ContextMenuStrip1

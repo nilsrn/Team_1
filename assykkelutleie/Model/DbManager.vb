@@ -193,7 +193,7 @@ Public Class DbManager
     End Sub
 #End Region
 
-#Region "Statistics"
+#Region "statisticsView"
     Public Shared Sub GetStatistics(x As Object) 'Gets the number of rented bicycletypes
         Using sqlconnection As New MySqlConnection(connectionString)
             Dim sql As New MySqlCommand("SELECT BicycleType.Name As Sykkeltype, COUNT(*) AS Antall FROM BicycleType, RentedBicycles, Bicycle WHERE RentedBicycles.BicycleID = Bicycle.BicycleID AND Bicycle.BicycleType = BicycleType.Name GROUP BY BicycleType.Name ASC;", sqlconnection)

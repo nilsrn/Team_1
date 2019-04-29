@@ -40,6 +40,7 @@ Partial Class customerView
         Me.btnCustomerSearch = New System.Windows.Forms.Button()
         Me.txtCustomerSearch = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -48,14 +49,15 @@ Partial Class customerView
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(617, 426)
+        Me.TabControl1.Size = New System.Drawing.Size(640, 450)
         Me.TabControl1.TabIndex = 19
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label2)
         Me.TabPage3.Controls.Add(Me.txtEmail)
         Me.TabPage3.Controls.Add(Me.txtTelephone)
         Me.TabPage3.Controls.Add(Me.txtSurname)
@@ -71,7 +73,7 @@ Partial Class customerView
         Me.TabPage3.Controls.Add(Me.Label15)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(609, 400)
+        Me.TabPage3.Size = New System.Drawing.Size(632, 424)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Kunder"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -111,9 +113,9 @@ Partial Class customerView
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(297, 67)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(46, 13)
+        Me.Label8.Size = New System.Drawing.Size(49, 13)
         Me.Label8.TabIndex = 39
-        Me.Label8.Text = "Fornavn"
+        Me.Label8.Text = "Fornavn:"
         '
         'Label12
         '
@@ -138,9 +140,9 @@ Partial Class customerView
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(297, 93)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(53, 13)
+        Me.Label14.Size = New System.Drawing.Size(56, 13)
         Me.Label14.TabIndex = 31
-        Me.Label14.Text = "Etternavn"
+        Me.Label14.Text = "Etternavn:"
         '
         'txtFirstname
         '
@@ -155,7 +157,7 @@ Partial Class customerView
         Me.lbCustomer.FormattingEnabled = True
         Me.lbCustomer.Location = New System.Drawing.Point(17, 60)
         Me.lbCustomer.Name = "lbCustomer"
-        Me.lbCustomer.Size = New System.Drawing.Size(258, 329)
+        Me.lbCustomer.Size = New System.Drawing.Size(258, 303)
         Me.lbCustomer.TabIndex = 24
         '
         'ContextMenuStrip1
@@ -172,16 +174,16 @@ Partial Class customerView
         '
         'btnCustomerSearch
         '
-        Me.btnCustomerSearch.Location = New System.Drawing.Point(239, 31)
+        Me.btnCustomerSearch.Location = New System.Drawing.Point(236, 32)
         Me.btnCustomerSearch.Name = "btnCustomerSearch"
-        Me.btnCustomerSearch.Size = New System.Drawing.Size(36, 20)
+        Me.btnCustomerSearch.Size = New System.Drawing.Size(39, 20)
         Me.btnCustomerSearch.TabIndex = 23
         Me.btnCustomerSearch.Text = "Søk"
         Me.btnCustomerSearch.UseVisualStyleBackColor = True
         '
         'txtCustomerSearch
         '
-        Me.txtCustomerSearch.Location = New System.Drawing.Point(106, 31)
+        Me.txtCustomerSearch.Location = New System.Drawing.Point(103, 32)
         Me.txtCustomerSearch.Name = "txtCustomerSearch"
         Me.txtCustomerSearch.Size = New System.Drawing.Size(127, 20)
         Me.txtCustomerSearch.TabIndex = 22
@@ -189,11 +191,21 @@ Partial Class customerView
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(17, 34)
+        Me.Label15.Location = New System.Drawing.Point(14, 35)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(83, 13)
         Me.Label15.TabIndex = 21
         Me.Label15.Text = "Telefonnummer:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(14, 366)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(171, 13)
+        Me.Label2.TabIndex = 54
+        Me.Label2.Text = "Høyreklikk for å slette valgt sykkel."
         '
         'customerView
         '
@@ -229,4 +241,5 @@ Partial Class customerView
     Friend WithEvents Label15 As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SlettToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
 End Class

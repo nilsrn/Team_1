@@ -28,6 +28,7 @@ Partial Class statisticsView
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.txtAverage = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
@@ -58,7 +59,6 @@ Partial Class statisticsView
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,10 +69,10 @@ Partial Class statisticsView
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(617, 426)
+        Me.TabControl1.Size = New System.Drawing.Size(640, 450)
         Me.TabControl1.TabIndex = 19
         '
         'TabPage1
@@ -82,7 +82,7 @@ Partial Class statisticsView
         Me.TabPage1.Controls.Add(Me.Label30)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(609, 400)
+        Me.TabPage1.Size = New System.Drawing.Size(632, 424)
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "Popularitet"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -107,7 +107,7 @@ Partial Class statisticsView
         '
         Me.btnRefresh.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.reload
         Me.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnRefresh.Location = New System.Drawing.Point(561, 9)
+        Me.btnRefresh.Location = New System.Drawing.Point(595, 4)
         Me.btnRefresh.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(30, 30)
@@ -160,10 +160,20 @@ Partial Class statisticsView
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(609, 400)
+        Me.TabPage2.Size = New System.Drawing.Size(632, 424)
         Me.TabPage2.TabIndex = 4
         Me.TabPage2.Text = "Avanse"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(16, 41)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(102, 13)
+        Me.Label16.TabIndex = 88
+        Me.Label16.Text = "Alle verdier er i NOK"
         '
         'txtAverage
         '
@@ -423,16 +433,6 @@ Partial Class statisticsView
         Me.Label1.Size = New System.Drawing.Size(85, 17)
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "Omsetning"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(16, 41)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(102, 13)
-        Me.Label16.TabIndex = 88
-        Me.Label16.Text = "Alle verdier er i NOK"
         '
         'statisticsView
         '

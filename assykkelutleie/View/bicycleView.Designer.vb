@@ -77,10 +77,10 @@ Partial Class bicycleView
         '
         Me.TabControl1.Controls.Add(Me.TabBicycle)
         Me.TabControl1.Controls.Add(Me.TabEquipment)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(617, 426)
+        Me.TabControl1.Size = New System.Drawing.Size(640, 450)
         Me.TabControl1.TabIndex = 18
         '
         'TabBicycle
@@ -106,7 +106,7 @@ Partial Class bicycleView
         Me.TabBicycle.Controls.Add(Me.btnBicycleSearch)
         Me.TabBicycle.Location = New System.Drawing.Point(4, 22)
         Me.TabBicycle.Name = "TabBicycle"
-        Me.TabBicycle.Size = New System.Drawing.Size(609, 400)
+        Me.TabBicycle.Size = New System.Drawing.Size(632, 424)
         Me.TabBicycle.TabIndex = 2
         Me.TabBicycle.Text = "Sykler"
         Me.TabBicycle.UseVisualStyleBackColor = True
@@ -326,7 +326,7 @@ Partial Class bicycleView
         Me.TabEquipment.Controls.Add(Me.btnEquipmentSearch)
         Me.TabEquipment.Location = New System.Drawing.Point(4, 22)
         Me.TabEquipment.Name = "TabEquipment"
-        Me.TabEquipment.Size = New System.Drawing.Size(609, 400)
+        Me.TabEquipment.Size = New System.Drawing.Size(632, 424)
         Me.TabEquipment.TabIndex = 3
         Me.TabEquipment.Text = "Utstyr"
         Me.TabEquipment.UseVisualStyleBackColor = True
@@ -346,9 +346,9 @@ Partial Class bicycleView
         Me.Label3.Location = New System.Drawing.Point(15, 371)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(171, 13)
+        Me.Label3.Size = New System.Drawing.Size(166, 13)
         Me.Label3.TabIndex = 72
-        Me.Label3.Text = "Høyreklikk for å slette valgt sykkel."
+        Me.Label3.Text = "Høyreklikk for å slette valgt utstyr."
         '
         'Label4
         '
