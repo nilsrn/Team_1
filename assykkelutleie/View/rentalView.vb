@@ -167,7 +167,7 @@ Public Class rentalView
             EquipmentType = row("EquipmentType")
             DefaultLocation = row("DefaultLocation")
         Next
-        EquipmentID = pickbike.SelectedValue
+        EquipmentID = pickequipment.SelectedValue
         CurrentLocation = filing.SelectedValue
         Status = "Utleid"
         Dim updateequipment As New Equipment(EquipmentID, EquipmentType, DefaultLocation, CurrentLocation, Status)
