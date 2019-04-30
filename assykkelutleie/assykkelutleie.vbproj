@@ -86,6 +86,7 @@
     <Compile Include="Controller\Bicycle.vb" />
     <Compile Include="Controller\BicycleType.vb" />
     <Compile Include="Controller\Customer.vb" />
+    <Compile Include="Controller\CustomMessageBox.vb" />
     <Compile Include="Controller\Equipment.vb" />
     <Compile Include="Controller\EquipmentType.vb" />
     <Compile Include="Controller\Invoice.vb" />
@@ -113,6 +114,12 @@
       <DependentUpon>customerView.vb</DependentUpon>
     </Compile>
     <Compile Include="View\customerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\inoutView.Designer.vb">
+      <DependentUpon>inoutView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\inoutView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\loginView.vb">
@@ -169,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\customerView.resx">
       <DependentUpon>customerView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\inoutView.resx">
+      <DependentUpon>inoutView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\loginView.resx">
       <DependentUpon>loginView.vb</DependentUpon>

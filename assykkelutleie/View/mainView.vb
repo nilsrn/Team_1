@@ -20,6 +20,10 @@
         Main.main(statisticsView, btnStatistics)
     End Sub
 
+    Private Sub BtnInOut_Click(sender As Object, e As EventArgs) Handles btnInOut.Click
+        Main.main(inoutView, btnInOut)
+    End Sub
+
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         If My.Settings.accounttype = "Administrator" Then
             Main.main(adminView, btnAdmin)

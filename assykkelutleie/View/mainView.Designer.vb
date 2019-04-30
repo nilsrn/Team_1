@@ -30,6 +30,7 @@ Partial Class mainView
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.btnInOut = New System.Windows.Forms.Button()
         Me.btnStatistics = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -119,7 +120,7 @@ Partial Class mainView
         Me.btnAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.ImageKey = "(none)"
-        Me.btnAdmin.Location = New System.Drawing.Point(9, 259)
+        Me.btnAdmin.Location = New System.Drawing.Point(9, 345)
         Me.btnAdmin.Name = "btnAdmin"
         Me.btnAdmin.Size = New System.Drawing.Size(144, 45)
         Me.btnAdmin.TabIndex = 5
@@ -137,6 +138,7 @@ Partial Class mainView
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btnInOut)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnStatistics)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnCustomers)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnRental)
@@ -148,6 +150,21 @@ Partial Class mainView
         Me.SplitContainer1.SplitterDistance = 158
         Me.SplitContainer1.SplitterWidth = 3
         Me.SplitContainer1.TabIndex = 8
+        '
+        'btnInOut
+        '
+        Me.btnInOut.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.check_in
+        Me.btnInOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnInOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInOut.ImageKey = "(none)"
+        Me.btnInOut.Location = New System.Drawing.Point(9, 259)
+        Me.btnInOut.Name = "btnInOut"
+        Me.btnInOut.Size = New System.Drawing.Size(144, 45)
+        Me.btnInOut.TabIndex = 9
+        Me.btnInOut.Text = "Mottak        Uthenting"
+        Me.btnInOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInOut.UseVisualStyleBackColor = True
         '
         'btnStatistics
         '
@@ -190,4 +207,5 @@ Partial Class mainView
     Friend WithEvents btnAdmin As Button
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents btnStatistics As Button
+    Friend WithEvents btnInOut As Button
 End Class
