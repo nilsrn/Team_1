@@ -82,6 +82,19 @@ Public Class rentalView
 
         Return datetodays
     End Function
+
+    Private Function discount() ' Function calculating discount
+
+        Dim thediscount As Integer
+        If ButtonClickCount = 1 Or ButtonClickCount = 2 Or ButtonClickCount = 3 Or ButtonClickCount = 4 Then
+            thediscount = (equipmentpricetotal() + bikepricetotal())
+        ElseIf ButtonClickCount = 5 Then
+            thediscount = (equipmentpricetotal() + bikepricetotal()) * 0.85
+        ElseIf ButtonClickCount = 10 Then
+            thediscount = (equipmentpricetotal() + bikepricetotal()) * 0.7
+        End If
+        Return thediscount
+    End Function
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
 
@@ -105,7 +118,7 @@ Public Class rentalView
         InvoiceDate = Date.Today.AddDays(11)
         DueDate = Date.Today.AddDays(30)
         kid = Int((9999 * Rnd()) + 1111)
-        Total_Pris = bikepricetotal() + equipmentpricetotal()
+        Total_Pris = discount()
         Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)
         DbManager.Insert(insertInvoice)
     End Sub
@@ -185,7 +198,7 @@ Public Class rentalView
             Utleie_Type = "Døgn"
             Utleie_Type_Antall = totaldays()
             Username = My.Settings.username
-            Total_Pris = equipmentpricetotal() + bikepricetotal()
+            Total_Pris = discount()
             CustomerID = presentcustomerid.Text
             Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
             DbManager.Insert(insertRentals)
@@ -196,6 +209,7 @@ Public Class rentalView
             updateequipment()
             PutLbRentals(GetAllRentals)
             MsgBox("Kunden er registrert!")
+            MsgBox(discount())
             txtsearch.Text = " "
             firstnametxt.Text = " "
             surnametxt.Text = " "
@@ -208,6 +222,8 @@ Public Class rentalView
             extradition.Text = ""
             pickbike.Text = ""
             pickequipment.Text = ""
+            lbOversikt.Items.Clear()
+            ButtonClickCount = 0
 
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
@@ -271,6 +287,13 @@ Public Class rentalView
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         PutLbRentals(GetAllRentals)
+    End Sub
+
+
+    Private ButtonClickCount As Integer = 0
+    Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click
+        ButtonClickCount = ButtonClickCount + 1
+        lbOversikt.Items.Add("Sykkel: " & pickbike.SelectedValue & " med utstyr: " & pickequipment.SelectedValue)
     End Sub
 
 
