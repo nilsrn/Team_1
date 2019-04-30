@@ -24,9 +24,11 @@
                 Dim getBicycle As New DataTable
                 getBicycle = DbManager.GetSpecific(bicycle, lbIn.SelectedItem.BicycleID())
                 bicycle = New Bicycle(getBicycle)
-                Dim result = CustomMessageBox.Show({"Ledig", "Service", "Stjålet"}, "Velg ønsket status:", "Lagre")
+                Dim result = CustomMessageBox.Show({"Ledig", "Service", "Stjålet"}, "Velg ønsket status:", "AS SykkelUtleie")
                 bicycle.Status() = result
-                DbManager.Update(bicycle)
+                If result <> "" Then
+                    DbManager.Update(bicycle)
+                End If
             End If
         Else
             MsgBox("Du må høyreklikke på et objekt")

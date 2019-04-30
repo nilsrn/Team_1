@@ -1,7 +1,7 @@
 ﻿Public Module CustomMessageBox
     Private result As String
     Public Function Show(options As IEnumerable(Of String), Optional message As String = "", Optional title As String = "") As String
-        result = "Cancel"
+        result = ""
         Dim myForm As New Form With {.Text = title}
         Dim tlp As New TableLayoutPanel With {.ColumnCount = 1, .RowCount = 2}
         Dim flp As New FlowLayoutPanel()
@@ -21,7 +21,7 @@
                     myForm.Close()
                 End Sub
         Next
-        myForm.FormBorderStyle = FormBorderStyle.FixedDialog
+        myForm.FormBorderStyle = FormBorderStyle.FixedToolWindow
         myForm.Height = 100
         myForm.ShowDialog()
         Return result
