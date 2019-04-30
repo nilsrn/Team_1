@@ -83,14 +83,15 @@ Public Class rentalView
         Return datetodays
     End Function
 
+
     Private Function discount() ' Function calculating discount
 
         Dim thediscount As Integer
         If ButtonClickCount = 1 Or ButtonClickCount = 2 Or ButtonClickCount = 3 Or ButtonClickCount = 4 Then
-            thediscount = (equipmentpricetotal() + bikepricetotal())
-        ElseIf ButtonClickCount = 5 Then
+            thediscount = equipmentpricetotal() + bikepricetotal()
+        ElseIf ButtonClickCount = 5 Or ButtonClickCount = 6 Or ButtonClickCount = 7 Or ButtonClickCount = 8 Or ButtonClickCount = 9 Then
             thediscount = (equipmentpricetotal() + bikepricetotal()) * 0.85
-        ElseIf ButtonClickCount = 10 Then
+        ElseIf ButtonClickCount >= 10 Then
             thediscount = (equipmentpricetotal() + bikepricetotal()) * 0.7
         End If
         Return thediscount
