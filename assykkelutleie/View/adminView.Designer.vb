@@ -108,6 +108,9 @@ Partial Class adminView
         Me.tbEquipmentTypeDescription = New System.Windows.Forms.TextBox()
         Me.tbEquipmentTypeName = New System.Windows.Forms.TextBox()
         Me.lbEquipmentType = New System.Windows.Forms.ListBox()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabUsers.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -123,9 +126,10 @@ Partial Class adminView
         Me.TabControl1.Controls.Add(Me.TabBicycleTypes)
         Me.TabControl1.Controls.Add(Me.TabEquipmentType)
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(640, 450)
+        Me.TabControl1.Size = New System.Drawing.Size(960, 692)
         Me.TabControl1.TabIndex = 19
         '
         'TabUsers
@@ -155,10 +159,11 @@ Partial Class adminView
         Me.TabUsers.Controls.Add(Me.tbUsername)
         Me.TabUsers.Controls.Add(Me.lbUsers)
         Me.TabUsers.Controls.Add(Me.btnUserSearch)
-        Me.TabUsers.Location = New System.Drawing.Point(4, 22)
+        Me.TabUsers.Location = New System.Drawing.Point(4, 29)
+        Me.TabUsers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabUsers.Name = "TabUsers"
-        Me.TabUsers.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TabUsers.Size = New System.Drawing.Size(632, 424)
+        Me.TabUsers.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabUsers.Size = New System.Drawing.Size(952, 659)
         Me.TabUsers.TabIndex = 0
         Me.TabUsers.Text = "Brukere"
         Me.TabUsers.UseVisualStyleBackColor = True
@@ -167,10 +172,9 @@ Partial Class adminView
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(310, 14)
-        Me.Label31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label31.Location = New System.Drawing.Point(465, 22)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(161, 17)
+        Me.Label31.Size = New System.Drawing.Size(212, 25)
         Me.Label31.TabIndex = 57
         Me.Label31.Text = "Brukerkonto detaljer:"
         '
@@ -178,39 +182,35 @@ Partial Class adminView
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(12, 14)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label30.Location = New System.Drawing.Point(18, 22)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(223, 17)
+        Me.Label30.Size = New System.Drawing.Size(292, 25)
         Me.Label30.TabIndex = 56
         Me.Label30.Text = "Liste over alle brukerkontoer:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(351, 311)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(530, 482)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(239, 13)
+        Me.Label1.Size = New System.Drawing.Size(353, 20)
         Me.Label1.TabIndex = 55
         Me.Label1.Text = "Velg et unikt brukernavn for å opprette ny bruker."
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(409, 293)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label15.Location = New System.Drawing.Point(614, 451)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(181, 13)
+        Me.Label15.Size = New System.Drawing.Size(273, 20)
         Me.Label15.TabIndex = 54
         Me.Label15.Text = "Felter merket med (*) er obligatoriske."
         '
         'btnUserClear
         '
-        Me.btnUserClear.Location = New System.Drawing.Point(533, 252)
-        Me.btnUserClear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUserClear.Location = New System.Drawing.Point(800, 388)
         Me.btnUserClear.Name = "btnUserClear"
-        Me.btnUserClear.Size = New System.Drawing.Size(57, 23)
+        Me.btnUserClear.Size = New System.Drawing.Size(86, 35)
         Me.btnUserClear.TabIndex = 11
         Me.btnUserClear.Text = "Tøm"
         Me.btnUserClear.UseVisualStyleBackColor = True
@@ -218,18 +218,18 @@ Partial Class adminView
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(12, 387)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label14.Location = New System.Drawing.Point(18, 595)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(198, 13)
+        Me.Label14.Size = New System.Drawing.Size(290, 20)
         Me.Label14.TabIndex = 52
         Me.Label14.Text = "Høyreklikk for å slette valgt brukerkonto."
         '
         'btnUserSave
         '
-        Me.btnUserSave.Location = New System.Drawing.Point(398, 252)
+        Me.btnUserSave.Location = New System.Drawing.Point(597, 388)
+        Me.btnUserSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnUserSave.Name = "btnUserSave"
-        Me.btnUserSave.Size = New System.Drawing.Size(125, 23)
+        Me.btnUserSave.Size = New System.Drawing.Size(188, 35)
         Me.btnUserSave.TabIndex = 10
         Me.btnUserSave.Text = "Oppdater / Opprett"
         Me.btnUserSave.UseVisualStyleBackColor = True
@@ -237,27 +237,30 @@ Partial Class adminView
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(310, 175)
+        Me.Label9.Location = New System.Drawing.Point(465, 269)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(83, 13)
+        Me.Label9.Size = New System.Drawing.Size(124, 20)
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "Telefonnummer:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(311, 49)
+        Me.Label8.Location = New System.Drawing.Point(466, 75)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(75, 13)
+        Me.Label8.Size = New System.Drawing.Size(110, 20)
         Me.Label8.TabIndex = 18
         Me.Label8.Text = "Brukernavn(*):"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(311, 228)
+        Me.Label7.Location = New System.Drawing.Point(466, 351)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(63, 13)
+        Me.Label7.Size = New System.Drawing.Size(93, 20)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Lokasjon(*):"
         '
@@ -265,17 +268,19 @@ Partial Class adminView
         '
         Me.cbUserLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbUserLocation.FormattingEnabled = True
-        Me.cbUserLocation.Location = New System.Drawing.Point(398, 225)
+        Me.cbUserLocation.Location = New System.Drawing.Point(597, 346)
+        Me.cbUserLocation.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cbUserLocation.Name = "cbUserLocation"
-        Me.cbUserLocation.Size = New System.Drawing.Size(192, 21)
+        Me.cbUserLocation.Size = New System.Drawing.Size(286, 28)
         Me.cbUserLocation.TabIndex = 9
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(311, 149)
+        Me.Label6.Location = New System.Drawing.Point(466, 229)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.Size = New System.Drawing.Size(113, 20)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "E-postadresse"
         '
@@ -283,102 +288,115 @@ Partial Class adminView
         '
         Me.cbAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbAccountType.FormattingEnabled = True
-        Me.cbAccountType.Location = New System.Drawing.Point(398, 198)
+        Me.cbAccountType.Location = New System.Drawing.Point(597, 305)
+        Me.cbAccountType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cbAccountType.Name = "cbAccountType"
-        Me.cbAccountType.Size = New System.Drawing.Size(192, 21)
+        Me.cbAccountType.Size = New System.Drawing.Size(286, 28)
         Me.cbAccountType.TabIndex = 8
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(311, 201)
+        Me.Label5.Location = New System.Drawing.Point(466, 309)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 13)
+        Me.Label5.Size = New System.Drawing.Size(101, 20)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Kontotype(*):"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(310, 123)
+        Me.Label4.Location = New System.Drawing.Point(465, 189)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.Size = New System.Drawing.Size(87, 20)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Passord(*):"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(311, 100)
+        Me.Label3.Location = New System.Drawing.Point(466, 154)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 13)
+        Me.Label3.Size = New System.Drawing.Size(82, 20)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Etternavn:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(310, 74)
+        Me.Label2.Location = New System.Drawing.Point(465, 114)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(71, 20)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Fornavn:"
         '
         'tbUserPhoneNumber
         '
-        Me.tbUserPhoneNumber.Location = New System.Drawing.Point(398, 172)
+        Me.tbUserPhoneNumber.Location = New System.Drawing.Point(597, 265)
+        Me.tbUserPhoneNumber.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbUserPhoneNumber.MaxLength = 255
         Me.tbUserPhoneNumber.Name = "tbUserPhoneNumber"
-        Me.tbUserPhoneNumber.Size = New System.Drawing.Size(192, 20)
+        Me.tbUserPhoneNumber.Size = New System.Drawing.Size(286, 26)
         Me.tbUserPhoneNumber.TabIndex = 7
         '
         'tbEmail
         '
-        Me.tbEmail.Location = New System.Drawing.Point(398, 146)
+        Me.tbEmail.Location = New System.Drawing.Point(597, 225)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEmail.MaxLength = 255
         Me.tbEmail.Name = "tbEmail"
-        Me.tbEmail.Size = New System.Drawing.Size(192, 20)
+        Me.tbEmail.Size = New System.Drawing.Size(286, 26)
         Me.tbEmail.TabIndex = 6
         '
         'tbSurname
         '
-        Me.tbSurname.Location = New System.Drawing.Point(398, 97)
+        Me.tbSurname.Location = New System.Drawing.Point(597, 149)
+        Me.tbSurname.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbSurname.MaxLength = 255
         Me.tbSurname.Name = "tbSurname"
-        Me.tbSurname.Size = New System.Drawing.Size(192, 20)
+        Me.tbSurname.Size = New System.Drawing.Size(286, 26)
         Me.tbSurname.TabIndex = 4
         '
         'tbPassword
         '
-        Me.tbPassword.Location = New System.Drawing.Point(398, 120)
+        Me.tbPassword.Location = New System.Drawing.Point(597, 185)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbPassword.MaxLength = 255
         Me.tbPassword.Name = "tbPassword"
-        Me.tbPassword.Size = New System.Drawing.Size(192, 20)
+        Me.tbPassword.Size = New System.Drawing.Size(286, 26)
         Me.tbPassword.TabIndex = 5
         '
         'tbFirstName
         '
-        Me.tbFirstName.Location = New System.Drawing.Point(398, 71)
+        Me.tbFirstName.Location = New System.Drawing.Point(597, 109)
+        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbFirstName.MaxLength = 255
         Me.tbFirstName.Name = "tbFirstName"
-        Me.tbFirstName.Size = New System.Drawing.Size(192, 20)
+        Me.tbFirstName.Size = New System.Drawing.Size(286, 26)
         Me.tbFirstName.TabIndex = 3
         '
         'tbUsername
         '
-        Me.tbUsername.Location = New System.Drawing.Point(398, 45)
+        Me.tbUsername.Location = New System.Drawing.Point(597, 69)
+        Me.tbUsername.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbUsername.MaxLength = 50
         Me.tbUsername.Name = "tbUsername"
-        Me.tbUsername.Size = New System.Drawing.Size(125, 20)
+        Me.tbUsername.Size = New System.Drawing.Size(186, 26)
         Me.tbUsername.TabIndex = 1
         '
         'lbUsers
         '
         Me.lbUsers.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbUsers.FormattingEnabled = True
-        Me.lbUsers.Location = New System.Drawing.Point(15, 42)
+        Me.lbUsers.ItemHeight = 20
+        Me.lbUsers.Location = New System.Drawing.Point(22, 65)
+        Me.lbUsers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbUsers.Name = "lbUsers"
-        Me.lbUsers.Size = New System.Drawing.Size(220, 342)
+        Me.lbUsers.Size = New System.Drawing.Size(328, 524)
         Me.lbUsers.TabIndex = 3
         '
         'ContextMenuStrip1
@@ -386,25 +404,27 @@ Partial Class adminView
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SlettToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(98, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(120, 34)
         '
         'SlettToolStripMenuItem
         '
         Me.SlettToolStripMenuItem.Name = "SlettToolStripMenuItem"
-        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(97, 22)
+        Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(119, 30)
         Me.SlettToolStripMenuItem.Text = "Slett"
         '
         'btnUserSearch
         '
-        Me.btnUserSearch.Location = New System.Drawing.Point(529, 45)
+        Me.btnUserSearch.Location = New System.Drawing.Point(794, 69)
+        Me.btnUserSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnUserSearch.Name = "btnUserSearch"
-        Me.btnUserSearch.Size = New System.Drawing.Size(61, 20)
+        Me.btnUserSearch.Size = New System.Drawing.Size(92, 31)
         Me.btnUserSearch.TabIndex = 2
         Me.btnUserSearch.Text = "Søk"
         Me.btnUserSearch.UseVisualStyleBackColor = True
         '
         'TabLocations
         '
+        Me.TabLocations.Controls.Add(Me.Label41)
         Me.TabLocations.Controls.Add(Me.Label36)
         Me.TabLocations.Controls.Add(Me.Label34)
         Me.TabLocations.Controls.Add(Me.btnLocationClear)
@@ -421,9 +441,10 @@ Partial Class adminView
         Me.TabLocations.Controls.Add(Me.btnLocationSearch)
         Me.TabLocations.Controls.Add(Me.tbLocationSearch)
         Me.TabLocations.Controls.Add(Me.Label10)
-        Me.TabLocations.Location = New System.Drawing.Point(4, 22)
+        Me.TabLocations.Location = New System.Drawing.Point(4, 29)
+        Me.TabLocations.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabLocations.Name = "TabLocations"
-        Me.TabLocations.Size = New System.Drawing.Size(632, 424)
+        Me.TabLocations.Size = New System.Drawing.Size(952, 659)
         Me.TabLocations.TabIndex = 1
         Me.TabLocations.Text = "Lokasjoner"
         Me.TabLocations.UseVisualStyleBackColor = True
@@ -432,10 +453,9 @@ Partial Class adminView
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(320, 15)
-        Me.Label36.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label36.Location = New System.Drawing.Point(480, 23)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(138, 17)
+        Me.Label36.Size = New System.Drawing.Size(183, 25)
         Me.Label36.TabIndex = 77
         Me.Label36.Text = "Lokasjon detaljer:"
         '
@@ -443,19 +463,17 @@ Partial Class adminView
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(10, 15)
-        Me.Label34.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label34.Location = New System.Drawing.Point(15, 23)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(196, 17)
+        Me.Label34.Size = New System.Drawing.Size(258, 25)
         Me.Label34.TabIndex = 76
         Me.Label34.Text = "Liste over alle lokasjoner:"
         '
         'btnLocationClear
         '
-        Me.btnLocationClear.Location = New System.Drawing.Point(543, 121)
-        Me.btnLocationClear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLocationClear.Location = New System.Drawing.Point(814, 186)
         Me.btnLocationClear.Name = "btnLocationClear"
-        Me.btnLocationClear.Size = New System.Drawing.Size(44, 23)
+        Me.btnLocationClear.Size = New System.Drawing.Size(66, 35)
         Me.btnLocationClear.TabIndex = 5
         Me.btnLocationClear.Text = "Tøm"
         Me.btnLocationClear.UseVisualStyleBackColor = True
@@ -463,28 +481,27 @@ Partial Class adminView
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(10, 388)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label26.Location = New System.Drawing.Point(15, 597)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(180, 13)
+        Me.Label26.Size = New System.Drawing.Size(263, 20)
         Me.Label26.TabIndex = 75
         Me.Label26.Text = "Høyreklikk for å slette valgt lokasjon."
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(406, 160)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Location = New System.Drawing.Point(609, 246)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(181, 13)
+        Me.Label16.Size = New System.Drawing.Size(273, 20)
         Me.Label16.TabIndex = 55
         Me.Label16.Text = "Felter merket med (*) er obligatoriske."
         '
         'btnSaveLocation
         '
-        Me.btnSaveLocation.Location = New System.Drawing.Point(388, 121)
+        Me.btnSaveLocation.Location = New System.Drawing.Point(582, 186)
+        Me.btnSaveLocation.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSaveLocation.Name = "btnSaveLocation"
-        Me.btnSaveLocation.Size = New System.Drawing.Size(141, 23)
+        Me.btnSaveLocation.Size = New System.Drawing.Size(212, 35)
         Me.btnSaveLocation.TabIndex = 4
         Me.btnSaveLocation.Text = "Oppdater / Opprett"
         Me.btnSaveLocation.UseVisualStyleBackColor = True
@@ -492,87 +509,99 @@ Partial Class adminView
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(321, 45)
+        Me.Label11.Location = New System.Drawing.Point(482, 69)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(63, 13)
+        Me.Label11.Size = New System.Drawing.Size(93, 20)
         Me.Label11.TabIndex = 24
         Me.Label11.Text = "Lokasjon(*):"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(321, 98)
+        Me.Label12.Location = New System.Drawing.Point(482, 151)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(46, 13)
+        Me.Label12.Size = New System.Drawing.Size(66, 20)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "Telefon:"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(321, 72)
+        Me.Label13.Location = New System.Drawing.Point(482, 111)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(48, 13)
+        Me.Label13.Size = New System.Drawing.Size(72, 20)
         Me.Label13.TabIndex = 22
         Me.Label13.Text = "Adresse:"
         '
         'tbLocationTelephoneNumber
         '
-        Me.tbLocationTelephoneNumber.Location = New System.Drawing.Point(388, 95)
+        Me.tbLocationTelephoneNumber.Location = New System.Drawing.Point(582, 146)
+        Me.tbLocationTelephoneNumber.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbLocationTelephoneNumber.Name = "tbLocationTelephoneNumber"
-        Me.tbLocationTelephoneNumber.Size = New System.Drawing.Size(199, 20)
+        Me.tbLocationTelephoneNumber.Size = New System.Drawing.Size(296, 26)
         Me.tbLocationTelephoneNumber.TabIndex = 3
         '
         'tbLocationAddress
         '
-        Me.tbLocationAddress.Location = New System.Drawing.Point(388, 69)
+        Me.tbLocationAddress.Location = New System.Drawing.Point(582, 106)
+        Me.tbLocationAddress.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbLocationAddress.Name = "tbLocationAddress"
-        Me.tbLocationAddress.Size = New System.Drawing.Size(199, 20)
+        Me.tbLocationAddress.Size = New System.Drawing.Size(296, 26)
         Me.tbLocationAddress.TabIndex = 2
         '
         'tbLocationName
         '
-        Me.tbLocationName.Location = New System.Drawing.Point(388, 43)
+        Me.tbLocationName.Location = New System.Drawing.Point(582, 66)
+        Me.tbLocationName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbLocationName.Name = "tbLocationName"
-        Me.tbLocationName.Size = New System.Drawing.Size(199, 20)
+        Me.tbLocationName.Size = New System.Drawing.Size(296, 26)
         Me.tbLocationName.TabIndex = 1
         '
         'lbLocations
         '
         Me.lbLocations.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbLocations.FormattingEnabled = True
-        Me.lbLocations.Location = New System.Drawing.Point(13, 69)
+        Me.lbLocations.ItemHeight = 20
+        Me.lbLocations.Location = New System.Drawing.Point(20, 106)
+        Me.lbLocations.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbLocations.Name = "lbLocations"
-        Me.lbLocations.Size = New System.Drawing.Size(267, 316)
+        Me.lbLocations.Size = New System.Drawing.Size(398, 484)
         Me.lbLocations.TabIndex = 7
         '
         'btnLocationSearch
         '
-        Me.btnLocationSearch.Location = New System.Drawing.Point(193, 42)
+        Me.btnLocationSearch.Location = New System.Drawing.Point(290, 65)
+        Me.btnLocationSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnLocationSearch.Name = "btnLocationSearch"
-        Me.btnLocationSearch.Size = New System.Drawing.Size(87, 20)
+        Me.btnLocationSearch.Size = New System.Drawing.Size(130, 31)
         Me.btnLocationSearch.TabIndex = 6
         Me.btnLocationSearch.Text = "Søk"
         Me.btnLocationSearch.UseVisualStyleBackColor = True
         '
         'tbLocationSearch
         '
-        Me.tbLocationSearch.Location = New System.Drawing.Point(87, 42)
+        Me.tbLocationSearch.Location = New System.Drawing.Point(130, 65)
+        Me.tbLocationSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbLocationSearch.Name = "tbLocationSearch"
-        Me.tbLocationSearch.Size = New System.Drawing.Size(100, 20)
+        Me.tbLocationSearch.Size = New System.Drawing.Size(148, 26)
         Me.tbLocationSearch.TabIndex = 5
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(11, 45)
+        Me.Label10.Location = New System.Drawing.Point(16, 69)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(53, 13)
+        Me.Label10.Size = New System.Drawing.Size(77, 20)
         Me.Label10.TabIndex = 4
         Me.Label10.Text = "Lokasjon:"
         '
         'TabBicycleTypes
         '
+        Me.TabBicycleTypes.Controls.Add(Me.Label43)
         Me.TabBicycleTypes.Controls.Add(Me.Label38)
         Me.TabBicycleTypes.Controls.Add(Me.Label37)
         Me.TabBicycleTypes.Controls.Add(Me.Label25)
@@ -594,9 +623,10 @@ Partial Class adminView
         Me.TabBicycleTypes.Controls.Add(Me.tbBicycleTypeDescription)
         Me.TabBicycleTypes.Controls.Add(Me.tbBicycleTypeName)
         Me.TabBicycleTypes.Controls.Add(Me.lbBicycleType)
-        Me.TabBicycleTypes.Location = New System.Drawing.Point(4, 22)
+        Me.TabBicycleTypes.Location = New System.Drawing.Point(4, 29)
+        Me.TabBicycleTypes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabBicycleTypes.Name = "TabBicycleTypes"
-        Me.TabBicycleTypes.Size = New System.Drawing.Size(632, 424)
+        Me.TabBicycleTypes.Size = New System.Drawing.Size(952, 659)
         Me.TabBicycleTypes.TabIndex = 2
         Me.TabBicycleTypes.Text = "Sykkeltyper"
         Me.TabBicycleTypes.UseVisualStyleBackColor = True
@@ -605,10 +635,9 @@ Partial Class adminView
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(310, 16)
-        Me.Label38.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label38.Location = New System.Drawing.Point(465, 25)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(151, 17)
+        Me.Label38.Size = New System.Drawing.Size(202, 25)
         Me.Label38.TabIndex = 78
         Me.Label38.Text = "Sykkeltype detaljer:"
         '
@@ -616,112 +645,117 @@ Partial Class adminView
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(11, 16)
-        Me.Label37.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label37.Location = New System.Drawing.Point(16, 25)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(203, 17)
+        Me.Label37.Size = New System.Drawing.Size(268, 25)
         Me.Label37.TabIndex = 77
         Me.Label37.Text = "Liste over alle sykkeltyper:"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(11, 387)
-        Me.Label25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label25.Location = New System.Drawing.Point(16, 595)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(188, 13)
+        Me.Label25.Size = New System.Drawing.Size(274, 20)
         Me.Label25.TabIndex = 74
         Me.Label25.Text = "Høyreklikk for å slette valgt sykkeltype"
         '
         'btnBicycleTypeClear
         '
-        Me.btnBicycleTypeClear.Location = New System.Drawing.Point(548, 262)
-        Me.btnBicycleTypeClear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBicycleTypeClear.Location = New System.Drawing.Point(822, 403)
         Me.btnBicycleTypeClear.Name = "btnBicycleTypeClear"
-        Me.btnBicycleTypeClear.Size = New System.Drawing.Size(44, 23)
+        Me.btnBicycleTypeClear.Size = New System.Drawing.Size(66, 35)
         Me.btnBicycleTypeClear.TabIndex = 9
         Me.btnBicycleTypeClear.Text = "Tøm"
         Me.btnBicycleTypeClear.UseVisualStyleBackColor = True
         '
         'tbBicycleTypeRateHour
         '
-        Me.tbBicycleTypeRateHour.Location = New System.Drawing.Point(397, 236)
+        Me.tbBicycleTypeRateHour.Location = New System.Drawing.Point(596, 363)
+        Me.tbBicycleTypeRateHour.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeRateHour.Name = "tbBicycleTypeRateHour"
-        Me.tbBicycleTypeRateHour.Size = New System.Drawing.Size(195, 20)
+        Me.tbBicycleTypeRateHour.Size = New System.Drawing.Size(290, 26)
         Me.tbBicycleTypeRateHour.TabIndex = 7
         '
         'tbBicycleTypeRateDay
         '
-        Me.tbBicycleTypeRateDay.Location = New System.Drawing.Point(397, 210)
+        Me.tbBicycleTypeRateDay.Location = New System.Drawing.Point(596, 323)
+        Me.tbBicycleTypeRateDay.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeRateDay.Name = "tbBicycleTypeRateDay"
-        Me.tbBicycleTypeRateDay.Size = New System.Drawing.Size(195, 20)
+        Me.tbBicycleTypeRateDay.Size = New System.Drawing.Size(290, 26)
         Me.tbBicycleTypeRateDay.TabIndex = 6
         '
         'tbBicycleTypeFrameSize
         '
-        Me.tbBicycleTypeFrameSize.Location = New System.Drawing.Point(397, 184)
+        Me.tbBicycleTypeFrameSize.Location = New System.Drawing.Point(596, 283)
+        Me.tbBicycleTypeFrameSize.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeFrameSize.Name = "tbBicycleTypeFrameSize"
-        Me.tbBicycleTypeFrameSize.Size = New System.Drawing.Size(195, 20)
+        Me.tbBicycleTypeFrameSize.Size = New System.Drawing.Size(290, 26)
         Me.tbBicycleTypeFrameSize.TabIndex = 5
         '
         'tbBicycleTypeWheelSize
         '
-        Me.tbBicycleTypeWheelSize.Location = New System.Drawing.Point(397, 158)
+        Me.tbBicycleTypeWheelSize.Location = New System.Drawing.Point(596, 243)
+        Me.tbBicycleTypeWheelSize.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeWheelSize.Name = "tbBicycleTypeWheelSize"
-        Me.tbBicycleTypeWheelSize.Size = New System.Drawing.Size(195, 20)
+        Me.tbBicycleTypeWheelSize.Size = New System.Drawing.Size(290, 26)
         Me.tbBicycleTypeWheelSize.TabIndex = 4
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(310, 239)
+        Me.Label24.Location = New System.Drawing.Point(465, 368)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(54, 13)
+        Me.Label24.Size = New System.Drawing.Size(80, 20)
         Me.Label24.TabIndex = 68
         Me.Label24.Text = "Timespris:"
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(310, 213)
+        Me.Label23.Location = New System.Drawing.Point(465, 328)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(51, 13)
+        Me.Label23.Size = New System.Drawing.Size(76, 20)
         Me.Label23.TabIndex = 67
         Me.Label23.Text = "Dagspris:"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(311, 187)
+        Me.Label22.Location = New System.Drawing.Point(466, 288)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(85, 13)
+        Me.Label22.Size = New System.Drawing.Size(130, 20)
         Me.Label22.TabIndex = 66
         Me.Label22.Text = "Rammestørrelse:"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(311, 161)
+        Me.Label21.Location = New System.Drawing.Point(466, 248)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(67, 13)
+        Me.Label21.Size = New System.Drawing.Size(101, 20)
         Me.Label21.TabIndex = 65
         Me.Label21.Text = "Hjulstørrelse:"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(411, 300)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Location = New System.Drawing.Point(616, 462)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(181, 13)
+        Me.Label17.Size = New System.Drawing.Size(273, 20)
         Me.Label17.TabIndex = 64
         Me.Label17.Text = "Felter merket med (*) er obligatoriske."
         '
         'btnBicycleTypeSave
         '
-        Me.btnBicycleTypeSave.Location = New System.Drawing.Point(397, 262)
+        Me.btnBicycleTypeSave.Location = New System.Drawing.Point(596, 403)
+        Me.btnBicycleTypeSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBicycleTypeSave.Name = "btnBicycleTypeSave"
-        Me.btnBicycleTypeSave.Size = New System.Drawing.Size(137, 23)
+        Me.btnBicycleTypeSave.Size = New System.Drawing.Size(206, 35)
         Me.btnBicycleTypeSave.TabIndex = 8
         Me.btnBicycleTypeSave.Text = "Oppdater / Opprett"
         Me.btnBicycleTypeSave.UseVisualStyleBackColor = True
@@ -729,64 +763,73 @@ Partial Class adminView
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(311, 42)
+        Me.Label18.Location = New System.Drawing.Point(466, 65)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(46, 13)
+        Me.Label18.Size = New System.Drawing.Size(65, 20)
         Me.Label18.TabIndex = 62
         Me.Label18.Text = "Navn(*):"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(311, 135)
+        Me.Label19.Location = New System.Drawing.Point(466, 208)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(55, 13)
+        Me.Label19.Size = New System.Drawing.Size(84, 20)
         Me.Label19.TabIndex = 61
         Me.Label19.Text = "Girsystem:"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(311, 68)
+        Me.Label20.Location = New System.Drawing.Point(466, 105)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(64, 13)
+        Me.Label20.Size = New System.Drawing.Size(93, 20)
         Me.Label20.TabIndex = 60
         Me.Label20.Text = "Beskrivelse:"
         '
         'tbBicycleTypeGearSystem
         '
-        Me.tbBicycleTypeGearSystem.Location = New System.Drawing.Point(397, 132)
+        Me.tbBicycleTypeGearSystem.Location = New System.Drawing.Point(596, 203)
+        Me.tbBicycleTypeGearSystem.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeGearSystem.Name = "tbBicycleTypeGearSystem"
-        Me.tbBicycleTypeGearSystem.Size = New System.Drawing.Size(195, 20)
+        Me.tbBicycleTypeGearSystem.Size = New System.Drawing.Size(290, 26)
         Me.tbBicycleTypeGearSystem.TabIndex = 3
         '
         'tbBicycleTypeDescription
         '
-        Me.tbBicycleTypeDescription.Location = New System.Drawing.Point(397, 65)
+        Me.tbBicycleTypeDescription.Location = New System.Drawing.Point(596, 100)
+        Me.tbBicycleTypeDescription.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeDescription.MaxLength = 254
         Me.tbBicycleTypeDescription.Multiline = True
         Me.tbBicycleTypeDescription.Name = "tbBicycleTypeDescription"
-        Me.tbBicycleTypeDescription.Size = New System.Drawing.Size(195, 61)
+        Me.tbBicycleTypeDescription.Size = New System.Drawing.Size(290, 92)
         Me.tbBicycleTypeDescription.TabIndex = 2
         '
         'tbBicycleTypeName
         '
-        Me.tbBicycleTypeName.Location = New System.Drawing.Point(397, 39)
+        Me.tbBicycleTypeName.Location = New System.Drawing.Point(596, 60)
+        Me.tbBicycleTypeName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBicycleTypeName.Name = "tbBicycleTypeName"
-        Me.tbBicycleTypeName.Size = New System.Drawing.Size(195, 20)
+        Me.tbBicycleTypeName.Size = New System.Drawing.Size(290, 26)
         Me.tbBicycleTypeName.TabIndex = 1
         '
         'lbBicycleType
         '
         Me.lbBicycleType.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbBicycleType.FormattingEnabled = True
-        Me.lbBicycleType.Location = New System.Drawing.Point(14, 42)
+        Me.lbBicycleType.ItemHeight = 20
+        Me.lbBicycleType.Location = New System.Drawing.Point(21, 65)
+        Me.lbBicycleType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbBicycleType.Name = "lbBicycleType"
-        Me.lbBicycleType.Size = New System.Drawing.Size(200, 342)
+        Me.lbBicycleType.Size = New System.Drawing.Size(298, 524)
         Me.lbBicycleType.TabIndex = 56
         '
         'TabEquipmentType
         '
+        Me.TabEquipmentType.Controls.Add(Me.Label42)
         Me.TabEquipmentType.Controls.Add(Me.Label40)
         Me.TabEquipmentType.Controls.Add(Me.Label39)
         Me.TabEquipmentType.Controls.Add(Me.Label27)
@@ -802,9 +845,10 @@ Partial Class adminView
         Me.TabEquipmentType.Controls.Add(Me.tbEquipmentTypeDescription)
         Me.TabEquipmentType.Controls.Add(Me.tbEquipmentTypeName)
         Me.TabEquipmentType.Controls.Add(Me.lbEquipmentType)
-        Me.TabEquipmentType.Location = New System.Drawing.Point(4, 22)
+        Me.TabEquipmentType.Location = New System.Drawing.Point(4, 29)
+        Me.TabEquipmentType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabEquipmentType.Name = "TabEquipmentType"
-        Me.TabEquipmentType.Size = New System.Drawing.Size(632, 424)
+        Me.TabEquipmentType.Size = New System.Drawing.Size(952, 659)
         Me.TabEquipmentType.TabIndex = 3
         Me.TabEquipmentType.Text = "Utstyrstyper"
         Me.TabEquipmentType.UseVisualStyleBackColor = True
@@ -813,84 +857,83 @@ Partial Class adminView
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(303, 19)
-        Me.Label40.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label40.Location = New System.Drawing.Point(454, 29)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(151, 17)
+        Me.Label40.Size = New System.Drawing.Size(204, 25)
         Me.Label40.TabIndex = 95
-        Me.Label40.Text = "Sykkeltype detaljer:"
+        Me.Label40.Text = "Utstyrstype detaljer:"
         '
         'Label39
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(16, 19)
-        Me.Label39.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label39.Location = New System.Drawing.Point(24, 29)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(207, 17)
+        Me.Label39.Size = New System.Drawing.Size(271, 25)
         Me.Label39.TabIndex = 94
         Me.Label39.Text = "Liste over alle utstyrstyper:"
         '
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(16, 384)
-        Me.Label27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label27.Location = New System.Drawing.Point(24, 591)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(191, 13)
+        Me.Label27.Size = New System.Drawing.Size(282, 20)
         Me.Label27.TabIndex = 93
         Me.Label27.Text = "Høyreklikk for å slette valgt utstyrstype."
         '
         'btnEquipmentTypeClear
         '
-        Me.btnEquipmentTypeClear.Location = New System.Drawing.Point(546, 189)
-        Me.btnEquipmentTypeClear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEquipmentTypeClear.Location = New System.Drawing.Point(819, 291)
         Me.btnEquipmentTypeClear.Name = "btnEquipmentTypeClear"
-        Me.btnEquipmentTypeClear.Size = New System.Drawing.Size(44, 23)
+        Me.btnEquipmentTypeClear.Size = New System.Drawing.Size(66, 35)
         Me.btnEquipmentTypeClear.TabIndex = 6
         Me.btnEquipmentTypeClear.Text = "Tøm"
         Me.btnEquipmentTypeClear.UseVisualStyleBackColor = True
         '
         'tbEquipmentTypeRateDay
         '
-        Me.tbEquipmentTypeRateDay.Location = New System.Drawing.Point(376, 137)
+        Me.tbEquipmentTypeRateDay.Location = New System.Drawing.Point(564, 211)
+        Me.tbEquipmentTypeRateDay.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEquipmentTypeRateDay.Name = "tbEquipmentTypeRateDay"
-        Me.tbEquipmentTypeRateDay.Size = New System.Drawing.Size(215, 20)
+        Me.tbEquipmentTypeRateDay.Size = New System.Drawing.Size(320, 26)
         Me.tbEquipmentTypeRateDay.TabIndex = 3
         '
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(303, 166)
+        Me.Label28.Location = New System.Drawing.Point(454, 255)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(54, 13)
+        Me.Label28.Size = New System.Drawing.Size(80, 20)
         Me.Label28.TabIndex = 87
         Me.Label28.Text = "Timespris:"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(303, 140)
+        Me.Label29.Location = New System.Drawing.Point(454, 215)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(51, 13)
+        Me.Label29.Size = New System.Drawing.Size(76, 20)
         Me.Label29.TabIndex = 86
         Me.Label29.Text = "Dagspris:"
         '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(409, 225)
-        Me.Label32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label32.Location = New System.Drawing.Point(614, 346)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(181, 13)
+        Me.Label32.Size = New System.Drawing.Size(273, 20)
         Me.Label32.TabIndex = 83
         Me.Label32.Text = "Felter merket med (*) er obligatoriske."
         '
         'btnEquipmentTypeSave
         '
-        Me.btnEquipmentTypeSave.Location = New System.Drawing.Point(376, 189)
+        Me.btnEquipmentTypeSave.Location = New System.Drawing.Point(564, 291)
+        Me.btnEquipmentTypeSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnEquipmentTypeSave.Name = "btnEquipmentTypeSave"
-        Me.btnEquipmentTypeSave.Size = New System.Drawing.Size(158, 23)
+        Me.btnEquipmentTypeSave.Size = New System.Drawing.Size(237, 35)
         Me.btnEquipmentTypeSave.TabIndex = 5
         Me.btnEquipmentTypeSave.Text = "Oppdater / Opprett"
         Me.btnEquipmentTypeSave.UseVisualStyleBackColor = True
@@ -898,62 +941,97 @@ Partial Class adminView
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(303, 47)
+        Me.Label33.Location = New System.Drawing.Point(454, 72)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(46, 13)
+        Me.Label33.Size = New System.Drawing.Size(65, 20)
         Me.Label33.TabIndex = 81
         Me.Label33.Text = "Navn(*):"
         '
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(303, 73)
+        Me.Label35.Location = New System.Drawing.Point(454, 112)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(64, 13)
+        Me.Label35.Size = New System.Drawing.Size(93, 20)
         Me.Label35.TabIndex = 79
         Me.Label35.Text = "Beskrivelse:"
         '
         'tbEquipmentTypeRateHour
         '
-        Me.tbEquipmentTypeRateHour.Location = New System.Drawing.Point(376, 163)
+        Me.tbEquipmentTypeRateHour.Location = New System.Drawing.Point(564, 251)
+        Me.tbEquipmentTypeRateHour.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEquipmentTypeRateHour.Name = "tbEquipmentTypeRateHour"
-        Me.tbEquipmentTypeRateHour.Size = New System.Drawing.Size(215, 20)
+        Me.tbEquipmentTypeRateHour.Size = New System.Drawing.Size(320, 26)
         Me.tbEquipmentTypeRateHour.TabIndex = 4
         '
         'tbEquipmentTypeDescription
         '
-        Me.tbEquipmentTypeDescription.Location = New System.Drawing.Point(376, 70)
+        Me.tbEquipmentTypeDescription.Location = New System.Drawing.Point(564, 108)
+        Me.tbEquipmentTypeDescription.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEquipmentTypeDescription.MaxLength = 254
         Me.tbEquipmentTypeDescription.Multiline = True
         Me.tbEquipmentTypeDescription.Name = "tbEquipmentTypeDescription"
-        Me.tbEquipmentTypeDescription.Size = New System.Drawing.Size(215, 61)
+        Me.tbEquipmentTypeDescription.Size = New System.Drawing.Size(320, 92)
         Me.tbEquipmentTypeDescription.TabIndex = 2
         '
         'tbEquipmentTypeName
         '
-        Me.tbEquipmentTypeName.Location = New System.Drawing.Point(376, 44)
+        Me.tbEquipmentTypeName.Location = New System.Drawing.Point(564, 68)
+        Me.tbEquipmentTypeName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbEquipmentTypeName.Name = "tbEquipmentTypeName"
-        Me.tbEquipmentTypeName.Size = New System.Drawing.Size(215, 20)
+        Me.tbEquipmentTypeName.Size = New System.Drawing.Size(320, 26)
         Me.tbEquipmentTypeName.TabIndex = 1
         '
         'lbEquipmentType
         '
         Me.lbEquipmentType.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbEquipmentType.FormattingEnabled = True
-        Me.lbEquipmentType.Location = New System.Drawing.Point(19, 39)
+        Me.lbEquipmentType.ItemHeight = 20
+        Me.lbEquipmentType.Location = New System.Drawing.Point(28, 60)
+        Me.lbEquipmentType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lbEquipmentType.Name = "lbEquipmentType"
-        Me.lbEquipmentType.Size = New System.Drawing.Size(204, 342)
+        Me.lbEquipmentType.Size = New System.Drawing.Size(304, 524)
         Me.lbEquipmentType.TabIndex = 75
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(557, 286)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(321, 20)
+        Me.Label41.TabIndex = 78
+        Me.Label41.Text = "Velg et unikt navn for å opprette ny lokasjon."
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(548, 382)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(336, 20)
+        Me.Label42.TabIndex = 96
+        Me.Label42.Text = "Velg et unikt navn for å opprette ny utstyrstype"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(552, 504)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(332, 20)
+        Me.Label43.TabIndex = 97
+        Me.Label43.Text = "Velg et unikt navn for å opprette ny sykkeltype"
         '
         'adminView
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(640, 450)
+        Me.ClientSize = New System.Drawing.Size(960, 692)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "adminView"
         Me.Text = "admin"
         Me.TabControl1.ResumeLayout(False)
@@ -1054,4 +1132,7 @@ Partial Class adminView
     Friend WithEvents Label38 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Label40 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Label43 As Label
+    Friend WithEvents Label42 As Label
 End Class

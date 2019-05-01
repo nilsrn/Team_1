@@ -82,23 +82,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AccountType.vb" />
-    <Compile Include="Controller\Bicycle.vb" />
-    <Compile Include="Controller\BicycleType.vb" />
-    <Compile Include="Controller\Customer.vb" />
-    <Compile Include="Controller\CustomMessageBox.vb" />
-    <Compile Include="Controller\Equipment.vb" />
-    <Compile Include="Controller\EquipmentType.vb" />
-    <Compile Include="Controller\Invoice.vb" />
-    <Compile Include="Controller\Main.vb" />
-    <Compile Include="Controller\Location.vb" />
-    <Compile Include="Controller\Rentals.vb" />
-    <Compile Include="Controller\RentedBicycles.vb" />
-    <Compile Include="Controller\RentedEquipment.vb" />
-    <Compile Include="Controller\Status.vb" />
-    <Compile Include="Controller\UserAccount.vb" />
+    <Compile Include="Classes\AccountType.vb" />
+    <Compile Include="Classes\Bicycle.vb" />
+    <Compile Include="Classes\BicycleType.vb" />
+    <Compile Include="Classes\Customer.vb" />
+    <Compile Include="Classes\CustomMessageBox.vb" />
+    <Compile Include="Classes\Equipment.vb" />
+    <Compile Include="Classes\EquipmentType.vb" />
+    <Compile Include="Classes\Invoice.vb" />
+    <Compile Include="Classes\Main.vb" />
+    <Compile Include="Classes\Location.vb" />
+    <Compile Include="Classes\Rentals.vb" />
+    <Compile Include="Classes\RentedBicycles.vb" />
+    <Compile Include="Classes\RentedEquipment.vb" />
+    <Compile Include="Classes\Status.vb" />
+    <Compile Include="Classes\UserAccount.vb" />
     <Compile Include="Model\DbManager.vb" />
-    <Compile Include="Controller\Encryption.vb" />
+    <Compile Include="Classes\Encryption.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
