@@ -271,5 +271,8 @@
   <ItemGroup>
     <None Include="Resources\shopping-cart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
