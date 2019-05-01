@@ -1,5 +1,5 @@
 ﻿Public Class UserAccount
-    Dim m_username, m_password, m_salt, m_accountType, m_location, m_firstName, m_surname, m_email, m_telephoneNumber As String
+    Dim m_username, m_password, m_salt, m_accountType, m_location, m_firstName, m_surname, m_email, m_telephoneNumber As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New(username, password, salt, accountType, location, firstName, surname, email, telephoneNumber)
         m_username = username

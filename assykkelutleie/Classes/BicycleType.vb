@@ -1,4 +1,4 @@
-﻿Public Class BicycleType 'Sven-Erik
+﻿Public Class BicycleType
     Dim m_Name, m_Description, m_GearSystem, m_WheelSize, m_FrameSize As String
     Dim m_RateHour, m_RateDay As Integer
 

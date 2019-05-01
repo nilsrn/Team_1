@@ -1,5 +1,5 @@
 ﻿Public Class Equipment
-    Dim m_equipmentType, m_defaultLocation, m_currentLocation, m_status As String
+    Dim m_equipmentType, m_defaultLocation, m_currentLocation, m_status As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
     Dim m_id As Integer
 
     Public Sub New()

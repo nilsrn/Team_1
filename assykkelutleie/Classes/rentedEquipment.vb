@@ -1,5 +1,5 @@
 ﻿Public Class RentedEquipment
-    Dim m_eqid, m_price, rid As Integer
+    Dim m_eqid, m_price, rid As Integer ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
     Dim m_datefrom, m_dateto As Date
 
     Public Sub New()

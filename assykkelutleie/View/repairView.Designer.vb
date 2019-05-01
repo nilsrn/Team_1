@@ -25,15 +25,15 @@ Partial Class repairView
         Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.lbEquipmentRepairs = New System.Windows.Forms.ListBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.repairUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbBicycleRepairs = New System.Windows.Forms.ListBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -65,6 +65,33 @@ Partial Class repairView
         Me.TabPage1.Text = "Reparasjon"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(476, 611)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(242, 20)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Høyreklikk for å oppdatere status"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(26, 611)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(242, 20)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Høyreklikk for å oppdatere status"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(476, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(296, 20)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Liste over alt utstyr med status ""Service"":"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -91,7 +118,7 @@ Partial Class repairView
         Me.lbEquipmentRepairs.ItemHeight = 20
         Me.lbEquipmentRepairs.Location = New System.Drawing.Point(480, 93)
         Me.lbEquipmentRepairs.Name = "lbEquipmentRepairs"
-        Me.lbEquipmentRepairs.Size = New System.Drawing.Size(440, 504)
+        Me.lbEquipmentRepairs.Size = New System.Drawing.Size(425, 504)
         Me.lbEquipmentRepairs.TabIndex = 1
         '
         'ContextMenuStrip1
@@ -114,35 +141,8 @@ Partial Class repairView
         Me.lbBicycleRepairs.ItemHeight = 20
         Me.lbBicycleRepairs.Location = New System.Drawing.Point(30, 93)
         Me.lbBicycleRepairs.Name = "lbBicycleRepairs"
-        Me.lbBicycleRepairs.Size = New System.Drawing.Size(412, 504)
+        Me.lbBicycleRepairs.Size = New System.Drawing.Size(385, 504)
         Me.lbBicycleRepairs.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(476, 60)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(296, 20)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Liste over alt utstyr med status ""Service"":"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(26, 611)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(242, 20)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Høyreklikk for å oppdatere status"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(476, 611)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(242, 20)
-        Me.Label4.TabIndex = 13
-        Me.Label4.Text = "Høyreklikk for å oppdatere status"
         '
         'repairView
         '

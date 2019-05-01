@@ -1,5 +1,5 @@
 ﻿Public Class Status
-    Dim m_status2 As String
+    Dim m_status2 As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
 

@@ -1,4 +1,4 @@
-﻿Public Class adminView 'Nils
+﻿Public Class adminView
 
 #Region "General code for the form"
     Private Sub adminView_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Populates all listboxes and comboboxes when the form loads.
@@ -56,13 +56,13 @@
 
 #Region "Code for the UserAccount tab"
     Private Sub CbGetUserLocations()    'Populates the location combo box.
-            Dim location As New Location()
-            cbUserLocation.DataSource = DbManager.GetAll(location)
-            cbUserLocation.DisplayMember = "Name"
-            cbUserLocation.ValueMember = "Name"
-        End Sub
+        Dim location As New Location()
+        cbUserLocation.DataSource = DbManager.GetAll(location)
+        cbUserLocation.DisplayMember = "Name"
+        cbUserLocation.ValueMember = "Name"
+    End Sub
 
-        Private Sub CbGetAccountTypes()    'Populates the Accounttypes combo box.
+    Private Sub CbGetAccountTypes()    'Populates the Accounttypes combo box.
         Dim accountType As New AccountType()
         cbAccountType.DataSource = DbManager.GetAll(accountType)
         cbAccountType.DisplayMember = "Name"
@@ -159,10 +159,10 @@
     End Sub
 
     Private Sub PutLbLocations(table As DataTable) 'Populates the locations listbox with data received from the DB. 
-            lbLocations.DataSource = table
-            lbLocations.DisplayMember = "Name"
-            lbLocations.ValueMember = "Name"
-        End Sub
+        lbLocations.DataSource = table
+        lbLocations.DisplayMember = "Name"
+        lbLocations.ValueMember = "Name"
+    End Sub
 
     Private Sub lbLocations_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbLocations.SelectedIndexChanged 'Populates the textboxes based on the chosen location in the listbox.
         Dim locationselected As New Location()
@@ -177,14 +177,14 @@
     End Sub
 
     Private Sub btnSaveLocation_Click(sender As Object, e As EventArgs) Handles btnSaveLocation.Click 'Updates an existing location or creates a new location if the name is unique.
-            Dim name, address, telephoneNumber As String
-            Try
-                name = tbLocationName.Text
-                address = tbLocationAddress.Text
-                telephoneNumber = tbLocationTelephoneNumber.Text
-                Dim updateLocation As New Location(name, address, telephoneNumber)
-                DbManager.InsertOrUpdate(updateLocation)
-            Catch ex As Exception
+        Dim name, address, telephoneNumber As String
+        Try
+            name = tbLocationName.Text
+            address = tbLocationAddress.Text
+            telephoneNumber = tbLocationTelephoneNumber.Text
+            Dim updateLocation As New Location(name, address, telephoneNumber)
+            DbManager.InsertOrUpdate(updateLocation)
+        Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
         End Try
         GetAllLocations()

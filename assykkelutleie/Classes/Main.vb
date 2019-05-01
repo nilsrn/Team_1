@@ -1,11 +1,5 @@
-﻿Public Class Main 'Sven-Erik
+﻿Public Class Main
     Public Shared Sub main(view, button)
-        'Enables all buttons except the one active
-        'For Each ctl As Control In mainView.Controls
-        'ctl.Enabled = True
-        'Next
-        'button.Enabled = False
-
         'The correct form is loaded to mainView.PanelMainView depending on the button
         mainView.SplitContainer1.Panel2.Controls.Clear()
         view.TopLevel = False
@@ -13,7 +7,7 @@
         view.Show()
     End Sub
 
-    Public Shared Sub logout()
+    Public Shared Sub logout() 'Logout
         mainView.Hide()
         loginView.txtUsername.Text = ""
         loginView.txtPassword.Text = ""

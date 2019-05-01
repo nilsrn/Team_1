@@ -5,8 +5,6 @@ Public Class DbManager
 #Region "General database functions"
     Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Connection string to the MySql database.
 
-
-
     Public Shared Sub Login(username As String, password As String) ' Sub procedure for logging in users. 
         Dim salt As String = "" 'Empty because using a DataReader which will get the specific users salt from the DB. 
 
@@ -123,7 +121,7 @@ Public Class DbManager
             If objectValue.ToString().Equals("False") Then objectValue = "0"
             objectStringValues = objectStringValues & "'" & objectValue & "'" & ", "
         Next
-        objectStringValues = objectStringValues.Substring(0, objectStringValues.Length - 2) 'Removes the last comma in the string to avoid syntaxerrors 
+        objectStringValues = objectStringValues.Substring(0, objectStringValues.Length - 2) 'Removes the last comma in the string returned to avoid syntaxerrors 
         Return objectStringValues
     End Function
 

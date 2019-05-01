@@ -1,6 +1,6 @@
 ﻿Public Class Rentals
     Dim rid, cid, typantall, pris As Integer
-    Dim m_username, pickuploc, dloc, uttyp, m_comment As String
+    Dim m_username, pickuploc, dloc, uttyp, m_comment As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
     Dim m_pickuptime, dtime As Date
 
     Public Sub New()

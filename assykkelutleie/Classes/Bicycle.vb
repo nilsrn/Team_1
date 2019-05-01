@@ -1,6 +1,6 @@
-﻿Public Class Bicycle 'Sven-Erik
+﻿Public Class Bicycle
     Dim m_BicycleID As Integer
-    Dim m_BicycleType, m_DefaultLocation, m_CurrentLocation, m_Status As String
+    Dim m_BicycleType, m_DefaultLocation, m_CurrentLocation, m_Status As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
 

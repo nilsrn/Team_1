@@ -1,6 +1,6 @@
 ﻿Public Class Customer
     Dim me_phone As Integer
-    Dim me_firstname, me_surname, me_email As String
+    Dim me_firstname, me_surname, me_email As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
 

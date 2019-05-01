@@ -2,7 +2,7 @@
 
     Dim summary As String
     Dim m_duedate, m_invoicedate As Date
-    Dim nr, cid, rid, m_kid, m_amount As Integer
+    Dim nr, cid, rid, m_kid, m_amount As Integer ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
 
