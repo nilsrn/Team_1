@@ -8,13 +8,13 @@ Public Class transportView
         lbTransportation.Items.Clear()
         For Each row In bicycleList.Rows
             If Not row("DefaultLocation") = row("CurrentLocation") Then
-                Dim b = New Bicycle With {.BicycleID = row("BicycleID"), .BicycleType = row("BicycleType"), .DefaultLocation = row("DefaultLocation"), .CurrentLocation = row("CurrentLocation")}  'Oppretter sykkelobjektet og legger til i listboksen
+                Dim b = New Bicycle With {.BicycleID = row("BicycleID"), .BicycleType = row("BicycleType"), .DefaultLocation = row("DefaultLocation"), .CurrentLocation = row("CurrentLocation")}
                 lbTransportation.Items.Add(b)
             End If
         Next
         For Each row In equipmentList.Rows
             If Not row("DefaultLocation") = row("CurrentLocation") Then
-                Dim e = New Equipment With {.EquipmentID = row("EquipmentID"), .EquipmentType = row("EquipmentType"), .DefaultLocation = row("DefaultLocation"), .CurrentLocation = row("CurrentLocation")} 'Oppretter utstyrsobjektet og legger til i listboksen
+                Dim e = New Equipment With {.EquipmentID = row("EquipmentID"), .EquipmentType = row("EquipmentType"), .DefaultLocation = row("DefaultLocation"), .CurrentLocation = row("CurrentLocation")}
                 lbTransportation.Items.Add(e)
             End If
         Next
@@ -48,5 +48,9 @@ Public Class transportView
 
     Private Sub TransportView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetAllForTransport()
+    End Sub
+
+    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+
     End Sub
 End Class

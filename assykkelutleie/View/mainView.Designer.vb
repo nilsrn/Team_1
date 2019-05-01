@@ -30,6 +30,7 @@ Partial Class mainView
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.btnRepair = New System.Windows.Forms.Button()
         Me.btnInOut = New System.Windows.Forms.Button()
         Me.btnStatistics = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,7 +45,7 @@ Partial Class mainView
         Me.btnCustomers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.ImageKey = "(none)"
-        Me.btnCustomers.Location = New System.Drawing.Point(14, 85)
+        Me.btnCustomers.Location = New System.Drawing.Point(13, 84)
         Me.btnCustomers.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Size = New System.Drawing.Size(216, 69)
@@ -60,7 +61,7 @@ Partial Class mainView
         Me.btnBicycles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBicycles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBicycles.ImageKey = "(none)"
-        Me.btnBicycles.Location = New System.Drawing.Point(14, 163)
+        Me.btnBicycles.Location = New System.Drawing.Point(13, 163)
         Me.btnBicycles.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBicycles.Name = "btnBicycles"
         Me.btnBicycles.Size = New System.Drawing.Size(216, 69)
@@ -109,10 +110,10 @@ Partial Class mainView
         Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.ImageKey = "(none)"
-        Me.btnLogout.Location = New System.Drawing.Point(14, 609)
+        Me.btnLogout.Location = New System.Drawing.Point(14, 626)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(216, 69)
+        Me.btnLogout.Size = New System.Drawing.Size(216, 52)
         Me.btnLogout.TabIndex = 7
         Me.btnLogout.Text = "Logg ut"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -125,10 +126,10 @@ Partial Class mainView
         Me.btnAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdmin.ImageKey = "(none)"
-        Me.btnAdmin.Location = New System.Drawing.Point(14, 531)
+        Me.btnAdmin.Location = New System.Drawing.Point(16, 558)
         Me.btnAdmin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(216, 69)
+        Me.btnAdmin.Size = New System.Drawing.Size(216, 58)
         Me.btnAdmin.TabIndex = 5
         Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -143,6 +144,7 @@ Partial Class mainView
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btnRepair)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnInOut)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnStatistics)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnCustomers)
@@ -160,6 +162,21 @@ Partial Class mainView
         Me.SplitContainer1.SplitterDistance = 236
         Me.SplitContainer1.TabIndex = 8
         '
+        'btnRepair
+        '
+        Me.btnRepair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnRepair.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRepair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRepair.ImageKey = "(none)"
+        Me.btnRepair.Location = New System.Drawing.Point(16, 400)
+        Me.btnRepair.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnRepair.Name = "btnRepair"
+        Me.btnRepair.Size = New System.Drawing.Size(216, 69)
+        Me.btnRepair.TabIndex = 10
+        Me.btnRepair.Text = "Reparasjon"
+        Me.btnRepair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRepair.UseVisualStyleBackColor = True
+        '
         'btnInOut
         '
         Me.btnInOut.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.check_in
@@ -167,7 +184,7 @@ Partial Class mainView
         Me.btnInOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInOut.ImageKey = "(none)"
-        Me.btnInOut.Location = New System.Drawing.Point(14, 398)
+        Me.btnInOut.Location = New System.Drawing.Point(16, 321)
         Me.btnInOut.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnInOut.Name = "btnInOut"
         Me.btnInOut.Size = New System.Drawing.Size(216, 69)
@@ -183,7 +200,7 @@ Partial Class mainView
         Me.btnStatistics.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStatistics.ImageKey = "(none)"
-        Me.btnStatistics.Location = New System.Drawing.Point(14, 320)
+        Me.btnStatistics.Location = New System.Drawing.Point(16, 479)
         Me.btnStatistics.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnStatistics.Name = "btnStatistics"
         Me.btnStatistics.Size = New System.Drawing.Size(216, 69)
@@ -220,4 +237,5 @@ Partial Class mainView
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents btnStatistics As Button
     Friend WithEvents btnInOut As Button
+    Friend WithEvents btnRepair As Button
 End Class

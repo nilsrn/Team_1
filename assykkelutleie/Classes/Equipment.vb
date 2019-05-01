@@ -24,8 +24,8 @@
         Next
     End Sub
 
-    Public Overrides Function ToString() As String 'Overrides the ToString method to provide information for the transportation view.
-        Return String.Format("UtstyrID: {0} ({1}) skal fraktes fra {2} til {3}", EquipmentID, EquipmentType, CurrentLocation, DefaultLocation)
+    Public Overrides Function ToString() As String 'Overrides the ToString method to provide more information.
+        Return String.Format("UtstyrID: {0} ({1}) befinner seg på {2} (standard: {3})", EquipmentID, EquipmentType, CurrentLocation, DefaultLocation)
     End Function
 
     Public Property EquipmentID() As Integer
