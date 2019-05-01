@@ -42,7 +42,7 @@
 #End Region
 
 #Region "Code for the Out tab"
-    Private Sub GetAllForOut()    'Gets all bicycles that has the same CurrentLocation and DefaultLocation with status "Utleid". 
+    Private Sub GetAllForOut()    'Gets all bicycles that has the same CurrentLocation and DefaultLocation with status "Ledig". 
         Dim bicycle As New Bicycle()
         Dim bicycleList As DataTable = DbManager.GetAll(bicycle)
         lbOut.Items.Clear()
