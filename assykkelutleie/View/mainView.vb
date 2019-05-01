@@ -16,12 +16,16 @@
         Main.main(transportView, btnTransport)
     End Sub
 
-    Private Sub BtnStatistics_Click(sender As Object, e As EventArgs) Handles btnStatistics.Click
-        Main.main(statisticsView, btnStatistics)
+    Private Sub btnRepair_Click(sender As Object, e As EventArgs) Handles btnRepair.Click
+        Main.main(repairView, btnRepair)
     End Sub
 
     Private Sub BtnInOut_Click(sender As Object, e As EventArgs) Handles btnInOut.Click
         Main.main(inoutView, btnInOut)
+    End Sub
+
+    Private Sub BtnStatistics_Click(sender As Object, e As EventArgs) Handles btnStatistics.Click
+        Main.main(statisticsView, btnStatistics)
     End Sub
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
@@ -39,4 +43,5 @@
     Private Sub Window1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Closing
         End
     End Sub
+
 End Class

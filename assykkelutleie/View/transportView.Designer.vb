@@ -41,9 +41,10 @@ Partial Class transportView
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(640, 450)
+        Me.TabControl1.Size = New System.Drawing.Size(960, 692)
         Me.TabControl1.TabIndex = 19
         '
         'TabPage2
@@ -52,11 +53,10 @@ Partial Class transportView
         Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.lbTransportation)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(632, 424)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Size = New System.Drawing.Size(952, 659)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Transport"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -65,30 +65,27 @@ Partial Class transportView
         '
         Me.btnTransportUpdate.BackgroundImage = Global.assykkelutleie.My.Resources.Resources.reload
         Me.btnTransportUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnTransportUpdate.Location = New System.Drawing.Point(595, 6)
-        Me.btnTransportUpdate.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTransportUpdate.Location = New System.Drawing.Point(892, 9)
         Me.btnTransportUpdate.Name = "btnTransportUpdate"
-        Me.btnTransportUpdate.Size = New System.Drawing.Size(30, 30)
+        Me.btnTransportUpdate.Size = New System.Drawing.Size(45, 46)
         Me.btnTransportUpdate.TabIndex = 3
         Me.btnTransportUpdate.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 389)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(18, 598)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(272, 13)
+        Me.Label5.Size = New System.Drawing.Size(405, 20)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Høyreklikk for å markere sykkel eller utstyr som returnert."
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 23)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(18, 35)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(246, 13)
+        Me.Label4.Size = New System.Drawing.Size(368, 20)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Oversikt over sykler og utstyr som må transporteres"
         '
@@ -96,10 +93,10 @@ Partial Class transportView
         '
         Me.lbTransportation.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lbTransportation.FormattingEnabled = True
-        Me.lbTransportation.Location = New System.Drawing.Point(15, 45)
-        Me.lbTransportation.Margin = New System.Windows.Forms.Padding(2)
+        Me.lbTransportation.ItemHeight = 20
+        Me.lbTransportation.Location = New System.Drawing.Point(22, 69)
         Me.lbTransportation.Name = "lbTransportation"
-        Me.lbTransportation.Size = New System.Drawing.Size(610, 342)
+        Me.lbTransportation.Size = New System.Drawing.Size(913, 524)
         Me.lbTransportation.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -107,22 +104,23 @@ Partial Class transportView
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(187, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(253, 34)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(186, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(252, 30)
         Me.ToolStripMenuItem1.Text = "Marker som returnert"
         '
         'transportView
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(640, 450)
+        Me.ClientSize = New System.Drawing.Size(960, 692)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "transportView"
         Me.Text = "transport"
         Me.TabControl1.ResumeLayout(False)
