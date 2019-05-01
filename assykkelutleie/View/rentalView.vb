@@ -7,7 +7,6 @@ Public Class rentalView
         Dim location As New Location()
         Dim equipment As New Equipment()
 
-
         pickbike.DataSource = DbManager.GetAll(bicycle)
         pickequipment.DataSource = DbManager.GetAll(equipment)
         extradition.DataSource = DbManager.GetAll(location)
@@ -22,8 +21,8 @@ Public Class rentalView
         pickequipment.ValueMember = "EquipmentID"
         extradition.ValueMember = "Name"
         filing.ValueMember = "Name"
-
     End Sub
+
     Private Sub PutLbRentals(table As DataTable) 'Populates the listbox with data received from the DB. 
         lbrentals.DataSource = table
         lbrentals.DisplayMember = "RentalID"
@@ -41,13 +40,14 @@ Public Class rentalView
         Dim invoiceTable As DataTable = DbManager.GetAll(invoice)
         Return invoiceTable
     End Function
+
     Private Function bikepricetotal() 'Counts days between pickup/delivery and multiplies with day-rate for bicycle type
         Dim bikerateday As Integer
         Dim bikeprice As Integer
-        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
-        Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
+        Dim borrow As Date = extraditiondate.Value.Date
+        Dim back As Date = filingdate.Value.Date
         Dim CountDays As TimeSpan = back.Subtract(borrow)
-        Dim datetodays = Convert.ToInt32(CountDays.Days)
+        Dim datetodays As Integer = CountDays.Days
         Dim bicycletype As New BicycleType()
         Dim typelist As DataTable = DbManager.GetAll(bicycletype)
         For Each row In typelist.Rows
@@ -59,10 +59,10 @@ Public Class rentalView
     Private Function equipmentpricetotal() 'Counts days between pickup/delivery and multiplies with day-rate for equipment type 
         Dim equipmentrateday As Integer
         Dim equipmenteprice As Integer
-        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
-        Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
+        Dim borrow As Date = extraditiondate.Value.Date
+        Dim back As Date = filingdate.Value.Date
         Dim CountDays As TimeSpan = back.Subtract(borrow)
-        Dim datetodays = Convert.ToInt32(CountDays.Days)
+        Dim datetodays As Integer = CountDays.Days
         Dim equipmenttype As New EquipmentType()
         Dim typelist As DataTable = DbManager.GetAll(equipmenttype)
         For Each row In typelist.Rows
@@ -74,18 +74,14 @@ Public Class rentalView
 
 
     Private Function totaldays() 'Function showing number of days something is rented
-
-        Dim borrow As DateTime = Convert.ToDateTime(extraditiondate.Text)
-        Dim back As DateTime = Convert.ToDateTime(filingdate.Text)
+        Dim borrow As Date = extraditiondate.Value.Date
+        Dim back As Date = filingdate.Value.Date
         Dim CountDays As TimeSpan = back.Subtract(borrow)
-        Dim datetodays = Convert.ToInt32(CountDays.Days)
-
+        Dim datetodays As Integer = CountDays.Days
         Return datetodays
     End Function
 
-
     Private Function discount() ' Function calculating discount
-
         Dim thediscount As Integer
         If ButtonClickCount = 1 Or ButtonClickCount = 2 Or ButtonClickCount = 3 Or ButtonClickCount = 4 Then
             thediscount = equipmentpricetotal() + bikepricetotal()
@@ -96,15 +92,16 @@ Public Class rentalView
         End If
         Return thediscount
     End Function
+
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
-
             firstnametxt.Text = row("FirstName")
             surnametxt.Text = row("Surname")
             mailtxt.Text = row("Email")
             presentcustomerid.Text = row("CustomerID")
         Next
     End Sub
+
     Private Sub makeInvoice() 'Sub for writing an invoice for the client
         Dim rid, InvoiceNumber, Total_Pris, CustomerID, kid As Integer
         Dim InvoiceDate, DueDate As Date
@@ -116,13 +113,14 @@ Public Class rentalView
         Next
         CustomerID = presentcustomerid.Text
         rentalsummary = commenttxt.Text
-        InvoiceDate = Date.Today.AddDays(11)
-        DueDate = Date.Today.AddDays(30)
+        InvoiceDate = Today.AddDays(11)
+        DueDate = Today.AddDays(30)
         kid = Int((9999 * Rnd()) + 1111)
         Total_Pris = discount()
         Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)
         DbManager.Insert(insertInvoice)
     End Sub
+
     Private Sub rentedbicycleequipment() 'sub for updating tables RentedBicycles and RentedEquipment when a rental is placed
         Dim rid, BicycleID, EquipmentID, pricebike, priceequipment As Integer
         Dim datefrom, dateto As Date
@@ -134,8 +132,8 @@ Public Class rentalView
 
         BicycleID = pickbike.SelectedValue
         EquipmentID = pickequipment.SelectedValue
-        datefrom = extraditiondate.Text
-        dateto = filingdate.Text
+        datefrom = extraditiondate.Value.Date
+        dateto = filingdate.Value.Date
         pricebike = bikepricetotal()
         priceequipment = equipmentpricetotal()
 
@@ -152,10 +150,10 @@ Public Class rentalView
         For Each row In list.Rows
             BicycleType = row("BicycleType")
             DefaultLocation = row("DefaultLocation")
+            Status = row("Status")
         Next
         BicycleID = pickbike.SelectedValue
         CurrentLocation = filing.SelectedValue
-        'Status = "Utleid"
         Dim updatebicycle As New Bicycle(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status)
         DbManager.Update(updatebicycle)
     End Sub
@@ -167,16 +165,13 @@ Public Class rentalView
         For Each row In list.Rows
             EquipmentType = row("EquipmentType")
             DefaultLocation = row("DefaultLocation")
+            Status = row("Status")
         Next
         EquipmentID = pickequipment.SelectedValue
         CurrentLocation = filing.SelectedValue
-        'Status = "Utleid"
         Dim updateequipment As New Equipment(EquipmentID, EquipmentType, DefaultLocation, CurrentLocation, Status)
         DbManager.Update(updateequipment)
     End Sub
-
-
-
 #End Region
 
 #Region "Actions"
@@ -185,16 +180,14 @@ Public Class rentalView
         CbPutComboBox()
     End Sub
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click 'Inserts data into tables Rentals, Invoice, Rentedbicycles and rentedequipment. Updates status on bicycle/equipment-location
-
         Dim PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
         Dim PickupTime, DeliveryTime As Date
         Dim CustomerID, Utleie_Type_Antall, Total_Pris, RentalID As Integer
-
         Try
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
-            PickupTime = extraditiondate.Text
-            DeliveryTime = filingdate.Text
+            PickupTime = extraditiondate.Value.Date
+            DeliveryTime = filingdate.Value.Date
             Comment = commenttxt.Text
             Utleie_Type = "Døgn"
             Utleie_Type_Antall = totaldays()
@@ -211,14 +204,14 @@ Public Class rentalView
             PutLbRentals(GetAllRentals)
             MsgBox("Kunden er registrert!")
             MsgBox(discount())
-            txtsearch.Text = " "
-            firstnametxt.Text = " "
-            surnametxt.Text = " "
-            mailtxt.Text = " "
-            presentcustomerid.Text = " "
-            commenttxt.Text = " "
-            extraditiondate.Text = Date.Today
-            filingdate.Text = Date.Today
+            txtsearch.Text = ""
+            firstnametxt.Text = ""
+            surnametxt.Text = ""
+            mailtxt.Text = ""
+            presentcustomerid.Text = ""
+            commenttxt.Text = ""
+            extraditiondate.Value = Today
+            filingdate.Value = Today
             filing.Text = ""
             extradition.Text = ""
             pickbike.Text = ""
@@ -229,14 +222,13 @@ Public Class rentalView
         Catch ex As Exception
             MsgBox("Noe gikk galt. Feilmelding:" & ex.Message, MsgBoxStyle.Critical, "Feilmelding")
         End Try
-
     End Sub
+
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim customerSearch As New Customer()
         Dim customer As String = txtsearch.Text
         Dim customerTable As DataTable = DbManager.GetSpecific(customerSearch, customer)
         PutCustomer(customerTable)
-
     End Sub
 
     Private Sub searchrentals_Click(sender As Object, e As EventArgs) Handles searchrentals.Click
@@ -248,6 +240,7 @@ Public Class rentalView
             MsgBox("Skriv noe i søkefeltet")
         End If
     End Sub
+
     Private Sub lbrentals_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) 'ContextMenuStrip only shows when an item is selected in the listbox.
         If e.Button = Windows.Forms.MouseButtons.Right Then
             If lbrentals.SelectedIndices.Count > 0 Then
@@ -257,6 +250,7 @@ Public Class rentalView
             End If
         End If
     End Sub
+
     Private Sub LbBicycles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbrentals.SelectedIndexChanged 'Populates the textboxes based on the chosen bicycle in the listbox.
         Dim rentalSearch As New Rentals()
         Dim invoice As New Invoice()
@@ -273,11 +267,8 @@ Public Class rentalView
                 Dim rentalID As Integer = lbrentals.SelectedValue
 
                 DbManager.Delete(bike, "RentalID", rentalID)
-
                 DbManager.Delete(equipment, "RentalID", rentalID)
-
                 DbManager.Delete(invoice, "RentalID", rentalID)
-
                 DbManager.Delete(rental, "RentalID", rentalID)
 
             Catch ex As Exception
@@ -290,14 +281,10 @@ Public Class rentalView
         PutLbRentals(GetAllRentals)
     End Sub
 
-
     Private ButtonClickCount As Integer = 0
     Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click
         ButtonClickCount = ButtonClickCount + 1
         lbOversikt.Items.Add("Sykkel: " & pickbike.SelectedValue & " med utstyr: " & pickequipment.SelectedValue)
     End Sub
-
-
 #End Region
-
 End Class
