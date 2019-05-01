@@ -155,7 +155,7 @@ Public Class rentalView
         Next
         BicycleID = pickbike.SelectedValue
         CurrentLocation = filing.SelectedValue
-        Status = "Utleid"
+        'Status = "Utleid"
         Dim updatebicycle As New Bicycle(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status)
         DbManager.Update(updatebicycle)
     End Sub
@@ -170,7 +170,7 @@ Public Class rentalView
         Next
         EquipmentID = pickequipment.SelectedValue
         CurrentLocation = filing.SelectedValue
-        Status = "Utleid"
+        'Status = "Utleid"
         Dim updateequipment As New Equipment(EquipmentID, EquipmentType, DefaultLocation, CurrentLocation, Status)
         DbManager.Update(updateequipment)
     End Sub
