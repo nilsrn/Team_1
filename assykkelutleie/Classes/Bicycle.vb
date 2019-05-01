@@ -24,11 +24,7 @@
         Next
     End Sub
 
-    'Public Overrides Function ToString() As String 'Overrides the ToString method to provide information for the transportation view.
-    '    Return String.Format("SykkelID: {0} ({1}) skal fraktes fra {2} til {3}", BicycleID, BicycleType, CurrentLocation, DefaultLocation)
-    'End Function
-
-    Public Overrides Function ToString() As String 'Overrides the ToString method to provide information for the inoutview.
+    Public Overrides Function ToString() As String 'Overrides the ToString method to provide more information
         Return String.Format("SykkelID: {0} ({1}) befinner seg på {2} (standard: {3})", BicycleID, BicycleType, CurrentLocation, DefaultLocation)
     End Function
 
