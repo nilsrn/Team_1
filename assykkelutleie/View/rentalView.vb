@@ -118,17 +118,19 @@ Public Class rentalView
 
     Private Sub makeInvoice() 'Sub for writing an invoice for the client
         Dim rid, InvoiceNumber, Total_Pris, CustomerID, kid As Integer
-        Dim InvoiceDate, DueDate As Date
+        Dim InvoiceDate, DueDate As String
         Dim rentalsummary As String
         Dim rental As New Rentals()
         Dim list As DataTable = DbManager.GetAll(rental)
         For Each row In list.Rows
             rid = row("RentalID")
+            InvoiceDate = row("PickupTime")
+            DueDate = row("DeliveryTime")
         Next
         CustomerID = presentcustomerid.Text
         rentalsummary = commenttxt.Text
-        InvoiceDate = Today.AddDays(11)
-        DueDate = Today.AddDays(30)
+        'InvoiceDate = Today.AddDays(11)
+        'DueDate = Today.AddDays(30)
         kid = Int((9999 * Rnd()) + 1111)
         Total_Pris = discount()
         Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)

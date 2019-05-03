@@ -1,7 +1,7 @@
 ﻿Public Class Invoice
 
     Dim summary As String
-    Dim m_duedate, m_invoicedate As Date
+    Dim m_duedate, m_invoicedate As String
     Dim nr, cid, rid, m_kid, m_amount As Integer ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
@@ -44,19 +44,19 @@
             rid = value
         End Set
     End Property
-    Public Property InvoiceDate() As Date
+    Public Property InvoiceDate() As String
         Get
             Return m_invoicedate
         End Get
-        Set(value As Date)
+        Set(value As String)
             m_invoicedate = value
         End Set
     End Property
-    Public Property DueDate() As Date
+    Public Property DueDate() As String
         Get
             Return m_duedate
         End Get
-        Set(value As Date)
+        Set(value As String)
             m_duedate = value
         End Set
     End Property

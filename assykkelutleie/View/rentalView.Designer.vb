@@ -63,6 +63,7 @@ Partial Class rentalView
         Me.lbrentals = New System.Windows.Forms.ListBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SlettToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -122,7 +123,7 @@ Partial Class rentalView
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(260, 320)
+        Me.GroupBox3.Size = New System.Drawing.Size(260, 358)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Utlevering og innlevering"
@@ -205,6 +206,7 @@ Partial Class rentalView
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.btnLeggTil)
         Me.GroupBox2.Controls.Add(Me.lbOversikt)
         Me.GroupBox2.Controls.Add(Me.Label6)
@@ -215,7 +217,7 @@ Partial Class rentalView
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(264, 320)
+        Me.GroupBox2.Size = New System.Drawing.Size(264, 358)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sykkel og utstyr"
@@ -234,10 +236,10 @@ Partial Class rentalView
         '
         Me.lbOversikt.FormattingEnabled = True
         Me.lbOversikt.ItemHeight = 16
-        Me.lbOversikt.Location = New System.Drawing.Point(9, 158)
+        Me.lbOversikt.Location = New System.Drawing.Point(8, 188)
         Me.lbOversikt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lbOversikt.Name = "lbOversikt"
-        Me.lbOversikt.Size = New System.Drawing.Size(245, 148)
+        Me.lbOversikt.Size = New System.Drawing.Size(245, 164)
         Me.lbOversikt.TabIndex = 4
         '
         'Label6
@@ -295,7 +297,7 @@ Partial Class rentalView
         Me.Kunde.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Kunde.Name = "Kunde"
         Me.Kunde.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Kunde.Size = New System.Drawing.Size(261, 320)
+        Me.Kunde.Size = New System.Drawing.Size(261, 358)
         Me.Kunde.TabIndex = 0
         Me.Kunde.TabStop = False
         Me.Kunde.Text = "Kunde"
@@ -482,6 +484,15 @@ Partial Class rentalView
         Me.SlettToolStripMenuItem.Size = New System.Drawing.Size(108, 24)
         Me.SlettToolStripMenuItem.Text = "Slett"
         '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(7, 130)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(246, 53)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Under vises en oversikt over pris for sykler og utstyr etterhvert som du legger t" &
+    "il"
+        '
         'rentalView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -546,4 +557,5 @@ Partial Class rentalView
     Friend WithEvents Label3 As Label
     Friend WithEvents btnLeggTil As Button
     Friend WithEvents lbOversikt As ListBox
+    Friend WithEvents Label2 As Label
 End Class
