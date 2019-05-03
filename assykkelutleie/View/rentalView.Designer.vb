@@ -38,7 +38,7 @@ Partial Class rentalView
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnLeggTil = New System.Windows.Forms.Button()
-        Me.lbOversikt = New System.Windows.Forms.ListBox()
+        Me.lbSummary = New System.Windows.Forms.ListBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pickequipment = New System.Windows.Forms.ComboBox()
@@ -208,7 +208,7 @@ Partial Class rentalView
         '
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.btnLeggTil)
-        Me.GroupBox2.Controls.Add(Me.lbOversikt)
+        Me.GroupBox2.Controls.Add(Me.lbSummary)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.pickequipment)
@@ -232,15 +232,15 @@ Partial Class rentalView
         Me.btnLeggTil.Text = "Legg til"
         Me.btnLeggTil.UseVisualStyleBackColor = True
         '
-        'lbOversikt
+        'lbSummary
         '
-        Me.lbOversikt.FormattingEnabled = True
-        Me.lbOversikt.ItemHeight = 16
-        Me.lbOversikt.Location = New System.Drawing.Point(8, 188)
-        Me.lbOversikt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.lbOversikt.Name = "lbOversikt"
-        Me.lbOversikt.Size = New System.Drawing.Size(245, 164)
-        Me.lbOversikt.TabIndex = 4
+        Me.lbSummary.FormattingEnabled = True
+        Me.lbSummary.ItemHeight = 16
+        Me.lbSummary.Location = New System.Drawing.Point(8, 188)
+        Me.lbSummary.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbSummary.Name = "lbSummary"
+        Me.lbSummary.Size = New System.Drawing.Size(245, 164)
+        Me.lbSummary.TabIndex = 4
         '
         'Label6
         '
@@ -556,6 +556,6 @@ Partial Class rentalView
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents btnLeggTil As Button
-    Friend WithEvents lbOversikt As ListBox
+    Friend WithEvents lbSummary As ListBox
     Friend WithEvents Label2 As Label
 End Class

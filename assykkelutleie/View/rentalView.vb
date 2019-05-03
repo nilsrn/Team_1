@@ -95,7 +95,7 @@ Public Class rentalView
 
     Private Function totalpriceperday()
         Dim total As Integer
-        For Each Str As String In lbOversikt.Items
+        For Each Str As String In lbSummary.Items
             total = total + CInt(Str)
         Next
         Return total
@@ -238,7 +238,7 @@ Public Class rentalView
             extradition.Text = ""
             pickbike.Text = ""
             pickequipment.Text = ""
-            lbOversikt.Items.Clear()
+            lbSummary.Items.Clear()
             ButtonClickCount = 0
 
         Catch ex As Exception
@@ -319,8 +319,8 @@ Public Class rentalView
             equipmentrateday = row("RateDay")
         Next
 
-        lbOversikt.Items.Add(bikerateday)
-        lbOversikt.Items.Add(equipmentrateday)
+        lbSummary.Items.Add(bikerateday)
+        lbSummary.Items.Add(equipmentrateday)
 
 
     End Sub
