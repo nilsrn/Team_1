@@ -93,7 +93,7 @@ Public Class rentalView
         Return thediscount
     End Function
 
-    Private Function totalpriceperday()
+    Private Function totalpriceperday() 'Function to calculate total price of bicycles and equipment per day based on prices added to the listbox
         Dim total As Integer
         For Each Str As String In lbSummary.Items
             total = total + CInt(Str)
@@ -101,10 +101,16 @@ Public Class rentalView
         Return total
     End Function
 
-    Private Function totalprice()
+    Private Function totalprice() 'Function who multiplies total price per day with the total number of days to get the total price of the order
         Dim totalp As Integer
         totalp = totalpriceperday() * totaldays()
         Return totalp
+    End Function
+
+    Private Function removeOption()
+        Dim remove As Integer
+        remove = pickbike.SelectedValue - 1
+        Return remove
     End Function
 
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
@@ -321,6 +327,7 @@ Public Class rentalView
 
         lbSummary.Items.Add(bikerateday)
         lbSummary.Items.Add(equipmentrateday)
+        ' pickbike.RemoveItem(removeOption)
 
 
     End Sub
