@@ -246,3 +246,5 @@ C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\team1\Team_1\assykkelutleie\obj\Debug\assykkelutleie.statisticsView.resources
 \\home.ansatt.ntnu.no\nilsrle\Documents\GitHub\team1\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
+C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.inoutView.resources
+C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources

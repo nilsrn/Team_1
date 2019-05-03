@@ -12,8 +12,8 @@ Public Class rentalView
         extradition.DataSource = DbManager.GetAll(location)
         filing.DataSource = DbManager.GetAll(location)
 
-        pickbike.DisplayMember = "BicycleID"
-        pickequipment.DisplayMember = "EquipmentID"
+        pickbike.DisplayMember = "BicycleType" 'Tidl: BicycleID
+        pickequipment.DisplayMember = "EquipmentType" 'Tidl: EqipmentID
         extradition.DisplayMember = "Name"
         filing.DisplayMember = "Name"
 
@@ -84,13 +84,27 @@ Public Class rentalView
     Private Function discount() ' Function calculating discount
         Dim thediscount As Integer
         If ButtonClickCount = 1 Or ButtonClickCount = 2 Or ButtonClickCount = 3 Or ButtonClickCount = 4 Then
-            thediscount = equipmentpricetotal() + bikepricetotal()
+            thediscount = totalprice()
         ElseIf ButtonClickCount = 5 Or ButtonClickCount = 6 Or ButtonClickCount = 7 Or ButtonClickCount = 8 Or ButtonClickCount = 9 Then
-            thediscount = (equipmentpricetotal() + bikepricetotal()) * 0.85
+            thediscount = totalprice() * 0.85
         ElseIf ButtonClickCount >= 10 Then
-            thediscount = (equipmentpricetotal() + bikepricetotal()) * 0.7
+            thediscount = totalprice() * 0.7
         End If
         Return thediscount
+    End Function
+
+    Private Function totalpriceperday()
+        Dim total As Integer
+        For Each Str As String In lbOversikt.Items
+            total = total + CInt(Str)
+        Next
+        Return total
+    End Function
+
+    Private Function totalprice()
+        Dim totalp As Integer
+        totalp = totalpriceperday() * totaldays()
+        Return totalp
     End Function
 
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
@@ -136,7 +150,6 @@ Public Class rentalView
         dateto = filingdate.Value.Date
         pricebike = bikepricetotal()
         priceequipment = equipmentpricetotal()
-
         Dim insertRentedBicycle As New RentedBicycles(BicycleID, rid, pricebike, datefrom, dateto)
         Dim insertRentedEquipment As New RentedEquipment(EquipmentID, rid, priceequipment, datefrom, dateto)
         DbManager.Insert(insertRentedBicycle)
@@ -202,7 +215,7 @@ Public Class rentalView
             updatebike()
             updateequipment()
             PutLbRentals(GetAllRentals)
-            MsgBox("Kunden er registrert!")
+            MsgBox("Bestillingen er registrert!")
             MsgBox(discount())
             txtsearch.Text = ""
             firstnametxt.Text = ""
@@ -284,7 +297,25 @@ Public Class rentalView
     Private ButtonClickCount As Integer = 0
     Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click
         ButtonClickCount = ButtonClickCount + 1
-        lbOversikt.Items.Add("Sykkel: " & pickbike.SelectedValue & " med utstyr: " & pickequipment.SelectedValue)
+        Dim bikerateday, equipmentrateday As Integer
+        Dim bicycletype As New BicycleType()
+        Dim equipmenttype As New EquipmentType()
+        Dim typelist1 As DataTable = DbManager.GetAll(bicycletype)
+        Dim typelist2 As DataTable = DbManager.GetAll(equipmenttype)
+
+        For Each row In typelist1.Rows
+            bikerateday = row("RateDay")
+        Next
+        For Each row In typelist2.Rows
+            equipmentrateday = row("RateDay")
+        Next
+
+        lbOversikt.Items.Add(bikerateday)
+        lbOversikt.Items.Add(equipmentrateday)
+
+
     End Sub
+
+
 #End Region
 End Class
