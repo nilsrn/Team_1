@@ -137,7 +137,7 @@ Public Class rentalView
 
     Private Sub rentedbicycleequipment() 'sub for updating tables RentedBicycles and RentedEquipment when a rental is placed
         Dim rid, BicycleID, EquipmentID, pricebike, priceequipment As Integer
-        Dim datefrom, dateto As Date
+        Dim datefrom, dateto As String
         Dim rental As New Rentals()
         Dim list As DataTable = DbManager.GetAll(rental)
         For Each row In list.Rows
@@ -146,8 +146,8 @@ Public Class rentalView
 
         BicycleID = pickbike.SelectedValue
         EquipmentID = pickequipment.SelectedValue
-        datefrom = extraditiondate.Value.Date
-        dateto = filingdate.Value.Date
+        datefrom = extraditiondate.Value.ToString("yyyy-MM-dd")
+        dateto = filingdate.Value.ToString("yyyy-MM-dd")
         pricebike = bikepricetotal()
         priceequipment = equipmentpricetotal()
         Dim insertRentedBicycle As New RentedBicycles(BicycleID, rid, pricebike, datefrom, dateto)
@@ -194,21 +194,29 @@ Public Class rentalView
     End Sub
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click 'Inserts data into tables Rentals, Invoice, Rentedbicycles and rentedequipment. Updates status on bicycle/equipment-location
         Dim PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
-        Dim PickupTime, DeliveryTime As Date
+        Dim PickupTime, DeliveryTime As String 'Date
         Dim CustomerID, Utleie_Type_Antall, Total_Pris, RentalID As Integer
         Try
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
-            PickupTime = extraditiondate.Value.Date
-            DeliveryTime = filingdate.Value.Date
+            PickupTime = extraditiondate.Value.ToString("yyyy-MM-dd")
+            DeliveryTime = filingdate.Value.ToString("yyyy-MM-dd")
             Comment = commenttxt.Text
             Utleie_Type = "Døgn"
             Utleie_Type_Antall = totaldays()
             Username = My.Settings.username
             Total_Pris = discount()
             CustomerID = presentcustomerid.Text
-            Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
-            DbManager.Insert(insertRentals)
+            'Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
+            Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+            Dim sql As New MySqlConnection(connectionString)
+            Dim query As String = "INSERT INTO Rentals (CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment) VALUES ('" & CustomerID & "', '" & Username & "', '" & PickupLocation & "', '" & DeliveryLocation & "', '" & PickupTime & "', '" & DeliveryTime & "', '" & Utleie_Type & "', '" & Utleie_Type_Antall & "', '" & Total_Pris & "', '" & Comment & "')"
+            Dim command As New MySqlCommand(query, sql)
+            Dim ad As New MySqlDataAdapter()
+            Dim interntabell As New DataTable()
+            ad.SelectCommand = command
+            ad.Fill(interntabell)
+            'DbManager.Insert(insertRentals)
 
             makeInvoice()
             rentedbicycleequipment()
@@ -216,7 +224,6 @@ Public Class rentalView
             updateequipment()
             PutLbRentals(GetAllRentals)
             MsgBox("Bestillingen er registrert!")
-            MsgBox(discount())
             txtsearch.Text = ""
             firstnametxt.Text = ""
             surnametxt.Text = ""

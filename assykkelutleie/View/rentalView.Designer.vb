@@ -234,10 +234,10 @@ Partial Class rentalView
         '
         Me.lbOversikt.FormattingEnabled = True
         Me.lbOversikt.ItemHeight = 16
-        Me.lbOversikt.Location = New System.Drawing.Point(9, 126)
+        Me.lbOversikt.Location = New System.Drawing.Point(9, 158)
         Me.lbOversikt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lbOversikt.Name = "lbOversikt"
-        Me.lbOversikt.Size = New System.Drawing.Size(245, 180)
+        Me.lbOversikt.Size = New System.Drawing.Size(245, 148)
         Me.lbOversikt.TabIndex = 4
         '
         'Label6
