@@ -12,8 +12,8 @@ Public Class rentalView
         extradition.DataSource = DbManager.GetAll(location)
         filing.DataSource = DbManager.GetAll(location)
 
-        pickbike.DisplayMember = "BicycleType" 'Tidl: BicycleID
-        pickequipment.DisplayMember = "EquipmentType" 'Tidl: EqipmentID
+        pickbike.DisplayMember = "BicycleType"
+        pickequipment.DisplayMember = "EquipmentType"
         extradition.DisplayMember = "Name"
         filing.DisplayMember = "Name"
 
@@ -81,7 +81,7 @@ Public Class rentalView
         Return datetodays
     End Function
 
-    Private Function discount() ' Function calculating discount
+    Private Function discount() ' Function calculating discount based on number of selected items
         Dim thediscount As Integer
         If ButtonClickCount = 1 Or ButtonClickCount = 2 Or ButtonClickCount = 3 Or ButtonClickCount = 4 Then
             thediscount = totalprice()
@@ -107,12 +107,6 @@ Public Class rentalView
         Return totalp
     End Function
 
-    Private Function removeOption()
-        Dim remove As Integer
-        remove = pickbike.SelectedValue - 1
-        Return remove
-    End Function
-
     Private Sub PutCustomer(list As DataTable) 'Populates the textboxes with data from the DB.
         For Each row In list.Rows
             firstnametxt.Text = row("FirstName")
@@ -135,15 +129,13 @@ Public Class rentalView
         Next
         CustomerID = presentcustomerid.Text
         rentalsummary = commenttxt.Text
-        'InvoiceDate = Today.AddDays(11)
-        'DueDate = Today.AddDays(30)
         kid = Int((9999 * Rnd()) + 1111)
         Total_Pris = discount()
         Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)
         DbManager.Insert(insertInvoice)
     End Sub
 
-    Private Sub rentedbicycleequipment() 'sub for updating tables RentedBicycles and RentedEquipment when a rental is placed
+    Private Sub rentedbicycleequipment() 'Sub for updating tables RentedBicycles and RentedEquipment when a rental is placed
         Dim rid, BicycleID, EquipmentID, pricebike, priceequipment As Integer
         Dim datefrom, dateto As String
         Dim rental As New Rentals()
@@ -163,7 +155,7 @@ Public Class rentalView
         DbManager.Insert(insertRentedBicycle)
         DbManager.Insert(insertRentedEquipment)
     End Sub
-    Private Sub updatebike() 'updates status and location when a bike is rented
+    Private Sub updatebike() 'Updates status and location when a bike is rented
         Dim BicycleID As Integer
         Dim BicycleType, DefaultLocation, CurrentLocation, Status As String
         Dim bike As New Bicycle()
@@ -178,7 +170,7 @@ Public Class rentalView
         Dim updatebicycle As New Bicycle(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status)
         DbManager.Update(updatebicycle)
     End Sub
-    Private Sub updateequipment() 'updates status and location when equipment is rented
+    Private Sub updateequipment() 'Updates status and location when equipment is rented
         Dim EquipmentID As Integer
         Dim EquipmentType, DefaultLocation, CurrentLocation, Status As String
         Dim equipment As New Equipment()
@@ -196,7 +188,7 @@ Public Class rentalView
 #End Region
 
 #Region "Actions"
-    Private Sub rentalView_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub rentalView_Load(sender As Object, e As EventArgs) Handles Me.Load 'Puts rentals in listbox and fills combobox when the form is loaded
         PutLbRentals(GetAllRentals)
         CbPutComboBox()
     End Sub
@@ -215,7 +207,6 @@ Public Class rentalView
             Username = My.Settings.username
             Total_Pris = discount()
             CustomerID = presentcustomerid.Text
-            'Dim insertRentals As New Rentals(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
             Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
             Dim sql As New MySqlConnection(connectionString)
             Dim query As String = "INSERT INTO Rentals (CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment) VALUES ('" & CustomerID & "', '" & Username & "', '" & PickupLocation & "', '" & DeliveryLocation & "', '" & PickupTime & "', '" & DeliveryTime & "', '" & Utleie_Type & "', '" & Utleie_Type_Antall & "', '" & Total_Pris & "', '" & Comment & "')"
@@ -224,7 +215,6 @@ Public Class rentalView
             Dim interntabell As New DataTable()
             ad.SelectCommand = command
             ad.Fill(interntabell)
-            'DbManager.Insert(insertRentals)
 
             makeInvoice()
             rentedbicycleequipment()
@@ -252,7 +242,7 @@ Public Class rentalView
         End Try
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click 'Puts customer information in textboxes based on the phone number in the search box
         Dim customerSearch As New Customer()
         Dim customer As String = txtsearch.Text
         Dim customerTable As DataTable = DbManager.GetSpecific(customerSearch, customer)
@@ -305,12 +295,12 @@ Public Class rentalView
         PutLbRentals(GetAllRentals)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 'Updates listbox to show newly added rentals
         PutLbRentals(GetAllRentals)
     End Sub
 
     Private ButtonClickCount As Integer = 0
-    Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click
+    Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click 'Adds price of the selected items from the pickbike and pickequipment comboboxes to overview listbox and counts number of clicks on button
         ButtonClickCount = ButtonClickCount + 1
         Dim bikerateday, equipmentrateday As Integer
         Dim bicycletype As New BicycleType()
@@ -327,8 +317,6 @@ Public Class rentalView
 
         lbSummary.Items.Add(bikerateday)
         lbSummary.Items.Add(equipmentrateday)
-        ' pickbike.RemoveItem(removeOption)
-
 
     End Sub
 
