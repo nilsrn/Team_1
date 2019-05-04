@@ -42,7 +42,7 @@
 #End Region
 
 #Region "Code for the Out tab"
-    Private Sub GetAllForOut()    'Gets all bicycles that has the same CurrentLocation and DefaultLocation with status "Ledig". 
+    Private Sub GetAllForOut()    'Gets all bicycles that meets the criteria. 
         Dim thisDate As Date = Today
         Dim rentedbicycles As New RentedBicycles()
         Dim bicycle As New Bicycle()
@@ -52,7 +52,7 @@
         For Each row2 In bicycleList.Rows
             For Each row In rentedbicyclesList.Rows
                 If row2("BicycleID") = row("BicycleID") And row("DateFrom") >= thisDate And row2("Status") = "Ledig" Then
-                    Dim b = New RentedBicycles With {.BicycleID = row("BicycleID"), .RentalID = row("RentalID"), .DateFrom = row("DateFrom")}  'Oppretter sykkelobjektet og legger til i listboksen
+                    Dim b = New RentedBicycles With {.BicycleID = row("BicycleID"), .RentalID = row("RentalID"), .DateFrom = row("DateFrom")}  'Creates bicycleobject and adds it to the listbox
                     lbOut.Items.Add(b)
                 End If
             Next

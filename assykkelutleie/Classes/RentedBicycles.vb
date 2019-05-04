@@ -16,7 +16,7 @@
 
     Public Sub New(table As DataTable)
         For Each row In table.Rows
-            m_BicycleID = row("BicycleID")
+            m_bicycleid = row("BicycleID")
             m_rentalid = row("RentalID")
             m_price = row("Price")
             m_datefrom = row("DateFrom")
@@ -24,6 +24,9 @@
         Next
     End Sub
 
+    Public Overrides Function ToString() As String 'Overrides the ToString method to provide more information
+        Return String.Format("SykkelID: {0} (UtleieID: {1}) er utleid fra {2}", m_bicycleid, m_rentalid, m_datefrom)
+    End Function
 
     Public Property BicycleID() As Integer
         Get
