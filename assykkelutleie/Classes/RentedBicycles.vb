@@ -1,75 +1,75 @@
 ﻿Public Class RentedBicycles
-    Dim m_bicycleid, m_price, m_rentalid As Integer ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
-    Dim m_datefrom, m_dateto As String
+    Dim _bicycleid, _price, _rentalid As Integer ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _datefrom, _dateto As String
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(BicycleID, RentalID, Price, DateFrom, DateTo)
-        m_bicycleid = BicycleID
-        m_rentalid = RentalID
-        m_price = Price
-        m_datefrom = DateFrom
-        m_dateto = DateTo
+        _bicycleid = BicycleID
+        _rentalid = RentalID
+        _price = Price
+        _datefrom = DateFrom
+        _dateto = DateTo
     End Sub
 
     Public Sub New(table As DataTable)
         For Each row In table.Rows
-            m_bicycleid = row("BicycleID")
-            m_rentalid = row("RentalID")
-            m_price = row("Price")
-            m_datefrom = row("DateFrom")
-            m_dateto = row("DateTo")
+            _bicycleid = row("BicycleID")
+            _rentalid = row("RentalID")
+            _price = row("Price")
+            _datefrom = row("DateFrom")
+            _dateto = row("DateTo")
         Next
     End Sub
 
     Public Overrides Function ToString() As String 'Overrides the ToString method to provide more information
-        Return String.Format("SykkelID: {0} (UtleieID: {1}) er utleid fra {2}", m_bicycleid, m_rentalid, m_datefrom)
+        Return String.Format("SykkelID: {0} (UtleieID: {1}) er utleid fra {2}", _bicycleid, _rentalid, _datefrom)
     End Function
 
     Public Property BicycleID() As Integer
         Get
-            Return m_bicycleid
+            Return _bicycleid
         End Get
         Set(value As Integer)
-            m_bicycleid = value
+            _bicycleid = value
         End Set
     End Property
 
     Public Property RentalID() As Integer
         Get
-            Return m_rentalid
+            Return _rentalid
         End Get
         Set(value As Integer)
-            m_rentalid = value
+            _rentalid = value
         End Set
     End Property
 
     Public Property Price() As Integer
         Get
-            Return m_price
+            Return _price
         End Get
         Set(value As Integer)
-            m_price = value
+            _price = value
         End Set
     End Property
 
     Public Property DateFrom() As String
         Get
-            Return m_datefrom
+            Return _datefrom
         End Get
         Set(value As String)
-            m_datefrom = value
+            _datefrom = value
         End Set
     End Property
 
     Public Property DateTo() As String
         Get
-            Return m_dateto
+            Return _dateto
         End Get
         Set(value As String)
-            m_dateto = value
+            _dateto = value
         End Set
     End Property
 End Class

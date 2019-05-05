@@ -1,52 +1,52 @@
 ﻿Public Class EquipmentType
-    Dim m_name, m_description As String
-    Dim m_ratehour, m_rateday As Integer
+    Dim _name, _description As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _ratehour, _rateday As Integer
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(Name, Description, RateHour, RateDay)
-        m_name = Name
-        m_description = Description
-        m_ratehour = RateHour
-        m_rateday = RateDay
+        _name = Name
+        _description = Description
+        _ratehour = RateHour
+        _rateday = RateDay
     End Sub
 
     Public Property Name() As String
         Get
-            Return m_name
+            Return _name
         End Get
         Set(value As String)
-            m_name = value
+            _name = value
         End Set
     End Property
 
     Public Property Description() As String
         Get
-            Return m_description
+            Return _description
         End Get
         Set(value As String)
-            m_description = value
+            _description = value
         End Set
     End Property
 
 
     Public Property rateHour() As Integer
         Get
-            Return m_ratehour
+            Return _ratehour
         End Get
         Set(value As Integer)
-            m_ratehour = value
+            _ratehour = value
         End Set
     End Property
 
     Public Property rateDay() As Integer
         Get
-            Return m_rateday
+            Return _rateday
         End Get
         Set(value As Integer)
-            m_rateday = value
+            _rateday = value
         End Set
     End Property
 End Class

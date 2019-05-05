@@ -1,26 +1,26 @@
 ﻿Public Class Equipment
-    Dim m_equipmentType, m_defaultLocation, m_currentLocation, m_status As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
-    Dim m_id As Integer
+    Dim _equipmentType, _defaultLocation, _currentLocation, _status As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _id As Integer
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(EquipmentID, EquipmentType, DefaultLocation, CurrentLocation, Status)
-        m_id = EquipmentID
-        m_equipmentType = EquipmentType
-        m_defaultLocation = DefaultLocation
-        m_currentLocation = CurrentLocation
-        m_status = Status
+        _id = EquipmentID
+        _equipmentType = EquipmentType
+        _defaultLocation = DefaultLocation
+        _currentLocation = CurrentLocation
+        _status = Status
     End Sub
 
     Public Sub New(table As DataTable)
         For Each row In table.Rows
-            m_id = row("EquipmentID")
-            m_equipmentType = row("EquipmentType")
-            m_defaultLocation = row("DefaultLocation")
-            m_currentLocation = row("CurrentLocation")
-            m_status = row("Status")
+            _id = row("EquipmentID")
+            _equipmentType = row("EquipmentType")
+            _defaultLocation = row("DefaultLocation")
+            _currentLocation = row("CurrentLocation")
+            _status = row("Status")
         Next
     End Sub
 
@@ -30,42 +30,42 @@
 
     Public Property EquipmentID() As Integer
         Get
-            Return m_id
+            Return _id
         End Get
         Set(value As Integer)
-            m_id = value
+            _id = value
         End Set
     End Property
     Public Property EquipmentType() As String
         Get
-            Return m_equipmentType
+            Return _equipmentType
         End Get
         Set(value As String)
-            m_equipmentType = value
+            _equipmentType = value
         End Set
     End Property
     Public Property DefaultLocation() As String
         Get
-            Return m_defaultLocation
+            Return _defaultLocation
         End Get
         Set(value As String)
-            m_defaultLocation = value
+            _defaultLocation = value
         End Set
     End Property
     Public Property CurrentLocation() As String
         Get
-            Return m_currentLocation
+            Return _currentLocation
         End Get
         Set(value As String)
-            m_currentLocation = value
+            _currentLocation = value
         End Set
     End Property
     Public Property Status() As String
         Get
-            Return m_status
+            Return _status
         End Get
         Set(value As String)
-            m_status = value
+            _status = value
         End Set
     End Property
 

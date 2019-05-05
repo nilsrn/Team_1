@@ -1,8 +1,8 @@
 ﻿Public Class Invoice
 
     Dim summary As String
-    Dim m_duedate, m_invoicedate As String
-    Dim nr, cid, rid, m_kid, m_amount As Integer ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _duedate, _invoicedate As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim nr, cid, rid, _kid, _amount As Integer
 
     Public Sub New()
 
@@ -12,10 +12,10 @@
         nr = InvoiceNumber
         cid = CustomerID
         rid = RentalID
-        m_invoicedate = InvoiceDate
-        m_duedate = DueDate
-        m_kid = KIDnumber
-        m_amount = Amount
+        _invoicedate = InvoiceDate
+        _duedate = DueDate
+        _kid = KIDnumber
+        _amount = Amount
         summary = RentalSummary
 
     End Sub
@@ -46,34 +46,34 @@
     End Property
     Public Property InvoiceDate() As String
         Get
-            Return m_invoicedate
+            Return _invoicedate
         End Get
         Set(value As String)
-            m_invoicedate = value
+            _invoicedate = value
         End Set
     End Property
     Public Property DueDate() As String
         Get
-            Return m_duedate
+            Return _duedate
         End Get
         Set(value As String)
-            m_duedate = value
+            _duedate = value
         End Set
     End Property
     Public Property KIDNumber() As Integer
         Get
-            Return m_kid
+            Return _kid
         End Get
         Set(value As Integer)
-            m_kid = value
+            _kid = value
         End Set
     End Property
     Public Property Amount() As Integer
         Get
-            Return m_amount
+            Return _amount
         End Get
         Set(value As Integer)
-            m_amount = value
+            _amount = value
         End Set
     End Property
     Public Property RentalSummary() As String

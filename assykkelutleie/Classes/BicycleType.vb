@@ -1,30 +1,30 @@
 ﻿Public Class BicycleType
-    Dim m_Name, m_Description, m_GearSystem, m_WheelSize, m_FrameSize As String
-    Dim m_RateHour, m_RateDay As Integer
+    Dim _Name, _Description, _GearSystem, _WheelSize, _FrameSize As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _RateHour, _RateDay As Integer
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(Name, Description, GearSystem, WheelSize, FrameSize, RateHour, RateDay)
-        m_Name = Name
-        m_Description = Description
-        m_GearSystem = GearSystem
-        m_WheelSize = WheelSize
-        m_FrameSize = FrameSize
-        m_RateHour = RateHour
-        m_RateDay = RateDay
+        _Name = Name
+        _Description = Description
+        _GearSystem = GearSystem
+        _WheelSize = WheelSize
+        _FrameSize = FrameSize
+        _RateHour = RateHour
+        _RateDay = RateDay
     End Sub
 
     Public Sub New(table As DataTable)
         For Each row In table.Rows
-            m_Name = row("Name")
-            m_Description = row("Description")
-            m_GearSystem = row("GearSystem")
-            m_WheelSize = row("WheelSize")
-            m_FrameSize = row("FrameSize")
-            m_RateHour = row("RateHour")
-            m_RateDay = row("RateDay")
+            _Name = row("Name")
+            _Description = row("Description")
+            _GearSystem = row("GearSystem")
+            _WheelSize = row("WheelSize")
+            _FrameSize = row("FrameSize")
+            _RateHour = row("RateHour")
+            _RateDay = row("RateDay")
         Next
     End Sub
 
@@ -34,64 +34,64 @@
 
     Public Property Name() As String
         Get
-            Return m_Name
+            Return _Name
         End Get
         Set(value As String)
-            m_Name = value
+            _Name = value
         End Set
     End Property
 
     Public Property Description() As String
         Get
-            Return m_Description
+            Return _Description
         End Get
         Set(value As String)
-            m_Description = value
+            _Description = value
         End Set
     End Property
 
     Public Property gearSystem() As String
         Get
-            Return m_GearSystem
+            Return _GearSystem
         End Get
         Set(value As String)
-            m_GearSystem = value
+            _GearSystem = value
         End Set
     End Property
 
     Public Property WheelSize() As String
         Get
-            Return m_WheelSize
+            Return _WheelSize
         End Get
         Set(value As String)
-            m_WheelSize = value
+            _WheelSize = value
         End Set
     End Property
 
     Public Property FrameSize() As String
         Get
-            Return m_FrameSize
+            Return _FrameSize
         End Get
         Set(value As String)
-            m_FrameSize = value
+            _FrameSize = value
         End Set
     End Property
 
     Public Property rateHour() As Integer
         Get
-            Return m_RateHour
+            Return _RateHour
         End Get
         Set(value As Integer)
-            m_RateHour = value
+            _RateHour = value
         End Set
     End Property
 
     Public Property rateDay() As Integer
         Get
-            Return m_RateDay
+            Return _RateDay
         End Get
         Set(value As Integer)
-            m_RateDay = value
+            _RateDay = value
         End Set
     End Property
 End Class

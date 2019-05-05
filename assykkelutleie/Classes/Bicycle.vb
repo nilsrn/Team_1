@@ -1,26 +1,26 @@
 ﻿Public Class Bicycle
-    Dim m_BicycleID As Integer
-    Dim m_BicycleType, m_DefaultLocation, m_CurrentLocation, m_Status As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _BicycleID As Integer
+    Dim _BicycleType, _DefaultLocation, _CurrentLocation, _Status As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(BicycleID, BicycleType, DefaultLocation, CurrentLocation, Status)
-        m_BicycleID = BicycleID
-        m_BicycleType = BicycleType
-        m_DefaultLocation = DefaultLocation
-        m_CurrentLocation = CurrentLocation
-        m_Status = Status
+        _BicycleID = BicycleID
+        _BicycleType = BicycleType
+        _DefaultLocation = DefaultLocation
+        _CurrentLocation = CurrentLocation
+        _Status = Status
     End Sub
 
     Public Sub New(table As DataTable)
         For Each row In table.Rows
-            m_BicycleID = row("BicycleID")
-            m_BicycleType = row("BicycleType")
-            m_DefaultLocation = row("DefaultLocation")
-            m_CurrentLocation = row("CurrentLocation")
-            m_Status = row("Status")
+            _BicycleID = row("BicycleID")
+            _BicycleType = row("BicycleType")
+            _DefaultLocation = row("DefaultLocation")
+            _CurrentLocation = row("CurrentLocation")
+            _Status = row("Status")
         Next
     End Sub
 
@@ -30,46 +30,46 @@
 
     Public Property BicycleID() As Integer
         Get
-            Return m_BicycleID
+            Return _BicycleID
         End Get
         Set(value As Integer)
-            m_BicycleID = value
+            _BicycleID = value
         End Set
     End Property
 
     Public Property BicycleType() As String
         Get
-            Return m_BicycleType
+            Return _BicycleType
         End Get
         Set(value As String)
-            m_BicycleType = value
+            _BicycleType = value
         End Set
     End Property
 
     Public Property DefaultLocation() As String
         Get
-            Return m_DefaultLocation
+            Return _DefaultLocation
         End Get
         Set(value As String)
-            m_DefaultLocation = value
+            _DefaultLocation = value
         End Set
     End Property
 
     Public Property CurrentLocation() As String
         Get
-            Return m_CurrentLocation
+            Return _CurrentLocation
         End Get
         Set(value As String)
-            m_CurrentLocation = value
+            _CurrentLocation = value
         End Set
     End Property
 
     Public Property Status() As String
         Get
-            Return m_Status
+            Return _Status
         End Get
         Set(value As String)
-            m_Status = value
+            _Status = value
         End Set
     End Property
 End Class

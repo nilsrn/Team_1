@@ -1,29 +1,29 @@
 ﻿Public Class UserAccount
-    Dim m_username, m_password, m_salt, m_accountType, m_location, m_firstName, m_surname, m_email, m_telephoneNumber As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _username, _password, _salt, _accountType, _location, _firstName, _surname, _email, _telephoneNumber As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
 
     Public Sub New(username, password, salt, accountType, location, firstName, surname, email, telephoneNumber)
-        m_username = username
-        m_password = password
-        m_salt = salt
-        m_accountType = accountType
-        m_location = location
-        m_firstName = firstName
-        m_surname = surname
-        m_email = email
-        m_telephoneNumber = telephoneNumber
+        _username = username
+        _password = password
+        _salt = salt
+        _accountType = accountType
+        _location = location
+        _firstName = firstName
+        _surname = surname
+        _email = email
+        _telephoneNumber = telephoneNumber
     End Sub
 
     Public Sub New(table As DataTable)
         For Each row In table.Rows
-            m_username = row("Username")
-            m_password = row("Password")
-            m_salt = row("Salt")
-            m_accountType = row("AccountType")
-            m_location = row("Location")
-            m_firstName = row("FirstName")
-            m_surname = row("Surname")
-            m_email = row("Email")
-            m_telephoneNumber = row("TelephoneNumber")
+            _username = row("Username")
+            _password = row("Password")
+            _salt = row("Salt")
+            _accountType = row("AccountType")
+            _location = row("Location")
+            _firstName = row("FirstName")
+            _surname = row("Surname")
+            _email = row("Email")
+            _telephoneNumber = row("TelephoneNumber")
         Next
     End Sub
 
@@ -32,82 +32,82 @@
 
     Public Property Username() As String
         Get
-            Return m_username
+            Return _username
         End Get
         Set(value As String)
-            m_username = value
+            _username = value
         End Set
     End Property
 
     Public Property Password() As String
         Get
-            Return m_password
+            Return _password
         End Get
         Set(value As String)
-            m_password = value
+            _password = value
         End Set
     End Property
 
     Public Property Salt() As String
         Get
-            Return m_salt
+            Return _salt
         End Get
         Set(value As String)
-            m_salt = value
+            _salt = value
         End Set
     End Property
 
     Public Property AccountType() As String
         Get
-            Return m_accountType
+            Return _accountType
         End Get
         Set(value As String)
-            m_accountType = value
+            _accountType = value
         End Set
     End Property
 
     Public Property Location() As String
         Get
-            Return m_location
+            Return _location
         End Get
         Set(value As String)
-            m_location = value
+            _location = value
         End Set
     End Property
 
     Public Property FirstName() As String
         Get
-            Return m_firstName
+            Return _firstName
         End Get
         Set(value As String)
-            m_firstName = value
+            _firstName = value
         End Set
     End Property
 
     Public Property Surname() As String
         Get
-            Return m_surname
+            Return _surname
         End Get
         Set(value As String)
-            m_surname = value
+            _surname = value
         End Set
     End Property
 
     Public Property Email() As String
         Get
-            Return m_email
+            Return _email
         End Get
         Set(value As String)
-            m_email = value
+            _email = value
         End Set
     End Property
 
     Public Property TelephoneNumber() As String
         Get
-            Return m_telephoneNumber
+            Return _telephoneNumber
         End Get
         Set(value As String)
-            m_telephoneNumber = value
+            _telephoneNumber = value
         End Set
     End Property
 
