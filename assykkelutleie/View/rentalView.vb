@@ -101,7 +101,7 @@ Public Class rentalView
         Return total
     End Function
 
-    Private Function totalprice() 'Function who multiplies total price per day with the total number of days to get the total price of the order
+    Private Function totalprice() 'Function that multiplies total price per day with the total number of days to get the total price of the order
         Dim totalp As Integer
         totalp = totalpriceperday() * totaldays()
         Return totalp
@@ -117,7 +117,7 @@ Public Class rentalView
     End Sub
 
     Private Sub makeInvoice() 'Sub for writing an invoice for the client
-        Dim rid, InvoiceNumber, Total_Pris, CustomerID, kid As Integer
+        Dim rid, InvoiceNumber, price, CustomerID, kid As Integer
         Dim InvoiceDate, DueDate As String
         Dim rentalsummary As String
         Dim rental As New Rentals()
@@ -130,8 +130,8 @@ Public Class rentalView
         CustomerID = presentcustomerid.Text
         rentalsummary = commenttxt.Text
         kid = Int((9999 * Rnd()) + 1111)
-        Total_Pris = discount()
-        Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, Total_Pris, rentalsummary)
+        price = discount()
+        Dim insertInvoice As New Invoice(InvoiceNumber, CustomerID, rid, InvoiceDate, DueDate, kid, price, rentalsummary)
         DbManager.Insert(insertInvoice)
     End Sub
 
@@ -193,23 +193,23 @@ Public Class rentalView
         CbPutComboBox()
     End Sub
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click 'Inserts data into tables Rentals, Invoice, Rentedbicycles and rentedequipment. Updates status on bicycle/equipment-location
-        Dim PickupLocation, DeliveryLocation, Comment, Username, Utleie_Type As String
-        Dim PickupTime, DeliveryTime As String 'Date
-        Dim CustomerID, Utleie_Type_Antall, Total_Pris, RentalID As Integer
+        Dim PickupLocation, DeliveryLocation, Comment, Username, rentaltype As String
+        Dim PickupTime, DeliveryTime As String
+        Dim CustomerID, typeammount, price, RentalID As Integer
         Try
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
             PickupTime = extraditiondate.Value.ToString("yyyy-MM-dd")
             DeliveryTime = filingdate.Value.ToString("yyyy-MM-dd")
             Comment = commenttxt.Text
-            Utleie_Type = "Døgn"
-            Utleie_Type_Antall = totaldays()
+            rentaltype = "Døgn"
+            typeammount = totaldays()
             Username = My.Settings.username
-            Total_Pris = discount()
+            price = discount()
             CustomerID = presentcustomerid.Text
             Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
             Dim sql As New MySqlConnection(connectionString)
-            Dim query As String = "INSERT INTO Rentals (CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment) VALUES ('" & CustomerID & "', '" & Username & "', '" & PickupLocation & "', '" & DeliveryLocation & "', '" & PickupTime & "', '" & DeliveryTime & "', '" & Utleie_Type & "', '" & Utleie_Type_Antall & "', '" & Total_Pris & "', '" & Comment & "')"
+            Dim query As String = "INSERT INTO Rentals (CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment) VALUES ('" & CustomerID & "', '" & Username & "', '" & PickupLocation & "', '" & DeliveryLocation & "', '" & PickupTime & "', '" & DeliveryTime & "', '" & rentaltype & "', '" & typeammount & "', '" & price & "', '" & Comment & "')"
             Dim command As New MySqlCommand(query, sql)
             Dim ad As New MySqlDataAdapter()
             Dim interntabell As New DataTable()

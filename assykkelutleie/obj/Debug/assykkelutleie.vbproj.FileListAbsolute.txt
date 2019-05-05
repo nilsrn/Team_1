@@ -248,3 +248,6 @@ C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 C:\Users\nysta\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
 C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.inoutView.resources
 C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
+C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.inoutView.resources
+C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
+C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.statisticsView.resources

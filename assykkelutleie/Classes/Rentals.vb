@@ -1,6 +1,6 @@
 ﻿Public Class Rentals
-    Dim rid, cid, typantall, pris As Integer
-    Dim _username, pickuploc, dloc, uttyp, _comment As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim rid, cid, typeammount, price As Integer
+    Dim _username, pickuploc, dloc, rentaltype, _comment As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
     Dim _pickuptime, dtime As String
 
     Public Sub New()
@@ -15,9 +15,9 @@
         dloc = DeliveryLocation
         _pickuptime = PickupTime
         dtime = DeliveryTime
-        uttyp = Utleie_Type
-        typantall = Utleie_Type_Antall
-        pris = Total_Pris
+        rentaltype = Utleie_Type
+        typeammount = Utleie_Type_Antall
+        price = Total_Pris
         _comment = Comment
     End Sub
 
@@ -86,28 +86,28 @@
 
     Public Property Utleie_Type() As String
         Get
-            Return uttyp
+            Return rentaltype
         End Get
         Set(value As String)
-            uttyp = value
+            rentaltype = value
         End Set
     End Property
 
     Public Property Utleie_Type_Antall() As Integer
         Get
-            Return typantall
+            Return typeammount
         End Get
         Set(value As Integer)
-            typantall = value
+            typeammount = value
         End Set
     End Property
 
     Public Property Total_Pris() As Integer
         Get
-            Return pris
+            Return price
         End Get
         Set(value As Integer)
-            pris = value
+            price = value
         End Set
     End Property
 
