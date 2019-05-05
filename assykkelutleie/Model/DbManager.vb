@@ -3,7 +3,7 @@ Imports System.Reflection 'Provides objects that describe assemblies, modules an
 
 Public Class DbManager
 #Region "General database functions"
-    Private Shared connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Connection string to the MySql database.
+    Private Shared ReadOnly connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;" 'Connection string to the MySql database.
 
     Public Shared Sub Login(username As String, password As String) ' Sub procedure for logging in users. 
         Dim salt As String = "" 'Empty because using a DataReader which will get the specific users salt from the DB. 

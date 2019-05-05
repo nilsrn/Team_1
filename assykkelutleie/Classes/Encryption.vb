@@ -1,5 +1,5 @@
-﻿Public Class Encryption ' Nils
-    Private cryptoServiceProvider As System.Security.Cryptography.RNGCryptoServiceProvider  'Using RNGCrypto SP to generate real random results. 
+﻿Public Class Encryption
+    Private ReadOnly cryptoServiceProvider As System.Security.Cryptography.RNGCryptoServiceProvider  'Using RNGCrypto SP to generate real random results. 
 
     'Function for escaping to avoid SQL-injection
     Public Shared Function Escaping(str As String)
