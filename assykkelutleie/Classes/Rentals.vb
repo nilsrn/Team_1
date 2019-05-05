@@ -1,41 +1,41 @@
 ﻿Public Class Rentals
-    Dim rid, cid, typeammount, price As Integer
-    Dim _username, pickuploc, dloc, rentaltype, _comment As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
-    Dim _pickuptime, dtime As String
+    Dim _rid, _cid, _typeammount, _price As Integer
+    Dim _username, _pickuploc, _dloc, _rentaltype, _comment As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _pickuptime, _dtime As String
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
-        rid = RentalID
-        cid = CustomerID
+        _rid = RentalID
+        _cid = CustomerID
         _username = Username
-        pickuploc = PickupLocation
-        dloc = DeliveryLocation
+        _pickuploc = PickupLocation
+        _dloc = DeliveryLocation
         _pickuptime = PickupTime
-        dtime = DeliveryTime
-        rentaltype = Utleie_Type
-        typeammount = Utleie_Type_Antall
-        price = Total_Pris
+        _dtime = DeliveryTime
+        _rentaltype = Utleie_Type
+        _typeammount = Utleie_Type_Antall
+        _price = Total_Pris
         _comment = Comment
     End Sub
 
     Public Property RentalID() As Integer
         Get
-            Return rid
+            Return _rid
         End Get
         Set(value As Integer)
-            rid = value
+            _rid = value
         End Set
     End Property
 
     Public Property CustomerID() As Integer
         Get
-            Return cid
+            Return _cid
         End Get
         Set(value As Integer)
-            cid = value
+            _cid = value
         End Set
     End Property
 
@@ -50,19 +50,19 @@
 
     Public Property PickupLocation() As String
         Get
-            Return pickuploc
+            Return _pickuploc
         End Get
         Set(value As String)
-            pickuploc = value
+            _pickuploc = value
         End Set
     End Property
 
     Public Property DeliveryLocation() As String
         Get
-            Return dloc
+            Return _dloc
         End Get
         Set(value As String)
-            dloc = value
+            _dloc = value
         End Set
     End Property
 
@@ -77,37 +77,37 @@
 
     Public Property DeliveryTime() As String 'Date
         Get
-            Return dtime
+            Return _dtime
         End Get
         Set(value As String) 'Date)
-            dtime = value
+            _dtime = value
         End Set
     End Property
 
     Public Property Utleie_Type() As String
         Get
-            Return rentaltype
+            Return _rentaltype
         End Get
         Set(value As String)
-            rentaltype = value
+            _rentaltype = value
         End Set
     End Property
 
     Public Property Utleie_Type_Antall() As Integer
         Get
-            Return typeammount
+            Return _typeammount
         End Get
         Set(value As Integer)
-            typeammount = value
+            _typeammount = value
         End Set
     End Property
 
     Public Property Total_Pris() As Integer
         Get
-            Return price
+            Return _price
         End Get
         Set(value As Integer)
-            price = value
+            _price = value
         End Set
     End Property
 

@@ -1,47 +1,47 @@
 ﻿Public Class Invoice
 
-    Dim summary As String
+    Dim _summary As String
     Dim _duedate, _invoicedate As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
-    Dim nr, cid, rid, _kid, _amount As Integer
+    Dim _nr, _cid, _rid, _kid, _amount As Integer
 
     Public Sub New()
 
     End Sub
 
     Public Sub New(InvoiceNumber, CustomerID, RentalID, InvoiceDate, DueDate, KIDnumber, Amount, RentalSummary)
-        nr = InvoiceNumber
-        cid = CustomerID
-        rid = RentalID
+        _nr = InvoiceNumber
+        _cid = CustomerID
+        _rid = RentalID
         _invoicedate = InvoiceDate
         _duedate = DueDate
         _kid = KIDnumber
         _amount = Amount
-        summary = RentalSummary
+        _summary = RentalSummary
 
     End Sub
 
     Public Property InvoiceNumber() As Integer
         Get
-            Return nr
+            Return _nr
         End Get
         Set(value As Integer)
-            nr = value
+            _nr = value
         End Set
     End Property
     Public Property CustomerID() As Integer
         Get
-            Return cid
+            Return _cid
         End Get
         Set(value As Integer)
-            cid = value
+            _cid = value
         End Set
     End Property
     Public Property RentalID() As Integer
         Get
-            Return rid
+            Return _rid
         End Get
         Set(value As Integer)
-            rid = value
+            _rid = value
         End Set
     End Property
     Public Property InvoiceDate() As String
@@ -78,10 +78,10 @@
     End Property
     Public Property RentalSummary() As String
         Get
-            Return summary
+            Return _summary
         End Get
         Set(value As String)
-            summary = value
+            _summary = value
         End Set
     End Property
 End Class
