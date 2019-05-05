@@ -12,7 +12,7 @@
         Return EncryptString(str)
     End Function
 
-    'Function for generating a random salt. Returns a true random string. Source: https://www.youtube.com/watch?v=XkphcCDeysE 
+    'Function for generating a random salt. Returns a true random string. Source for salting an encryption: https://www.youtube.com/watch?v=XkphcCDeysE 
     Public Shared Function GenerateSalt() As String
         Using cryptoServiceProvider As New System.Security.Cryptography.RNGCryptoServiceProvider
             Dim sb As New System.Text.StringBuilder()

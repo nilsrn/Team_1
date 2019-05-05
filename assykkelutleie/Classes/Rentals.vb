@@ -1,7 +1,7 @@
 ﻿Public Class Rentals
     Dim rid, cid, typantall, pris As Integer
-    Dim m_username, pickuploc, dloc, uttyp, m_comment As String ' m_ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
-    Dim m_pickuptime, dtime As String
+    Dim _username, pickuploc, dloc, uttyp, _comment As String ' The _ prefix means member variable. Helps create a clear distinction between a public property and the private member variable backing it. 
+    Dim _pickuptime, dtime As String
 
     Public Sub New()
 
@@ -10,15 +10,15 @@
     Public Sub New(RentalID, CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment)
         rid = RentalID
         cid = CustomerID
-        m_username = Username
+        _username = Username
         pickuploc = PickupLocation
         dloc = DeliveryLocation
-        m_pickuptime = PickupTime
+        _pickuptime = PickupTime
         dtime = DeliveryTime
         uttyp = Utleie_Type
         typantall = Utleie_Type_Antall
         pris = Total_Pris
-        m_comment = Comment
+        _comment = Comment
     End Sub
 
     Public Property RentalID() As Integer
@@ -41,10 +41,10 @@
 
     Public Property Username() As String
         Get
-            Return m_username
+            Return _username
         End Get
         Set(value As String)
-            m_username = value
+            _username = value
         End Set
     End Property
 
@@ -68,10 +68,10 @@
 
     Public Property PickupTime() As String 'Date
         Get
-            Return m_pickuptime
+            Return _pickuptime
         End Get
         Set(value As String) 'Date)
-            m_pickuptime = value
+            _pickuptime = value
         End Set
     End Property
 
@@ -113,10 +113,10 @@
 
     Public Property Comment() As String
         Get
-            Return m_comment
+            Return _comment
         End Get
         Set(value As String)
-            m_comment = value
+            _comment = value
         End Set
     End Property
 End Class
