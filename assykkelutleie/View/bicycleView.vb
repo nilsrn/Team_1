@@ -118,7 +118,7 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Function bicycleStatus() ' Function to check selected status
-        Dim status As String
+        Dim status As String = ""
         If rbBicycleAvailable.Checked = True Then
             status = "Ledig"
         ElseIf rbBicycleRented.Checked = True Then
@@ -216,7 +216,7 @@ Public Class bicycleView 'Sven-Erik
     End Sub
 
     Private Function EquipmentStatus() ' Function to check selected status
-        Dim status As String
+        Dim status As String = ""
         If rbEquipmentAvailable.Checked = True Then
             status = "Ledig"
         ElseIf rbEquipmentRented.Checked = True Then

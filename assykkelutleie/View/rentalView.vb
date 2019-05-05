@@ -118,7 +118,8 @@ Public Class rentalView
 
     Private Sub makeInvoice() 'Sub for writing an invoice for the client
         Dim rid, InvoiceNumber, price, CustomerID, kid As Integer
-        Dim InvoiceDate, DueDate As String
+        Dim InvoiceDate As String = ""
+        Dim DueDate As String = ""
         Dim rentalsummary As String
         Dim rental As New Rentals()
         Dim list As DataTable = DbManager.GetAll(rental)
@@ -157,7 +158,10 @@ Public Class rentalView
     End Sub
     Private Sub updatebike() 'Updates status and location when a bike is rented
         Dim BicycleID As Integer
-        Dim BicycleType, DefaultLocation, CurrentLocation, Status As String
+        Dim BicycleType As String = ""
+        Dim DefaultLocation As String = ""
+        Dim CurrentLocation As String
+        Dim Status As String = ""
         Dim bike As New Bicycle()
         Dim list As DataTable = DbManager.GetAll(bike)
         For Each row In list.Rows
@@ -172,7 +176,10 @@ Public Class rentalView
     End Sub
     Private Sub updateequipment() 'Updates status and location when equipment is rented
         Dim EquipmentID As Integer
-        Dim EquipmentType, DefaultLocation, CurrentLocation, Status As String
+        Dim EquipmentType As String = ""
+        Dim DefaultLocation As String = ""
+        Dim CurrentLocation As String
+        Dim Status As String = ""
         Dim equipment As New Equipment()
         Dim list As DataTable = DbManager.GetAll(equipment)
         For Each row In list.Rows
@@ -195,7 +202,7 @@ Public Class rentalView
     Private Sub rentalcomplete_Click(sender As Object, e As EventArgs) Handles rentalcomplete.Click 'Inserts data into tables Rentals, Invoice, Rentedbicycles and rentedequipment. Updates status on bicycle/equipment-location
         Dim PickupLocation, DeliveryLocation, Comment, Username, rentaltype As String
         Dim PickupTime, DeliveryTime As String
-        Dim CustomerID, typeammount, price, RentalID As Integer
+        Dim CustomerID, typeammount, price As Integer
         Try
             PickupLocation = extradition.SelectedValue
             DeliveryLocation = filing.SelectedValue
