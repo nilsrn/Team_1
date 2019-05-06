@@ -219,9 +219,9 @@ Public Class rentalView
             Dim query As String = "INSERT INTO Rentals (CustomerID, Username, PickupLocation, DeliveryLocation, PickupTime, DeliveryTime, Utleie_Type, Utleie_Type_Antall, Total_Pris, Comment) VALUES ('" & CustomerID & "', '" & Username & "', '" & PickupLocation & "', '" & DeliveryLocation & "', '" & PickupTime & "', '" & DeliveryTime & "', '" & rentaltype & "', '" & typeammount & "', '" & price & "', '" & Comment & "')"
             Dim command As New MySqlCommand(query, sql)
             Dim ad As New MySqlDataAdapter()
-            Dim interntabell As New DataTable()
+            Dim table As New DataTable()
             ad.SelectCommand = command
-            ad.Fill(interntabell)
+            ad.Fill(table)
 
             makeInvoice()
             rentedbicycleequipment()
@@ -309,21 +309,37 @@ Public Class rentalView
     Private ButtonClickCount As Integer = 0
     Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click 'Adds price of the selected items from the pickbike and pickequipment comboboxes to overview listbox and counts number of clicks on button
         ButtonClickCount = ButtonClickCount + 1
-        Dim bikerateday, equipmentrateday As Integer
-        Dim bicycletype As New BicycleType()
-        Dim equipmenttype As New EquipmentType()
-        Dim typelist1 As DataTable = DbManager.GetAll(bicycletype)
-        Dim typelist2 As DataTable = DbManager.GetAll(equipmenttype)
+        Dim bicycleid As Integer = pickbike.SelectedValue
+        Dim equipmentid As Integer = pickequipment.SelectedValue
+        Dim equipmentrateday As Integer
+        Dim bikerateday As Integer
+        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+        Dim sql As New MySqlConnection(connectionString)
+        Dim query As String = "SELECT RateDay from BicycleType, Bicycle WHERE BicycleType.Name=Bicycle.BicycleType and BicycleID=" & bicycleid
+        Dim query2 As String = "SELECT RateDay from EquipmentType, Equipment WHERE EquipmentType.Name=Equipment.EquipmentType and EquipmentID=" & equipmentid
 
-        For Each row In typelist1.Rows
+        Dim command As New MySqlCommand(query, sql)
+        Dim command2 As New MySqlCommand(query2, sql)
+        Dim adapter As New MySqlDataAdapter()
+        Dim adapter2 As New MySqlDataAdapter()
+
+        Dim table As New DataTable()
+        Dim table2 As New DataTable()
+        adapter.SelectCommand = command
+        adapter.Fill(table)
+        adapter2.SelectCommand = command2
+        adapter2.Fill(table2)
+
+        For Each row In table.Rows
             bikerateday = row("RateDay")
         Next
-        For Each row In typelist2.Rows
+        For Each row In table2.Rows
             equipmentrateday = row("RateDay")
         Next
 
         lbSummary.Items.Add(bikerateday)
         lbSummary.Items.Add(equipmentrateday)
+
 
     End Sub
 
