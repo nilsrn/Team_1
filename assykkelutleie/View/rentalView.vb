@@ -2,10 +2,8 @@
 Public Class rentalView
 #Region "Functions"
     Private Sub CbPutComboBox() 'Populates the comboboxes.
-        Dim bikeid As Integer
-        Dim equipmentid As Integer
-        Dim type As String = ""
-        Dim type2 As String = ""
+
+        Dim bikeid, equipmentid As Integer
         Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
         Dim sql As New MySqlConnection(connectionString)
         Dim query As String = "SELECT BicycleID, BicycleType FROM `Bicycle` WHERE Status='Ledig'"
@@ -328,38 +326,41 @@ Public Class rentalView
     Private ButtonClickCount As Integer = 0
     Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click 'Adds price of the selected items from the pickbike and pickequipment comboboxes to overview listbox and counts number of clicks on button
         ButtonClickCount = ButtonClickCount + 1
-        Dim bicycleid As Integer = pickbike.Text
-        Dim equipmentid As Integer = pickequipment.Text
-        Dim equipmentrateday As Integer
-        Dim bikerateday As Integer
-        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
-        Dim sql As New MySqlConnection(connectionString)
-        Dim query As String = "SELECT RateDay from BicycleType, Bicycle WHERE BicycleType.Name=Bicycle.BicycleType and BicycleID=" & bicycleid
-        Dim query2 As String = "SELECT RateDay from EquipmentType, Equipment WHERE EquipmentType.Name=Equipment.EquipmentType and EquipmentID=" & equipmentid
+        Try
+            Dim bicycleid As Integer = pickbike.Text
+            Dim equipmentid As Integer = pickequipment.Text
+            Dim equipmentrateday As Integer
+            Dim bikerateday As Integer
+            Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+            Dim sql As New MySqlConnection(connectionString)
+            Dim query As String = "SELECT RateDay from BicycleType, Bicycle WHERE BicycleType.Name=Bicycle.BicycleType and BicycleID=" & bicycleid
+            Dim query2 As String = "SELECT RateDay from EquipmentType, Equipment WHERE EquipmentType.Name=Equipment.EquipmentType and EquipmentID=" & equipmentid
 
-        Dim command As New MySqlCommand(query, sql)
-        Dim command2 As New MySqlCommand(query2, sql)
-        Dim adapter As New MySqlDataAdapter()
-        Dim adapter2 As New MySqlDataAdapter()
+            Dim command As New MySqlCommand(query, sql)
+            Dim command2 As New MySqlCommand(query2, sql)
+            Dim adapter As New MySqlDataAdapter()
+            Dim adapter2 As New MySqlDataAdapter()
 
-        Dim table As New DataTable()
-        Dim table2 As New DataTable()
-        adapter.SelectCommand = command
-        adapter.Fill(table)
-        adapter2.SelectCommand = command2
-        adapter2.Fill(table2)
+            Dim table As New DataTable()
+            Dim table2 As New DataTable()
+            adapter.SelectCommand = command
+            adapter.Fill(table)
+            adapter2.SelectCommand = command2
+            adapter2.Fill(table2)
 
-        For Each row In table.Rows
-            bikerateday = row("RateDay")
-        Next
-        For Each row In table2.Rows
-            equipmentrateday = row("RateDay")
-        Next
+            For Each row In table.Rows
+                bikerateday = row("RateDay")
+            Next
+            For Each row In table2.Rows
+                equipmentrateday = row("RateDay")
+            Next
 
-        lbSummary.Items.Add(bikerateday)
-        lbSummary.Items.Add(equipmentrateday)
+            lbSummary.Items.Add(bikerateday)
+            lbSummary.Items.Add(equipmentrateday)
 
-
+        Catch ex As Exception
+            MsgBox("Du må velge sykkel og utstyr fra nedtrekkslisten.")
+        End Try
     End Sub
 
 
