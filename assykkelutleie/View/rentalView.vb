@@ -256,7 +256,7 @@ Public Class rentalView
         PutCustomer(customerTable)
     End Sub
 
-    Private Sub searchrentals_Click(sender As Object, e As EventArgs) Handles searchrentals.Click
+    Private Sub searchrentals_Click(sender As Object, e As EventArgs) Handles searchrentals.Click 'Searches for rentals based on the RentalID in the textboxt field and lists the results in the listbox.
         Dim rentalSearch As New Rentals()
         Dim rental As String = txtrentalsearch.Text
         Dim rentalTable As DataTable = DbManager.GetSpecific(rentalSearch, rental)

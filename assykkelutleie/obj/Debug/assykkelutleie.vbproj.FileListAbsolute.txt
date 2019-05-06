@@ -94,19 +94,9 @@ C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\assykke
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\assykkelutleie.exe
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\assykkelutleie.pdb
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\assykkelutleie.xml
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Data.dll
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Data.EntityFramework.dll
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Web.dll
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\Google.Protobuf.dll
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Data.xml
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Data.EntityFramework.xml
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\bin\Debug\MySql.Web.xml
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.vbprojAssemblyReference.cache
-C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.exe.config
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.adminView.resources
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.loginView.resources
 C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.Resources.resources
@@ -251,3 +241,5 @@ C:\Users\sisch\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutlei
 C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.inoutView.resources
 C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
 C:\Users\ådne\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.statisticsView.resources
+C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.inoutView.resources
+C:\Users\blastyburga\Source\Repos\nilsrn\Team_1\assykkelutleie\obj\Debug\assykkelutleie.repairView.resources
