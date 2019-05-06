@@ -2,23 +2,42 @@
 Public Class rentalView
 #Region "Functions"
     Private Sub CbPutComboBox() 'Populates the comboboxes.
+        Dim bikeid As Integer
+        Dim equipmentid As Integer
+        Dim type As String = ""
+        Dim type2 As String = ""
+        Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
+        Dim sql As New MySqlConnection(connectionString)
+        Dim query As String = "SELECT BicycleID, BicycleType FROM `Bicycle` WHERE Status='Ledig'"
+        Dim query2 As String = "SELECT EquipmentID, EquipmentType FROM `Equipment` WHERE Status='Ledig'"
+        Dim command As New MySqlCommand(query, sql)
+        Dim command2 As New MySqlCommand(query2, sql)
+        Dim adapter As New MySqlDataAdapter()
+        Dim adapter2 As New MySqlDataAdapter()
+        Dim table As New DataTable()
+        Dim table2 As New DataTable()
+        adapter.SelectCommand = command
+        adapter.Fill(table)
+        adapter2.SelectCommand = command2
+        adapter2.Fill(table2)
 
-        Dim bicycle As New Bicycle()
+
+        For Each row In table.Rows
+            bikeid = row("BicycleID")
+            pickbike.Items.Add(bikeid)
+        Next
+        For Each row In table2.Rows
+            equipmentid = row("EquipmentID")
+            pickequipment.Items.Add(equipmentid)
+
+        Next
+
         Dim location As New Location()
-        Dim equipment As New Equipment()
-
-        pickbike.DataSource = DbManager.GetAll(bicycle)
-        pickequipment.DataSource = DbManager.GetAll(equipment)
         extradition.DataSource = DbManager.GetAll(location)
         filing.DataSource = DbManager.GetAll(location)
 
-        pickbike.DisplayMember = "BicycleType"
-        pickequipment.DisplayMember = "EquipmentType"
         extradition.DisplayMember = "Name"
         filing.DisplayMember = "Name"
-
-        pickbike.ValueMember = "BicycleID"
-        pickequipment.ValueMember = "EquipmentID"
         extradition.ValueMember = "Name"
         filing.ValueMember = "Name"
     End Sub
@@ -145,8 +164,8 @@ Public Class rentalView
             rid = row("RentalID")
         Next
 
-        BicycleID = pickbike.SelectedValue
-        EquipmentID = pickequipment.SelectedValue
+        BicycleID = pickbike.Text
+        EquipmentID = pickequipment.Text
         datefrom = extraditiondate.Value.ToString("yyyy-MM-dd")
         dateto = filingdate.Value.ToString("yyyy-MM-dd")
         pricebike = bikepricetotal()
@@ -309,8 +328,8 @@ Public Class rentalView
     Private ButtonClickCount As Integer = 0
     Private Sub btnLeggTil_Click(sender As Object, e As EventArgs) Handles btnLeggTil.Click 'Adds price of the selected items from the pickbike and pickequipment comboboxes to overview listbox and counts number of clicks on button
         ButtonClickCount = ButtonClickCount + 1
-        Dim bicycleid As Integer = pickbike.SelectedValue
-        Dim equipmentid As Integer = pickequipment.SelectedValue
+        Dim bicycleid As Integer = pickbike.Text
+        Dim equipmentid As Integer = pickequipment.Text
         Dim equipmentrateday As Integer
         Dim bikerateday As Integer
         Dim connectionString As String = "Server=mysql-ait.stud.idi.ntnu.no;Database=nilsrle;Uid=nilsrle;Pwd=TnAzsu4O;"
