@@ -46,15 +46,19 @@
         Dim thisDate As Date = Today
         Dim rentedbicycles As New RentedBicycles()
         Dim bicycle As New Bicycle()
+        Dim rentals As New Rentals()
         Dim rentedbicyclesList As DataTable = DbManager.GetAll(rentedbicycles)
         Dim bicycleList As DataTable = DbManager.GetAll(bicycle)
+        Dim rentalList As DataTable = DbManager.GetAll(rentals)
         lbOut.Items.Clear()
-        For Each row2 In bicycleList.Rows
-            For Each row In rentedbicyclesList.Rows
-                If row2("BicycleID") = row("BicycleID") And row("DateFrom") >= thisDate And row2("Status") = "Ledig" Then
-                    Dim b = New RentedBicycles With {.BicycleID = row("BicycleID"), .RentalID = row("RentalID"), .DateFrom = row("DateFrom")}  'Creates bicycleobject and adds it to the listbox
-                    lbOut.Items.Add(b)
-                End If
+        For Each row3 In rentalList.Rows
+            For Each row2 In bicycleList.Rows
+                For Each row In rentedbicyclesList.Rows
+                    If row2("BicycleID") = row("BicycleID") And row("DateFrom") >= thisDate And row2("Status") = "Ledig" And row3("RentalID") = row("RentalID") And row2("CurrentLocation") = row3("PickupLocation") Then
+                        Dim b = New RentedBicycles With {.BicycleID = row("BicycleID"), .RentalID = row("RentalID"), .DateFrom = row("DateFrom")}  'Creates bicycleobject and adds it to the listbox
+                        lbOut.Items.Add(b)
+                    End If
+                Next
             Next
         Next
     End Sub
@@ -63,10 +67,21 @@
         If lbOut.SelectedIndices.Count > 0 Then
             If lbOut.SelectedItem.ToString.StartsWith("SykkelID") Then
                 Dim bicycle As New Bicycle()
+                Dim rentedbicycles As New RentedBicycles()
+                Dim rentals As New Rentals()
+                Dim rentedbicyclesList As DataTable = DbManager.GetAll(rentedbicycles)
+                Dim rentalList As DataTable = DbManager.GetAll(rentals)
                 Dim getBicycle As New DataTable
-                getBicycle = DbManager.GetSpecific(bicycle, lbOut.SelectedItem.BicycleID())
-                bicycle = New Bicycle(getBicycle)
-                bicycle.Status() = "Utleid"
+                For Each row2 In rentalList.Rows
+                    For Each row In rentedbicyclesList.Rows
+                        If row2("RentalID") = row("RentalID") And row("BicycleID") = lbOut.SelectedItem.BicycleID() Then
+                            getBicycle = DbManager.GetSpecific(bicycle, lbOut.SelectedItem.BicycleID())
+                            bicycle = New Bicycle(getBicycle)
+                            bicycle.Status() = "Utleid"
+                            bicycle.CurrentLocation() = row2("DeliveryLocation")
+                        End If
+                    Next
+                Next
                 DbManager.Update(bicycle)
             End If
         Else
